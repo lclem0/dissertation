@@ -1,0 +1,680 @@
+\chapter{State of Art}%
+\label{chapter:stateofart}
+
+
+\begin{introduction}
+In this chapter, the evolution leading to Industry 5.0 contextualizes the importance of technological advancements. 
+The focus is on Industry 5.0, particularly its transition from autonomous robots to the emerging dynamics of \ac{HRC}.
+The critical need for collaborative scenarios between humans and robots is highlighted, emphasizing the transformative potential of such partnerships. 
+Additionally, the role of digital realities alongside \ac{DT} within Industry 5.0, assessing their effectiveness in facilitating \ac{HRI}, marking a new era of efficiency and collaboration in the industry.
+\end{introduction}
+
+
+\section{Industry 4.0}
+% Industry 4.0: Underlying Technologies. Industry 5.0: Human-Computer Interaction as a Tech Bridge from Industry 4.0 to Industry 5.0 
+\label{section:industry-4}
+"Industry 4.0" represents the integration of cutting-edge digital technologies into manufacturing processes, leading to the emergence of smart factories. 
+It integrates leveraging advanced systems such as \ac{CPSS}, the \ac{IOT}, robotics, \ac{AR}, simulation, cloud computing and big data analytics,
+as shown in figure \ref{fig:key-tech-industry-4}, to enhance production efficiency, flexibility, and innovation. This signifies a fundamental 
+shift towards interconnected, intelligent, and digitally-driven manufacturing ecosystems, revolutionizing the way products are conceived, manufactured, 
+and delivered \cite{Moller2022,Ahmed2022}.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\linewidth]{figs/key-tech-industry-4.png}
+    \caption{Key enabling technologies in Industry 4.0 - \cite{Ahmed2022}}
+    \label{fig:key-tech-industry-4}
+\end{figure}
+
+
+With \ac{AI}, industrial processes can achieve unprecedented performance levels, often exceeding human capabilities. These \ac{AI}-driven systems 
+enable robots to perform tasks that may be too hazardous, complex, or delicate for humans, such as handling dangerous materials or managing 
+microscopic elements. 
+Despite this extraordinary potential, it is important to recognize that current industrial robots are not as "smart" as humans in many contexts. 
+While these robots can perform highly skilled tasks, they often operate within strict, pre-programmed limits \cite{Ahmed2022}.
+
+Although Industry 4.0 has undoubtedly increased productivity, flexibility, and automation in industrial environments, it has also led to concerns 
+regarding the diminishing role of human operators. The relentless push towards full automation has, in some cases, reduced the involvement of 
+humans in critical decision-making processes, leading to a more machine-centric production landscape \cite{GOLOVIANKO2023102}
+
+\section{Industry 5.0}
+
+Approximately a decade after the launch of Industry 4.0, the European Commission introduced Industry 5.0 in response to new societal challenges 
+\cite{industry5}.
+
+The growing concerns about the exclusion of human operators in Industry 4.0 systems, coupled with the limitations of full automation, paved the way 
+for a new industrial paradigm: Industry 5.0. As a response to the increasing automation and the need for greater human involvement in manufacturing 
+processes, Industry 5.0 seeks to reintroduce the human element into industrial ecosystems \cite{su11164371}.
+
+The goal is to combine the strengths of humans and machines to achieve more sustainable, efficient, and human-centered production systems.
+This shift reflects the realization that while machines excel at repetitive, dangerous, or complex tasks, humans provide irreplaceable creativity, 
+adaptability, and problem-solving abilities \cite{10577684}.
+Industry 5.0 seeks to strike a balance between technological advancement and human-centric values, fostering environments where humans work alongside 
+advanced technologies to achieve greater societal and environmental outcomes \cite{GOLOVIANKO2023102}.
+
+\subsection{The Key Drivers of Industry 5.0}
+While Industry 4.0 focused on pushing the limits of automation and data-driven production, Industry 5.0 reintroduces the importance of human collaboration,
+recognizing that humans and machines each have unique advantages that can complement one another. Key technological drivers of Industry 5.0 include:
+\begin{itemize} \item \textbf{Artificial Intelligence and Cognitive Computing:} These technologies continue to evolve, enabling robots and automation 
+                systems to work alongside humans in ways that enhance human productivity without fully replacing them.
+                
+                \item \textbf{Collaborative Robots (Cobots):} Cobots are designed to work safely alongside humans, facilitating intuitive interaction 
+                and allowing both to collaborate on tasks that leverage the strengths of each. The development of collaborative robots focuses on 
+                creating systems that enable intuitive, seamless interaction between human users and robotic systems, a key aspect of Industry 5.0’s 
+                vision. This redefines the employment roles of human workers, emphasizing their communication with robotic systems 
+                and artificial intelligence \cite{10577684}.
+
+                \item \textbf{Digital Twins:} The incorporation of digital twins represents a pivotal technological advancement in Industry 5.0. 
+                Digital twins provide visual models that enhance comprehension and facilitate the evaluation of goods, processes, and production. 
+                By allowing real-time monitoring and simulation, digital twins help optimize manufacturing processes, bridging the gap between the virtual 
+                and physical worlds \cite{10577684}.
+
+                \item \textbf{Human-Centric Automation:} The emphasis is placed on using technology to augment human capabilities rather than replace them,
+                fostering a more inclusive, creative, and flexible manufacturing environment.
+\end{itemize}
+
+% \section{Introduction to Industry 5.0} As a response to the increasing automation and the need for greater human involvement in manufacturing 
+% processes, "Industry 5.0" seeks to reintroduce the human element into industrial ecosystems. Unlike Industry 4.0, which prioritized automation and 
+% machine autonomy, Industry 5.0 emphasizes human-robot collaboration, where the strengths of humans and machines are combined to achieve more sustainable, 
+% efficient, and human-centered production systems. This shift reflects the realization that while machines excel at repetitive, dangerous, or complex tasks,
+% humans provide irreplaceable creativity, adaptability, and problem-solving abilities.
+
+% Industry 5.0 seeks to strike a balance between technological advancement and human-centric values, fostering environments where humans work alongside 
+% advanced technologies to achieve greater societal and environmental outcomes \cite{GOLOVIANKO2023102}.
+
+\subsection{Human-Robot Collaboration}
+%%%% estender um pouco mais e fazer ponte para collaboration scenarios / digital realities
+\label{subsection:human-robot-collab}
+% \input{chapters/stateofart/subsections/human-robot-collab}
+\ac{HRI} focuses on creating robots that are safe, effective, and compatible for collaboration with humans rather than replacing them.
+This involves developing robots that are autonomous and also capable of understanding and predicting human actions, communicating with humans, 
+and learning from human feedback. \ac{HRI} is an extensive field dedicated to examining the interactions and coexistence of humans and robots in shared spaces. 
+Its objective consists on enhancing these interactions by designing robots that can assist and cooperate with humans in diverse roles \cite{Ogenyi2021}.
+
+One key area within \ac{HRI} is \ac{HRC}, which specifically focuses on scenarios where humans and robots cooperate directly to achieve common goals.
+\ac{HRI} can be broken down into different forms of interaction, whose categorization is based on various factors that define how 
+humans and robots share the workspace:
+
+\begin{itemize}
+    \item \textbf{Human-Robot Coexistence (HRCx)}: In this form of interaction, humans and robots share the same workspace but do not directly interact.
+    Both carry out their tasks independently, with the primary focus on avoiding collisions. Usually this interaction does not involve synchronized work 
+    or communication between the two parties.
+
+    \item \textbf{Human-Robot Cooperation (HRCp)}: Here, humans and robots share both the workspace and the task objective. Cooperation occurs when humans
+    and robots work toward a common goal, and advanced technologies such as sensors or machine vision may be used to detect and prevent collisions.
+    However, there is limited physical interaction between them.
+
+    \item \textbf{Human-Robot Collaboration (HRC)}: This is the most integrated form of \ac{HRI}, where humans and robots not only share the workspace and
+    objectives but also interact directly. In HRC, physical contact may occur (e.g., through shared manipulation of an object), or there can be non-physical
+    collaboration, such as verbal communication, gestures, or recognizing intentions through eye movement. In collaborative environments, humans usually
+    perform tasks requiring fine motor skills or decision-making, while robots handle repetitive, strenuous, or hazardous tasks.
+\end{itemize}
+
+Despite both coexistence, cooperation and collaboration terms being used in \ac{HRI}, as well as both allowing for a close interaction and a 
+shared goal, this categorization differs not only based on the dependence and sequence of operations performed by the agents, but also based on 
+the shared environment area. Therefore, collaboration can be defined as gathering human operators and robots sharing the sequence of a task towards 
+achieving the same goal, allowing direct contact between both agents, as depicted in the figure \ref{fig:collab} \cite{Jahanmahin2022}.
+
+
+\begin{figure}[h]
+    \centering
+    \hspace{-1.3cm}
+    \includegraphics[width=1.07\linewidth]{figs/collab-coex-coopr.png}
+    \caption{Different levels of \ac{HRI} - \cite{Jahanmahin2022}} 
+    \label{fig:collab}
+\end{figure} 
+
+
+These new robots featuring intelligent sensing and vision systems, envisioned to integrate the production line, are called "cobots". 
+They represent the alternative to full automation, since industry specialists have stated it is not possible to completely remove the 
+human within the manufacturing environment \cite{Weiss2021}.
+
+%% adicionar figura correta e dar label - verificar depois esta questao do estado da arte aqui
+
+%%%%%%%%%%%%%%%%%%%%%%%% analise do artigo sobre cobots - Human–Robot Collaboration in Manufacturing Applications: A Review - 2019
+%%%%%%%%%%%%%%%%%%%%%%%% ver melhor esta parte abaixo, organizar melhor e adicionar referencias bem, imagens e o que está a faltar
+\subsection{Collaborative Robots (Cobots)} 
+
+
+In the past decade, the market has introduced a new category of robots known as collaborative robots, or "cobots." These are designed to interact 
+physically with humans within the same workspace, devoid of the traditional barriers or protective cages typical in conventional robotic systems. 
+Cobots are celebrated for their ability to quickly and inexpensively adapt layouts, although properly harnessing their potential requires a thorough 
+understanding of their proper uses and characteristics, which can otherwise pose barriers to industry adoption.
+
+
+\subsubsection{The Role and Benefits of Cobots}
+
+Unlike traditional industrial robotic systems that necessitate extensive safety guarding, thus reducing flexibility and increasing both cost and 
+spatial demands, cobots offer a solution geared towards the current market's need for reduced lead times and mass customization[1]. This demand is 
+particularly prevalent among small- and medium-sized enterprises (SMEs). Cobots facilitate direct physical interaction between humans and machines, 
+and their design allows for straightforward reprogramming by non-experts [3]. Collaboratively, humans and cobots can increase productivity while 
+cutting production costs by combining human cognitive abilities with robotic precision and strength.
+
+\subsubsection{Background and Evolution of Cobots}
+
+The cobot concept was initially proposed by J. Edward Colgate and Michael Pashkin in 1996 [2,4 - confirmar], with the first commercial cobot, the UR5 
+model by Universal Robots, being sold in 2008 [6]. This marks the beginning of practical human-robot collaboration developments.
+
+\subsubsection{Understanding Collaboration in Cobots}
+
+Clarifying the modes of collaboration is crucial as the term often leads to misunderstandings. Müller et al [7]. proposed a classification system for 
+different collaboration methods between humans and cobots, indicating that these categorizations are not fixed and may vary across different literatures. 
+- add figure 1 - summarizes that humans and cobots can work together.
+
+\subsubsection{Distinguishing Cobots from Industrial Robots}
+
+Cobots are distinct from traditional industrial robots in that they are specifically designed with safety and ergonomics in mind [13]. They often 
+include advanced features such as force and torque sensors, vision systems, and anti-collision systems, which are not typically part of traditional 
+robotic setups. These features allow cobots to be deployed without the extensive additional costs and setup required for retrofitting traditional 
+robots with similar capabilities.
+
+\subsubsection{Economic and Practical Advantages of Cobots}
+
+The shift towards cobots in industrial settings is largely driven by economic factors, improvements in occupational health, and the efficient 
+utilization of factory space. Cobots offer significant flexibility—they can be easily relocated within different parts of a plant and quickly 
+adapted to changes in production layouts [16]. This is particularly advantageous in high-risk applications, although it does necessitate certain 
+constraints similar to those in traditional systems. Cobots can also lead to lower direct unit production costs compared to traditional robotic 
+systems [17].
+
+\subsubsection{Comparative Analysis with Traditional Robots}
+
+- ver tabela 1 - comparacao between collaborative and traditional
+When comparing cobots and traditional robots across various tasks such as assembly, placement, handling, and picking, cobots often show superior 
+daptability and cost-effectiveness. However, traditional robots still offer advantages in scenarios requiring high payload [23 serve?- confirmar. 
+questao do payload?] and precision. 
+
+\subsubsection{Future Trends in \ac{HRC}}
+figura 7 - ver
+Recent studies suggest future enhancements in HRC will focus on better understanding and integrating environmental and operator intentions into robotic 
+operations. This involves employing advanced sensing and algorithmic strategies to make interaction more intuitive and safer, thereby increasing 
+reliability and system adoption.
+
+% Falta a parte da conclusao. adicionar figuras, tabelas, imagens do artigo
+% %%%%%%%%%%%%%%%%%%%%%%%% 
+
+% %%%%%%%%%%%%%%%%%%%%%%%% ver a parte abaixo dos cenarios de colaboracao - o que fazer com isto. integrar melhor depois da parte de ar e dt estarem
+% %%%%%%%%%%%%%%%%%%%%%%%% definidas. deixar o que está abaixo? ou mover para a parte de depois de introduzir os DT
+
+\subsection{Collaboration Scenarios} 
+
+Cobots are different from traditional automation robots, being designed for direct interaction with humans within industrial settings. 
+These cobots, which are now being developed for a range of industrial applications, eliminate the need for protective barriers, allowing them to 
+work alongside humans and expand beyond the spatial constraints, typical of conventional industrial robots \cite{Kadir2018} CITE THIS IN THE MENDELEY.
+
+Key features that set cobots apart include their enhanced safety protocols for close human interaction and their simplified programming, 
+which supports flexible application within manufacturing environments. This allows for straightforward deployment and reassignment throughout 
+various factory processes, significantly aiding tasks such as assembly, packaging, and organizing \cite{Faccio2019} CITE THIS IN THE MENDELEY.
+
+The integration of \ac{HRC} systems in smart manufacturing is opening doors to increased productivity and efficiency. Industries like automotive 
+have begun implementing cobots equipped with advanced sensing and vision systems, demonstrating the potential for collaborative robots to 
+revolutionize these sectors. Since the automotive industry requires a significant portion of production involving assembly tasks, combining 
+human skills and cobot capabilities is proving essential for tasks requiring greater flexibility and robustness than what robots can provide 
+on their own \cite{Tsarouchi2016} CITE THIS IN THE MENDELEY. 
+% Specifically, cobots are being used for precise tasks such as screwing during assembly stages, through integration with human operators, enabling shared workspace efficiencies [L. Wang et al., 2019].
+
+% Moreover, the food industry’s move towards demand-based strategies underscores the importance of adopting Industry 4.0 technologies, including digitalization and cobots, to drive the sector towards enhanced sustainability and productivity [J. Miranda et al., 2019].
+This shift towards a more collaborative manufacturing environment, pairing human intelligence with robotic efficiency, represents a significant 
+stride towards the future of industrial automation.
+% %%%%%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%% 16set 18h04 a parte abaixo, está ok ver so se é preciso adicionar mais alguma figura
+\section{Digital Realities} 
+
+
+\ac{DR's} encompass a spectrum of technologies that blend virtual elements with the real world to varying degrees. 
+In exploring the capabilities and applications of \ac{DR's}, these can be broadly categorized into three main types:
+
+\begin{itemize}
+    \item \textbf{\ac{AR}}: Enhances the user's perception of the real world by overlaying digital content such as 3D graphics, information, or media directly 
+    onto their physical surroundings \cite{liu2022digitaltwin}. 
+    This technology enables the virtual content to interact dynamically with the environment in real-time. 
+    The ideal outcome is for users to perceive both virtual and real entities as inhabiting the same shared space, creating a unified and interactive 
+    experience \cite{Azuma1997}.
+    \ac{AR} requires spatial registration to ensure that virtual additions are contextually and spatially aligned with the physical world.
+    A prime example of \ac{AR} is Pokémon GO (add a picture of pokemon go view), where virtual creatures appear as if they exist within the real world, 
+    allowing users to interact with them through their mobile devices \cite{whatismixedreality}.
+
+    \item \textbf{\ac{VR}}: Immerses users in a completely synthetic environment, isolating them from the physical world. This immersion is achieved through 
+    \ac{HMD} (add picture of an example of HMD) that provide a fully virtual view, with technologies such as head tracking enhancing the experience by 
+    allowing natural movements to influence the virtual environment. \ac{VR} typically features individual experiences and can transport users to remote 
+    or imaginary locations, offering a profound sense of presence in a digitally constructed reality \cite{whatismixedreality}.
+    
+    \item \textbf{\ac{MR}}: Since \ac{MR} lacks a universally agreed-upon definition, various sources describe it in different ways.
+    In \cite{microsoft_mixed_reality}, \ac{MR} encompasses a spectrum, as depicted in the picture \ref{f:mixed-spectrum} that includes everything
+    from \ac{AR} where the physical reality is dominant, to augmented virtuality where virtual elements are more prominent, facilitating a seamless
+    transition between real and virtual worlds.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.85\linewidth]{figs/mixed-reality-spectrum.jpeg}
+        \caption{The mixed reality spectrum, from \cite{microsoft_mixed_reality}}
+        \label{f:mixed-spectrum}
+    \end{figure}
+    
+
+    Given that \ac{MR} is not an universally concept and is understood differently depending on the context, ten experts in \ac{AR}/\ac{VR}
+    from academia and industry were interviewed \cite{whatismixedreality}.
+
+    Therefore, \ac{MR} can encompass a wide range of notions, such as:
+    \begin{itemize}
+        \item \textbf{\ac{MR} as a continuum}: Involving a range of experiences from \ac{AR} to augmented virtuality, depending on the degree of
+        virtual content integrated into the real world.
+        \item \textbf{\ac{MR} as Collaboration}: : Describes the interactive processes between users in different realities, such as one in \ac{AR}
+        and another in \ac{VR}, emphasizing the collaborative potential of \ac{MR} in shared or interconnected spaces.
+        \item \textbf{\ac{MR} as Strong \ac{AR}}: Viewing \ac{MR} as an advanced form of \ac{AR} where interactions with and within the environment are 
+        more complex and integrated.
+        \item \textbf{\ac{MR} as a Synonym for \ac{AR}}: In this usage, the terms \ac{MR} and \ac{AR} are used interchangeably.
+        This approach typically occurs when a system or experience aligns closely with \ac{AR}, and the definition of \ac{AR} is utilized to clarify what is 
+        meant by \ac{MR}.
+        \item \textbf{\ac{MR} as a Combination of \ac{AR} and \ac{VR}}: This definition describes \ac{MR} as an integration of both \ac{AR} and \ac{VR} technologies. 
+        It refers to systems or applications that feature distinct \ac{AR} and \ac{VR} components, which may interact but are not necessarily seamlessly integrated.
+        This can also apply to devices or apps capable of switching between \ac{AR} and \ac{VR} modes as needed.
+        \item \textbf{\ac{MR} as an Alignment of Environments}: This concept of \ac{MR} involves the synchronization or alignment of virtual and physical 
+        environments. It describes systems where the virtual and real components are distinct yet aligned, similar to how collaboration setups 
+        work but without requiring actual collaborative interactions or physically separate environments.
+    \end{itemize}
+\end{itemize}
+
+% use this? - 17 set 00h18
+% Therefore, it holds great promise for enhancing collaborative efforts, particularly in remote interactions, where \ac{AR} is utilized by for 
+% on-site members, overlaying digital information onto the physical environment, and \ac{VR} is employed for remote members, immersing them in 
+% a simulated virtual environment. This integration of both digital realities allow participants from different locales to share a common virtual 
+% space for interaction.
+
+%%%%%%%%%%%%%%    % 16 set 18h04  a parte acima esta ok, ver so se é preciso adicionar mais alguma figura
+
+%%%%%%%%%%%%%% é preciso entrar em mais detalhe sobre o que é MR e como se enquadra no contexto de HRC????? faz sentido? - do artigo de mixed realities
+%%%%%%%%%%%%%% capitulo 8 - a conceptual framework for mixed reality . 16 set 18h04
+    % \subsection*{Summary of Mixed Reality Concepts}
+
+    % The landscape of \ac{MR} is notably fragmented, influenced by diverse expert opinions and various scholarly sources. 
+    % Despite these differences, there is a consensus on the utility of a unified definition for clarity, particularly within Human-Computer Interaction 
+    % research. However, the approach adopted does not seek to establish a singular definition but rather to accommodate the variety of existing perspectives.
+    
+    % \subsection*{Conceptual Dimensions of MR}
+
+    % Several dimensions have been identified to classify \ac{MR} experiences more clearly:
+
+    % \begin{itemize}
+    %     \item \textbf{Number of Environments:} This dimension addresses the count of physical and virtual environments involved in \ac{MR} experiences. 
+    %     For instance, a \ac{VR} experience might be considered a separate environment even when occurring in the same physical space as an \ac{AR} setup.
+    %     \item \textbf{Number of Users:} Reflects the user involvement needed for different types of \ac{MR}. While the collaboration type of \ac{MR} 
+    %     typically involves multiple users, other forms might not.
+    %     \item \textbf{Level of Immersion:} Describes the depth of immersion, which varies independently from the level of virtuality. This is crucial 
+    %     for understanding user engagement in \ac{MR} environments.
+    %     \item \textbf{Level of Virtuality:} Indicates the extent of virtual content integrated into the user's perception. It parallels the 
+    %     Reality-Virtuality Continuum and varies from non-existent to fully virtual.
+    %     \item \textbf{Degree of Interaction:} Categorized into implicit and explicit interactions, this dimension focuses on how users interact 
+    %     with the \ac{MR} system—ranging from passive engagement to active manipulation of the \ac{MR} scene.
+    % \end{itemize}
+
+    % \subsection*{Additional Dimensions}
+
+    % \begin{itemize}
+    %     \item \textbf{Input:} Encompasses non-interactive inputs like motion tracking, geolocation, and sensor data, which inform the \ac{MR} environment.
+    %     \item \textbf{Output:} Involves the types of sensory feedback provided to the user, potentially including visual, auditory, haptic, and other sensory outputs.
+    % \end{itemize}
+
+    % These dimensions form a framework that allows for a structured classification and discussion of \ac{MR} experiences, accommodating the range of definitions and applications highlighted by industry and academic experts.
+
+% \subsection{Extended Reality}  -------------- perguntar ao eurico e bernardo se é preciso falar disto ou fica apenas pela mixed reality?
+% % - importante para a industria 4.0
+% % mencionar áreas de aplicacao onde ja existe.
+% % dar + enfase aos trabalho alinhados com HRC e HRI
+% \ac{XR} is a recent comprehensive term that encapsulates all immersive technologies, including \ac{VR}, \ac{AR}, and \ac{MR}. 
+% These technologies extend the spectrum of human experience by merging the digital and physical realms in various degrees and forms. 
+
+% \ac{XR} technologies are pivotal in:
+% \begin{itemize}
+%     \item creating a continuum of immersive experiences, ranging from fully virtual environments to the enhancement of the physical world with 
+%     digital overlays \cite{Morimoto2022}.
+%     \item transforming the manufacturing industry by enhancing visualization, training, and operational efficiency.
+% \end{itemize} 
+
+% \subsection{Limitations of XR}
+
+% While \ac{XR} holds great promise for revolutionizing remote interactions, it also has challenges, especially in distant settings.
+
+% It begins with the limitation in perspective and environmental context. The view available to remote participants is restricted to what their on-site 
+% counterparts can share, which may limit a full understanding of the environment. This constraint can lead to less effective guidance and decision-making 
+% from afar. 
+
+% Moreover, \ac{XR} technologies often emphasize sharing visual and audio data, neglecting the collection of multisensory information. 
+% This lack of comprehensive data collection prevents remote participants from fully grasping the nuances of the physical location, missing out 
+% on critical contextual cues necessary for a deep understanding of on-site conditions.
+
+% Additionally, the interaction with physical objects through \ac{XR} can be superficial, lacking the depth needed for intricate explanations or 
+% precise gestures, especially in complex or dynamic situations. This limitation can make it challenging to perform tasks that require detailed 
+% manipulation.
+
+% Furthermore, navigation poses another challenge for on-site users, particularly in environments that are complex or fraught with hazards. 
+% The difficulty in moving safely and efficiently through such spaces can compromise the sharing of contextual information and hinder the overall 
+% effectiveness and efficiency of the tasks being done.
+
+% These limitations underscore the need for ongoing advancements in \ac{XR} technology to address these gaps and fully leverage its potential in 
+% remote collaboration \cite{Lambrecht2021,Suzuki2022}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% abaixo - verificar se alguma informacao daqui pode ser util para os DT - 19 set 16h11 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+% 19 set 00h14 - parte dos dt parece estar ok (falta adicionar figuras e tabelas) - ordenar melhor ( ver o que o chat deu)
+% - a seguir falar das solucoes industriais - ar e dt para remote collaboration
+% introduzir human robot collaboration antes? 
+% \section{Digital Twins}
+% cite from article - "state of art survey digital twin implementations" 
+
+% \ac{DT} are virtual replicas of physical entities, enabling the simulation, analysis, and control of systems in a digital realm. 
+% Their importance in enhancing \ac{HRC} lies in their ability to provide a real-time, interactive environment that mirrors the 
+% physical world, allowing for improved decision-making, efficiency, and flexibility in industrial applications.
+
+% By transforming smart manufacturing, \ac{DT} enable comprehensive examination and prediction of physical systems' behaviors, 
+% optimizing operations and minimizing downtime. In \ac{HRC}, \ac{DT} significantly boost ergonomic interactions, adapting robotic movements to meet 
+% human needs and constraints, thereby ensuring a safer and more productive workplace \cite{Tao2019}.
+
+% The integration of \ac{DT} in various fields is supported by advancements in big data and \ac{IoT}, providing the necessary infrastructure for its 
+% implementation. As a cutting-edge technology, \ac{DT} leverages modern data surges to assist engineers, managers, healthcare professionals, and 
+% policymakers in managing complex systems such as production lines, healthcare, and smart cities (citar 4-8 confirmar quais os casos aplicaveis aqui).
+% These systems offer high fidelity monitoring, diagnostics, and prognostics tools, enhancing operational oversight and decision-making processes.
+
+% Moreover, \ac{DT} are instrumental in the proactive management of \ac{HRC}, fostering mutual-cognitive, predictable, and self-organizing functionalities that 
+% enhance the efficiency and safety of \ac{HRI} \cite{Li2023}.
+
+% Originally conceptualized by NASA in the 1980s, the idea of \ac{DT} was intended to monitor spacecrafts from Earth. This concept has evolved significantly 
+% with the advancements in computational and \ac{IoT} technologies. Modern \ac{DT} systems utilize real-time data from sensors to accurately reflect the 
+% state of the physical twin, enhancing the fidelity and applicability of simulations (cite 10).
+
+% Nowadays, a notable implementation of \ac{DT} technology is observed in Singapore's Smart Nation Initiative, where the Land Transport Authority is developing a 
+% \ac{DT} of the country to inform policy decisions by testing potential policies virtually before they are enacted. This application not only demonstrates
+% the immense potential of \ac{DT} for contemporary and future technologies but also underscores the ongoing commitment to advancing this concept (cite 6).
+
+% However, the concept of \ac{DT} lacks a standardized definition, leading to a variability in the scope and execution of \ac{DT} implementations. 
+% The dual nature of cyber and physical components in \ac{DT} makes \ac{AR} a suitable companion for visualizing and interacting with these complex 
+% systems (cite the article itself).
+
+% As \ac{DT} technology continues to attract interest, the necessity for intuitive data visualization methods becomes apparent. Non-expert users must 
+% be able to understand and interact with the complex data provided by \ac{DT} systems effectively. \ac{AR} offers a promising solution by overlaying 
+% virtual data directly onto physical objects, providing a more natural and intuitive user interface for interacting with digital 
+% information cite(12).
+% \ac{AR} expands the traditional interaction from 2D screens to 3D real-world applications, making it an ideal tool for enhancing user interaction 
+% with digital twins. By enabling users to view and interact with maintenance instructions projected directly onto equipment, \ac{AR} facilitates more 
+% efficient and effective operation and maintenance processes (cite 13).
+
+
+
+% \subsection*{Digital Twins in Academia and Industry}
+% The term \ac{DT} is widely recognized in both academic and industrial circles as a \ac{CPS} that typically consists of three main components: 
+% \begin{itemize}
+%     \item A physical system.
+%     \item A virtual model.
+%     \item The connections between them (cite 1,2,3 from the dt article).
+% \end{itemize}
+
+% Research applications of \ac{DT} span across 
+% various fields, offering solutions for lifecycle management, \ac{PHM}, and urban planning, to name a few (cite 4-8).
+
+% Critically, the industry's adoption of \ac{DT}, led by companies like Siemens, often focuses on creating digital shadows rather than true \ac{DT}, 
+% characterized by a lack of bidirectional communication. True \ac{DT} systems are distinguished by their ability to not only update the virtual model 
+% based on changes in the physical system but also to allow alterations in the virtual model to affect the physical entity (cite 9- add table 5).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% acima - verificar se alguma informacao daqui pode ser util para os DT - 19 set 16h11 %%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% abaixo - parte a usar para DT - 19 set 16h11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+\section{Digital Twins}
+
+\subsection{Introduction to Digital Twins}
+\ac{DT} are sophisticated virtual replicas of physical entities that enable simulation, analysis, and control of systems within a digital framework. 
+These digital counterparts are pivotal in enhancing \ac{HRC}, as they provide real-time, interactive environments that mirror the physical world. 
+This mirroring capability facilitates improved decision-making, efficiency, and flexibility across various industrial applications.
+
+\subsection{Historical Origins of Digital Twins}
+The concept of \ac{DT} was originally formulated by NASA in the 1980s for monitoring spacecrafts from Earth. With advancements in \ac{IOT} and 
+computational technologies, modern \ac{DT} systems now utilize real-time sensor data to enhance the accuracy and reliability of simulations, 
+significantly evolving from their initial conception \cite{NASA-reference}.
+
+\subsection{Characteristics and Applications of Digital Twins}
+\ac{DT} transform smart manufacturing by enabling detailed examination and prediction of the behavior of physical systems, thereby optimizing operations 
+and minimizing downtime. In the realm of \ac{HRC}, \ac{DT} significantly enhance ergonomic interactions by adapting robotic movements to meet human needs,
+thus ensuring safer and more productive workplace conditions \cite{8477101}.
+
+A notable implementation of \ac{DT} technology can be observed in Singapore's Smart Nation Initiative, where the Land Transport Authority 
+utilizes a \ac{DT} to simulate and evaluate potential policies before implementation, showcasing the vast potential of \ac{DT} for modern and 
+future technologies \cite{isprs-archives-XLII-4-W7-37-2017}.
+
+\subsection{Digital Twins in Academia and Industry}
+
+Digital Twins (DT) have gained significant traction in both academic research and industrial applications in recent years. Despite their growing prominence,
+there is no universally accepted formal definition of a DT. 
+
+Nevertheless, the majority of reputable researchers concur that a DT is a \ac{CPS} comprising at
+least three essential components: 
+\begin{itemize}
+    \item A physical system,
+    \item A virtual model,
+    \item Connections facilitating bidirectional communication between the physical and virtual models \cite{TaoFei, 8477101, ROSEN2015567}.
+\end{itemize}
+
+In academic settings, DTs have been explored across a wide array of applications, including machine tool life management, product health management,
+smart cities, and patient health monitoring, among others \cite{8361285, TAO2018169, isprs-archives-XLII-4-W7-37-2017, 10.1007/978-3-030-23162-0_19, 6296978}. 
+These applications demonstrate the versatility and potential of DTs in enhancing efficiency, predictive maintenance, and system optimization.
+
+In the industrial sector, numerous companies, such as Siemens, offer software and platform solutions aimed at creating DTs for their industrial partners. 
+However, some critics argue that these solutions represent digital shadows rather than true DTs. The primary contention is the lack of bidirectional 
+communication capabilities \cite{CIMINO2019103130}. Specifically, while changes in the physical system can influence the virtual model, the reverse—where 
+modifications in the virtual model impact the physical system—is often absent. 
+
+In Figure \ref{f:dt-structure}, \cite{dt_model} outlines the \ac{DT} reference model, illustrating the bidirectional communication between the physical 
+and digital entities. This configuration underscores the distinction between true DTs and digital shadows, the latter often criticized for lacking 
+interactive communication capabilities \cite{CIMINO2019103130}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figs/dt_reference_model.png}
+    \caption{A Digital Twin reference model \cite{dt_model}}
+    \label{f:dt-structure}
+\end{figure}
+
+% However, the concept of \ac{DT} lacks a standardized definition, leading to a variability in the scope and execution of \ac{DT} implementations. 
+% The dual nature of cyber and physical components in \ac{DT} makes \ac{AR} a suitable companion for visualizing and interacting with these complex 
+% systems (cite the article itself).
+
+As emphasized by Liu et al.~\cite{liu2022state}, "A true DT must include bidirectional communication instead of having a virtual model that updates
+according to a physical system." 
+Given that the concept of \ac{DT} lacks a standardized definition, leading to a variability in the scope and execution of \ac{DT} implementations and
+defining a misconception, the critical distinction between three types of interaction is further ilustrated in Table
+~\ref{tab:levels_of_control}.
+% This critical distinction is further illustrated in Table~\ref{tab:levels_of_control}.
+
+\begin{table}[ht]
+    \centering
+    \caption{Levels of Control, adapted from \cite{liu2022state}}
+    \label{tab:levels_of_control}
+    \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{10cm}@{}}
+    \toprule
+    Level of Interaction & Description \\ 
+    \midrule
+    No interaction & Virtual model and physical system are not connected through a network. The virtual model only simulates and models a physical 
+    system without any real-time updates. \\ \hline
+    Unidirectional & The physical system feeds sensor data to the virtual model through a network. The virtual model utilizes data to update the 
+    current state and predict future states. \\ \hline
+    Bidirectional & Both the physical system and the virtual model can send data to each other. The virtual model updates using physical data while 
+    the physical system can be controlled through data sent by the virtual model. \\ 
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+
+\subsection{Integration of Augmented Reality with Digital Twins}
+The integration of \ac{AR} with \ac{DT} represents a significant advancement in enhancing user interactions with complex systems. 
+\ac{AR} overlays virtual data directly onto physical objects, thereby providing a more intuitive and engaging interface for users. 
+This capability is particularly beneficial in industrial settings where \ac{AR} can facilitate more efficient and effective operation and 
+maintenance processes \cite{article12, peddie2017augmented}.
+
+Despite the numerous advantages of \ac{DT}s, a significant challenge lies in the effective visualization of the complex data they generate. 
+As interest in \ac{DT}s grows, it becomes increasingly important to provide users with intuitive and accessible methods to interpret and interact 
+with this data. According to \cite{article12}, the benefits of real-time data and information provided by \ac{DT}s cannot be fully realized without 
+proper visualization techniques that present complex information in a clear and uncluttered manner, especially for users with limited technical expertise.
+
+\ac{AR} offers a promising solution to this challenge by enhancing data visualization and user interaction. Traditionally, users interact with digital 
+information through 2D interfaces such as screens and monitors. However, \ac{AR} expands this interaction into the real world by overlaying virtual 
+data onto physical objects, creating immersive 3D experiences that align with users' familiar environments \cite{peddie2017augmented}. This 3D visualization enables
+users to better understand and absorb information through visual cues, which are often more effective than textual or auditory information \cite{article-teaching}.
+For instance, projecting maintenance instructions directly onto a machine allows users to perform maintenance tasks more efficiently compared to 
+consulting physical manuals \cite{inproceedings}. Moreover, \ac{AR} has been successfully utilized in various manufacturing processes to provide guidance 
+for maintenance procedures and to train novice workers, demonstrating its versatility and effectiveness in industrial settings \cite{ong2004virtual}.
+
+By integrating \ac{DT} with \ac{AR}, it is possible to monitor the state of a system in real-time using \ac{DT}s while simultaneously displaying relevant
+data and information through \ac{AR} interfaces. This integration not only enhances the user experience but also improves operational efficiency and 
+safety by providing actionable insights in an intuitive and accessible manner.
+
+\section{Human-Robot Collaboration and Industrial Applications}
+Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusses how these technologies integrate into \ac{HRC}, with specific emphasis 
+on remote collaboration and practical examples from the industry that utilize \ac{DT} and \ac{AR} solutions.
+
+\subsection{Enhancing Human-Robot Collaboration through AR and DT Implementations}
+
+Integrating Augmented Reality (AR) and Digital Twin (DT) technologies into Human-Robot Collaboration (HRC) has demonstrated significant improvements in 
+interaction, safety, and efficiency. This section explores various solutions and their implementation advantages, drawing insights from recent studies.
+
+\begin{enumerate}
+    \item \textbf{Augmented Reality for Enhanced Interaction and Safety}
+    
+    Leveraging \ac{AR} can significantly improve the interaction between humans and robots by providing intuitive visualizations and reducing the need 
+    for continuous visual contact. As demonstrated by Chu et al.~\cite{Chu2023}, effectively conveying robot intentions through \ac{AR} visuals enhances 
+    worker awareness of their surroundings, thereby improving safety and efficiency in collaborative tasks. The \ac{AR} interfaces clearly visualize the 
+    robot's work envelope, as depicted in Figure~\ref{fig:ar-envelope}, enabling human operators to navigate shared workspaces safely and efficiently.
+    
+    Additionally, Lotsaris et al.~\cite{LOTSARIS2021301} presented an \ac{AR} application that facilitates operator work in human-robot environments by 
+    enabling coexistence and improving communication. Their system displays safety fields around the robot using different colors to represent safe and 
+    dangerous regions, enhancing situational awareness and reducing the risk of accidents. However, a significant challenge remains in the complexity of
+     recognizing detailed information through haptic feedback, indicating a need for more sophisticated algorithms and sensors to capture and translate 
+     complex robot actions into intuitive \ac{AR} visualizations.
+    
+    \begin{figure}[htp]
+        \centering
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{figs/a-work-env.png}
+            \caption{}
+            \label{fig:sfig1}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{figs/b-work-env.png}
+            \caption{}
+            \label{fig:sfig2}
+        \end{subfigure}
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{figs/c-work-env.png}
+            \caption{}
+            \label{fig:sfig3}
+        \end{subfigure}%
+        \begin{subfigure}{.5\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{figs/d-work-env.png}
+            \caption{}
+            \label{fig:sfig4}
+        \end{subfigure}
+        \caption{AR displayed work envelope of robotic arm \cite{Chu2023}}
+        \label{fig:ar-envelope}
+    \end{figure}
+    
+    \item \textbf{Virtual and Augmented Reality for Intuitive Robot Programming}
+    
+    Programming robots using Virtual Reality (VR) and DT introduces innovative methods that capture human movements, reducing the learning curve for 
+    non-experts and enabling intuitive programming of complex tasks. Bolano et al.~\cite{Bolano2020} demonstrated that bilateral communication between 
+    the VR environment and the robot’s hardware allows changes to be made in both the virtual and physical systems. This full immersive experience 
+    enables users to interact directly with the robot's end effector through holographic interfaces, facilitating the selection and application of 
+    desired operations seamlessly.
+    
+    Similarly, Burghardt et al.~\cite{burghardt2020programming} explored programming DTs using VR, where the robot reproduces human movements within a virtual 
+    environment. This approach ensures that the robot can accurately mimic complex human actions, which is particularly beneficial in tasks that are 
+    challenging to automate traditionally. The integration of Unity and \ac{ROS} platforms further enhances the functionality by 
+    providing robust communication and real-time data processing capabilities.
+    
+    In the context of mobile platforms, Lotsaris et al.~\cite{LOTSARIS2021301} highlighted the challenges of achieving friendly interaction in shared 
+    working environments due to the absence of effective communication between operators and robots. Their AR application addresses this by displaying 
+    safety fields and facilitating better communication, thereby improving the overall interaction experience.
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.9\linewidth]{figs/vr-oculos-dt.png}
+        \caption{Schematic diagram of the building and programming of a robotic station alongside VR technologies \cite{burghardt2020programming}}
+        \label{fig:vr-oculos-dt}
+    \end{figure}
+    
+    Despite these advancements, challenges such as the need for high precision in replicating human movements and the complexity of \ac{VR} tracking 
+    technology persist. Improvements in algorithms, particularly those utilizing Machine Learning (\ac{ML}) techniques, are essential to ensure that 
+    robotic movements closely mimic human operators' actions \cite{Burghardt2020}.
+    
+    \item \textbf{AR-Assisted Multi-Robot Systems for Enhanced Control and Coordination}
+    
+    The use of \ac{AR} in real-time and planned control modes for multi-robot manufacturing systems significantly improves interaction, operational 
+    safety, and efficiency. Li et al.~\cite{LI2022102321} demonstrated how operators can manage and coordinate multiple robots more effectively using 
+    \ac{AR}-assisted DTs. Figure~\ref{fig:physical-digital} illustrates the dual view where users interact with the physical setup of two collaborating 
+    robots and view their virtual counterparts via Microsoft Hololens \ac{AR} glasses. This immersive and intuitive control experience allows for 
+    real-time simulation and monitoring of manufacturing processes and robot operations.
+    
+    Additionally, Ong et al.~\cite{ong2020} presented an AR-assisted robot programming system for welding applications. Their user-friendly interface 
+    simplifies and accelerates the programming process by allowing users to define welding points and orientations using a handheld pointer. 
+    The \ac{AR} interface enables users to validate programmed tasks within the real robot workspace, enhancing both accuracy and efficiency.
+    
+    Further advancements include the use of smart glasses and smartphones for robot manipulation. Malí et al.~\cite{7819154} developed an \ac{AR} 
+    application that allows users to adjust robot axis values, highlight specific robot points with 3D arrows, navigate to invisible robot points using
+    leading lines, and provide instructions via text and touch interactions. This system was evaluated in a production cell with an industrial robot, 
+    demonstrating improved usability and interaction capabilities.
+
+    Puljiz et al.~\cite{puljiz2019conceptsendtoendaugmentedreality,puljiz2} explored various AR-based methods for robotic arm programming using devices like Microsoft HoloLens. 
+    Their approaches include hand-guided task programming, augmented trajectories, and the creation of spatial maps for waypoint placement and virtual 
+    trajectory execution. These methods enable intuitive and precise programming of robotic arms, facilitating seamless integration of virtual instructions 
+    with real-world robot operations.
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\linewidth]{figs/physical-digital.png}
+        \caption{\ac{AR}-assisted \ac{DT}-enabled multi-robot collaborative manufacturing system \cite{LI2022102321}}
+        \label{fig:physical-digital}
+    \end{figure}
+    
+    Despite the promising advancements, issues such as \ac{DT} model accuracy and network latency continue to affect system performance. Future work must 
+    focus on enhancing the fidelity and responsiveness of \ac{AR}-assisted \ac{DT} systems to fully realize their potential in industrial applications 
+    \cite{LI2022102321}.
+\end{enumerate}
+
+
+
+\section{Summary}
+Therefore, the proposed approach aligns with recent research emphasizing the potential of \ac{XR} to enhance interaction, safety, and efficiency 
+in \ac{HRC}:
+\begin{itemize}
+    \item \textbf{Interconnection via Robotic Arm}: Leveraging the UR10e, it facilitates a dynamic bridge between distributed members, offering a 
+    tangible link for both on-site and remote collaboration.
+
+    \item \textbf{Enhanced On-site and Remote Interaction}: Utilizing \ac{HHD} and potentially more immersive tools like the Hololens 2 for on-site 
+    participants, and a 2D interface evolving towards \ac{VR} technologies like Oculus Quest for remote participants, it proposes significant advancements 
+    in how collaborators perceive and interact with the shared environment.
+
+    \item \textbf{Technological Advancements for Collaboration}:
+    \begin{itemize}
+        \item \textbf{Camera Integration on the Robot}: This automation improves environmental sharing, allowing on-site participants to focus more 
+        on their tasks. 
+        \item \textbf{Efficient Communication}: Enhancing information sharing through voice and annotations to streamline collaboration.
+    \end{itemize}
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
