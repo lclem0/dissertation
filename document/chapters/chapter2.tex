@@ -6,7 +6,8 @@
 In this chapter, the evolution leading to Industry 5.0 contextualizes the importance of technological advancements. 
 The focus is on Industry 5.0, particularly its transition from autonomous robots to the emerging dynamics of \ac{HRC}.
 The critical need for collaborative scenarios between humans and robots is highlighted, emphasizing the transformative potential of such partnerships. 
-Additionally, the role of digital realities alongside \ac{DT} within Industry 5.0, assessing their effectiveness in facilitating \ac{HRI}, marking a new era of efficiency and collaboration in the industry.
+Moreover, the integration of digital realities with \ac{DT} in Industry 5.0 is evaluated for its impact on enhancing \ac{HRI}, signaling a new era of efficiency and 
+collaboration in industrial operations.
 \end{introduction}
 
 
@@ -15,9 +16,10 @@ Additionally, the role of digital realities alongside \ac{DT} within Industry 5.
 \label{section:industry-4}
 "Industry 4.0" represents the integration of cutting-edge digital technologies into manufacturing processes, leading to the emergence of smart factories. 
 It integrates leveraging advanced systems such as \ac{CPSS}, the \ac{IOT}, robotics, \ac{AR}, simulation, cloud computing and big data analytics,
-as shown in figure \ref{fig:key-tech-industry-4}, to enhance production efficiency, flexibility, and innovation. This signifies a fundamental 
-shift towards interconnected, intelligent, and digitally-driven manufacturing ecosystems, revolutionizing the way products are conceived, manufactured, 
-and delivered \cite{Moller2022,Ahmed2022}.
+as shown in figure \ref{fig:key-tech-industry-4}.
+
+This signifies a fundamental shift towards interconnected, intelligent, and digitally-driven manufacturing ecosystems, revolutionizing the way products are conceived, manufactured, 
+and delivered, as well as enhancing production efficiency, flexibility, and innovation \cite{Moller2022,Ahmed2022}.
 
 \begin{figure}[htbp]
     \centering
@@ -35,15 +37,16 @@ While these robots can perform highly skilled tasks, they often operate within s
 
 Although Industry 4.0 has undoubtedly increased productivity, flexibility, and automation in industrial environments, it has also led to concerns 
 regarding the diminishing role of human operators. The relentless push towards full automation has, in some cases, reduced the involvement of 
-humans in critical decision-making processes, leading to a more machine-centric production landscape \cite{GOLOVIANKO2023102}
+humans in critical decision-making processes, leading to a more machine-centric production landscape \cite{GOLOVIANKO2023102}.
 
 \section{Industry 5.0}
 
 Approximately a decade after the launch of Industry 4.0, the European Commission introduced Industry 5.0 in response to new societal challenges 
 \cite{industry5}.
-
 The growing concerns about the exclusion of human operators in Industry 4.0 systems, coupled with the limitations of full automation, paved the way 
-for a new industrial paradigm: Industry 5.0. As a response to the increasing automation and the need for greater human involvement in manufacturing 
+for a new industrial paradigm: Industry 5.0. 
+
+As a response to the increasing automation and the need for greater human involvement in manufacturing 
 processes, Industry 5.0 seeks to reintroduce the human element into industrial ecosystems \cite{su11164371}.
 
 The goal is to combine the strengths of humans and machines to achieve more sustainable, efficient, and human-centered production systems.
@@ -58,15 +61,15 @@ recognizing that humans and machines each have unique advantages that can comple
 \begin{itemize} \item \textbf{Artificial Intelligence and Cognitive Computing:} These technologies continue to evolve, enabling robots and automation 
                 systems to work alongside humans in ways that enhance human productivity without fully replacing them.
                 
-                \item \textbf{Collaborative Robots (Cobots):} Cobots are designed to work safely alongside humans, facilitating intuitive interaction 
-                and allowing both to collaborate on tasks that leverage the strengths of each. The development of collaborative robots focuses on 
-                creating systems that enable intuitive, seamless interaction between human users and robotic systems, a key aspect of Industry 5.0’s 
-                vision. This redefines the employment roles of human workers, emphasizing their communication with robotic systems 
-                and artificial intelligence \cite{10577684}.
+                \item \textbf{Collaborative Robots (Cobots):} Collaborative robots, or cobots, are built to operate safely alongside humans, promoting intuitive 
+                interactions and joining efforts that harness both strengths. Its development prioritizes creating systems that support
+                smooth, user-friendly collaboration between humans and robots, aligning with the core vision of Industry 5.0.
+                This redefines the employment roles of human workers, emphasizing their communication with robotic systems 
+                and \ac{AI} \cite{10577684}.
 
-                \item \textbf{Digital Twins:} The incorporation of digital twins represents a pivotal technological advancement in Industry 5.0. 
-                Digital twins provide visual models that enhance comprehension and facilitate the evaluation of goods, processes, and production. 
-                By allowing real-time monitoring and simulation, digital twins help optimize manufacturing processes, bridging the gap between the virtual 
+                \item \textbf{Digital Twins:} Digital twins represent a pivotal technological advancement in Industry 5.0. They provide visual models
+                that enhance comprehension and facilitate the evaluation of goods, processes, and production. 
+                By allowing real-time monitoring and simulation, \ac{DT} help optimize manufacturing processes, bridging the gap between the virtual 
                 and physical worlds \cite{10577684}.
 
                 \item \textbf{Human-Centric Automation:} The emphasis is placed on using technology to augment human capabilities rather than replace them,
@@ -82,46 +85,53 @@ recognizing that humans and machines each have unique advantages that can comple
 % Industry 5.0 seeks to strike a balance between technological advancement and human-centric values, fostering environments where humans work alongside 
 % advanced technologies to achieve greater societal and environmental outcomes \cite{GOLOVIANKO2023102}.
 
-\subsection{Human-Robot Collaboration}
+\subsection{Human-Robot Interaction and Collaboration}
 %%%% estender um pouco mais e fazer ponte para collaboration scenarios / digital realities
 \label{subsection:human-robot-collab}
 % \input{chapters/stateofart/subsections/human-robot-collab}
-\ac{HRI} focuses on creating robots that are safe, effective, and compatible for collaboration with humans rather than replacing them.
-This involves developing robots that are autonomous and also capable of understanding and predicting human actions, communicating with humans, 
-and learning from human feedback. \ac{HRI} is an extensive field dedicated to examining the interactions and coexistence of humans and robots in shared spaces. 
-Its objective consists on enhancing these interactions by designing robots that can assist and cooperate with humans in diverse roles \cite{Ogenyi2021}.
+
+\ac{HRI} is an extensive field dedicated to examining the interactions and coexistence of humans and robots in shared spaces, whose objective consists
+on enhancing these interactions by designing robots that are safe, effective and compatible for assisting and cooperating with humans in diverse roles, 
+rather than replacing them \cite{Ogenyi2021}.
+This involves developing robots that are, not only autonomous, but also capable of understanding and communicating with humans, as well as predicting
+human-behavior and learning from human feedback. 
+
 
 One key area within \ac{HRI} is \ac{HRC}, which specifically focuses on scenarios where humans and robots cooperate directly to achieve common goals.
-\ac{HRI} can be broken down into different forms of interaction, whose categorization is based on various factors that define how 
-humans and robots share the workspace:
+However, \ac{HRI} can be broken down into different forms of interaction, whose categorization is based on various factors that define how 
+humans and robots share the workspace. This disctinction is represented in the figure \ref{fig:collab} \cite{Jahanmahin2022} and can be summarized as follows:
 
-\begin{itemize}
-    \item \textbf{Human-Robot Coexistence (HRCx)}: In this form of interaction, humans and robots share the same workspace but do not directly interact.
-    Both carry out their tasks independently, with the primary focus on avoiding collisions. Usually this interaction does not involve synchronized work 
-    or communication between the two parties.
-
-    \item \textbf{Human-Robot Cooperation (HRCp)}: Here, humans and robots share both the workspace and the task objective. Cooperation occurs when humans
-    and robots work toward a common goal, and advanced technologies such as sensors or machine vision may be used to detect and prevent collisions.
-    However, there is limited physical interaction between them.
-
-    \item \textbf{Human-Robot Collaboration (HRC)}: This is the most integrated form of \ac{HRI}, where humans and robots not only share the workspace and
-    objectives but also interact directly. In HRC, physical contact may occur (e.g., through shared manipulation of an object), or there can be non-physical
-    collaboration, such as verbal communication, gestures, or recognizing intentions through eye movement. In collaborative environments, humans usually
-    perform tasks requiring fine motor skills or decision-making, while robots handle repetitive, strenuous, or hazardous tasks.
-\end{itemize}
-
-Despite both coexistence, cooperation and collaboration terms being used in \ac{HRI}, as well as both allowing for a close interaction and a 
-shared goal, this categorization differs not only based on the dependence and sequence of operations performed by the agents, but also based on 
-the shared environment area. Therefore, collaboration can be defined as gathering human operators and robots sharing the sequence of a task towards 
-achieving the same goal, allowing direct contact between both agents, as depicted in the figure \ref{fig:collab} \cite{Jahanmahin2022}.
-
-
-\begin{figure}[h]
+\begin{figure}[!htbp]
     \centering
-    \hspace{-1.3cm}
-    \includegraphics[width=1.07\linewidth]{figs/collab-coex-coopr.png}
+    % \hspace{-1.3cm}
+    \includegraphics[width=1.0\linewidth]{figs/collab-coex-coopr.png}
     \caption{Different levels of \ac{HRI} - \cite{Jahanmahin2022}} 
     \label{fig:collab}
+\end{figure} 
+
+\begin{itemize}
+    \item \textbf{\ac{HRCx}}: In this form of interaction, humans and robots do not directly interact.
+    Both carry out their tasks independently, avoiding contact. Usually this interaction does not involve synchronized work 
+    or communication between the two parties.
+
+    \item \textbf{\ac{HRCp}}: Here, humans and robots share both the workspace and the task objective. Cooperation occurs when humans
+    and robots work towards a common goal, and advanced technologies such as sensors or machine vision rarely may be used to detect and prevent collisions.
+    However, there is limited physical interaction between them.
+
+    \item \textbf{Human-Robot Collaboration (\ac{HRC})}: This is the most integrated form of \ac{HRI}, where humans and robots, not only share the workspace and
+    objectives, but also interact directly, as shown in the picture \ref{fig:hrc-workstation}. 
+    
+    In \ac{HRC}, physical contact may occur (e.g., through shared manipulation of an object), or there can be non-physical
+    collaboration, such as verbal communication, gestures, or pattern recognition. In collaborative environments, humans usually perform tasks requiring
+    fine motor skills or decision-making, while robots handle repetitive, strenuous, or hazardous tasks.
+\end{itemize}
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.55\linewidth]{figs/human-robot-collab-env.jpg}
+    \caption{Human-robot collaborative workstation - \cite{MALIK2021102092}} 
+    \label{fig:hrc-workstation}
 \end{figure} 
 
 
@@ -139,86 +149,117 @@ human within the manufacturing environment \cite{Weiss2021}.
 In the past decade, the market has introduced a new category of robots known as collaborative robots, or "cobots." These are designed to interact 
 physically with humans within the same workspace, devoid of the traditional barriers or protective cages typical in conventional robotic systems. 
 Cobots are celebrated for their ability to quickly and inexpensively adapt layouts, although properly harnessing their potential requires a thorough 
-understanding of their proper uses and characteristics, which can otherwise pose barriers to industry adoption.
+understanding of their proper uses and characteristics, which can otherwise pose barriers to industry adoption \cite{robotics8040100}.
 
 
 \subsubsection{The Role and Benefits of Cobots}
 
 Unlike traditional industrial robotic systems that necessitate extensive safety guarding, thus reducing flexibility and increasing both cost and 
-spatial demands, cobots offer a solution geared towards the current market's need for reduced lead times and mass customization[1]. This demand is 
-particularly prevalent among small- and medium-sized enterprises (SMEs). Cobots facilitate direct physical interaction between humans and machines, 
-and their design allows for straightforward reprogramming by non-experts [3]. Collaboratively, humans and cobots can increase productivity while 
-cutting production costs by combining human cognitive abilities with robotic precision and strength.
+spatial demands, cobots offer a solution geared towards the current market's need for reduced lead times and mass customization \cite{barbazza2017agility},
+specially among \ac{SMEs}. 
+
+Cobots facilitate direct physical interaction between humans and machines, and their design allows for straightforward reprogramming by non-experts \cite{7140065}.
+Collaboratively, humans and cobots can increase productivity while cutting production costs by combining human cognitive abilities with robotic precision and strength.
 
 \subsubsection{Background and Evolution of Cobots}
 
-The cobot concept was initially proposed by J. Edward Colgate and Michael Pashkin in 1996 [2,4 - confirmar], with the first commercial cobot, the UR5 
-model by Universal Robots, being sold in 2008 [6]. This marks the beginning of practical human-robot collaboration developments.
-
-\subsubsection{Understanding Collaboration in Cobots}
-
-Clarifying the modes of collaboration is crucial as the term often leads to misunderstandings. Müller et al [7]. proposed a classification system for 
-different collaboration methods between humans and cobots, indicating that these categorizations are not fixed and may vary across different literatures. 
-- add figure 1 - summarizes that humans and cobots can work together.
+The cobot concept was initially proposed by J. Edward Colgate and Michael Pashkin in 1996 \cite{cobot-definition}, with the first commercial cobot, the UR5 
+model by Universal Robots \footnote{\url{https://www.universal-robots.com/products/ur5-robot/}, acessed in 2022-09-22}, being sold in 2008 \cite{robotics8040100}. 
+This marks the beginning of practical \ac{HRC} developments.
 
 \subsubsection{Distinguishing Cobots from Industrial Robots}
 
-Cobots are distinct from traditional industrial robots in that they are specifically designed with safety and ergonomics in mind [13]. They often 
-include advanced features such as force and torque sensors, vision systems, and anti-collision systems, which are not typically part of traditional 
+Cobots are distinct from traditional industrial robots in that they are specifically designed with safety and ergonomics in mind \cite{cobots-design}. 
+They often include advanced features such as force and torque sensors, vision systems, and anti-collision systems, which are not typically part of traditional 
 robotic setups. These features allow cobots to be deployed without the extensive additional costs and setup required for retrofitting traditional 
 robots with similar capabilities.
 
 \subsubsection{Economic and Practical Advantages of Cobots}
 
-The shift towards cobots in industrial settings is largely driven by economic factors, improvements in occupational health, and the efficient 
-utilization of factory space. Cobots offer significant flexibility—they can be easily relocated within different parts of a plant and quickly 
-adapted to changes in production layouts [16]. This is particularly advantageous in high-risk applications, although it does necessitate certain 
-constraints similar to those in traditional systems. Cobots can also lead to lower direct unit production costs compared to traditional robotic 
-systems [17].
+The shift towards cobots in industrial settings is largely driven by:
+\begin{itemize}
+    \item Economic factors;
+    \item Improvements in occupational health;
+    \item Efficient utilization of factory space.
+\end{itemize}
 
-\subsubsection{Comparative Analysis with Traditional Robots}
+Cobots offer significant flexibility and are cost-effective, as they can be easily relocated within different parts of a plant and quickly 
+adapted to changes in production layouts \cite{cobots-implementation}. This is particularly advantageous in high-risk applications, although 
+it does necessitate certain constraints similar to those in traditional systems.
+Cobots can also lead to lower direct unit production costs compared to traditional robotic systems \cite{cobot-2019collaborative}.
 
-- ver tabela 1 - comparacao between collaborative and traditional
 When comparing cobots and traditional robots across various tasks such as assembly, placement, handling, and picking, cobots often show superior 
-daptability and cost-effectiveness. However, traditional robots still offer advantages in scenarios requiring high payload [23 serve?- confirmar. 
-questao do payload?] and precision. 
+adaptability and cost-effectiveness. However, traditional robots still offer advantages in scenarios requiring high payload and precision 
+\footnote{\url{https://www.fanuc.eu/it/en/robots/robot-filter-page/m-2000-series}, acessed in 2022-09-22} \cite{robotics8040100}. 
 
-\subsubsection{Future Trends in \ac{HRC}}
-figura 7 - ver
-Recent studies suggest future enhancements in HRC will focus on better understanding and integrating environmental and operator intentions into robotic 
-operations. This involves employing advanced sensing and algorithmic strategies to make interaction more intuitive and safer, thereby increasing 
-reliability and system adoption.
 
-% Falta a parte da conclusao. adicionar figuras, tabelas, imagens do artigo
-% %%%%%%%%%%%%%%%%%%%%%%%% 
 
-% %%%%%%%%%%%%%%%%%%%%%%%% ver a parte abaixo dos cenarios de colaboracao - o que fazer com isto. integrar melhor depois da parte de ar e dt estarem
-% %%%%%%%%%%%%%%%%%%%%%%%% definidas. deixar o que está abaixo? ou mover para a parte de depois de introduzir os DT
+\subsubsection{Future Trends in Human-Robot Collaboration}
 
-\subsection{Collaboration Scenarios} 
+According to the 2019 article \textit{Human–Robot Collaboration in Manufacturing Applications: A Review} \cite{robotics8040100}, future directions in 
+\ac{HRC} are evolving due to advancements in cobot technologies, sensing methodologies, and algorithmic developments. The key trends identified include:
 
-Cobots are different from traditional automation robots, being designed for direct interaction with humans within industrial settings. 
-These cobots, which are now being developed for a range of industrial applications, eliminate the need for protective barriers, allowing them to 
-work alongside humans and expand beyond the spatial constraints, typical of conventional industrial robots \cite{Kadir2018} CITE THIS IN THE MENDELEY.
+\begin{itemize}
+    \item \textbf{Enhanced Scene Understanding:} Future \ac{HRC} systems will focus on better understanding the operational environment. 
+    This involves discerning operator intentions, monitoring environmental conditions, and assessing the task status. 
 
-Key features that set cobots apart include their enhanced safety protocols for close human interaction and their simplified programming, 
-which supports flexible application within manufacturing environments. This allows for straightforward deployment and reassignment throughout 
-various factory processes, significantly aiding tasks such as assembly, packaging, and organizing \cite{Faccio2019} CITE THIS IN THE MENDELEY.
+    \item \textbf{Advanced Sensing and Data Fusion:} To improve scene understanding, researchers are advocating for the use of additional sensors 
+    coupled with advanced data fusion techniques. This will enable systems to provide clear and concise information to users, thereby enhancing 
+    safety by minimizing unexpected robot motions and increasing user trust and system adoption.
+    
+    \item \textbf{Integration of Learning Techniques:} Incorporating \ac{ML} and other adaptive learning techniques will allow 
+    robots to better mimic human movements and adapt to complex tasks. Learning by demonstration, hand-guiding, and simulation-based teaching methods 
+    are expected to play significant roles in this advancement.
+    
+    \item \textbf{Improved Task Planning and Adaptive Learning:} Enhanced modeling and understanding of tasks, better task planning, and the ability 
+    to learn and adapt to new tasks dynamically are anticipated to be key areas of development. These improvements will enable robots to handle more 
+    complex and varied tasks within industrial settings.
+    
+    \item \textbf{User-Friendly Interfaces and Interaction Methods:} As \ac{HRC} systems become more sophisticated, there is a growing need for user-friendly 
+    interfaces that do not require extensive technical knowledge. \ac{AR} and \ac{VR} technologies are seen as pivotal in creating intuitive and 
+    accessible interaction methods for operators.
+\end{itemize}
 
-The integration of \ac{HRC} systems in smart manufacturing is opening doors to increased productivity and efficiency. Industries like automotive 
-have begun implementing cobots equipped with advanced sensing and vision systems, demonstrating the potential for collaborative robots to 
-revolutionize these sectors. Since the automotive industry requires a significant portion of production involving assembly tasks, combining 
-human skills and cobot capabilities is proving essential for tasks requiring greater flexibility and robustness than what robots can provide 
-on their own \cite{Tsarouchi2016} CITE THIS IN THE MENDELEY. 
-% Specifically, cobots are being used for precise tasks such as screwing during assembly stages, through integration with human operators, enabling shared workspace efficiencies [L. Wang et al., 2019].
+% add this figure?
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.9\linewidth]{figs/future-trends.png} % Replace with actual Figure 7 from the article
+%     \caption{Future Directions in Human-Robot Collaboration \cite{HRCReview2019}}
+%     \label{fig:future-trends}
+% \end{figure}
+% Figure~\ref{fig:future-trends} summarizes the future trends in HRC as identified in the literature.
 
-% Moreover, the food industry’s move towards demand-based strategies underscores the importance of adopting Industry 4.0 technologies, including digitalization and cobots, to drive the sector towards enhanced sustainability and productivity [J. Miranda et al., 2019].
-This shift towards a more collaborative manufacturing environment, pairing human intelligence with robotic efficiency, represents a significant 
-stride towards the future of industrial automation.
-% %%%%%%%%%%%%%%%%%%%%%%%% 
+Historically, the focus has been on increasing the relevance of {HRI} by addressing higher safety requirements and enabling 
+robots to perform more complex tasks. Recently, the scope has expanded to include more sophisticated methods aimed at enhancing system performance, 
+applying these methods across different application fields and tackling more intricate tasks. This expansion is driven by the emergence of new 
+cobots, advancements in sensing technologies, matured algorithms, and accumulated experience in designing collaborative workcells \cite{robotics8040100}.
+
+
+
+% \subsection{Collaboration Scenarios}  - repeticao do que vem acima, verificar se alguma parte é necessaria, se nao for, tirar
+
+% Cobots are different from traditional automation robots, being designed for direct interaction with humans within industrial settings. 
+% These cobots, which are now being developed for a range of industrial applications, eliminate the need for protective barriers, allowing them to 
+% work alongside humans and expand beyond the spatial constraints, typical of conventional industrial robots \cite{Kadir2018} CITE THIS IN THE MENDELEY.
+
+% Key features that set cobots apart include their enhanced safety protocols for close human interaction and their simplified programming, 
+% which supports flexible application within manufacturing environments. This allows for straightforward deployment and reassignment throughout 
+% various factory processes, significantly aiding tasks such as assembly, packaging, and organizing \cite{Faccio2019} CITE THIS IN THE MENDELEY.
+
+% The integration of \ac{HRC} systems in smart manufacturing is opening doors to increased productivity and efficiency. Industries like automotive 
+% have begun implementing cobots equipped with advanced sensing and vision systems, demonstrating the potential for collaborative robots to 
+% revolutionize these sectors. Since the automotive industry requires a significant portion of production involving assembly tasks, combining 
+% human skills and cobot capabilities is proving essential for tasks requiring greater flexibility and robustness than what robots can provide 
+% on their own \cite{Tsarouchi2016} CITE THIS IN THE MENDELEY. 
+% % Specifically, cobots are being used for precise tasks such as screwing during assembly stages, through integration with human operators, enabling shared workspace efficiencies [L. Wang et al., 2019].
+
+% % Moreover, the food industry’s move towards demand-based strategies underscores the importance of adopting Industry 4.0 technologies, including digitalization and cobots, to drive the sector towards enhanced sustainability and productivity [J. Miranda et al., 2019].
+% This shift towards a more collaborative manufacturing environment, pairing human intelligence with robotic efficiency, represents a significant 
+% stride towards the future of industrial automation.
+% % %%%%%%%%%%%%%%%%%%%%%%%% 
 
 %%%%%%%%%%%%%% 16set 18h04 a parte abaixo, está ok ver so se é preciso adicionar mais alguma figura
-\section{Digital Realities} 
+\subsection{Digital Realities} 
 
 
 \ac{DR's} encompass a spectrum of technologies that blend virtual elements with the real world to varying degrees. 
@@ -421,19 +462,19 @@ In exploring the capabilities and applications of \ac{DR's}, these can be broadl
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% abaixo - parte a usar para DT - 19 set 16h11 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 
-\section{Digital Twins}
+\subsection{Digital Twins}
 
-\subsection{Introduction to Digital Twins}
+\subsubsection{Introduction to Digital Twins}
 \ac{DT} are sophisticated virtual replicas of physical entities that enable simulation, analysis, and control of systems within a digital framework. 
 These digital counterparts are pivotal in enhancing \ac{HRC}, as they provide real-time, interactive environments that mirror the physical world. 
 This mirroring capability facilitates improved decision-making, efficiency, and flexibility across various industrial applications.
 
-\subsection{Historical Origins of Digital Twins}
+\subsubsection{Historical Origins of Digital Twins}
 The concept of \ac{DT} was originally formulated by NASA in the 1980s for monitoring spacecrafts from Earth. With advancements in \ac{IOT} and 
 computational technologies, modern \ac{DT} systems now utilize real-time sensor data to enhance the accuracy and reliability of simulations, 
 significantly evolving from their initial conception \cite{NASA-reference}.
 
-\subsection{Characteristics and Applications of Digital Twins}
+\subsubsection{Characteristics and Applications of Digital Twins}
 \ac{DT} transform smart manufacturing by enabling detailed examination and prediction of the behavior of physical systems, thereby optimizing operations 
 and minimizing downtime. In the realm of \ac{HRC}, \ac{DT} significantly enhance ergonomic interactions by adapting robotic movements to meet human needs,
 thus ensuring safer and more productive workplace conditions \cite{8477101}.
@@ -442,7 +483,7 @@ A notable implementation of \ac{DT} technology can be observed in Singapore's Sm
 utilizes a \ac{DT} to simulate and evaluate potential policies before implementation, showcasing the vast potential of \ac{DT} for modern and 
 future technologies \cite{isprs-archives-XLII-4-W7-37-2017}.
 
-\subsection{Digital Twins in Academia and Industry}
+\subsubsection{Digital Twins in Academia and Industry}
 
 Digital Twins (DT) have gained significant traction in both academic research and industrial applications in recent years. Despite their growing prominence,
 there is no universally accepted formal definition of a DT. 
@@ -506,11 +547,7 @@ defining a misconception, the critical distinction between three types of intera
 
 
 
-
-
-
-
-\subsection{Integration of Augmented Reality with Digital Twins}
+\subsubsection{Integration of Augmented Reality with Digital Twins}
 The integration of \ac{AR} with \ac{DT} represents a significant advancement in enhancing user interactions with complex systems. 
 \ac{AR} overlays virtual data directly onto physical objects, thereby providing a more intuitive and engaging interface for users. 
 This capability is particularly beneficial in industrial settings where \ac{AR} can facilitate more efficient and effective operation and 
@@ -533,11 +570,11 @@ By integrating \ac{DT} with \ac{AR}, it is possible to monitor the state of a sy
 data and information through \ac{AR} interfaces. This integration not only enhances the user experience but also improves operational efficiency and 
 safety by providing actionable insights in an intuitive and accessible manner.
 
-\section{Human-Robot Collaboration and Industrial Applications}
+\subsection{Human-Robot Collaboration and Industrial Applications}
 Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusses how these technologies integrate into \ac{HRC}, with specific emphasis 
 on remote collaboration and practical examples from the industry that utilize \ac{DT} and \ac{AR} solutions.
 
-\subsection{Enhancing Human-Robot Collaboration through AR and DT Implementations}
+\subsubsection{Enhancing Human-Robot Collaboration through AR and DT Implementations}
 
 Integrating Augmented Reality (AR) and Digital Twin (DT) technologies into Human-Robot Collaboration (HRC) has demonstrated significant improvements in 
 interaction, safety, and efficiency. This section explores various solutions and their implementation advantages, drawing insights from recent studies.
@@ -674,7 +711,17 @@ in \ac{HRC}:
 \end{itemize}
 
 
+%add this part somewhere
+from article: 9911168
+"AI, AR, DT and HRC approaches are employed in smart manufacturing to transform data processing into digital processing and controlling. 
+Therefore, designing smart systems will lead to high-quality real-time data exchange, zero wasted efforts and better data management [43]. 
+Focusing on HRC applications, HRC is the future alternative to conventional robotic and automation systems."
 
+%also add this part somewhere:
+from article: chang-ar-hrc
+" Augmented reality will only continue to mature into
+a more accessible technology, and its role in human–robot collaboration can become much
+more impactful and relevant to many different domains"
 
 
 
