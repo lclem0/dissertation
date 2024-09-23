@@ -611,32 +611,26 @@ For instance, projecting maintenance instructions directly onto a machine allows
 consulting physical manuals \cite{inproceedings}. Moreover, \ac{AR} has been successfully utilized in various manufacturing processes to provide guidance 
 for maintenance procedures and to train novice workers, demonstrating its versatility and effectiveness in industrial settings \cite{ong2004virtual}.
 
-By integrating \ac{DT} with \ac{AR}, it is possible to monitor the state of a system in real-time using \ac{DT}s while simultaneously displaying relevant
+By integrating \ac{DT} with \ac{AR}, it is possible to monitor the state of a system in real-time while simultaneously displaying relevant
 data and information through \ac{AR} interfaces. This integration not only enhances the user experience but also improves operational efficiency and 
 safety by providing actionable insights in an intuitive and accessible manner.
 
 \subsection{Human-Robot Collaboration and Industrial Applications}
-Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusses how these technologies integrate into \ac{HRC}, with specific emphasis 
-on remote collaboration and practical examples from the industry that utilize \ac{DT} and \ac{AR} solutions.
+Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusses how these technologies integrate into \ac{HRC}, demonstrating significant improvements in interaction, safety and efficacy in practical examples from industry solutions with specific emphasis on remote collaboration.
 
-\subsubsection{Enhancing Human-Robot Collaboration through AR and DT Implementations}
-
-Integrating Augmented Reality (AR) and Digital Twin (DT) technologies into Human-Robot Collaboration (HRC) has demonstrated significant improvements in 
-interaction, safety, and efficiency. This section explores various solutions and their implementation advantages, drawing insights from recent studies.
+\subsubsection{Enhancing Human-Robot Collaboration (\ac{HRC}) through Augmented Reality (\ac{AR}) and Digital Twin (\ac{DT}) Implementation}
 
 \begin{enumerate}
     \item \textbf{Augmented Reality for Enhanced Interaction and Safety}
-    
+    % Augmented reality user interface design and experimental evaluation for human-robot collaborative assembly - reference : CHU2023313
     Leveraging \ac{AR} can significantly improve the interaction between humans and robots by providing intuitive visualizations and reducing the need 
-    for continuous visual contact. As demonstrated by Chu et al.~\cite{Chu2023}, effectively conveying robot intentions through \ac{AR} visuals enhances 
-    worker awareness of their surroundings, thereby improving safety and efficiency in collaborative tasks. The \ac{AR} interfaces clearly visualize the 
-    robot's work envelope, as depicted in Figure~\ref{fig:ar-envelope}, enabling human operators to navigate shared workspaces safely and efficiently.
+    for continuous visual contact. As demonstrated by Chu et al. \cite{CHU2023313}, effectively conveying robot intentions through \ac{AR} visuals enhances 
+    worker awareness of their surroundings, thereby improving safety and efficiency in collaborative tasks. 
     
-    Additionally, Lotsaris et al.~\cite{LOTSARIS2021301} presented an \ac{AR} application that facilitates operator work in human-robot environments by 
-    enabling coexistence and improving communication. Their system displays safety fields around the robot using different colors to represent safe and 
-    dangerous regions, enhancing situational awareness and reducing the risk of accidents. However, a significant challenge remains in the complexity of
-     recognizing detailed information through haptic feedback, indicating a need for more sophisticated algorithms and sensors to capture and translate 
-     complex robot actions into intuitive \ac{AR} visualizations.
+    After analysing previous related work and implemented methodologies, 
+
+    The \ac{AR} interfaces clearly visualize the 
+    robot's work envelope, as depicted in Figure~\ref{fig:ar-envelope}, enabling human operators to navigate shared workspaces safely and efficiently.
     
     \begin{figure}[htp]
         \centering
@@ -664,10 +658,48 @@ interaction, safety, and efficiency. This section explores various solutions and
             \caption{}
             \label{fig:sfig4}
         \end{subfigure}
-        \caption{AR displayed work envelope of robotic arm \cite{Chu2023}}
+        \caption{AR displayed work envelope of robotic arm \cite{CHU2023313}}
         \label{fig:ar-envelope}
     \end{figure}
     
+
+    %notas para adicionar sobre o artigo - acima - 
+    The experiment aims to verify and
+    cross-compare the effectiveness of visual and haptic cues in various forms that convey the robot intent to human.
+    Analysis of the work performance and gazing behavior of participants shows that both cues can reduce their
+    visual attention on the moving robot during the collaboration. 
+    [10] emphasized the importance of human information
+    communication on assuring safety in HRC. They considered AR as an
+    ideal interface that enables the human and robot to ground their
+    communication and intentions by sharing an ego-centric view. AR also
+    allows for an exocentric view of the collaborative workspace that provides spatial awareness. This study suggested that a human-robot
+    collaborative system based on multimodal interactions would be more
+    effective and natural than unimodal.
+    Since  AR headsets still have a very limited field of view compared to the human vision. Visual guidance for localizing out-of-view objects in the limited display space often causes visual conflicts such as cluttering or occlusion of information [11]
+    Other works [12] proposed a visualization interface in AR HMD that superimposed the intended robot motion onto the user’s
+    view of real environment verifying that  the user determined where the robot was going to move using the interface more
+    quickly and accurately than 2D display or no assisted visualization.
+
+    the article itself outlines that providing AR user interfaces with either visual, haptic or multi-modal cues for HRC are benefitial.
+        Visual-based AR (cues) help overcome limitations arising from complex environments by superimposing visuals in an HMD without compromising robot mobility. this system also revealed to reduce the idle robot time as well as the task completion time when compared to the baseline without the user interface or the space sharing. However, user experience assessment showed that the HoloLens setup was not yet technically mature on the shop floor, particularly the limited field of view.
+        Visual feedback on a screen displayed the swept volume generated by the planned robot trajectory. Experimental data indicated that the human
+        workers felt more comfortable and had a better understanding of the robot motion and goals using multi-modal feedback. 
+        Haptic cues - It is sometimes advantageous in industrial environments over visual and auditory modalities, which could be overloaded or blocked on site. Vibrotactile devices have been applied to control industrial robot and to inform users of approaching singularities and joint limits in a factory [22]
+        Visual and acustic - aimed to reduce human's anxiety related to the unpredictability of the robot motion in a shared workspace. Acoustic feedback was used to alert the human when the robot had detected a possible collision and changed the planned motion.
+
+        % ROS was useful, said by this article, this reinforces that the model i developed goes in line to what the literature supports
+        Implementing the system using the Robot Operating System also allowed modularity and extendibility for such a multi-device and multi-user approach.
+
+    %verificar este artigo e mencionar coisas mais úteis, isto está mto breve
+    Additionally, Lotsaris et al.~\cite{LOTSARIS2021301} presented an \ac{AR} application that facilitates operator work in human-robot environments by 
+    enabling coexistence and improving communication. Their system displays safety fields around the robot using different colors to represent safe and 
+    dangerous regions, enhancing situational awareness and reducing the risk of accidents. However, a significant challenge remains in the complexity of
+    recognizing detailed information through haptic feedback, indicating a need for more sophisticated algorithms and sensors to capture and translate 
+    complex robot actions into intuitive \ac{AR} visualizations.
+    
+
+
+
     \item \textbf{Virtual and Augmented Reality for Intuitive Robot Programming}
     
     Programming robots using Virtual Reality (VR) and DT introduces innovative methods that capture human movements, reducing the learning curve for 
