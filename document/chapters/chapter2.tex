@@ -510,14 +510,14 @@ Reality corresponds to the perception of an unaltered physical environment.
 \subsection{Digital Twins}
 
 \subsubsection{Introduction to Digital Twins}
-\ac{DT} are sophisticated virtual replicas of physical entities that enable simulation, analysis, and control of systems within a digital framework. 
+\ac{DTs} are sophisticated virtual replicas of physical entities that enable simulation, analysis, and control of systems within a digital framework. 
 These digital counterparts are pivotal in enhancing \ac{HRC}, as they provide real-time, interactive environments that mirror the physical world. 
 This mirroring capability facilitates improved decision-making, efficiency, and flexibility across various industrial applications.
 
 \subsubsection{Historical Origins of Digital Twins}
 The concept of \ac{DT} was originally formulated by NASA in the 1980s for monitoring spacecrafts from Earth. With advancements in \ac{IOT} and 
 computational technologies, modern \ac{DT} systems now utilize real-time sensor data to enhance the accuracy and reliability of simulations, 
-significantly evolving from their initial conception \cite{NASA-reference}.
+significantly evolving from their initial conception \cite{liu2022digitaltwin}.
 
 \subsubsection{Characteristics and Applications of Digital Twins}
 \ac{DT} transform smart manufacturing by enabling detailed examination and prediction of the behavior of physical systems, thereby optimizing operations 
@@ -539,22 +539,23 @@ least three essential components:
     \item A physical system,
     \item A virtual model,
     \item Connections facilitating bidirectional communication between the physical and virtual models \cite{TaoFei, 8477101, ROSEN2015567}.
+    % confirm these citations above
 \end{itemize}
 
 In academic settings, DTs have been explored across a wide array of applications, including machine tool life management, product health management,
-smart cities, and patient health monitoring, among others \cite{8361285, TAO2018169, isprs-archives-XLII-4-W7-37-2017, 10.1007/978-3-030-23162-0_19, 6296978}. 
-These applications demonstrate the versatility and potential of DTs in enhancing efficiency, predictive maintenance, and system optimization.
+smart cities, and patient health monitoring, among others \cite{8361285, TAO2018169, isprs-archives-XLII-4-W7-37-2017, 10.1007/978-3-030-23162-0_19, 6296978}. These applications demonstrate the versatility and potential of DTs in enhancing efficiency, predictive maintenance, and system optimization. 
+% confirm these citations above
 
 In the industrial sector, numerous companies, such as Siemens, offer software and platform solutions aimed at creating DTs for their industrial partners. 
-However, some critics argue that these solutions represent digital shadows rather than true DTs. The primary contention is the lack of bidirectional 
-communication capabilities \cite{CIMINO2019103130}. Specifically, while changes in the physical system can influence the virtual model, the reverse—where 
-modifications in the virtual model impact the physical system—is often absent. 
+However, some critics argue that these solutions represent digital shadows rather than true DTs. 
 
-In Figure \ref{f:dt-structure}, \cite{dt_model} outlines the \ac{DT} reference model, illustrating the bidirectional communication between the physical 
+The primary contention is the lack of bidirectional communication capabilities, specifically, while changes in the physical system can influence the virtual model, the reverse—where modifications in the virtual model impact the physical system—is often absent \cite{CIMINO2019103130}. 
+
+Figure \ref{f:dt-structure}, \cite{dt_model} outlines the \ac{DT} reference model, illustrating the bidirectional communication between the physical 
 and digital entities. This configuration underscores the distinction between true DTs and digital shadows, the latter often criticized for lacking 
 interactive communication capabilities \cite{CIMINO2019103130}.
 
-\begin{figure}[h]
+\begin{figure}[!htpb]
     \centering
     \includegraphics[width=0.4\linewidth]{figs/dt_reference_model.png}
     \caption{A Digital Twin reference model \cite{dt_model}}
@@ -565,14 +566,13 @@ interactive communication capabilities \cite{CIMINO2019103130}.
 % The dual nature of cyber and physical components in \ac{DT} makes \ac{AR} a suitable companion for visualizing and interacting with these complex 
 % systems (cite the article itself).
 
-As emphasized by Liu et al.~\cite{liu2022state}, "A true DT must include bidirectional communication instead of having a virtual model that updates
+As emphasized by Liu et al.~, "A true DT must include bidirectional communication instead of having a virtual model that updates
 according to a physical system." 
 Given that the concept of \ac{DT} lacks a standardized definition, leading to a variability in the scope and execution of \ac{DT} implementations and
-defining a misconception, the critical distinction between three types of interaction is further ilustrated in Table
-~\ref{tab:levels_of_control}.
+defining a misconception, the critical distinction between three types of interaction is further ilustrated in Table ~\ref{tab:levels_of_control}, ~\cite{liu2022state}.
 % This critical distinction is further illustrated in Table~\ref{tab:levels_of_control}.
 
-\begin{table}[ht]
+\begin{table}[!htpb]
     \centering
     \caption{Levels of Control, adapted from \cite{liu2022state}}
     \label{tab:levels_of_control}
@@ -592,7 +592,7 @@ defining a misconception, the critical distinction between three types of intera
 
 
 
-\subsubsection{Integration of Augmented Reality with Digital Twins}
+\subsubsection{Integration of Augmented Reality with Digital Twins} % verify this section references - if it matches what it said - 23 set 19h56
 The integration of \ac{AR} with \ac{DT} represents a significant advancement in enhancing user interactions with complex systems. 
 \ac{AR} overlays virtual data directly onto physical objects, thereby providing a more intuitive and engaging interface for users. 
 This capability is particularly beneficial in industrial settings where \ac{AR} can facilitate more efficient and effective operation and 
