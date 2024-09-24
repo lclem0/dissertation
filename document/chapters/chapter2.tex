@@ -786,72 +786,80 @@ Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusse
 % Section: Implementing AR and Digital Twins in Human-Robot Collaboration (HRC)
 
 
-The work reviewed several previous studies that gathered and exposed information on implementing \ac{AR} with \ac{DT}. Specifically, it integrates a real robot with visual and haptic \ac{AR} interfaces and explains their development. This section provides an overview of the implementation techniques, advantages, and experiment performed using these technologies in a collaborative LEGO assembly task.
+    The work reviewed several previous studies that gathered and exposed information on implementing \ac{AR} with \ac{DT}. Specifically, it integrates a real robot with visual and haptic \ac{AR} interfaces and explains their development. This section provides an overview of the implementation techniques, advantages, and experiment performed using these technologies in a collaborative LEGO assembly task.
 
-\paragraph{\ac{AR} and HRC Integration}
-The article outlines that \ac{AR} interfaces with visual, haptic, acoustic, or multi-modal cues are beneficial for \ac{HRC}. \ac{AR} is considered an ideal interface to enhance human-robot communication by providing both ego-centric and exocentric views of the collaborative workspace, improving spatial awareness and interaction \cite{10}. It has been shown that multimodal interactions, as opposed to unimodal, are more effective and natural for \ac{HRC} \cite{11}. 
+    \paragraph{\textbf{\ac{AR} and \ac{HRC} Integration}}
+    The article outlines that \ac{AR} interfaces with visual, haptic, acoustic, or multi-modal cues are beneficial for \ac{HRC}. \ac{AR} is considered an ideal interface to enhance human-robot communication by providing both ego-centric (ability to share remote views) and exocentric (ability to visualize the robot relative to the task space) views of the collaborative workspace, improving spatial awareness and interaction \cite{doi:10.5772/5664}. 
+    
+    It has been demonstrated that multimodal interactions, such as audio-tactile feedback, can significantly enhance the \ac{HRC} experience by making it more intuitive and effective. These multimodal approaches provide valuable insights that would otherwise be limited, such as overcoming the restricted \ac{FOV} in \ac{HMDs}.
+    For instance, research has shown that while audio-tactile guidance might be slower compared to visual methods like EyeSee360, it offers a similar or even slightly better accuracy rate. Moreover, it can be especially beneficial for users with visual impairments, as the same information is conveyed through another sensory channel without degrading performance.
 
-Visual \ac{AR} cues, implemented in a \ac{HMD}, help overcome limitations in complex environments by superimposing visuals onto the user's view without compromising robot mobility \cite{12}. However, limitations, such as the HoloLens’ reduced field of view, were noted as challenges for industrial application. Haptic cues provide an alternative in environments where visual and auditory modalities may be overloaded. Vibrotactile devices, for example, have been used to inform operators of robot motion, approaching singularities, and joint limits in factories \cite{22}. Acoustic feedback can also reduce human anxiety related to unpredictable robot motion in shared workspaces by alerting users to potential collisions or changes in the robot's planned trajectory.
+    Visual \ac{AR} cues, implemented via \ac{HMDs}, allow users to navigate complex environments by overlaying visual information without hindering the robot’s movement. However, challenges like the limited \ac{FOV} of devices like the HoloLens present obstacles in industrial settings.
+    In scenarios where visual and auditory modalities are overwhelmed, haptic feedback provides a viable alternative. Vibrotactile devices, for instance, have been successfully used to alert operators about robot motion, approaching singularities, and joint limits in factory environments. Acoustic feedback also helps reduce human anxiety in shared workspaces by warning users of potential collisions or sudden changes in the robot’s trajectory \cite{9199570}.
 
-\paragraph{Implementation Techniques}
-The system was developed using the \ac{ROS} to control a WidowX 250 Robot Arm, which provided the flexibility and modularity required for a multi-device and multi-user setup. MoveIt framework was used for robot motion planning and manipulation, aligning with the technical model proposed in other robotics literature. The integration of ROS reinforces the modularity and adaptability of the system, making it easier to manage human-robot collaboration in a shared environment.
+    In a human-robot collaboration scenario, such as the one used in \cite{doi:10.1177/0018720814565188}, where two distinct modes for robot operation were implemented, standar and human-aware, users reported feeling safer when the mode was able to differentiate between user actions and the surrounding environment. 
 
-Both \ac{AR} and \ac{DT} models were implemented using a combination of hardware and software tools. A Microsoft HoloLens 2 was used to implement the visual interfaces, while a SenseGlove Nova™ provided haptic feedback. By utilizing an HoloLens, the robot's planned motion and swept volume were displayed, allowing the user to anticipate robot's actions, while the haptic interface used vibration feedback to communicate the robot's proximity and target destinations. As shown in figure \ref{fig:haptic-visual-cues}, these cues were presented in two forms, conveying different degrees of information regarding the robot’s motion.
+    \paragraph{\textbf{Implementation Techniques}}
+    The system was developed using the \ac{ROS} to control a WidowX 250 Robot Arm, which provided the flexibility and modularity required for a multi-device and multi-user setup. MoveIt framework  was used for robot motion planning and manipulation, aligning with the technical model proposed in other robotics literature. The integration of \ac{ROS} reinforces the modularity and adaptability of the system, making it easier to manage \ac{HRC} in a shared environment.
 
-\begin{figure}[htp]
-    \centering
-    \begin{subfigure}{.5\textwidth}
+    % \footnote{\url{https://moveit.ai/}, acessed in 2024-09-24}
+
+    Both \ac{AR} and \ac{DT} models were implemented using a combination of hardware and software tools. A Microsoft HoloLens 2 was used to implement the visual interfaces, while a SenseGlove Nova™ provided haptic feedback. By utilizing an HoloLens, the robot's planned motion and swept volume were displayed, allowing the user to anticipate robot's actions, while the haptic interface used vibration feedback to communicate the robot's proximity and target destinations. As shown in figure \ref{fig:haptic-visual-cues}, these cues were presented in two forms, conveying different degrees of information regarding the robot’s motion.
+
+    \begin{figure}[htp]
         \centering
-        \includegraphics[width=0.9\linewidth]{figs/haptic-cues.jpg}
-        \caption{Indicating the gripper’s destination using vibration on different human fingers.}
-        \label{fig:sfig1}
-    \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+        \begin{subfigure}{.49\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{figs/haptic-cues.jpg}
+            \caption{Indicating the gripper’s destination using vibration on different human fingers.}
+            \label{fig:sfig1}
+        \end{subfigure}%
+        \begin{subfigure}{.49\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{figs/visual-cues.jpg}
+            \caption{Indicating the proximity of gripper via change of vibration frequency.}
+            \label{fig:sfig2}
+        \end{subfigure}
+        \caption{Visual and haptic interfaces used in the experiment \cite{CHU2023313}}
+        \label{fig:haptic-visual-cues}
+    \end{figure}
+
+    \paragraph{\textbf{Experiment Design: Collaborative LEGO Assembly Task}}
+    The experimental setup involved a human operator collaborating with a desktop robotic arm in a 25 cm × 25 cm workspace. The operator's task was to pick, fetch, and stack LEGO blocks onto specific areas of the workspace, sorted by color, while the robot arm delivered extra blocks randomly into the workspace over a wall. It aimed to verify and cross-compare the effectiveness of visual and haptic cues in conveying the robot’s intent to the human operator. Figures \ref{f:area-1} and \ref{f:robot-area-1} depict the collaborative workspace and robot setup.
+
+    \begin{figure}[!htpb]
         \centering
-        \includegraphics[width=0.9\linewidth]{figs/visual-cues.jpg}
-        \caption{Indicating the proximity of gripper via change of vibration frequency.}
-        \label{fig:sfig2}
-    \end{subfigure}
-    \caption{Visual and haptic interfaces used in the experiment.}
-    \label{fig:haptic-visual-cues}
-\end{figure}
+        \includegraphics[width=0.4\linewidth]{figs/area-1.jpg}
+        \caption{Collaborative work space in the experiment \cite{CHU2023313}}
+        \label{f:area-1}
+    \end{figure}
 
-\paragraph{Experiment Design: Collaborative LEGO Assembly Task}
-The experimental setup involved a human operator collaborating with a desktop robotic arm in a 25 cm × 25 cm workspace. The operator's task was to pick, fetch, and stack LEGO blocks onto specific areas of the workspace, sorted by color, while the robot arm delivered extra blocks randomly into the workspace over a wall. It aimed to verify and cross-compare the effectiveness of visual and haptic cues in conveying the robot’s intent to the human operator. Figures \ref{f:area-1} and \ref{f:robot-area-1} depict the collaborative workspace and robot setup.
+    \begin{figure}[!htpb]
+        \centering
+        \includegraphics[width=0.4\linewidth]{figs/robot-area-1.jpg}
+        \caption{Actual work environment in the experiment \cite{CHU2023313}}
+        \label{f:robot-area-1}
+    \end{figure}
 
-\begin{figure}[!htpb]
-    \centering
-    \includegraphics[width=0.4\linewidth]{figs/area-1.jpg}
-    \caption{Collaborative work space in the experiment, \cite{CHU2023313}}
-    \label{f:area-1}
-\end{figure}
+    The operator and robot worked independently, without physical contact, adhering to a sequence of tasks. While the operator picked up blocks randomly and placed them in the correct colored area, the robot randomly delivered blocks from the storage bin to one of the four workspaces. This task required careful coordination to avoid collision and optimize assembly efficiency, highlighting the benefits of \ac{AR}-based interfaces.
 
-\begin{figure}[!htpb]
-    \centering
-    \includegraphics[width=0.4\linewidth]{figs/robot-area-1.jpg}
-    \caption{Actual work environment in the experiment, \cite{CHU2023313}}
-    \label{f:robot-area-1}
-\end{figure}
+    \paragraph{\textbf{System Framework}}
+    UNITY engine running on a desktop computer allowed to communicat with the robot and the \ac{AR} devices. As shown in figure \ref{f:system-framework}, the system's architecture used USB connections and WiFi/Bluetooth for communication between the HoloLens, SenseGlove, and Robot. A HTC VIVE tracker was attached to the gloves to track the user's hand movements, providing haptic feedback in synchronization with the \ac{AR} visuals.
 
-The operator and robot worked independently, without physical contact, adhering to a sequence of tasks. While the operator picked up blocks randomly and placed them in the correct colored area, the robot randomly delivered blocks from the storage bin to one of the four workspaces. This task required careful coordination to avoid collision and optimize assembly efficiency, highlighting the benefits of \ac{AR}-based interfaces.
+    \begin{figure}[!htpb]
+        \centering
+        \includegraphics[width=0.75\linewidth]{figs/system-framework.jpg}
+        \caption{The system framework for integration of hardware devices in the experiment \cite{CHU2023313}}
+        \label{f:system-framework}
+    \end{figure}
 
-\paragraph{System Framework}
-UNITY engine running on a desktop computer allowed to communicat with the robot and the \ac{AR} devices. As shown in figure \ref{f:system-framework}, the system's architecture used USB connections and WiFi/Bluetooth for communication between the HoloLens, SenseGlove, and Robot. A HTC VIVE tracker was attached to the gloves to track the user's hand movements, providing haptic feedback in synchronization with the \ac{AR} visuals.
+    The framework allowed seamless interaction between the physical and virtual worlds, enabling real-time feedback for the operator, thus improving decision-making and task efficiency in the assembly process.
 
-\begin{figure}[!htpb]
-    \centering
-    \includegraphics[width=0.6\linewidth]{figs/system-framework.jpg}
-    \caption{The system framework for integration of hardware devices in the experiment, \cite{CHU2023313}}
-    \label{f:system-framework}
-\end{figure}
+    \paragraph{\textbf{Advantages of Multimodal Cues}}
+    The experiment demonstrated that using a combination of visual and haptic cues led to better task performance, as these cues helped the human operator predict the robot's movements, reduce visual strain, and enhance safety. The visual interfaces (especially those displaying proximity) outperformed others in usability, while haptic feedback was useful in environments where visual information might be insufficient or overloaded. Acoustic cues were also mentioned in the literature as a means to reduce anxiety in unpredictable robotic motions.
 
-The framework allowed seamless interaction between the physical and virtual worlds, enabling real-time feedback for the operator, thus improving decision-making and task efficiency in the assembly process.
-
-\paragraph{Advantages of Multimodal Cues}
-The experiment demonstrated that using a combination of visual and haptic cues led to better task performance, as these cues helped the human operator predict the robot's movements, reduce visual strain, and enhance safety. The visual interfaces (especially those displaying proximity) outperformed others in usability, while haptic feedback was useful in environments where visual information might be insufficient or overloaded. Acoustic cues were also mentioned in the literature as a means to reduce anxiety in unpredictable robotic motions.
-
-\paragraph{Conclusion}
-The experiment with LEGO assembly and the integration of \ac{AR} and haptic feedback showed that visual and haptic \ac{AR} interfaces effectively communicate robot motion intent, improving interaction and collaboration. The system, using ROS and MoveIt, provided a flexible and scalable platform for HRC in a shared workspace. The findings of this study align well with current literature, which emphasizes the importance of multimodal feedback in enhancing human-robot interaction in smart manufacturing.
+    \paragraph{Conclusion}
+    The experiment with LEGO assembly and the integration of \ac{AR} and haptic feedback showed that visual and haptic \ac{AR} interfaces effectively communicate robot motion intent, improving interaction and collaboration. The system, using ROS and MoveIt, provided a flexible and scalable platform for HRC in a shared workspace. The findings of this study align well with current literature, which emphasizes the importance of multimodal feedback in enhancing human-robot interaction in smart manufacturing.
 
 %  parece-me que a parte de cima parece estar bem estruturada e revelar as vantagens do artigo explorado - ver as referencias que faltam e organizar melhor a estrutura e as figuras - remover depois o texto comentado que está acima de toda esta parte que escrevi agora - 24 set 01h56
 
@@ -964,14 +972,6 @@ from article: chang-ar-hrc
 " Augmented reality will only continue to mature into
 a more accessible technology, and its role in human–robot collaboration can become much
 more impactful and relevant to many different domains"
-
-
-\section{broa
-afsdasgas
-gasd
-gainedasdg
-addressingas
-d}
 
 
 
