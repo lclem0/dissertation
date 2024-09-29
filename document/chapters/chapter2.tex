@@ -827,12 +827,13 @@ Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusse
     \paragraph{\textbf{System Framework}}
     UNITY engine running on a desktop computer allowed to communicat with the robot and the \ac{AR} devices. As shown in figure \ref{f:system-framework}, the system's architecture used USB connections and WiFi/Bluetooth for communication between the HoloLens, SenseGlove, and Robot. A HTC VIVE tracker was attached to the gloves to track the user's hand movements, providing haptic feedback in synchronization with the \ac{AR} visuals.
 
-    \begin{figure}[!htpb]
-        \centering
-        \includegraphics[width=0.75\linewidth]{figs/system-framework.jpg}
-        \caption{The system framework for integration of hardware devices in the experiment \cite{CHU2023313}}
-        \label{f:system-framework}
-    \end{figure}
+% remove this figure (done) - change the above text to reflect the removal of the figure
+    % \begin{figure}[!htpb]
+    %     \centering
+    %     \includegraphics[width=0.75\linewidth]{figs/system-framework.jpg}
+    %     \caption{The system framework for integration of hardware devices in the experiment \cite{CHU2023313}}
+    %     \label{f:system-framework}
+    % \end{figure}
 
     The framework allowed seamless interaction between the physical and virtual worlds, enabling real-time feedback for the operator, thus improving decision-making and task efficiency in the assembly process.
 
@@ -1003,29 +1004,15 @@ Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusse
     % the camera feed transmition is also good to mention because it allows the remote user to visualzie the workspace that is being worked on.
 
     % do a conclusion of the state of art.
-    Regarding the state of art review, several \ac{AR}-\ac{DT} novel implementations showcases the significant potential of the proposed system to be generalized across various application scenarios.
+
 \end{enumerate}
 
+\section{Summary}
 
+Despite significant advancements in \ac{AR}-\ac{DT} implementations over the past year, the state-of-the-art literature predominantly focuses on developing applications for on-site personnel. Remote collaboration, particularly in human-robot interaction \ac{HRI} scenarios, has received comparatively less attention, highlighting the need for systems that effectively facilitate both on-site and remote collaboration.
+% confirm if i can say this
 
-% \section{Summary}
-% Therefore, the proposed approach aligns with recent research emphasizing the potential of \ac{XR} to enhance interaction, safety, and efficiency 
-% in \ac{HRC}:
-% \begin{itemize}
-%     \item \textbf{Interconnection via Robotic Arm}: Leveraging the UR10e, it facilitates a dynamic bridge between distributed members, offering a 
-%     tangible link for both on-site and remote collaboration.
-
-%     \item \textbf{Enhanced On-site and Remote Interaction}: Utilizing \ac{HHD} and potentially more immersive tools like the Hololens 2 for on-site 
-%     participants, and a 2D interface evolving towards \ac{VR} technologies like Oculus Quest for remote participants, it proposes significant advancements 
-%     in how collaborators perceive and interact with the shared environment.
-
-%     \item \textbf{Technological Advancements for Collaboration}:
-%     \begin{itemize}
-%         \item \textbf{Camera Integration on the Robot}: This automation improves environmental sharing, allowing on-site participants to focus more 
-%         on their tasks. 
-%         \item \textbf{Efficient Communication}: Enhancing information sharing through voice and annotations to streamline collaboration.
-%     \end{itemize}
-% \end{itemize}
+In response to this need, the proposed project aims to develop a generalized system applicable across various application scenarios, whose focus is mainly on remote collaboration. However, in order to achieve efficient remote collaboration, on-site features must be developed firstly, such as the digital twin pose registration. 
 
 
 % %add this part somewhere
