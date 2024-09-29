@@ -1,7 +1,49 @@
 \chapter{Methodology}%
 \label{chapter:methodology}
 
+As defined earlier in goals section~\ref{section:goals} from the first chapter, the primary goal of this dissertation is to leverage the human-robot collaboration paradigm by integrating \ac{MR} technologies alongside robot capabilities to enhance remote collaboration. In order to achieve this, a conceptual model is further implemented.
 
+\section{Conceptual Model}
+In order to start addressing the mentioned challenges, a first effort has been made. A robotic arm, UR10e, from Universal Robots, 
+available at IRIS LAB \ref{f:ur10e_iris}, was used as a dynamic agent to assist in shared activities.
+%  add a footnote to the robot model in universal robots website
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.4\linewidth]{figs/ur10e.jpeg}
+    \caption{Robot UR10e used for the development of the dissertation work, available at IRIS-LAB, University of Aveiro}
+    \label{f:ur10e_iris}
+\end{figure}
+
+Afterwards, the framework required to integrate the \ac{MR} technologies with the robotic arm was thoroughly discussed with the supervisors, leading to the following components:
+\begin{itemize}
+    \item \textbf{On-Site Interaction:}
+    \begin{itemize}
+        \item Implement the robot model into a Unity 3D simulation environment
+        \item Utilize marker detection with Vuforia to align the digital model with the physical robot
+        \item Perform pose registration to ensure accurate spatial alignment between the virtual and physical robots
+        \item Develop a user-friendly interface for robot manipulation using \ac{HHDs}
+        \item Implement visual and audio cues for user awareness and accident prevention 
+    \end{itemize}
+    \item \textbf{Remote Visualization and Interaction:}
+    \begin{itemize}
+        \item Stablish a communication channel between the on-site and remote participants
+        
+        \item Provide remote participants with a foundational 2D interface, such as a laptop screen, to visualize the collaboration scenario and 
+        task context.
+        \item Develop the capability for remote operation of the robot via the \ac{MR} application, enhancing the remote participant's ability to 
+        interact and manipulate the collaborative environment.
+    \end{itemize}
+    \item \textbf{Automation and Immersion:}
+    \begin{itemize}
+        \item Integrate a camera into the robot to automate the process of environment sharing with remote participants, assisting on-site participants 
+        by delegating visual sharing to the robot.
+    \end{itemize}
+\end{itemize}
+
+
+
+\ac{MR} alongside a static robotic arm (UR10e) to support remote collaboration scenarios. This involves transforming human-robotic collaboration by integrating \ac{MR} technologies and robotic capabilities to enhance both on-site and remote collaboration experiences.
 
 Unity 3D engine will allow robot model development, enabling detailed and interactive digital twins with bilateral communication capabilities. By utilizing Vuforia for precise pose registration, the system ensures accurate spatial alignment between the virtual and physical robots.
 
@@ -21,15 +63,6 @@ virtual and augmented reality to its favor.
 
 % The developed work, so far, will be explained in this chapter.
 
-In order to start addressing the mentioned challenges, a first effort has been made. A robotic arm, UR10e, from Universal Robots, 
-available at IRIS LAB \ref{f:ur10e_iris}, was used as a dynamic agent to assist in shared activities.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.4\linewidth]{figs/ur10e.jpeg}
-    \caption{Robot UR10e used for the development of the dissertation work, available at IRIS-LAB, University of Aveiro}
-    \label{f:ur10e_iris}
-\end{figure}
 
 \section{Marker Detection}
 \label{section:marker-detection}
