@@ -1,7 +1,7 @@
 \chapter{Methodology}%
 \label{chapter:methodology}
 
-As defined earlier in goals section~\ref{section:goals} from the first chapter, the primary goal of this dissertation is to leverage the human-robot collaboration paradigm by integrating \ac{MR} technologies alongside robot capabilities to enhance remote collaboration. In order to achieve this, a conceptual model is further implemented.
+As defined earlier in goals section~\ref{section:goals} from the first chapter, the primary goal of this dissertation is to leverage the human-robot collaboration \ac{HRC} paradigm by integrating \ac{MR} technologies alongside robot capabilities to enhance remote collaboration. In order to achieve this, a conceptual model is further implemented.
 
 \section{Conceptual Model}
 In order to start addressing the mentioned challenges, a first effort has been made. A robotic arm, UR10e, from Universal Robots, 
@@ -19,55 +19,90 @@ Afterwards, the framework required to integrate the \ac{MR} technologies with th
 \begin{itemize}
     \item \textbf{On-Site Interaction:}
     \begin{itemize}
-        \item Implement the robot model into a Unity 3D simulation environment
-        \item Utilize marker detection with Vuforia to align the digital model with the physical robot
-        \item Perform pose registration to ensure accurate spatial alignment between the virtual and physical robots
+        \item Implement an UR10e digital model into the Unity 3D simulation environment
+        \item Utilize marker detection, utilizing Vuforia, to align the digital model with the physical robot
+        \item Perform pose registration to ensure accurate spatial alignment between the virtual and physical models
         \item Develop a user-friendly interface for robot manipulation using \ac{HHDs}
         \item Implement visual and audio cues for user awareness and accident prevention 
     \end{itemize}
     \item \textbf{Remote Visualization and Interaction:}
     \begin{itemize}
         \item Stablish a communication channel between the on-site and remote participants
-        
         \item Provide remote participants with a foundational 2D interface, such as a laptop screen, to visualize the collaboration scenario and 
         task context.
+        \item Enable bilateral communication between the robot and the remote digital twin
+        \item Implement real-time updates of the robot's position and workspace visualization
         \item Develop the capability for remote operation of the robot via the \ac{MR} application, enhancing the remote participant's ability to 
         interact and manipulate the collaborative environment.
     \end{itemize}
     \item \textbf{Automation and Immersion:}
     \begin{itemize}
-        \item Integrate a camera into the robot to automate the process of environment sharing with remote participants, assisting on-site participants 
-        by delegating visual sharing to the robot.
+        \item Integrate a camera into the robot 
+        \item Develop a camera feed transmission to provide real-time updates of the robot's position and workspace visualization
+        \item Share this information with remote participants, assisting on-site participants by delegating visual sharing to the robot.
     \end{itemize}
 \end{itemize}
 
 
 
-\ac{MR} alongside a static robotic arm (UR10e) to support remote collaboration scenarios. This involves transforming human-robotic collaboration by integrating \ac{MR} technologies and robotic capabilities to enhance both on-site and remote collaboration experiences.
+\section{Digital Model Implementation of the Robot}
+\label{section:digital-model}
 
-Unity 3D engine will allow robot model development, enabling detailed and interactive digital twins with bilateral communication capabilities. By utilizing Vuforia for precise pose registration, the system ensures accurate spatial alignment between the virtual and physical robots.
+\subsection{Unity}
 
-To enhance user awareness and prevent accidents, the system will implement visual and audio cues within the \ac{AR} environment, including safety-zone interactions and audio alerts. These features provide intuitive feedback to users, improving situational awareness during human--robot collaboration. The robot manipulation interface will be designed to be user-friendly, allowing non-expert users to operate the robot remotely using a handheld device (\ac{HHD}). This accessibility ensures that a wider range of users can effectively interact with the robotic system without extensive training.
+Unity is a dynamic and versatile game engine developed by Unity Technologies, widely recognized for revolutionizing game development over the past few years. Beyond gaming, it has become a prominent tool for creating \ac{AR}, \ac {VR}, and \ac{MR} applications. Its user-friendly interface empowers developers to rapidly craft immersive experiences while simplifying complex development processes.
 
-Real-time updates of the robot's position and workspace visualization will be provided through camera feed transmission, offering remote users a comprehensive view of the operational environment. This feature addresses the limitations identified in existing literature, where remote users often lack sufficient context and visibility of the workspace.
+By offering an \ac{IDE} that combines \ac{GUI} manipulation of scene objects with a code editor, similar to Visual Studio, it allows developers to build virtual scenes by integrating or creating 2D and 3D assets as well as apply attributes such as lighting, audio, physics properties, animations, and interactive gameplay logic. Afterwards, these composed scenes come to life, rendering them in real-time at frame rates that create smooth motion and immersive experiences.
 
-% Furthermore, the proposed system will address challenges identified in the state-of-the-art review, such as networking latency and positioning accuracy. By implementing optimized communication protocols and advanced tracking algorithms, the system aims to ensure efficient and safe human--robot collaboration. These improvements will not only enhance the performance of the system but also contribute valuable insights to the field, bridging the gap between on-site and remote interaction capabilities in industrial applications.
+One of Unity's significant advantages is its extensive platform compatibility. It supports development for various operating systems, including Windows, and Linux, as well as mobile platforms like iOS and Android. Additionally, a wide range of devices spanning \ac{AR},\ac{VR},\ac{MR} technologies are supported.
 
-Overall, this project seeks to expand upon current research by providing a holistic solution that integrates advanced technologies to facilitate seamless collaboration between humans and robots, regardless of physical location. By focusing on both on-site and remote users, the system aims to enhance flexibility, safety, and efficiency in various industrial scenarios.
+Unity's choice for developing the \ac{MR} application was advised by both supervisors regarding its versatility as well as its robust capabilities and extensive feature set.
+
+\subsection{Digital Robot Model - URDF Importer Package}
+% \input{chapters/on-site/digital-model} - commented this part because text is below - choose whether to use this or the text below
+
+    % foi necessário encontrar um modelo do robot a ser utilizado - UR10e que se encontra no IRIS lab
+    To successfully develop the \ac{MR} application for controlling the UR10e robot, it was essential to identify a model that closely mirrors 
+    the actual robot. The Unity Robotics Hub \footnote{Unity Technologies \url{https://github.com/Unity-Technologies/Unity-Robotics-Hub} 
+    Accessed: 2024-02-02} facilitates the integration of robotics into Unity projects via the URDF-Importer package 
+    \footnote{Unity Technologies \url{https://github.com/Unity-Technologies/URDF-Importer} Accessed: 2024-02-02}. 
+    However, challenges arose when attempting to import the UR10e \textit{.urdf} model into the Unity environment. To overcome this, 
+    a UR10 model, sourced from a GitHub repository \footnote{PositronicsLab \url{https://github.com/PositronicsLab/reveal_packages/tree/master/industrial_arm/scenario/models/urdf/ur10} Accessed: 2024-02-05} 
+    was used, due to its resemblance to the UR10e robot. This was discussed with the educators overseeing the dissertation development, 
+    and it was agreed that this approach would not pose any issues.
+
+    In the figure \ref{f:ur10_marker_unity} it is possible to see the digital UR10 model positioned related to the aruco marker 
+    (\ref{f:aruco_marker}), in a simulated Unity environment.
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/robot_marker_unity.jpg}
+    \caption{Digital UR10 model related to the aruco marker, on Unity environment}
+    \label{f:ur10_marker_unity}
+    \end{figure}
 
 
+% \ac{MR} alongside a static robotic arm (UR10e) to support remote collaboration scenarios. This involves transforming human-robotic collaboration by integrating \ac{MR} technologies and robotic capabilities to enhance both on-site and remote collaboration experiences.
 
+% Unity 3D engine will allow robot model development, enabling detailed and interactive digital twins with bilateral communication capabilities. By utilizing Vuforia for precise pose registration, the system ensures accurate spatial alignment between the virtual and physical robots.
 
-Initially, Unity software was used in order to develop an application that enabled the on-site member to interact with the robot by utilizing 
-virtual and augmented reality to its favor.  
+% To enhance user awareness and prevent accidents, the system will implement visual and audio cues within the \ac{AR} environment, including safety-zone interactions and audio alerts. These features provide intuitive feedback to users, improving situational awareness during human--robot collaboration. The robot manipulation interface will be designed to be user-friendly, allowing non-expert users to operate the robot remotely using a handheld device (\ac{HHD}). This accessibility ensures that a wider range of users can effectively interact with the robotic system without extensive training.
 
-% The developed work, so far, will be explained in this chapter.
+% Real-time updates of the robot's position and workspace visualization will be provided through camera feed transmission, offering remote users a comprehensive view of the operational environment. This feature addresses the limitations identified in existing literature, where remote users often lack sufficient context and visibility of the workspace.
 
+% % Furthermore, the proposed system will address challenges identified in the state-of-the-art review, such as networking latency and positioning accuracy. By implementing optimized communication protocols and advanced tracking algorithms, the system aims to ensure efficient and safe human--robot collaboration. These improvements will not only enhance the performance of the system but also contribute valuable insights to the field, bridging the gap between on-site and remote interaction capabilities in industrial applications.
 
-\section{Marker Detection}
+% Overall, this project seeks to expand upon current research by providing a holistic solution that integrates advanced technologies to facilitate seamless collaboration between humans and robots, regardless of physical location. By focusing on both on-site and remote users, the system aims to enhance flexibility, safety, and efficiency in various industrial scenarios.
+
+\section{Pose registration}
+
+After having successfully imported the \ac{URDF} model of the real robot into the Unity environment, the next step was to ensure that the digital model was accurately aligned with the physical robot. 
+
+\subsection{Marker Detection}
 \label{section:marker-detection}
 % \input{chapters/on-site/marker-detection} commented this part because text is below - choose whether to use this or the text below
 
+    % confirm below - keep working here - 30 set 15h51 
+This alignment was achieved by utilizing Vuforia, a software platform that enables the creation of \ac{AR} experiences. Integrated with Unity, Vuforia simplifies the incorporation of AR into mobile and digital apps. It uses computer vision technologies to recognize and track images and objects in the real world, allowing developers to overlay digital content precisely.
 
     Vuforia is a software platform that enables the creation of \ac{AR} experiences. 
     % Integrated with Unity, a leading platform for developing games and interactive applications, Vuforia simplifies the incorporation 
