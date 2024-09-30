@@ -1,11 +1,10 @@
 \chapter{Methodology}%
 \label{chapter:methodology}
 
-As defined earlier in goals section~\ref{section:goals} from the first chapter, the primary goal of this dissertation is to leverage the human-robot collaboration \ac{HRC} paradigm by integrating \ac{MR} technologies alongside robot capabilities to enhance remote collaboration. In order to achieve this, a conceptual model is further implemented.
+As defined earlier in section~\ref{section:Goals}, the primary goal of this dissertation is to leverage the Human-Robot Collaboration \ac{HRC} paradigm by integrating \ac{MR} technologies alongside robot capabilities to enhance remote collaboration. In order to achieve this, a conceptual model is further implemented.
 
 \section{Conceptual Model}
-In order to start addressing the mentioned challenges, a first effort has been made. A robotic arm, UR10e, from Universal Robots, 
-available at IRIS LAB \ref{f:ur10e_iris}, was used as a dynamic agent to assist in shared activities.
+In order to start addressing the mentioned challenges, a first effort has been made. A robotic arm from Universal Robots, UR10e, shown in the figure \ref{f:ur10e_iris}, available at IRIS LAB, was used as a dynamic agent to assist in shared activities.
 %  add a footnote to the robot model in universal robots website
 
 \begin{figure}[h]
@@ -101,36 +100,29 @@ After having successfully imported the \ac{URDF} model of the real robot into th
 \label{section:marker-detection}
 % \input{chapters/on-site/marker-detection} commented this part because text is below - choose whether to use this or the text below
 
-    % confirm below - keep working here - 30 set 15h51 
-This alignment was achieved by utilizing Vuforia, a software platform that enables the creation of \ac{AR} experiences. Integrated with Unity, Vuforia simplifies the incorporation of AR into mobile and digital apps. It uses computer vision technologies to recognize and track images and objects in the real world, allowing developers to overlay digital content precisely.
+This alignment was achieved by utilizing Vuforia, a software platform that enables the creation of \ac{AR} experiences. Integrated with Unity, Vuforia simplifies the incorporation of \ac{AR} into mobile and digital apps. It uses computer vision technologies to recognize and track images and objects in the real world, allowing developers to overlay digital content precisely.
 
-    Vuforia is a software platform that enables the creation of \ac{AR} experiences. 
-    % Integrated with Unity, a leading platform for developing games and interactive applications, Vuforia simplifies the incorporation 
-    of AR into mobile and digital apps. 
-    It uses computer vision technologies to recognize and track images and objects in the real world, allowing developers to overlay digital 
-    content precisely.
+The marker illustrated in Figure \ref{f:aruco_marker} was selected following initial attempts that yielded inconsistent results when using 
+the laptop's camera, shown in the figure \ref{fig:camera-c922}, to scan the environment. This particular marker demonstrated greater stability, 
+enabling the precise positioning of the digital UR10 model in alignment with the physical surroundings. Consequently, this facilitated the accurate 
+overlay of the digital UR10 model onto the actual UR10e robot, enhancing the integration of virtual and real-world elements.
 
-    The marker illustrated in Figure \ref{f:aruco_marker} was selected following initial attempts that yielded inconsistent results when using 
-    the laptop's camera, shown in the figure \ref{fig:camera-c922}, to scan the environment. This particular marker demonstrated greater stability, 
-    enabling the precise positioning of the digital UR10 model in alignment with the physical surroundings. Consequently, this facilitated the accurate 
-    overlay of the digital UR10 model onto the actual UR10e robot, enhancing the integration of virtual and real-world elements.
-
-    \begin{figure}[h]
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/calib_io_charuco_200x150_5x7_25_18_DICT_4X4.png}
+    \caption{ArUco marker used to allow the segmentation for aligning the digital twin accordingly to the real environment}
+    \label{f:aruco_marker}
+    \end{subfigure}
+        \hfill % This command adds space between the subfigures
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \begin{subfigure}[b]{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.7\textwidth]{figs/calib_io_charuco_200x150_5x7_25_18_DICT_4X4.png}
-        \caption{ArUco marker used to allow the segmentation for aligning the digital twin accordingly to the real environment}
-        \label{f:aruco_marker}
-        \end{subfigure}
-            \hfill % This command adds space between the subfigures
-        \begin{subfigure}[b]{0.45\textwidth}
-            \centering
-            \includegraphics[width=0.7\linewidth]{figs/camera-c922.jpg}
-            \caption{Logitech c922 camera, used for testing on-site application developments}
-            \label{fig:camera-c922}
-        \end{subfigure}
-        \caption{ArUco marker used with the Logitech c922 camera for segmentation and manipulation of virtual environment}
-    \label{marker-camera}
-    \end{figure}
-    
+        \includegraphics[width=0.7\linewidth]{figs/camera-c922.jpg}
+        \caption{Logitech c922 camera, used for testing on-site application developments}
+        \label{fig:camera-c922}
+    \end{subfigure}
+    \caption{ArUco marker used with the Logitech c922 camera for segmentation and manipulation of virtual environment}
+\label{marker-camera}
+\end{figure}
+
