@@ -49,9 +49,11 @@ Afterwards, the framework required to integrate the \ac{MR} technologies with th
 
 \subsection{Unity}
 
-Unity is a dynamic and versatile game engine developed by Unity Technologies, widely recognized for revolutionizing game development over the past few years. Beyond gaming, it has become a prominent tool for creating \ac{AR}, \ac {VR}, and \ac{MR} applications. Its user-friendly interface empowers developers to rapidly craft immersive experiences while simplifying complex development processes.
 
-By offering an \ac{IDE} that combines \ac{GUI} manipulation of scene objects with a code editor, similar to Visual Studio, it allows developers to build virtual scenes by integrating or creating 2D and 3D assets as well as apply attributes such as lighting, audio, physics properties, animations, and interactive gameplay logic. Afterwards, these composed scenes come to life, rendering them in real-time at frame rates that create smooth motion and immersive experiences.
+
+Unity is a dynamic and versatile game engine developed by Unity Technologies \footnote{Unity Technologies \url{https://unity.com/} Accessed: 2024-09-30}, widely recognized for revolutionizing game development over the past few years. Beyond gaming, it has become a prominent tool for creating \ac{AR}, \ac {VR}, and \ac{MR} applications. Its user-friendly interface empowers developers to rapidly craft immersive experiences while simplifying complex development processes.
+
+By offering an \ac{IDE} that combines \ac{GUI} manipulation of scene objects with a code editor, similar to Visual Studio, it allows developers to build virtual scenes by either creating or integrating 2D and 3D assets as well as apply attributes such as lighting, audio, physics properties, animations, and interactive gameplay logic. Afterwards, these composed scenes come to life, rendering them in real-time at frame rates that create smooth motion and immersive experiences.
 
 One of Unity's significant advantages is its extensive platform compatibility. It supports development for various operating systems, including Windows, and Linux, as well as mobile platforms like iOS and Android. Additionally, a wide range of devices spanning \ac{AR},\ac{VR},\ac{MR} technologies are supported.
 
@@ -62,9 +64,10 @@ Unity's choice for developing the \ac{MR} application was advised by both superv
 
     % foi necessário encontrar um modelo do robot a ser utilizado - UR10e que se encontra no IRIS lab
     To successfully develop the \ac{MR} application for controlling the UR10e robot, it was essential to identify a model that closely mirrors 
-    the actual robot. The Unity Robotics Hub \footnote{Unity Technologies \url{https://github.com/Unity-Technologies/Unity-Robotics-Hub} 
+    the actual robot. The Unity Robotics Hub \footnote{Unity Robotics Hub \url{https://github.com/Unity-Technologies/Unity-Robotics-Hub} 
     Accessed: 2024-02-02} facilitates the integration of robotics into Unity projects via the URDF-Importer package 
-    \footnote{Unity Technologies \url{https://github.com/Unity-Technologies/URDF-Importer} Accessed: 2024-02-02}. 
+    \footnote{Unity URDF Importer \url{https://github.com/Unity-Technologies/URDF-Importer} Accessed: 2024-02-02}. 
+    
     However, challenges arose when attempting to import the UR10e \textit{.urdf} model into the Unity environment. To overcome this, 
     a UR10 model, sourced from a GitHub repository \footnote{PositronicsLab \url{https://github.com/PositronicsLab/reveal_packages/tree/master/industrial_arm/scenario/models/urdf/ur10} Accessed: 2024-02-05} 
     was used, due to its resemblance to the UR10e robot. This was discussed with the educators overseeing the dissertation development, 
@@ -96,16 +99,17 @@ Unity's choice for developing the \ac{MR} application was advised by both superv
 
 After having successfully imported the \ac{URDF} model of the real robot into the Unity environment, the next step was to ensure that the digital model was accurately aligned with the physical robot. 
 
-\subsection{Marker Detection}
+\subsection{Vuforia}
 \label{section:marker-detection}
 % \input{chapters/on-site/marker-detection} commented this part because text is below - choose whether to use this or the text below
 
 This alignment was achieved by utilizing Vuforia, a software platform that enables the creation of \ac{AR} experiences. Integrated with Unity, Vuforia simplifies the incorporation of \ac{AR} into mobile and digital apps. It uses computer vision technologies to recognize and track images and objects in the real world, allowing developers to overlay digital content precisely.
 
-The marker illustrated in Figure \ref{f:aruco_marker} was selected following initial attempts that yielded inconsistent results when using 
-the laptop's camera, shown in the figure \ref{fig:camera-c922}, to scan the environment. This particular marker demonstrated greater stability, 
-enabling the precise positioning of the digital UR10 model in alignment with the physical surroundings. Consequently, this facilitated the accurate 
-overlay of the digital UR10 model onto the actual UR10e robot, enhancing the integration of virtual and real-world elements.
+\subsection{Marker Detection}
+
+The marker illustrated in Figure \ref{f:aruco_marker}, demonstrated greater stability, enabling the precise positioning of the digital UR10 model in alignment with the physical surroundings. Its choice followed initial attempts that yielded inconsistent results while using some other ArUco generated examples \footnote{ArUco Markers Generator \url{https://chev.me/arucogen/} Accessed: 2024-09-30}. 
+
+To scan the physical environment around the robot, the camera shown in the figure \ref{fig:camera-c922} was used throughout the features' development process. 
 
 \begin{figure}[h]
     \centering
@@ -119,10 +123,36 @@ overlay of the digital UR10 model onto the actual UR10e robot, enhancing the int
     \begin{subfigure}[b]{0.45\textwidth}
         \centering
         \includegraphics[width=0.7\linewidth]{figs/camera-c922.jpg}
-        \caption{Logitech c922 camera, used for testing on-site application developments}
+        \caption{Logitech c922 camera, used for on-site integration}
         \label{fig:camera-c922}
     \end{subfigure}
     \caption{ArUco marker used with the Logitech c922 camera for segmentation and manipulation of virtual environment}
 \label{marker-camera}
 \end{figure}
+
+Consequently, both the ArUco marker and the Logitech c922 camera allowed to overlay the digital UR10 model on top of the physical robot.
+% enhancing the integration of virtual and real-world elements - use???????
+
+
+\section{Billateral Communication}
+
+\subsection{UR10e ROS Documentation}
+Unity was chosen for its interactive capabilities, but this choice introduced additional complexity due to the need to operate across different operating systems—Windows for Unity and Ubuntu 20.04 for ROS Noetic, the version supporting the required ROS packages.
+
+A key advantage was the existence of pre-existing resources from the IRIS Lab, where the robot is housed. Specifically, there were two GitHub repositories—\href{https://github.com/iris-ua/iris_sami}{iris\_sami} and \href{https://github.com/iris-ua/iris_ur10e}{iris\_ur10e}, developed by 
+previous students and guided by Professor Eurico. These repositories provided a well-established ROS environment, enabling control of the UR10e 
+robot through RViz, trajectory planning, and real-time execution. The \texttt{iris\_ur10e} package is integral to operating the physical robot in 
+the lab, while \texttt{iris\_sami} allows for the robotic arm's manipulation.
+
+
+Given this existing ROS setup on Ubuntu 20.04, the challenge was to integrate it with Unity running on Windows, requiring a connection between two 
+laptops. 
+The solution was to implement a ROS-Unity bridge, which was made possible using the ROS-TCP-Connector and ROS-TCP-Endpoint packages from the 
+Unity Robotics Hub (\href{https://github.com/Unity-Technologies/ROS-TCP-Connector}{Unity-Technologies/ROS-TCP-Connector}). 
+
+The proposed framework for both laptops connection is shown in figure. (add a figure of the framework proposed).
+
+% Selecting this package over other ROS-Unity bridges was recommended by João Alves, one of the instructors who provided valuable insights during the development of this project.
+
+
 
