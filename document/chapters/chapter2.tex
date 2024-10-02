@@ -316,8 +316,8 @@ Reality corresponds to the perception of an unaltered physical environment.
    
     Since \ac{MR} lacks a universally agreed-upon definition, various sources describe it in different ways. 
 
-    Speicher, Hall, and Nebeling (2019) argue that there is no universally agreed-upon definition of \ac{MR}, and instead, they identified six competing notions from both literature and expert interviews.
-    Some of its definitions include the collaboration between users in different realities, or as an advanced form of \ac{AR} where interactions with and within the environment are more complex. In some contexts, \ac{MR} is considered synonymous with \ac{AR}, while in others, it is seen as a distinct integration of both \ac{AR} and \ac{VR} technologies \cite{whatismixedreality}. 
+    Speicher, Hall, and Nebeling (2019) argue that there is no universally agreed-upon definition of \ac{MR}, and instead, they identified some competing notions from both literature and expert interviews.
+    Some define \ac{MR} as including collaboration between users in different realities, while some regard it as an advanced form of \ac{AR} where interactions with and within the environment are more complex. In some contexts, \ac{MR} is considered synonymous with \ac{AR}, while in others, it is seen as a distinct integration of both \ac{AR} and \ac{VR} technologies \cite{whatismixedreality}. 
 
     % Given that \ac{MR} is not a universally agreed concept, it can encompass a wide range of notions, including:
     % \begin{itemize}
@@ -1009,10 +1009,16 @@ Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusse
 
 \section{Summary}
 
-Despite significant advancements in \ac{AR}-\ac{DT} implementations over the past year, the state-of-the-art literature predominantly focuses on developing applications for on-site personnel. Remote collaboration, particularly in human-robot interaction \ac{HRI} scenarios, has received comparatively less attention, highlighting the need for systems that effectively facilitate both on-site and remote collaboration.
+Even though significant advancements in \ac{MR}-\ac{DT} implementations over the past year, the state-of-the-art literature predominantly focuses on developing applications for on-site personnel. Remote collaboration, particularly in human-robot interaction \ac{HRI} scenarios, has received comparatively less attention, highlighting the need for systems that effectively facilitate both on-site and remote collaboration.
 % confirm if i can say this
 
-In response to this need, the proposed project aims to develop a generalized system applicable across various application scenarios, whose focus is mainly on remote collaboration. However, in order to achieve efficient remote collaboration, on-site features must be developed firstly, such as the digital twin pose registration. 
+Therefore, the proposed project aims to facilitate and integrate better remote collaboration by proposing a generalized conceptual system applicable across various application scenarios.
+
+Despite having developed on-site features, such as digital twin pose registration alongside audio and visual cues, focus will be mainly on the remote collaboration part implementation and the billateral communication between users.
+
+Unity 3D engine will be further explored for robot model development, \ac{ROS} will be used for robot control, and Vuforia for pose registration. It will also incorporate visual and audio cues to enhance user safety and awareness, \ac{MR} elements also implemented with Unity 3D. IP cameras will enable workspace monitoring. 
+
+In conclusion, the proposed system will enable remote users to manipulate the robot using handheld devices, with the robot's real-time position displayed in the Unity digital twin. By addressing these challenges, the project aims to enhance remote collaboration in human-robot interaction scenarios, contributing to the broader field of \ac{MR}-\ac{DT} applications.
 
 
 % %add this part somewhere
