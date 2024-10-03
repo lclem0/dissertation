@@ -36,8 +36,7 @@ Afterwards, the framework required to integrate the \ac{MR} technologies with th
     \end{itemize}
     \item \textbf{Automation and Immersion:}
     \begin{itemize}
-        \item Integrate a camera into the robot 
-        \item Develop a camera feed transmission to provide real-time updates of the robot's position and workspace visualization
+        \item Integrate a camera into the robot and develop a camera feed transmission to provide real-time updates of the robot's position and workspace visualization
         \item Share this information with remote participants, assisting on-site participants by delegating visual sharing to the robot.
     \end{itemize}
 \end{itemize}
@@ -68,19 +67,9 @@ Unity's choice for developing the \ac{MR} application was advised by both superv
     Accessed: 2024-02-02} facilitates the integration of robotics into Unity projects via the URDF-Importer package 
     \footnote{Unity URDF Importer \url{https://github.com/Unity-Technologies/URDF-Importer} Accessed: 2024-02-02}. 
     
-    However, challenges arose when attempting to import the UR10e \textit{.urdf} model into the Unity environment. To overcome this, 
-    a UR10 model, sourced from a GitHub repository \footnote{PositronicsLab \url{https://github.com/PositronicsLab/reveal_packages/tree/master/industrial_arm/scenario/models/urdf/ur10} Accessed: 2024-02-05} 
-    was used, due to its resemblance to the UR10e robot. This was discussed with the educators overseeing the dissertation development, 
-    and it was agreed that this approach would not pose any issues.
-
-    In the figure \ref{f:ur10_marker_unity} it is possible to see the digital UR10 model positioned related to the aruco marker 
-    (\ref{f:aruco_marker}), in a simulated Unity environment.
-    \begin{figure}[h]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figs/robot_marker_unity.jpg}
-    \caption{Digital UR10 model related to the aruco marker, on Unity environment}
-    \label{f:ur10_marker_unity}
-    \end{figure}
+    However, instead of importing the UR10e \textit{.urdf} model into the Unity environment, a UR10 model, sourced from a GitHub repository \footnote{PositronicsLab \url{https://github.com/PositronicsLab/reveal_packages/tree/master/industrial_arm/scenario/models/urdf/ur10} Accessed: 2024-02-05} 
+    was used, due to its resemblance to the UR10e robot. 
+    % This was discussed with the educators overseeing the dissertation development, and it was agreed that this approach would not pose any issues.
 
 
 % \ac{MR} alongside a static robotic arm (UR10e) to support remote collaboration scenarios. This involves transforming human-robotic collaboration by integrating \ac{MR} technologies and robotic capabilities to enhance both on-site and remote collaboration experiences.
@@ -133,16 +122,21 @@ To scan the physical environment around the robot, the camera shown in the figur
 Consequently, both the ArUco marker and the Logitech c922 camera allowed to overlay the digital UR10 model on top of the physical robot.
 % enhancing the integration of virtual and real-world elements - use???????
 
+In the figure \ref{f:ur10_marker_unity} it is possible to see the digital UR10 model positioned related to the aruco marker. 
+    (\ref{f:aruco_marker}), in a simulated Unity environment.
+    \begin{figure}[h]
+    \centering
+    \includegraphics[width=0.6\textwidth]{figs/robot_marker_unity.jpg}
+    \caption{Digital UR10 model related to the aruco marker, on Unity environment}
+    \label{f:ur10_marker_unity}
+    \end{figure}
 
 \section{Billateral Communication}
 
 \subsection{UR10e ROS Documentation}
 Unity was chosen for its interactive capabilities, but this choice introduced additional complexity due to the need to operate across different operating systems—Windows for Unity and Ubuntu 20.04 for ROS Noetic, the version supporting the required ROS packages.
 
-A key advantage was the existence of pre-existing resources from the IRIS Lab, where the robot is housed. Specifically, there were two GitHub repositories—\href{https://github.com/iris-ua/iris_sami}{iris\_sami} and \href{https://github.com/iris-ua/iris_ur10e}{iris\_ur10e}, developed by 
-previous students and guided by Professor Eurico. These repositories provided a well-established ROS environment, enabling control of the UR10e 
-robot through RViz, trajectory planning, and real-time execution. The \texttt{iris\_ur10e} package is integral to operating the physical robot in 
-the lab, while \texttt{iris\_sami} allows for the robotic arm's manipulation.
+A key advantage was the existence of pre-existing resources from the IRIS Lab, where the robot is housed. Specifically, there were two GitHub repositories—\href{https://github.com/iris-ua/iris_sami}{iris\_sami} and \href{https://github.com/iris-ua/iris_ur10e}{iris\_ur10e}. These provided a well-established ROS environment, enabling control of the UR10e robot through RViz, trajectory planning, and real-time execution. \texttt{iris\_ur10e} package is integral to operating the physical robot in the lab, while \texttt{iris\_sami} allows for the robotic arm's manipulation.
 
 
 Given this existing ROS setup on Ubuntu 20.04, the challenge was to integrate it with Unity running on Windows, requiring a connection between two 
