@@ -149,7 +149,17 @@ The proposed framework for both laptops connection is shown in figure. (add a fi
 
 By having already established the communication between Unity and ROS, specific types of messages from ROS environment had to be exchanged between the network, therefore enabling the robot to be controlled remotely.
 
-After understanding that the ROS topic responsible for publishing the current state of the robot's joints was \texttt{/joint\_states}, these data needed to be sent to Unity. By adapting the already existing Unity Robotics Hub packages, these messages were not only successfully exchanged between the two environments, but also saved into a \texttt{.json} file for further analysis.
+After understanding that the ROS topic responsible for publishing the current state of the robot's joints was \texttt{/joint\_states}, these data needed to be sent to Unity. By adapting the already existing Unity Robotics Hub packages, these messages were not only successfully exchanged between the two environments, but also saved into a \texttt{.json} file for further manipulation.
+
+\section{Robot Manipulation}
+When it it came to control the digital version of the robot in the Unity environment, it was necessary to understand the Unity Robotics Hub package's way of doing so. A C\# script named \texttt{Controller.cs}, contained the necessary functions to control the robot's joints.
+
+
+After further analysis, three control methods were implemented.
+
+Firstly a \ac{UI} was desgined to allow the on-site member to control each robot joint individually by using a panel 
+to understand that the \texttt{Controller.cs} script was responsible for controlling the robot's joints. This script was then adapted to allow for the robot's joints to be controlled using the \ac{HHD}.
+
 
 
 
