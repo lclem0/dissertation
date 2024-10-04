@@ -62,3 +62,32 @@
     
     
     This setup is fundamental for the Unity environment to interact effectively with ROS, allowing for real-time data exchange and control commands to be sent between the two systems. Further details are available in the Unity Robotics Hub tutorial on \href{https://github.com/Unity-Technologies/Unity-Robotics-Hub/blob/main/tutorials/ros_unity_integration/network.md}{ROS-Unity integration}.
+
+
+    \section{ROS Message Generation}
+    
+    After establishing the communication between ROS and Unity, as well as the other basic communication channels—publishers, subscribers, and services, the next step was to customize these components to handle the specific types of messages required for this project.
+    
+    \subsection{Adapting to Specific Message Types}
+    
+    To begin, I revisited the previously mentioned GitHub repositories for the UR10e robot, specifically focusing on identifying which ROS nodes and topics were critical for my Unity-ROS integration. This involved:
+    \begin{itemize}
+        \item \textbf{Identifying Key Nodes and Topics:} The primary focus was on 
+        % the \texttt{/joint\_states} topic,
+        finding which topic is responsible for publishing the current state of the robot’s joints.
+        \item \textbf{Message Subscription and Retrieval:} With guidance from my supervisors, I determined that subscribing to the \texttt{/joint\_states} topic would be essential for retrieving real-time data about the robot's joint positions.  This topic uses the \texttt{sensor\_msgs/JointState} message type, a standard message in ROS that provides the positions, velocities, and efforts of the robot's joints. It is well-documented and includes the necessary fields for capturing joint states. This message type is part of the broader \texttt{common\_msgs/sensor\_msgs} package, which is available on the \href{https://wiki.ros.org/sensor_msgs}{ROS wiki} and in the \href{https://github.com/ros/common_msgs/tree/noetic-devel/sensor_msgs/msg}{sensor\_msgs GitHub repository}.
+    \end{itemize}
+    
+    \subsection{ROS-TCP Connector and C\# Message Generation}
+    
+    To correctly handle the \texttt{sensor\_msgs/JointState} messages within Unity, it was necessary to generate corresponding C\# classes. This process, which is detailed in the \href{https://github.com/Unity-Technologies/ROS-TCP-Connector/blob/main/MessageGeneration.md}{ROS-TCP Connector documentation}, involves:
+    \begin{enumerate}
+        \item \textbf{Generating C\# Message Classes:} By following the steps provided in the documentation, I was able to generate the necessary C\# JointState class that represent the corresponding ROS message, as depicted in the figure \ref{fig:unityjoint_state_message}. This step was crucial for storing and manipulating the joint state data within the Unity environment.
+        \begin{figure}
+        \centering
+        \includegraphics[width=0.75\linewidth]{figs/unityjoint_state_message.png}
+        \caption{JointState message generation in Unity, corresponding to the desired ROS message}
+        \label{fig:unityjoint_state_message}
+        \end{figure}
+        \item \textbf{Compiling and Verifying the Message Classes:} After generating the message classes, I compiled them in the Windows environment, ensuring they matched the expected structure as described in the UnityRoboticsTutorial repository. This process took some time to fully understand, but was critical for the successful integration of ROS data into Unity.
+    \end{enumerate}

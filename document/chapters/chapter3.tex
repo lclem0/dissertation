@@ -26,10 +26,9 @@ Afterwards, the framework required to integrate the \ac{MR} technologies with th
     \end{itemize}
     \item \textbf{Remote Visualization and Interaction:}
     \begin{itemize}
-        \item Stablish a communication channel between the on-site and remote participants
+        \item Enable bilateral communication between the robot and the Unity digital twin
         \item Provide remote participants with a foundational 2D interface, such as a laptop screen, to visualize the collaboration scenario and 
         task context.
-        \item Enable bilateral communication between the robot and the remote digital twin
         \item Implement real-time updates of the robot's position and workspace visualization
         \item Develop the capability for remote operation of the robot via the \ac{MR} application, enhancing the remote participant's ability to 
         interact and manipulate the collaborative environment.
@@ -138,15 +137,19 @@ Unity was chosen for its interactive capabilities, but this choice introduced ad
 
 A key advantage was the existence of pre-existing resources from the IRIS Lab, where the robot is housed. Specifically, there were two GitHub repositories—\href{https://github.com/iris-ua/iris_sami}{iris\_sami} and \href{https://github.com/iris-ua/iris_ur10e}{iris\_ur10e}. These provided a well-established ROS environment, enabling control of the UR10e robot through RViz, trajectory planning, and real-time execution. \texttt{iris\_ur10e} package is integral to operating the physical robot in the lab, while \texttt{iris\_sami} allows for the robotic arm's manipulation.
 
-
-Given this existing ROS setup on Ubuntu 20.04, the challenge was to integrate it with Unity running on Windows, requiring a connection between two 
-laptops. 
-The solution was to implement a ROS-Unity bridge, which was made possible using the ROS-TCP-Connector and ROS-TCP-Endpoint packages from the 
-Unity Robotics Hub (\href{https://github.com/Unity-Technologies/ROS-TCP-Connector}{Unity-Technologies/ROS-TCP-Connector}). 
+Given this existing ROS setup on Ubuntu 20.04, ROS-TCP-Connector and ROS-TCP-Endpoint packages from the Unity Robotics Hub (\href{https://github.com/Unity-Technologies/ROS-TCP-Connector}{Unity-Technologies/ROS-TCP-Connector}) were used to establish the Wi-fi Connection. 
 
 The proposed framework for both laptops connection is shown in figure. (add a figure of the framework proposed).
 
+
 % Selecting this package over other ROS-Unity bridges was recommended by João Alves, one of the instructors who provided valuable insights during the development of this project.
+
+
+\subsection{Message Generation}
+
+By having already established the communication between Unity and ROS, specific types of messages from ROS environment had to be exchanged between the network, therefore enabling the robot to be controlled remotely.
+
+After understanding that the ROS topic responsible for publishing the current state of the robot's joints was \texttt{/joint\_states}, these data needed to be sent to Unity. By adapting the already existing Unity Robotics Hub packages, these messages were not only successfully exchanged between the two environments, but also saved into a \texttt{.json} file for further analysis.
 
 
 
