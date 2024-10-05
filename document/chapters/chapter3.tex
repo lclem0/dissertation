@@ -155,9 +155,35 @@ After understanding that the ROS topic responsible for publishing the current st
 When it it came to control the digital version of the robot in the Unity environment, it was necessary to understand the Unity Robotics Hub package's way of doing so. A C\# script named \texttt{Controller.cs}, contained the necessary functions to control the robot's joints.
 
 
-After further analysis, three control methods were implemented.
+After further analysis, three control methods were implemented to control the robot's joints:
+\begin{itemize}
+    \item \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and intuitive manner of controlling the robot, where a panel with a button for each joint was displayed, as shown in figure \ref{f:ui-control}. 
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\textwidth]{figs/toggle-1.png}
+        \caption{\ac{UI} panel to control the robot's joints individually}
+        \label{f:ui-control}
+    \end{figure}
 
-Firstly a \ac{UI} was desgined to allow the on-site member to control each robot joint individually by using a panel 
+    Besides the joints' buttons, a figure of the robot is also displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled.
+    
+    Upon activating a joint by pressing the desired button, its color turns green instead of the default red button and the user is able to choose between rotating this joint in either the positive or negative direction, also represented by a change in the default color of the corresponding directional arrow. These features are represented in figure --- add figures joint being selected as well as the direction of UI control.
+    
+   
+    \item \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows of the laptop and then send the current position of the \ac{DT} into the ROS environment via Wi-fi and, consequently, update the robot's real position. 
+    In order change the \ac{DT} robot state, the user had to press either the right or left arrow keyboard keys to select the following or previous joint, respectively, and the up or down arrow keys to rotate the selected joint in the positive or negative direction.
+    After updating the \ac{DT} robot state, the user had to press the publish \ac{UI} button, that was added to the Interface, and the current joint states would be sent over Wi-fi to the ROS environment, which would then be constantly listening to the desired topic and upon receiving a new message, would then update the real robot with those values.
+    
+
+
+
+    \item \textbf{Remote Control:} This method allowed the robot to be controlled remotely by using the \ac{HHD}.
+
+Firstly a \ac{UI} was desgined to allow the on-site member to control each robot joint individually by using an 
+
+
+
 to understand that the \texttt{Controller.cs} script was responsible for controlling the robot's joints. This script was then adapted to allow for the robot's joints to be controlled using the \ac{HHD}.
 
 
