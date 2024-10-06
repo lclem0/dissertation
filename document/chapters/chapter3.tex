@@ -152,7 +152,7 @@ By having already established the communication between Unity and ROS, specific 
 After understanding that the ROS topic responsible for publishing the current state of the robot's joints was \texttt{/joint\_states}, these data needed to be sent to Unity. By adapting the already existing Unity Robotics Hub packages, these messages were not only successfully exchanged between the two environments, but also saved into a \texttt{.json} file for further manipulation.
 
 \section{Robot Manipulation}
-When it it came to control the digital version of the robot in the Unity environment, it was necessary to understand the Unity Robotics Hub package's way of doing so. A C\# script named \texttt{Controller.cs}, contained the necessary functions to control the robot's joints.
+When it it came to manipulate the digital version of the robot in the Unity environment, it was necessary to understand the Unity Robotics Hub package's way of doing so. A C\# script named \texttt{Controller.cs}, contained the necessary functions to control the robot's joints.
 
 
 After further analysis, three control methods were implemented to control the robot's joints:
@@ -162,12 +162,12 @@ After further analysis, three control methods were implemented to control the ro
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.2\textwidth]{figs/toggle-1.png}
-        \caption{\ac{UI} panel to control the robot's joints individually}
+        \caption{\ac{UI} panel to control the robot's joints individually when using the \ac{UI} Control method}
         \label{f:ui-control}
     \end{figure}
     \FloatBarrier
 
-    Besides the joints' buttons, a figure of the robot is also displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled.
+    Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled.
     
     Upon activating a joint by pressing the desired button, its color turns green instead of the default red button and the user is able to choose between rotating this joint in either the positive or negative direction, also represented by a change in the default color of the corresponding directional arrow. These features are represented in figure --- add figures joint being selected as well as the direction of UI control.
     
@@ -179,7 +179,7 @@ After further analysis, three control methods were implemented to control the ro
 
     \begin{figure}[htpb]
         \centering
-        \includegraphics[width=0.8\linewidth]{figs/UI_Publish.png}
+        \includegraphics[width=0.9\linewidth]{figs/publish.jpeg}
         \caption{Publish button that sends Unity's \ac{DT} robot joint states into ROS the environment}
         \label{fig:publish_UI_button}
     \end{figure}
@@ -256,14 +256,41 @@ After further analysis, three control methods were implemented to control the ro
     
         
 
-    \item \textbf{Remote Control:} This method allowed the robot to be controlled remotely by using the \ac{HHD}.
+    \item \textbf{ROS-Unity Control:} This method allowed the robot to be controlled either in simulation in ROS environment with the Rviz interface, or manually in the robot itself and this would be reflected on the \ac{DT} robot model displayed in the Unity environment.
 
+    Upon selecting this method, the \ac{DT} robot model would be updated in real-time according to the data that is being published into the \texttt{joint\_states} ROS topic.
+    
+    A new script was created in Unity, called \texttt{JointStateSubscriber.cs}, that subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is saved at each frame into a specific \texttt{.json} file. This file is then read by the \texttt{Controller.cs} script, updating the \ac{DT} robot model in Unity.
+    
+    By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent digital twin representation as well as enabling the bidirectional communication and robot manipulation.
+
+    Below, there is another pseudo-code that explains how the ROS-Unity control method works.
+    \begin{algorithm}
+        \caption{ROS-Unity Control via Joint States Subscription}\label{alg:ros_unity_control}
+        \begin{algorithmic}[1]
+            \State \textbf{Step 1: Subscribe to ROS \texttt{joint\_states} topic}
+            \State Attach the Unity Script to the Digital Robot Model Asset: \texttt{JointStateSubscriber.cs}
+            \State Upon Initialization, it subscribes to topic: \texttt{/joint\_states}
+    
+            \While{Receiving JointState message from ROS}
+                \State Extract joint names and positions from the message
+                \State Store joint positions in a dictionary structure
+                \State Save the joint positions to a \texttt{jointStateSubscriber.json} file
+            \EndWhile
+    
+            \State \textbf{Step 2: Update Unity \ac{DT} Robot Model}
+            \While{Simulation is Running}
+                \State Read the \texttt{jointStateSubscriber.json} file
+                \State Update the Unity \ac{DT} robot model using the joint positions from the file
+            \EndWhile
+    
+            \State \textbf{Step 3: Synchronize Real Robot with \ac{DT} Robot}
+            \State The Unity \ac{DT} robot model moves according to the real robot’s joint positions, ensuring a consistent Digital Twin representation.
+        \end{algorithmic}
+    \end{algorithm}
+    
 \end{itemize}
-Firstly a \ac{UI} was desgined to allow the on-site member to control each robot joint individually by using an 
 
-
-
-to understand that the \texttt{Controller.cs} script was responsible for controlling the robot's joints. This script was then adapted to allow for the robot's joints to be controlled using the \ac{HHD}.
 
 
 
