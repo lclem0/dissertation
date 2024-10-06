@@ -171,15 +171,31 @@ After further analysis, three control methods were implemented to control the ro
     Upon activating a joint by pressing the desired button, its color turns green instead of the default red button and the user is able to choose between rotating this joint in either the positive or negative direction, also represented by a change in the default color of the corresponding directional arrow. These features are represented in figure --- add figures joint being selected as well as the direction of UI control.
     
    
-    \item \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows of the laptop and then send the current position of the \ac{DT} into the ROS environment via Wi-fi and, consequently, update the robot's real position. 
-    In order change the \ac{DT} robot state, the user had to press either the right or left arrow keyboard keys to select the following or previous joint, respectively, and the up or down arrow keys to rotate the selected joint in the positive or negative direction.
-    After updating the \ac{DT} robot state, the user had to press the publish \ac{UI} button, that was added to the Interface, and the current joint states would be sent over Wi-fi to the ROS environment, which would then be constantly listening to the desired topic and upon receiving a new message, would then update the real robot with those values.
+    \item \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows of the laptop, then sending its position into the ROS environment via Wi-fi. 
+    In order to change the Unity \ac{DT} robot state, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
+    
+    After updating the digital twin \ac{DT} robot's state, the user must press the "Publish" button within the user interface, shown in figure \ref{publish_UI_button}. This action publishes the current joint states over Wi-Fi to the ROS environment in a different \ac{ROS} topic than the real robot joint states are defined. 
+    
+    Therefore, two ROS nodes were created to handle this communication process. 
+    Firstly, the \texttt{unity\_joint\_subscriber.py} was developed within the \texttt{iris\_ur10e} package, working as a subscriber to the above mentioned \ac{ROS} topic, where the \ac{DT} Unity joint states are sent to.
+    Afterwards, it converts this data into a Float64MultiArray format and publishes it into yet another topic \texttt{/move\_joint\_unity} topic.
+    
+    Regarding the second node, the \texttt{move\_unity.py} script was created in the \texttt{iris\_sami} package. This node is a subscriber to the \texttt{/move\_joint\_unity} topic
+    , which continuously listens for messages on the relevant topic. Upon receiving a new message, the ROS system updates the real robot's joint positions accordingly.
+
+    \begin{figure}[htpb]
+        \centering
+        \includegraphics[width=0.7\linewidth]{figs/UI_Publish.png}
+        \caption{Publish button that sends Unity's \ac{DT} robot joint states into ROS the environment}
+        \label{fig:publish_UI_button}
+    \end{figure}
     
 
 
 
     \item \textbf{Remote Control:} This method allowed the robot to be controlled remotely by using the \ac{HHD}.
 
+\end{itemize}
 Firstly a \ac{UI} was desgined to allow the on-site member to control each robot joint individually by using an 
 
 
