@@ -161,10 +161,11 @@ After further analysis, three control methods were implemented to control the ro
     
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.6\textwidth]{figs/toggle-1.png}
+        \includegraphics[width=0.2\textwidth]{figs/toggle-1.png}
         \caption{\ac{UI} panel to control the robot's joints individually}
         \label{f:ui-control}
     \end{figure}
+    \FloatBarrier
 
     Besides the joints' buttons, a figure of the robot is also displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled.
     
@@ -174,24 +175,86 @@ After further analysis, three control methods were implemented to control the ro
     \item \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows of the laptop, then sending its position into the ROS environment via Wi-fi. 
     In order to change the Unity \ac{DT} robot state, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
     
-    After updating the digital twin \ac{DT} robot's state, the user must press the "Publish" button within the user interface, shown in figure \ref{publish_UI_button}. This action publishes the current joint states over Wi-Fi to the ROS environment in a different \ac{ROS} topic than the real robot joint states are defined. 
-    
-    Therefore, two ROS nodes were created to handle this communication process. 
-    Firstly, the \texttt{unity\_joint\_subscriber.py} was developed within the \texttt{iris\_ur10e} package, working as a subscriber to the above mentioned \ac{ROS} topic, where the \ac{DT} Unity joint states are sent to.
-    Afterwards, it converts this data into a Float64MultiArray format and publishes it into yet another topic \texttt{/move\_joint\_unity} topic.
-    
-    Regarding the second node, the \texttt{move\_unity.py} script was created in the \texttt{iris\_sami} package. This node is a subscriber to the \texttt{/move\_joint\_unity} topic
-    , which continuously listens for messages on the relevant topic. Upon receiving a new message, the ROS system updates the real robot's joint positions accordingly.
+    After updating the \ac{DT} robot's state, the user must press the "Publish" button within the user interface, shown in figure \ref{fig:publish_UI_button}. This action publishes the current joint states over Wi-Fi to the ROS environment in a different \ac{ROS} topic than the real robot joint states are defined. 
 
     \begin{figure}[htpb]
         \centering
-        \includegraphics[width=0.7\linewidth]{figs/UI_Publish.png}
+        \includegraphics[width=0.8\linewidth]{figs/UI_Publish.png}
         \caption{Publish button that sends Unity's \ac{DT} robot joint states into ROS the environment}
         \label{fig:publish_UI_button}
     \end{figure}
     
+    Below, a pseudo-code showcasing how to manipulate the robot in Unity-ROS control mode is described.
+    \begin{algorithm}
+        \caption{Unity Input for Joint Selection and Movement}\label{alg:unity_input}
+        \begin{algorithmic}[1]
+            \State \textbf{Step 1: User Input for Joint Selection and Movement in Unity}
+            \While{Unity Simulation is running AND Unity-ROS Control is selected}
+                \If{RightArrowKeyPressed}
+                    \State Select next joint
+                \ElsIf{LeftArrowKeyPressed}
+                    \State Select previous joint
+                \EndIf
+                \If{UpArrowKeyPressed}
+                    \State Rotate selected joint in positive direction
+                \ElsIf{DownArrowKeyPressed}
+                    \State Rotate selected joint in negative direction
+                \EndIf
+                \If{PublishButtonPressed}
+                    \State joint\_states = GetCurrentJointStates()
+                    \State PublishToROSTopic('unity\_joint\_states', joint\_states)
+                \EndIf
+            \EndWhile
+        \end{algorithmic}
+    \end{algorithm}
+
+    In order to handle this communication process, two ROS nodes were created. 
+    The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package.
+    By creating a new node, called \texttt{joint\_state\_listener}, it then subscribes to the \texttt{unity\_joint\_states} topic, expecting to receive a JointState message type.
+    Afterwards, it initializes a publisher for the \texttt{move\_joint\_unity} topic, that converts this data into a Float64MultiArray format that will be further received by the second node.
+    
+    Regarding the second node, the \texttt{move\_unity.py} script was created in the \texttt{iris\_sami} package. It initializes the \texttt{test\_arm\_movement} node that listens for joint position commands on the \texttt{/move\_joint\_unity} topic.
+    Upon receiving this data, it moves the robotic arm to the desired position.
+
+    This robot position update can be performed either on the simulation environment, where it can be visualized through Rviz, or by utilizing the real UR10e robot. 
+
+    A pseudo-code explanation for the ROS nodes is presented in algorithm \ref{alg:combined_ros_node}.
+    (add a picture of the framework exchange between Unity and ROS and a pseudo code of the ROS nodes created)
 
 
+    % Part 2: ROS Node for Receiving Unity Joint States
+
+    \begin{algorithm}
+        \caption{Combined ROS Node for Receiving Unity Joint States and Moving the Robot}\label{alg:combined_ros_node}
+        \begin{algorithmic}[1]
+            \State \textbf{Step 2 and 3: Combined ROS Node for Receiving Unity Joint States and Moving the Robot}
+            
+            % Initialize first node
+            \State Initialize ROS Node: joint\_state\_listener
+            \State Subscribe to Topic: 'unity\_joint\_states'
+            
+            \While{Receiving JointState message from Unity}
+                \State float\_array\_data = ConvertToFloat64MultiArray(joint\_states)
+                \State PublishToROSTopic('move\_joint\_unity', float\_array\_data)
+            \EndWhile
+            
+            % Initialize second node dependent on the first node
+            \State \textbf{Precondition:} The \texttt{joint\_state\_listener} node must be running and publishing to the \texttt{'move\_joint\_unity'} topic.
+            \State Initialize ROS Node: test\_arm\_movement
+            \State Subscribe to Topic: 'move\_joint\_unity'
+            
+            \While{Receiving Float64MultiArray message from \texttt{move\_joint\_unity}}
+                \State MoveRobotArmTo(joint\_positions)
+                \If{ConnectedToRealRobot}
+                    \State MoveRealRobot()
+                \Else
+                    \State VisualizeInRviz()
+                \EndIf
+            \EndWhile
+        \end{algorithmic}
+    \end{algorithm}
+    
+        
 
     \item \textbf{Remote Control:} This method allowed the robot to be controlled remotely by using the \ac{HHD}.
 
