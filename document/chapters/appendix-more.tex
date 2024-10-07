@@ -91,3 +91,149 @@
         \end{figure}
         \item \textbf{Compiling and Verifying the Message Classes:} After generating the message classes, I compiled them in the Windows environment, ensuring they matched the expected structure as described in the UnityRoboticsTutorial repository. This process took some time to fully understand, but was critical for the successful integration of ROS data into Unity.
     \end{enumerate}
+
+
+
+\section{Position Control (1 control type) - Unity to ROS} - confirm the purpose of this section - remove it?
+    This control type enables operators to interact directly with the robot's joints in real-time, providing a responsive and highly interactive control environment. The implementation of Position Control involves several key steps to ensure seamless operation and integration with the ROS environment.
+    
+    \subsection{Saving and Sending Joint States}
+    The first step in implementing Position Control was to capture and save the current states of the robot's joints in Unity. These joint states are then packaged and sent to the ROS environment upon user command. This process involves:
+    \begin{enumerate}
+        \item \textbf{Capturing Joint States:} The Unity application continuously monitors and records the positions of each joint of the digital twin robot, visible in the debug console represented in the figure \ref{fig:debug_joint_state}
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.8\linewidth]{figs/JointState_debug.png}
+            \caption{Unity debug console showing the current digital twin's joint positions}
+            \label{fig:debug_joint_state}
+        \end{figure}
+        \item \textbf{Data Serialization:} The joint states are serialized into a format suitable for transmission over the network. This was done by updating the joint positions into a list that is constantly saved into a JSON format, as depicted in the picture \ref{fig:json_pub}.
+            \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.5\linewidth]{figs/joint_states_json.png}
+            \caption{JSON format used to store Unity's digital twin joint states}
+            \label{fig:json_pub}
+            \end{figure}
+        \item \textbf{Sending Data:} Upon pressing a UI button trigger, shown in figure \ref{fig:publish_UI_button}, the serialized joint states are sent from Unity to the ROS environment using the previously established TCP/IP connection.
+            %% versao com publish a cinzento - qual manter
+            \begin{figure}[htpb]
+                \centering
+                \includegraphics[width=0.8\linewidth]{figs/UI_Publish_button.png}
+                \caption{UI Interface with Publishing button to send Unity's robot joint states into ROS the environment}
+                \label{fig:publish_UI_button}
+            \end{figure}
+    \end{enumerate}
+
+
+    \subsection{ROS Integration for Position Control}
+    In order to receive the data, the ROS environment needed some adjustments to process these joint states coming from Unity environment. Two new nodes were added to the ROS setup, enabling the following key functionalities:
+    \begin{enumerate}
+        \item \textbf{Joint State Listener Node:}
+        \begin{itemize}
+            \item \textbf{Purpose:} Receives joint states from Unity, ensuring that the digital inputs are translated into actionable data within the ROS environment.
+            \item \textbf{Functionality:} This node listens to a dedicated topic from Unity, processes this data, and republishes it to a different control topic. Figure \ref{fig:json_sent_ros} illustrates an example of data transmitted from Unity to ROS. The accompanying debug log below demonstrates its accuracy.
+
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.5\linewidth]{figs/json_publisher_14h25.png}
+                \caption{JSON file containing the unity's joint states that were sent to ROS environment}
+                \label{fig:json_sent_ros}
+            \end{figure}
+            \begin{verbatim}
+                    rosrun iris_ur10e unity_joint_subscriber.py 
+                    [INFO] [1725629583.306162, 720.978000]: 
+                    /joint_state_listener_7441_1725629572125I 
+                    heard (-0.4293505549430847, -0.8220488429069519,
+                    0.5078903436660767, -0.5654860734939575,
+                    0.12566372752189636, 0.26179951429367065)
+            \end{verbatim}
+        \end{itemize}
+            
+        \item \textbf{Robot Control Node:}
+            \begin{itemize}
+                \item \textbf{Purpose:} Directly controls the robot's movements based on processed joint states from Unity.
+                \item \textbf{Functionality:} This node requires that the previous one is also running, and subscribes to the control topic \textit{/move\_joint\_unity} to fetch and apply joint state data to the physical robot, mirroring the Unity operator’s interactions. The following debug log outputs the correct utilization of this node
+                \begin{verbatim}
+                    rosrun iris_sami move_unity.py 
+                    [ INFO] [1725629576.546376282]: Loading robot model 'ur10e'...
+                    [ INFO] [1725629577.773871662, 715.485000000]: Ready to take
+                    commands for planning group manipulator.
+                    [INFO] [1725629583.310087, 720.982000]: Moving arm to joint 
+                    positions: (-0.4293505549430847, -0.8220488429069519,
+                    0.5078903436660767, -0.5654860734939575,
+                    0.12566372752189636, 0.26179951429367065)
+                \end{verbatim}
+            
+                and the figure \ref{fig:synchronization-joint-control} displays two cases where the robot and its digital twin are properly synchronized using this control type.
+            \end{itemize}
+    \end{enumerate}
+    
+    \begin{figure}[b!]
+        \centering
+        \includegraphics[width=1\linewidth]{figs/montagem.png}
+        \caption{Two scenarios showcasing the synchronization between Unity and ROS environments using Joint Control}
+        \label{fig:synchronization-joint-control}
+    \end{figure}
+
+
+
+
+    \section{Joint State Subscription (2 control type) - ROS to Unity}
+
+    While the Position Control type allows operators to interactively manipulate the robot's joints and send these changes to the ROS environment, the Joint State Subscription control type operates in an opposite manner. It is designed to continually update the Unity digital twin's joint positions in synchronization with movements from the physical robot or its simulation in RViz. 
+
+
+    \subsection{Saving ROS Data}
+    In order to properly synchronize Unity's digital twin with real-time robot movements from the ROS environment, a new script \texttt{JointStateSubscriber.cs} was created. It subscribes to the \textit{/joint\_states} topic to continuously capture and store the robot's joint positions. This process is critical for maintaining a live reflection of the robot's state within the Unity simulation.
+    
+    \subsubsection{Subscribing to ROS Topics and Data Serialization}
+    \begin{itemize}
+        \item \textbf{Subscribing to Joint States:} The script actively listens to the \texttt{/joint\_states} topic, ensuring that any movement in the robot is promptly reflected in Unity.
+        \item \textbf{Storing Joint Data:} Captured joint positions are stored in a C\# dictionary, facilitating efficient data access and manipulation.
+        \item \textbf{Serializing Data to JSON:} The joint data is serialized into a JSON file, which provides a persistent and accessible format for storing the robot's state, overcoming potential restrictions from Unity packages that limit direct folder access.
+    \end{itemize}
+    
+    \subsubsection{Explanation and Integration}
+    The implementation of this system ensures that Unity's digital twin is consistently updated with the latest joint states from ROS, offering an accurate virtual representation for monitoring or interaction. Using the \texttt{SaveJointPositionsToFile()} method, joint data is structured and saved to enhance development workflow and project scalability.
+    
+    
+    \subsubsection{Practical Application and Visualization}
+    The real-time state of the robot’s joints, whether it is operating in a simulated environment or in real-time with the physical robot, is represented in figure \ref{fig:rviz_joint_states}.
+    Initially, the script was designed to save these robot joints' values upon pressing a UI button, but it was later adapted to continuously update the \texttt{float64[] position} array from the ROS side, visible in the below terminal log snippet, into the Unity environment as shown in the figure \ref{fig:json_joint_states}, ensuring that the most recent joint positions were always available.
+    
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{figs/jointStateSubRviz.png.jpg} % Adjust the file name and path as needed
+        \caption{Rviz environment with simulated Robot and correspondent joint values, in radians}
+        \label{fig:rviz_joint_states}
+    \end{figure}
+    
+    
+    \begin{verbatim}
+    name:
+        - elbow_joint
+        - left_finger_joint
+        - right_finger_joint
+        - shoulder_lift_joint
+        - shoulder_pan_joint
+        - wrist_1_joint
+        - wrist_2_joint
+        - wrist_3_joint
+    position: [0.8535921338670764, -5.695760001087214e-08, 5.587315793023694e-08, 
+    -1.6766575764811593, -0.7445104810535929, 1.059219605892937, 1.410329834615414,
+    -1.265097896821196]
+    velocity: [-4.84869176906394e-05, -0.00020121543757810655, 0.0001987088475458378,
+    0.006705746353461187, 0.00061522726960112, -0.0003380421322876756, 
+    0.001088906936911304, 0.0002984877856849871]
+    effort: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    \end{verbatim}
+    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\textwidth]{figs/jsonJointStateSub.png}
+        \caption{JointStateSubscriber Json file with Robot's joint values, in radians}
+        \label{fig:json_joint_states}
+    \end{figure}
+    
+    
