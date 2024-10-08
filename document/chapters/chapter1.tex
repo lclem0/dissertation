@@ -12,34 +12,28 @@
 \label{section:Motivation}
 % \input{chapters/introduction/motivation}
 The First Industrial Revolution, powered by steam engines, paved the way for subsequent revolutions driven by electricity, automation, machinery, 
-and the internet. Each revolution introduced groundbreaking technologies that reshaped industries, necessitating companies to prioritize reskilling 
+and the internet. Each revolution introduced groundbreaking technologies that reshaped industries, emphasizing the companies' need to prioritize reskilling 
 and upskilling their workforce.
 
-However, experts argue that complete automation, eliminating humans from manufacturing processes, is not feasible \cite{Weiss2021}. Instead, there is 
+However, experts argue that complete removal of humans from the manufacturing processes is not feasible \cite{Weiss2021}. Instead, there is 
 a growing emphasis on fostering collaborative partnerships between humans and intelligent machinery.
 
-As collaborative environments evolve, robots have become indispensable in various domains.
-% including the automation of medical services \cite{health_ref} and warehouse management \cite{warehouse_ref}.
-The complexity of these scenarios necessitates advanced solutions to enhance the \ac{HRI}. One promising approach is the integration of \ac{XR} 
-technologies, which encompass \ac{VR}, \ac{AR}, and \ac{MR}. \ac{XR} technologies blend the physical and digital worlds, providing immersive 
-experiences that transcend traditional reality and overcome geographical constraints, enabling real-time collaboration among individuals from 
-different locations.
+As collaborative environments evolve, robots have become indispensable in various domains, leading to increased complexity in these scenarios.  Therefore, advanced solutions are needed to enhance \ac{HRC}. 
+One promising approach consists on integrating \ac{MR} technologies, which encompass both \ac{VR} and Augmented Reality (\ac{AR}) by blending the physical and digital world, thus providing immersive experiences that transcend traditional reality and overcome geographical constraints, enabling real-time collaboration among individuals from different locations.
 
-However, the potential of \ac{XR} to enhance remote collaboration is currently hindered by several critical limitations. These include limited 
-perspective and context capture, which impede remote collaborators' understanding and decision-making capabilities, and a lack of multisensory 
-data collection, restricting comprehensive environmental comprehension. 
-Additionally, \ac{XR}'s interaction with physical objects often lacks the precision required for detailed tasks, particularly in dynamic scenarios. 
-These challenges diminish the effectiveness of \ac{XR} in facilitating thorough context sharing and impact the overall efficiency and safety of 
+However, the potential of \ac{MR} to enhance remote collaboration is currently hindered by several critical limitations. These include, not only limited perspective and context capture, which impede remote collaborators' understanding and decision-making capabilities, as well as a lack of multisensory data collection, restricting comprehensive environmental comprehension. 
+Additionally, \ac{MR}'s interaction with physical objects often lacks the precision required for detailed tasks, particularly in dynamic scenarios. 
+
+These challenges diminish the effectiveness of \ac{MR} in facilitating thorough context sharing and impact the overall efficiency and safety of 
 collaborative tasks.
 
 \section{Goals}
 \label{section:Goals}
 % \input{chapters/introduction/goals}
-The primary goal of this dissertation is to leverage Mixed Reality (\ac{MR}) alongside a static robotic arm (UR10e) to support remote collaboration scenarios. 
-This involves transforming human-robotic collaboration by integrating \ac{MR} technologies and robotic capabilities to enhance both on-site and 
-remote collaboration experiences.
+The primary goal of this dissertation consists on leveraging Mixed Reality (\ac{MR}) alongside a static robotic arm (UR10e) to support remote collaboration scenarios. 
+This involves transforming \ac{HRC} by integrating \ac{MR} technologies and robotic capabilities to enhance both on-site and remote collaboration experiences.
 
-To achieve this, the dissertation proposes the following objectives:
+In order to properly achieve this, the main goal can be broken down into the following objectives:
 
 \begin{itemize}
     \item \textbf{On-Site Interaction:}
@@ -80,3 +74,60 @@ of \ac{MR} and robotic technologies.
 \section{Thesis' Structure}
 % \input{chapters/introduction/structure}
 fazer!!!!! no fim 
+
+This dissertation is structured across six chapters, each representing a logical progression in the development of this work, which centers on integrating mixed reality (MR) with a static robotic arm to support remote collaboration within the context of Human-Robot Collaboration (HRC) and Industry 5.0. The following sections provide a comprehensive overview of each chapter and its contribution to the overall thesis.
+
+Chapter 1: Motivation and Goals
+The introductory chapter frames the motivation behind this work, underscoring the importance of Human-Robot Collaboration (HRC) as a pivotal element of Industry 5.0. Unlike Industry 4.0, which prioritized automation and robotic autonomy, Industry 5.0 aims to harmoniously reintegrate humans into industrial systems to create symbiotic collaborations with machines. This shift arises from a need to augment human cognitive and physical abilities while maintaining the creativity and adaptability unique to human workers. This motivation is rooted in the growing need to improve flexibility, efficiency, and human-centric innovation within industrial environments.
+
+In this context, emerging technologies—such as collaborative robots (cobots), digital twins (DTs), and immersive digital realities—are critical enablers. Chapter 1 delineates how these technologies can serve as foundational components of a new paradigm where humans and robots collaborate effectively, supported by MR interfaces that bridge physical and digital worlds.
+
+The main objective of this dissertation is clearly outlined: to explore the potential of mixed reality in augmenting human-robot collaboration by integrating MR with a static robotic arm to support remote collaboration scenarios. The primary goal is further broken down into smaller, more specific objectives that address technical, functional, and experiential aspects of the integration, such as the development of real-time robot control interfaces, remote visualization of robot states, and the bidirectional communication between a digital twin and a physical robotic system.
+
+Chapter 2: State of the Art Review
+Chapter 2 presents a comprehensive review of the relevant literature and state-of-the-art technologies that inform this dissertation's development. The chapter is divided into key thematic areas:
+
+Industry 5.0 and its Key Drivers: This section traces the evolutionary path from Industry 4.0 to Industry 5.0, focusing on the reintroduction of the human element into automated systems. Particular emphasis is placed on the technological enablers, such as AI, collaborative robots (cobots), digital twins, and MR, that make this transition possible. These technologies are examined not only for their technical capabilities but also for their role in fostering a more human-centric industrial environment.
+
+Human-Robot Collaboration (HRC): This section provides an in-depth exploration of HRC, its applications in Industry 5.0, and how it differs from traditional automation paradigms. Collaborative robots and their increasing role in industrial settings are discussed, particularly in light of how mixed reality can enhance interaction between humans and robots in shared workspaces.
+
+Digital Realities (AR, VR, MR, XR): Here, the dissertation delves into the different facets of digital realities, clarifying the conceptual distinctions between augmented reality (AR), virtual reality (VR), mixed reality (MR), and extended reality (XR). Since MR lacks a universally agreed-upon definition, a working definition is established for the scope of this dissertation, where MR is characterized by the seamless integration of virtual and physical environments for real-time interaction between human operators and robots.
+
+Digital Twins: Digital twins are explored in their role as virtual representations of physical systems, providing real-time data and feedback loops that enable enhanced monitoring, control, and prediction of robot behavior. The integration of digital twins in industrial applications is examined, focusing on their impact on improving remote collaboration efficiency and system flexibility.
+
+Summary: The chapter concludes with a synthesis of these technologies, highlighting their interconnectedness and potential synergies in supporting remote human-robot collaboration in industrial settings.
+
+Chapter 3: Methodology
+The third chapter presents the methodology and design approach for the project. The focus is on outlining the technical workflow for integrating the static robotic arm into a mixed reality environment. The chapter begins by acknowledging the availability of a real robotic system (UR10e) provided by the project supervisors and proceeds to elaborate on the development pipeline.
+
+The methodology is structured around key phases:
+
+Robot Model Integration: The process of importing the UR10e robotic arm into the Unity environment is detailed, including the creation of a digital twin (DT) that mirrors the robot’s real-world movements.
+
+Pose Registration: A critical component of the methodology, pose registration ensures that the digital robot aligns perfectly with the physical robot’s position in space. This phase requires careful calibration to maintain spatial accuracy during operations.
+
+Bidirectional Communication: The development of communication channels between the Unity-based digital twin and the ROS environment is elaborated, with emphasis on message-passing mechanisms that allow data to flow between the virtual and physical systems.
+
+ROS Development: Key ROS nodes were developed to facilitate joint state updates and real-time control of the robot through the mixed reality interface. These nodes are responsible for handling position data, joint states, and environmental information, ensuring synchronization between the digital twin and the physical robot.
+
+Chapter 4: Implementation of Features
+Chapter 4 focuses on the concrete implementation of the system’s features, targeting both the on-site and remote collaborators:
+
+On-Site Collaboration: This section describes the tools developed to allow local users to interact with the robot. This includes dynamic robot control through handheld devices (e.g., tablets), as well as augmented visualization of the robot’s workspace using MR technologies.
+
+Remote Visualization and Interaction: For remote participants, a set of tools were developed to enable real-time visualization and manipulation of the robotic system. This includes live camera feeds from the robot’s perspective, augmented by MR overlays, and the ability to remotely control the robot using a 2D interface or through an MR application.
+
+The chapter illustrates how these features enhance collaboration by improving situational awareness, minimizing communication delays, and creating a more immersive and intuitive collaborative environment.
+
+Chapter 5: Challenges and Limitations
+In this chapter, the technical and practical challenges encountered during the project are discussed. Special attention is given to the lack of comprehensive documentation and existing frameworks for integrating mixed reality systems with ROS-based robotics. Issues such as network latency, data transmission limitations, and hardware-software compatibility are explored, alongside the strategies employed to mitigate these challenges.
+
+Chapter 6: Conclusions and Future Work
+The final chapter provides a summary of the project's accomplishments, reflecting on how the initial goals were met and how the developed system succeeded in enhancing human-robot collaboration in a mixed reality environment. The chapter emphasizes the broader applicability of the implemented solution and its potential to scale to more complex industrial scenarios.
+
+Finally, the chapter identifies areas for future research and development, such as:
+
+Extending the MR interface to accommodate more sophisticated task management tools.
+Enhancing the communication protocols to reduce latency in real-time robot manipulation.
+Investigating the use of more advanced AR/VR devices, such as the HoloLens 2 and Oculus Quest, to further enhance remote collaboration.
+Conducting longitudinal user studies to assess the system’s long-term impact on collaboration efficiency and user satisfaction.
