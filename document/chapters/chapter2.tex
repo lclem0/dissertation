@@ -138,20 +138,15 @@ Cobots are celebrated for their ability to quickly and inexpensively adapt layou
 understanding of their proper uses and characteristics, which can otherwise pose barriers to industry adoption \cite{robotics8040100}.
 
 
-\subsubsection{The Role and Benefits of Cobots}
+% \subsubsection{The Role and Benefits of Cobots}
 
-Unlike traditional industrial robotic systems that necessitate extensive safety guarding, thus reducing flexibility and increasing both cost and 
-spatial demands, cobots offer a solution geared towards the current market's need for reduced lead times and mass customization \cite{barbazza2017agility},
-specially among \ac{SMEs}. 
+Unlike traditional industrial robotic systems, which require extensive safety guarding and consequently reduce flexibility while increasing both costs and spatial demands, cobots present a solution tailored to the current market's demand for shorter lead times and mass customization, particularly for \ac{SMEs} \cite{barbazza2017agility}.
 
-Cobots facilitate direct physical interaction between humans and machines, and their design allows for straightforward reprogramming by non-experts \cite{7140065}.
-Collaboratively, humans and cobots can increase productivity while cutting production costs by combining human cognitive abilities with robotic precision and strength.
+This cobots emergence represents a paradigm shift in industrial automation, emphasizing \ac{HRC} over the traditional model of robotic isolation. Cobots facilitate direct physical interaction between humans and machines while being designed for intuitive use, enabling even non-experts to reprogram them effortlessly \cite{7140065}. By leveraging the complementary strengths of human cognitive capabilities and robotic precision, cobots offer substantial productivity gains and reduced operational costs.
 
-\subsubsection{Background and Evolution of Cobots}
+% \subsubsection{Background and Evolution of Cobots}
 
-The cobot concept was initially proposed by J. Edward Colgate and Michael Pashkin in 1996 \cite{cobot-definition}, with the first commercial cobot, the UR5 
-model by Universal Robots \footnote{\url{https://www.universal-robots.com/products/ur5-robot/} shown in \ref{fig:ur5}, acessed in 2024-09-22}, being sold in 2008 \cite{robotics8040100}.  
-This marks the beginning of practical \ac{HRC} developments.
+The concept of cobots was first introduced by J. Edward Colgate and Michael Pashkin in 1996 \cite{cobot-definition}, laying the groundwork for practical applications in \ac{HRC}. Commercializing cobots began with the release of the UR5 model by Universal Robots in 2008 \cite{robotics8040100}, marking a significant milestone in the advancement of \ac{HRC} and then facilitating the integration of collaborative robotics into industrial workflows.
 
 \begin{figure}[!htbp]
     \centering
@@ -160,31 +155,26 @@ This marks the beginning of practical \ac{HRC} developments.
     \label{fig:ur5}
 \end{figure} 
 
-\subsubsection{Distinguishing Cobots from Industrial Robots}
+% \subsubsection{Distinguishing Cobots from Industrial Robots}
 
-Cobots are distinct from traditional industrial robots in that they are specifically designed with safety and ergonomics in mind \cite{cobots-design}. 
-They often include advanced features such as force and torque sensors, vision systems, and anti-collision systems, which are not typically part of traditional 
-robotic setups. These features allow cobots to be deployed without the extensive additional costs and setup required for retrofitting traditional 
-robots with similar capabilities.
+Cobots differentiate themselves from traditional industrial robots by prioritizing safety, ergonomics, and user accessibility. Unlike conventional robots that require extensive safety enclosures, cobots are equipped with advanced features such as force and torque sensors, vision systems, and anti-collision mechanisms. These capabilities enable them to operate safely in close proximity to humans without the need for restrictive barriers \cite{cobots-design}. The inherent design of cobots supports flexibility and ease of deployment, avoiding the high costs and complexity associated with retrofitting traditional robotic systems for similar functionality.
 
-\subsubsection{Economic and Practical Advantages of Cobots}
+% \subsubsection{Economic and Practical Advantages of Cobots}
 
-The shift towards cobots in industrial settings is largely driven by:
+The adoption of cobots in industrial settings is driven by a combination of economic, operational, and health-related factors:
 \begin{itemize}
-    \item Economic factors;
-    \item Improvements in occupational health;
-    \item Efficient utilization of factory space.
+    \item \textbf{Cost Efficiency:} Cobots can significantly reduce labor costs by performing repetitive tasks, thereby lowering direct unit production costs compared to traditional automation solutions \cite{cobot-2019collaborative}.
+    \item \textbf{Enhanced Workplace Safety:} Their design minimizes occupational hazards, which leads to improved worker safety and health, addressing ergonomic challenges in manual labor.
+    \item \textbf{Spatial Efficiency:} The compact and flexible nature of cobots allows them to be easily relocated and reconfigured within different production areas, optimizing factory space utilization \cite{cobots-implementation}.
 \end{itemize}
 
-Cobots offer significant flexibility and are cost-effective, as they can be easily relocated within different parts of a plant and quickly 
-adapted to changes in production layouts \cite{cobots-implementation}. This is particularly advantageous in high-risk applications, although 
-it does necessitate certain constraints similar to those in traditional systems.
-Cobots can also lead to lower direct unit production costs compared to traditional robotic systems \cite{cobot-2019collaborative}.
 
-When comparing cobots and traditional robots across various tasks such as assembly, placement, handling, and picking, cobots often show superior 
-adaptability and cost-effectiveness. However, traditional robots still offer advantages in scenarios requiring high payload and precision 
-\footnote{\url{https://www.fanuc.eu/it/en/robots/robot-filter-page/m-2000-series}, acessed in 2024-09-22} \cite{robotics8040100}. 
+These attributes are particularly beneficial in high-risk applications and industries that demand frequent changes in production layouts, such as electronics, automotive, and aerospace manufacturing.
 
+When assessing the applicability of cobots versus traditional robots, several distinctions emerge. Cobots excel in tasks that require adaptability and human-like dexterity, such as assembly, placement, handling, and quality inspection. Their versatility and ease of integration make them suitable for low-volume, high-mix production environments, where agility is crucial. However, traditional robots retain an advantage in scenarios that demand high payload capacity, speed, and precision, particularly in heavy-duty manufacturing applications \footnote{\url{https://www.fanuc.eu/it/en/robots/robot-filter-page/m-2000-series}, acessed in 2024-09-22} \cite{robotics8040100}.
+
+
+Despite their advantages, integrating cobots into existing workflows poses challenges. Issues such as interoperability with legacy systems, programming complexity for non-standard tasks, and optimizing cobot performance in dynamic environments require further research and development. Additionally, advancements in artificial intelligence and machine learning could unlock new capabilities for cobots, enabling them to autonomously adapt to changing tasks and work conditions, thereby extending their utility beyond predefined, structured environments.
 
 
 \subsubsection{Future Trends in Human-Robot Collaboration}
@@ -193,63 +183,25 @@ According to the 2019 article \textit{Human–Robot Collaboration in Manufacturi
 \ac{HRC} are evolving due to advancements in cobot technologies, sensing methodologies, and algorithmic developments. The key trends identified include:
 
 \begin{itemize}
-    \item \textbf{Enhanced Scene Understanding:} Future \ac{HRC} systems will focus on better understanding the operational environment. 
-    This involves discerning operator intentions, monitoring environmental conditions, and assessing the task status. 
+    \item \textbf{Enhanced Scene Understanding:} Next-generation \ac{HRC} systems will prioritize deeper contextual awareness of the workspace and tasks at hand. This involves not only detecting the physical environment but also interpreting operator intentions, recognizing task progression, and continuously monitoring environmental dynamics. Such enhanced scene understanding will enable robots to anticipate human actions, predict potential safety risks, and adjust their behavior accordingly, thus fostering a higher level of operational safety and efficiency.
 
-    \item \textbf{Advanced Sensing and Data Fusion:} To improve scene understanding, researchers are advocating for the use of additional sensors 
-    coupled with advanced data fusion techniques. This will enable systems to provide clear and concise information to users, thereby enhancing 
-    safety by minimizing unexpected robot motions and increasing user trust and system adoption.
-    
-    \item \textbf{Integration of Learning Techniques:} Incorporating \ac{ML} and other adaptive learning techniques will allow 
-    robots to better mimic human movements and adapt to complex tasks. Learning by demonstration, hand-guiding, and simulation-based teaching methods 
-    are expected to play significant roles in this advancement.
-    
-    \item \textbf{Improved Task Planning and Adaptive Learning:} Enhanced modeling and understanding of tasks, better task planning, and the ability 
-    to learn and adapt to new tasks dynamically are anticipated to be key areas of development. These improvements will enable robots to handle more 
-    complex and varied tasks within industrial settings.
-    
-    \item \textbf{User-Friendly Interfaces and Interaction Methods:} As \ac{HRC} systems become more sophisticated, there is a growing need for user-friendly 
-    interfaces that do not require extensive technical knowledge. \ac{AR} and \ac{VR} technologies are seen as pivotal in creating intuitive and 
-    accessible interaction methods for operators.
+    \item \textbf{Advanced Sensing and Data Fusion:} To facilitate this enhanced scene understanding, advanced sensing methodologies and sophisticated data fusion techniques will be critical. By integrating multi-modal sensor data—such as visual, tactile, and auditory inputs—robots will be able to construct more comprehensive models of their surroundings and human collaborators. Real-time fusion of such data will allow systems to process information more effectively, ensuring safer interactions by preempting hazardous movements and improving overall system transparency. This, in turn, will enhance user trust and accelerate the adoption of HRC solutions across industries.
+
+    \item \textbf{Integration of Learning Techniques:} 
+    The incorporation of \ac{ML} and adaptive learning algorithms into \ac{HRC} systems represent a transformative leap forward. Techniques such as learning-by-demonstration, and \ac{RL} will enable robots to more accurately mimic human dexterity and decision-making processes, allowing them to learn from human input and adapt to non-repetitive, complex tasks. These adaptive systems will continuously improve based on interaction data, leading to more intuitive and efficient \ac{HRC} in dynamic industrial environments.
+
+    \item \textbf{Improved Task Planning and Adaptive Learning:} Future \ac{HRC} systems will be distinguished by advanced task planning capabilities, driven by more sophisticated task modeling and real-time adaptation mechanisms. As robots become more capable of autonomously learning from both structured and unstructured environments, their ability to handle a wider array of tasks will expand, reducing human involvement in routine planning stages. The deployment of these capabilities in manufacturing and service sectors will enable robots to shift between tasks seamlessly, dynamically adjusting their behavior to respond to real-time changes in production or workflow.
+
+    \item \textbf{User-Friendly Interfaces and Interaction Methods:} As the complexity of \ac{HRC} systems increases, the need for intuitive and accessible human-robot interfaces will become paramount. Developing user interfaces that enable seamless human control without requiring advanced technical expertise is a key area of research. Implementing \ac{AR} and \ac{VR} technologies is expected to play a pivotal role in this domain, offering operators immersive and intuitive control mechanisms. These interfaces will reduce cognitive load and enable operators to interact with robots more effectively, thus improving operational efficiency and overall system usability.
 \end{itemize}
 
-% add this figure?
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.9\linewidth]{figs/future-trends.png} % Replace with actual Figure 7 from the article
-%     \caption{Future Directions in Human-Robot Collaboration \cite{HRCReview2019}}
-%     \label{fig:future-trends}
-% \end{figure}
-% Figure~\ref{fig:future-trends} summarizes the future trends in HRC as identified in the literature.
 
-Historically, the focus has been on increasing the relevance of {HRI} by addressing higher safety requirements and enabling 
+Historically, the focus has been on increasing the relevance of \ac{HRI} by addressing higher safety requirements and enabling 
 robots to perform more complex tasks. Recently, the scope has expanded to include more sophisticated methods aimed at enhancing system performance, 
 applying these methods across different application fields and tackling more intricate tasks. This expansion is driven by the emergence of new 
 cobots, advancements in sensing technologies, matured algorithms, and accumulated experience in designing collaborative workcells \cite{robotics8040100}.
 
 
-
-% \subsection{Collaboration Scenarios}  - repeticao do que vem acima, verificar se alguma parte é necessaria, se nao for, tirar
-
-% Cobots are different from traditional automation robots, being designed for direct interaction with humans within industrial settings. 
-% These cobots, which are now being developed for a range of industrial applications, eliminate the need for protective barriers, allowing them to 
-% work alongside humans and expand beyond the spatial constraints, typical of conventional industrial robots \cite{Kadir2018} CITE THIS IN THE MENDELEY.
-
-% Key features that set cobots apart include their enhanced safety protocols for close human interaction and their simplified programming, 
-% which supports flexible application within manufacturing environments. This allows for straightforward deployment and reassignment throughout 
-% various factory processes, significantly aiding tasks such as assembly, packaging, and organizing \cite{Faccio2019} CITE THIS IN THE MENDELEY.
-
-% The integration of \ac{HRC} systems in smart manufacturing is opening doors to increased productivity and efficiency. Industries like automotive 
-% have begun implementing cobots equipped with advanced sensing and vision systems, demonstrating the potential for collaborative robots to 
-% revolutionize these sectors. Since the automotive industry requires a significant portion of production involving assembly tasks, combining 
-% human skills and cobot capabilities is proving essential for tasks requiring greater flexibility and robustness than what robots can provide 
-% on their own \cite{Tsarouchi2016} CITE THIS IN THE MENDELEY. 
-% % Specifically, cobots are being used for precise tasks such as screwing during assembly stages, through integration with human operators, enabling shared workspace efficiencies [L. Wang et al., 2019].
-
-% % Moreover, the food industry’s move towards demand-based strategies underscores the importance of adopting Industry 4.0 technologies, including digitalization and cobots, to drive the sector towards enhanced sustainability and productivity [J. Miranda et al., 2019].
-% This shift towards a more collaborative manufacturing environment, pairing human intelligence with robotic efficiency, represents a significant 
-% stride towards the future of industrial automation.
-% % %%%%%%%%%%%%%%%%%%%%%%%% 
 
 %%%%%%%%%%%%%% 16set 18h04 a parte abaixo, está ok ver so se é preciso adicionar mais alguma figura
 \section{Digital Realities} 
