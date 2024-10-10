@@ -171,7 +171,7 @@ The adoption of cobots in industrial settings is driven by a combination of econ
 
 These attributes are particularly beneficial in high-risk applications and industries that demand frequent changes in production layouts, such as electronics, automotive, and aerospace manufacturing.
 
-When assessing the applicability of cobots versus traditional robots, several distinctions emerge. Cobots excel in tasks that require adaptability and human-like dexterity, such as assembly, placement, handling, and quality inspection. Their versatility and ease of integration make them suitable for low-volume, high-mix production environments, where agility is crucial. However, traditional robots retain an advantage in scenarios that demand high payload capacity, speed, and precision, particularly in heavy-duty manufacturing applications \footnote{\url{https://www.fanuc.eu/it/en/robots/robot-filter-page/m-2000-series}, acessed in 2024-09-22} \cite{robotics8040100}.
+When assessing the applicability of cobots versus traditional robots, several distinctions emerge. Cobots excel in tasks that require adaptability and human-like dexterity, such as assembly, placement, handling, and quality inspection. Their versatility and ease of integration make them suitable for low-volume, high-mix production environments, where agility is crucial. However, traditional robots retain an advantage in scenarios that demand high payload capacity, speed, and precision, particularly in heavy-duty manufacturing applications \cite{robotics8040100}.
 
 
 Despite their advantages, integrating cobots into existing workflows poses challenges. Issues such as interoperability with legacy systems, programming complexity for non-standard tasks, and optimizing cobot performance in dynamic environments require further research and development. Additionally, advancements in artificial intelligence and machine learning could unlock new capabilities for cobots, enabling them to autonomously adapt to changing tasks and work conditions, thereby extending their utility beyond predefined, structured environments.
@@ -180,8 +180,8 @@ Despite their advantages, integrating cobots into existing workflows poses chall
 %%%%%%%%%%%%%% 16set 18h04 a parte abaixo, está ok ver so se é preciso adicionar mais alguma figura
 \section{Digital Realities} 
 
-\ac{DR's} encompass a spectrum of technologies that blend virtual elements with the real world to varying degrees. 
-In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, represented in figure \ref{f:real-virtual-continuum}, which outlines four key stages: Reality, \ac{AR}, \ac{AV}, and \ac{VR} \cite{milgram1994}.
+Digital Realities \ac{DRs} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
+This continuum is divided into four principal stages: Reality, Augmented Reality \ac{AR}, \ac{AV}, and Virtual Reality \ac{VR}.
 
 \begin{figure}[h]
     \centering
@@ -190,40 +190,25 @@ In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, repres
     \label{f:real-virtual-continuum}
 \end{figure}
 
-Reality corresponds to the perception of an unaltered physical environment.
+In this continuum, Reality represents the perception of an unaltered physical environment, devoid of any virtual modifications. As we progress along the continuum towards the virtual side, different digital realities offer increasingly immersive experiences by blending or replacing real-world content with virtual elements.
 
-\subsubsection{Augmented Reality (\ac{AR})}
-    \ac{AR} enhances the user's perception of the real world by overlaying digital content such as 3D graphics, information, or media directly 
-    onto their physical surroundings \cite{liu2022digitaltwin}. 
-    This technology enables the virtual content to interact dynamically with the environment in real-time, with the ideal outcome being for users
-    to perceive both virtual and real entities as inhabiting the same shared space, creating a unified and interactive experience \cite{Azuma1997}.
-    \ac{AR} requires spatial registration to ensure that virtual additions are contextually and spatially aligned with the physical world.
+\subsubsection{Augmented Reality \ac{AR}}
+    \ac{AR} enhances a user's interaction with their physical environment by overlaying dynamic digital content, such as 3D objects, information layers, or media, onto the real world \cite{liu2022digitaltwin}. The main goal of \ac{AR} is to seamlessly integrate virtual objects with the user's surrounding physical context, facilitating real-time interaction between the virtual and physical realms \cite{Azuma1997}. The ultimate goal is for users to experience both virtual and real entities as coexisting within the same space, generating a cohesive and interactive environment.
 
-    Typical \ac{AR} devices include \ac{AR}-\ac{HMDs}, tablets, \ac{HUDs}, projectors, \ac{VR} headsets with cameras (often referred to as pass-through or see-through VR) and 2D screen-based augmentation. Each device offers varying levels of environmental awareness, human interaction capabilities (such as hand tracking) and holographic projection features.
+    Achieving this level of integration requires accurate spatial registration, a process that ensures that virtual elements are properly aligned with real-world objects in both location and scale. The spatial coherence between the two realities is critical for creating an effective \ac{AR} experience, where virtual objects respond to changes in the environment and user interaction in real-time.
 
-
-    A prime example of \ac{AR} is Pokémon GO, where virtual creatures known as Pokemons appear as if they exist within the real world, as shown in picture
-    \ref{f:pokemon-go}, allowing users to interact with them through their mobile devices \cite{whatismixedreality}.
-
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.6\linewidth]{figs/mewtwo.jpg}
-        \caption{Pokémon GO - an example of \ac{AR} application}
-        \label{f:pokemon-go}
-    \end{figure}
+    Various \ac{AR} devices are employed to deliver these experiences, including \ac{AR}-\ac{HMDs}, tablets, \ac{HHDs}, projectors, and see-through \ac{VR} headsets with built-in cameras. Each device offers different degrees of environmental awareness and interaction capabilities, such as hand tracking and holographic projection. 
+    % These technologies have transformed numerous industries, offering new possibilities in fields ranging from manufacturing and design to healthcare and entertainment.
 
 
 \subsubsection{Virtual Reality (\ac{VR})}
     
-    \ac{VR} stage in the Reality-Virtuality Continuum represents a complete replacement of a user’s perception of the real world with a fully synthetic environment isolating them from the physical world \cite{milgram1994}.
+    Within the Reality-Virtuality Continuum proposed by Milgram and Kishino, \ac{VR} occupies the extreme end of the spectrum, representing a complete substitution of a user’s perception of the physical world with a fully immersive synthetic environment. In this stage, the user is entirely isolated from their real surroundings, perceiving only the artificially constructed virtual environment, which is typically presented through a range of immersive devices such as \ac{HMDs} \cite{milgram1994}.
 
-    This immersion can also be achieved through \ac{HMDs} that consist on wearable devices that either project images directly into the user's eye or display them on a small screen positioned near the eye, such as the Oculus Quest 2.
-    %  depicted in figure \ref{f:quest-2-vr}. 
-    Some of these technologies are equiped with features like head tracking, enhancing the experience by allowing natural movements to influence the virtual environment.
-    
-    \ac{VR} typically allows for individual experiences and can transport users to remote or imaginary locations, offering a profound sense 
-    of presence in a digitally constructed reality \cite{whatismixedreality, 8712803}.
-    
+    Modern \ac{VR} systems achieve this full immersion by leveraging advanced \ac{HMDs}, such as the Oculus Quest 2, which present stereoscopic images directly to the user’s eyes through built-in displays or projection systems. These devices often incorporate additional features like head tracking, which enables the user’s head movements to influence their viewpoint in the virtual environment, further enhancing the sense of immersion and presence \cite{whatismixedreality}. Some systems also include positional tracking through external sensors or inside-out tracking via integrated cameras, allowing users to physically navigate virtual spaces, augmenting both interaction fidelity and spatial awareness.
+
+    \ac{VR} is particularly effective in applications that require the user to be completely enveloped in an artificial environment, thus enabling the simulation of real-world scenarios, historical reconstructions, or entirely imaginative worlds. This sense of "presence," wherein users perceive the virtual environment as real, is fundamental to \ac{VR}'s efficacy across various domains, including gaming, education, training, and simulation. Additionally, \ac{VR}'s potential to create deeply immersive and isolated experiences makes it especially valuable in fields like remote collaboration, where users can interact with simulated environments or models that are otherwise inaccessible \cite{8712803}.
+
     % \begin{figure}[h]
     %     \centering
     %     \includegraphics[width=0.6\linewidth]{figs/oculus-2-vr.png}
@@ -232,46 +217,27 @@ Reality corresponds to the perception of an unaltered physical environment.
     % \end{figure}
 
 \subsubsection{Mixed Reality (\ac{MR})}
+    \ac{MR} continues to elude a universally accepted definition, with interpretations diverging significantly across academic and industrial domains. First conceptualized by Milgram and Kishino, MR occupies a transitional space within the Reality-Virtuality Continuum, serving as an intermediary that bridges \ac{AR} and \ac{AV} \cite{milgram1994}. In \ac{MR} environments, both digital and physical elements coexist and interact in real time, fostering a dynamic and seamless interface between the virtual and physical worlds.
 
-    Since \ac{MR} lacks a universally agreed-upon definition, various sources describe it in different ways. 
-    According to Milgram and Kishino, \ac{MR} represents the merging of \ac{AR} and \ac{AV} technologies, creating environments where digital and physical elements interact fluidly \cite{milgram1994}. 
-    In \cite{microsoft_mixed_reality}, \ac{MR} encompasses a spectrum, as depicted in the picture \ref{f:mixed-spectrum}, that includes everything
-    from \ac{AR}, where the physical reality is dominant, to augmented virtuality, where virtual elements are more prominent, facilitating a seamless
-    transition between real and virtual worlds.
+    According to Microsoft’s \ac{MR} spectrum \cite{microsoft_mixed_reality}, \ac{MR} spans a range of technologies, from \ac{AR} (where physical reality is predominant and augmented with digital overlays) to \ac{AV} (where the virtual environment dominates, supplemented by real-world data). \ac{MR}, therefore, facilitates an immersive interaction between the user and both physical and digital elements, allowing for bi-directional interaction between virtual objects and the real-world environment. For instance, in \ac{MR} users can interact with digital content as though it physically exists within the real-world space. This fluid integration forms the cornerstone of \ac{MR} applications, enabling new forms of collaboration, visualization, and interaction.
 
-    \begin{figure}[!htpb]
-        \centering
-        \includegraphics[width=0.8\linewidth]{figs/mixed-reality-spectrum.jpeg}
-        \caption{The mixed reality spectrum, from \cite{microsoft_mixed_reality}}
-        \label{f:mixed-spectrum}
-    \end{figure}
-    
+    The inherent complexity of \ac{MR} arises from the challenge of ensuring a natural and intuitive integration of digital and physical elements. This requires advanced environmental sensing, real-time data fusion, and contextual understanding to deliver interactions that appear natural to the user. Consequently, the hardware requirements for \ac{MR} are more demanding than those for \ac{AR} or \ac{VR} alone. \ac{MR} systems typically employ spatial computing techniques, integrating high-fidelity sensors, advanced computational algorithms, and computer vision to recognize and map physical spaces, thus allowing for more sophisticated interactions.
+
+    Despite considerable advancements, the definition of \ac{MR} remains contested. Speicher, Hall, and Nebeling (2019) identified six competing notions of MR across both scholarly literature and industry practice, underscoring the fragmentation in its interpretation. Some experts argue that \ac{MR} represents an enhanced form of \ac{AR}, where users are not merely passive observers but active participants interacting with a responsive augmented space. In this interpretation, \ac{MR} is seen as a "stronger" form of \ac{AR}, exemplified by technologies such as Microsoft's HoloLens, where users can manipulate virtual elements within their physical environment.
+
+    Other perspectives view \ac{MR} as a convergence of \ac{AR} and \ac{VR}, where the boundary between the real and virtual worlds is fluid and adaptable, creating immersive, hybrid experiences. For example, the widely known game Pokémon Go is sometimes cited as an \ac{MR} application, where a \ac{VR}-based digital environment enables users to interact with augmented digital elements such as Pokémons, overlaid onto the physical world, as depicted in figure \ref{f:pokemon-go} \cite{whatismixedreality}.
+
+    However, the definition most relevant to this project's development emphasizes \ac{MR} as a medium for collaboration, enabling users to interact across different realities—whether physical, augmented, or virtual. In this context, \ac{MR} supports shared experiences between users situated in distinct environments. For example, a physical space visualized by an on-site \ac{AR} user can be simultaneously recreated and experienced by a remote \ac{VR} user, allowing for real-time, collaborative interactions between participants in different realities. This collaborative dimension of \ac{MR} is central to the system proposed in this research, which adopts this definition as the foundational framework for enabling seamless interaction and cooperation between users in distinct digital and physical environments \cite{whatismixedreality}.
    
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\linewidth]{figs/mewtwo.jpg}
+        \caption{Pokémon GO - an example of \ac{AR} application}
+        \label{f:pokemon-go}
+    \end{figure}\cite{whatismixedreality}.
 
-    Speicher, Hall, and Nebeling (2019) argue that there is no universally agreed-upon definition of \ac{MR}, and instead, they identified six competing notions from both literature and expert interviews.
-    Some define \ac{MR} as including collaboration between users in different realities, while some regard it as an advanced form of \ac{AR} where interactions with and within the environment are more complex. In some contexts, \ac{MR} is considered synonymous with \ac{AR}, while in others, it is seen as a distinct integration of both \ac{AR} and \ac{VR} technologies \cite{whatismixedreality}. 
-
-    % Given that \ac{MR} is not a universally agreed concept, it can encompass a wide range of notions, including:
-    % \begin{itemize}
-    %     \item \textbf{\ac{MR} as a continuum}: Involving a range of experiences from \ac{AR} to augmented virtuality, depending on the degree of
-    %     virtual content integrated into the real world.
-    %     \item \textbf{\ac{MR} as Collaboration}: Describes the interactive processes between users in different realities, such as one in \ac{AR}
-    %     and another in \ac{VR}, emphasizing the collaborative potential of \ac{MR} in shared or interconnected spaces.
-    %     \item \textbf{\ac{MR} as Strong \ac{AR}}: Viewing \ac{MR} as an advanced form of \ac{AR} where interactions with and within the environment are 
-    %     more complex and integrated.
-    %     \item \textbf{\ac{MR} as a Synonym for \ac{AR}}: In this usage, the terms \ac{MR} and \ac{AR} are used interchangeably.
-    %     This approach typically occurs when a system or experience aligns closely with \ac{AR}, and the definition of \ac{AR} is utilized to clarify what is 
-    %     meant by \ac{MR}.
-    %     \item \textbf{\ac{MR} as a Combination of \ac{AR} and \ac{VR}}: This definition describes \ac{MR} as an integration of both \ac{AR} and \ac{VR} technologies. 
-    %     It refers to systems or applications that feature distinct \ac{AR} and \ac{VR} components, which may interact but are not necessarily seamlessly integrated.
-    %     This can also apply to devices or apps capable of switching between \ac{AR} and \ac{VR} modes as needed.
-    %     \item \textbf{\ac{MR} as an Alignment of Environments}: This concept of \ac{MR} involves the synchronization or alignment of virtual and physical 
-    %     environments. It describes systems where the virtual and real components are distinct yet aligned, similar to how collaboration setups 
-    %     work but without requiring actual collaborative interactions or physically separate environments.
-    % \end{itemize}
-
-\subsubsection{Extended Reality (\ac{XR})}
-    The term \ac{XR} serves as an umbrella concept that includes \ac{AR}, \ac{MR}, and \ac{VR} as distinct but related technologies. It encompasses technologies designed to enhance sensory experiences by blending the physical and digital worlds \cite{pesca2021augmented}. These technologies allow users to engage with virtual and augmented elements in varying degrees, depending on the specific application or device in use.
+    % \subsubsection{Extended Reality (\ac{XR})}
+    % The term \ac{XR} serves as an umbrella concept that includes \ac{AR}, \ac{MR}, and \ac{VR} as distinct but related technologies. It encompasses technologies designed to enhance sensory experiences by blending the physical and digital worlds \cite{pesca2021augmented}. These technologies allow users to engage with virtual and augmented elements in varying degrees, depending on the specific application or device in use.
 
 
 % use this? - 17 set 00h18
