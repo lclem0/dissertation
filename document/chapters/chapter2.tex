@@ -440,135 +440,59 @@ Table \ref{tab:levels_of_control} illustrates the levels of control present in D
     \end{tabular}
 \end{table}
 
-% % 
-% \subsubsection{Digital Twins in Academia and Industry}
-
-% Digital Twins (DT) have gained significant traction in both academic research and industrial applications in recent years. Despite their growing prominence,
-% there is no universally accepted formal definition of a DT. 
-
-% Nevertheless, the majority of reputable researchers concur that a DT is a \ac{CPS} comprising at
-% least three essential components: 
-% \begin{itemize}
-%     \item A physical system,
-%     \item A virtual model,
-%     \item Connections facilitating bidirectional communication between the physical and virtual models \cite{TaoFei, 8477101, ROSEN2015567}.
-%     % confirm these citations above
-% \end{itemize}
-
-% In academic settings, DTs have been explored across a wide array of applications, including machine tool life management, product health management,
-% smart cities, and patient health monitoring, among others \cite{8361285, TAO2018169, isprs-archives-XLII-4-W7-37-2017, 10.1007/978-3-030-23162-0_19, 6296978}. These applications demonstrate the versatility and potential of DTs in enhancing efficiency, predictive maintenance, and system optimization. 
-% % confirm these citations above
-
-% In the industrial sector, numerous companies, such as Siemens, offer software and platform solutions aimed at creating DTs for their industrial partners. 
-% However, some critics argue that these solutions represent digital shadows rather than true DTs. 
-
-% The primary contention is the lack of bidirectional communication capabilities, specifically, while changes in the physical system can influence the virtual model, the reverse—where modifications in the virtual model impact the physical system—is often absent \cite{CIMINO2019103130}. 
-
-% Figure \ref{f:dt-structure}, \cite{dt_model} outlines the \ac{DT} reference model, illustrating the bidirectional communication between the physical 
-% and digital entities. This configuration underscores the distinction between true DTs and digital shadows, the latter often criticized for lacking 
-% interactive communication capabilities \cite{CIMINO2019103130}.
-
-
-
-% % However, the concept of \ac{DT} lacks a standardized definition, leading to a variability in the scope and execution of \ac{DT} implementations. 
-% % The dual nature of cyber and physical components in \ac{DT} makes \ac{AR} a suitable companion for visualizing and interacting with these complex 
-% % systems (cite the article itself).
-
-% As emphasized by Liu et al.~, "A true DT must include bidirectional communication instead of having a virtual model that updates
-% according to a physical system." 
-% Given that the concept of \ac{DT} lacks a standardized definition, leading to a variability in the scope and execution of \ac{DT} implementations and
-% defining a misconception, the critical distinction between three types of interaction is further ilustrated in Table ~\ref{tab:levels_of_control}, ~\cite{liu2022state}.
-% % This critical distinction is further illustrated in Table~\ref{tab:levels_of_control}.
-
-
-
-
-\subsubsection{Integration of Augmented Reality with Digital Twins} % verify this section references - if it matches what it said - 23 set 19h56
-
-Integration \ac{AR} with \ac{DT} technology represents a significant advancement in enhancing user interactions with complex systems. 
-\ac{AR} overlays virtual data directly onto physical objects, thereby providing a more intuitive and engaging interface for users. 
-This capability is particularly beneficial in industrial settings where \ac{AR} can facilitate more efficient and effective operation and 
-maintenance processes \cite{article12, peddie2017augmented}.
-
-Despite the numerous advantages of \ac{DT}s, a significant challenge lies in the effective visualization of the complex data they generate. 
-As interest in \ac{DT}s grows, it becomes increasingly important to provide users with intuitive and accessible methods to interpret and interact 
-with this data. According to \cite{article12}, the benefits of real-time data and information provided by \ac{DT}s cannot be fully realized without 
-proper visualization techniques that present complex information in a clear and uncluttered manner, especially for users with limited technical expertise.
-
-\ac{AR} offers a promising solution to this challenge by enhancing data visualization and user interaction. Traditionally, users interact with digital 
-information through 2D interfaces such as screens and monitors. However, \ac{AR} expands this interaction into the real world by overlaying virtual 
-data onto physical objects, creating immersive 3D experiences that align with users' familiar environments \cite{peddie2017augmented}. This 3D visualization enables
-users to better understand and absorb information through visual cues, which are often more effective than textual or auditory information \cite{article-teaching}.
-For instance, projecting maintenance instructions directly onto a machine allows users to perform maintenance tasks more efficiently compared to 
-consulting physical manuals \cite{inproceedings}. Moreover, \ac{AR} has been successfully utilized in various manufacturing processes to provide guidance 
-for maintenance procedures and to train novice workers, demonstrating its versatility and effectiveness in industrial settings \cite{ong2004virtual}.
-
-By integrating \ac{DT} with \ac{AR}, it is possible to monitor the state of a system in real-time while simultaneously displaying relevant
-data and information through \ac{AR} interfaces. This integration not only enhances the user experience but also improves operational efficiency and 
-safety by providing actionable insights in an intuitive and accessible manner.
-
-
 
 \section{Human-Robot Collaboration in Industrial Applications}
 Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusses how these technologies integrate into \ac{HRC}, demonstrating significant improvements in interaction, safety and efficacy in practical examples from industry solutions with specific emphasis on remote collaboration.
 
-\subsubsection{Enhancing Human-Robot Collaboration (\ac{HRC}) through Augmented Reality (\ac{AR}) and Digital Twin (\ac{DT}) Implementation}
+\subsection{Enhancing Human-Robot Collaboration (\ac{HRC}) through Augmented Reality (\ac{AR}) and Digital Twin (\ac{DT}) Implementation}
 
-\begin{enumerate}
-    \item \textbf{Augmented Reality for Enhanced Interaction and Safety}
+% \begin{enumerate}
+%     \item \textbf{Augmented Reality for Enhanced Interaction and Safety}
  
 
-    The work reviewed several previous studies that gathered and exposed information on implementing \ac{AR} with \ac{DT}. Specifically, it integrates a real robot with visual and haptic \ac{AR} interfaces and explains their development. This section provides an overview of the implementation techniques, advantages, and experiments performed using these technologies in a collaborative LEGO assembly task.
+\subsubsection{Augmented Reality for Enhanced Interaction and Safety}
 
-    \paragraph{\textbf{\ac{AR} and \ac{HRC} Integration}}
-    The article outlines that \ac{AR} interfaces with visual, haptic, acoustic, or multi-modal cues are beneficial for \ac{HRC}. \ac{AR} is considered an ideal interface to enhance human-robot communication by providing both ego-centric (ability to share remote views) and exocentric (ability to visualize the robot relative to the task space) views of the collaborative workspace, improving spatial awareness and interaction \cite{doi:10.5772/5664}. 
-    
-    It has been demonstrated that multimodal interactions, such as audio-tactile feedback, can significantly enhance the \ac{HRC} experience by making it more intuitive and effective. These multimodal approaches provide valuable insights that would otherwise be limited, such as overcoming the restricted \ac{FOV} in \ac{HMDs}.
-    % For instance, research has shown that while audio-tactile guidance might be slower compared to visual methods like EyeSee360, it offers a similar or even slightly better accuracy rate. 
-    Moreover, it can be especially beneficial for users with visual impairments, as the same information is conveyed through another sensory channel without degrading performance.
+Chu et al.~\cite{CHU2023313} reviewed various studies on integrating \ac{AR} with \ac{DT} to improve \ac{HRC} using visual and haptic feedback interfaces. Their work emphasizes the value of \ac{AR} in enhancing human-robot communication by providing both egocentric (shared remote views) and exocentric (spatial visualization of the robot relative to the workspace) perspectives, thereby improving spatial awareness and interaction quality. 
 
-    Visual \ac{AR} cues, implemented via \ac{HMDs}, allow users to navigate complex environments by overlaying visual information without hindering the robot’s movement. However, challenges like the limited \ac{FOV} of devices like the HoloLens present obstacles in industrial settings.
-    In scenarios where visual and auditory modalities are overwhelmed, haptic feedback provides a viable alternative. Vibrotactile devices, for instance, have been successfully used to alert operators about robot motion, approaching singularities, and joint limits in factory environments. Acoustic feedback also helps reduce human anxiety in shared workspaces by warning users of potential collisions or sudden changes in the robot’s trajectory \cite{9199570}.
+Green et al.~\cite{doi:10.5772/5664} further highlight that multimodal \ac{AR} interfaces—incorporating visual, haptic, and acoustic cues—can significantly enhance \ac{HRC}. Multimodal approaches help overcome challenges like limited \ac{FOV} in \ac{HMDs}, making the interaction more intuitive. For instance, audio-tactile feedback is particularly beneficial for individuals with visual impairments, providing alternative sensory channels without compromising performance. Visual \ac{AR} cues, implemented through \ac{HMDs}, help users navigate complex environments by overlaying relevant information, thus enhancing navigation without impeding robotic movement.
 
-    In their study, Lasota et al. conducted a human subject experiment to evaluate both the objective and subjective impacts of human-aware motion planning. The experimental results demonstrated clear improvements in task performance and team fluency metrics. Specifically, participants working with a robot employing human-aware motion planning were able to complete collaborative tasks in less time, exhibit higher degrees of concurrent human-robot motion, and experience reduced idle times for both the human and the robot \cite{doi:10.1177/0018720814565188}. Additionally, these participants maintained greater separation distances, contributing to enhanced safety and reduced collision risk compared to interactions with a standard, non-adaptive robotic system.
+\paragraph{Human-Aware Motion Planning and Safety Improvements}
 
-    These results underscore the dual benefit of human-aware motion planning: not only does it improve the functional performance of \ac{HRC} by enhancing task efficiency, but it also significantly elevates the perceived safety and comfort of human collaborators, which are critical factors in reducing stress-related health risks in industrial or high-stakes environments.
+Lasota et al.~\cite{doi:10.1177/0018720814565188} conducted experiments to evaluate the impact of human-aware motion planning on \ac{HRC}, demonstrating substantial improvements in task performance and team fluency. Compared to standard robotic systems, participants working with human-aware robots completed tasks more efficiently, exhibited greater concurrent motion, and experienced less idle time for both human and robot. Moreover, they maintained greater separation distances, which reduced collision risks and increased perceived safety. These results illustrate the dual advantage of human-aware planning: it not only enhances task efficiency but also elevates worker comfort and safety, which are critical for minimizing stress-related risks in industrial environments.
 
-    % Lasota~et.al, afirm that in a \ac{HRC} scenario where two distinct modes for robot operation were implemented, standard and human-aware, users reported feeling safer when the mode was able to differentiate between user actions and the surrounding environment. 
+\paragraph{Implementation Techniques}
 
-    \paragraph{\textbf{Implementation Techniques}}
-    The system was developed using the \ac{ROS} to control a WidowX 250 Robot Arm, which provided the flexibility and modularity required for a multi-device and multi-user setup. MoveIt framework  was used for robot motion planning and manipulation, aligning with the technical model proposed in other robotics literature. The integration of \ac{ROS} reinforces the modularity and adaptability of the system, making it easier to manage \ac{HRC} in a shared environment.
+The study utilized the \ac{ROS} to control a WidowX 250 Robot Arm, using the MoveIt framework for motion planning. This approach ensures modularity, adaptability, and ease of management in shared \ac{HRC} environments. Both \ac{AR} and \ac{DT} models were developed using the Microsoft HoloLens 2 for visual feedback and the SenseGlove Nova™ for haptic feedback, offering a comprehensive multimodal experience.
 
-    % \footnote{\url{https://moveit.ai/}, acessed in 2024-09-24}
+Through the HoloLens, users could visualize the robot's planned trajectory and swept volume, anticipating its actions. Concurrently, the haptic interface provided vibration feedback to signal the robot's proximity and target destinations, as illustrated in Figure~\ref{fig:haptic-visual-cues}. These multimodal cues offered varying levels of detail, aiding coordination in tasks that required awareness of robot movements.
 
-    Both \ac{AR} and \ac{DT} models were implemented using a combination of hardware and software tools, like the Microsoft HoloLens 2 for the visual interfaces and a SenseGlove Nova™ which provided haptic feedback.
-    Through the use of a HoloLens, the robot’s planned trajectory and swept volume were visually displayed, enabling the user to anticipate its actions. Simultaneously, the haptic interface provided vibration feedback to signal the robot’s proximity and intended target locations. As illustrated in figure \ref{fig:haptic-visual-cues}, these multimodal cues were presented in two distinct forms, each conveying varying levels of detail about the robot’s movement.
+\paragraph{Benefits of Multimodal Feedback}
 
-    \begin{figure}[htp]
+The findings show that combining visual, haptic, and acoustic cues significantly improved task performance. Visual interfaces, especially those indicating proximity, excelled in usability, while haptic feedback proved invaluable in scenarios where visual input was insufficient or overloaded. Acoustic signals also served as alerts for sudden changes in the robot's motion, helping reduce operator anxiety in unpredictable environments.
+
+In a task where the operator and robot worked independently but in close proximity, the system enabled efficient coordination. The robot delivered materials while the operator performed assembly tasks, highlighting the potential for \ac{AR}-based interfaces to optimize \ac{HRC} in industrial settings.
+
+\begin{figure}[htp]
+    \centering
+    \begin{subfigure}{.49\textwidth}
         \centering
-        \begin{subfigure}{.49\textwidth}
-            \centering
-            \includegraphics[width=0.9\linewidth]{figs/haptic-cues.jpg}
-            \caption{Indicating the gripper’s destination using vibration on different human fingers.}
-            \label{fig:sfig1}
-        \end{subfigure}%
-        \begin{subfigure}{.49\textwidth}
-            \centering
-            \includegraphics[width=0.9\linewidth]{figs/visual-cues.jpg}
-            \caption{Indicating the proximity of gripper via change of vibration frequency.}
-            \label{fig:sfig2}
-        \end{subfigure}
-        \caption{Visual and haptic interfaces used in the experiment \cite{CHU2023313}}
-        \label{fig:haptic-visual-cues}
-    \end{figure}
+        \includegraphics[width=0.9\linewidth]{figs/haptic-cues.jpg}
+        \caption{Indicating the gripper’s destination using vibration on different human fingers.}
+        \label{fig:sfig1}
+    \end{subfigure}%
+    \begin{subfigure}{.49\textwidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{figs/visual-cues.jpg}
+        \caption{Indicating the proximity of the gripper via vibration frequency changes.}
+        \label{fig:sfig2}
+    \end{subfigure}
+    \caption{Visual and haptic interfaces used in the experiment~\cite{CHU2023313}.}
+    \label{fig:haptic-visual-cues}
+\end{figure}
 
+\subsection{AR-Assisted Multi-Robot Systems for Enhanced Control and Coordination}
 
-    The operator and robot worked independently, without physical contact, adhering to a sequence of tasks. While the operator picked up blocks randomly and placed them in the correct colored area, the robot randomly delivered blocks from the storage bin to one of the four workspaces. This task required careful coordination to avoid collision and optimize assembly efficiency, highlighting the benefits of \ac{AR}-based interfaces.
-
-    \paragraph{\textbf{Advantages of Multimodal Cues}}
-    The experiment demonstrated that using a combination of visual and haptic cues led to better task performance, as these cues helped the human operator predict the robot's movements, reduce visual strain, and enhance safety. The visual interfaces (especially those displaying proximity) outperformed others in usability, while haptic feedback was useful in environments where visual information might be insufficient or overloaded. Acoustic cues were also mentioned in the literature as a means to reduce anxiety in unpredictable robotic motions.
-
-    \item \textbf{AR-Assisted Multi-Robot Systems for Enhanced Control and Coordination}
+    % \item \textbf{}
     
     The use of \ac{AR} in real-time and planned control modes for multi-robot manufacturing systems significantly improves interaction, operational 
     safety, and efficiency. Li et al.~\cite{LI2022102321} demonstrated how operators can manage and coordinate multiple robots more effectively using 
@@ -690,7 +614,7 @@ Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusse
 
     % do a conclusion of the state of art.
 
-\end{enumerate}
+% \end{enumerate}
 
 
 \section{Future Trends in Human-Robot Collaboration - mantain this part here? where to put it?}
