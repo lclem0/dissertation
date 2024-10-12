@@ -444,7 +444,7 @@ Table \ref{tab:levels_of_control} illustrates the levels of control present in D
 \section{Human-Robot Collaboration in Industrial Applications}
 Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusses how these technologies integrate into \ac{HRC}, demonstrating significant improvements in interaction, safety and efficacy in practical examples from industry solutions with specific emphasis on remote collaboration.
 
-\subsection{Enhancing Human-Robot Collaboration (\ac{HRC}) through Augmented Reality (\ac{AR}) and Digital Twin (\ac{DT}) Implementation}
+\subsection{Enhancing Human-Robot Collaboration through Augmented Reality and Digital Twin Implementation}
 
 % \begin{enumerate}
 %     \item \textbf{Augmented Reality for Enhanced Interaction and Safety}
@@ -490,134 +490,79 @@ In a task where the operator and robot worked independently but in close proximi
     \label{fig:haptic-visual-cues}
 \end{figure}
 
-\subsection{AR-Assisted Multi-Robot Systems for Enhanced Control and Coordination}
+\subsection{Augmented Reality-Assisted Multi-Robot Systems for Enhanced Control and Coordination}
+% below, update the correct references
+The integration of \ac{AR} into multi-robot manufacturing systems offers significant improvements in interaction, operational safety, and efficiency, especially when applied to real-time and planned control modes. Li et al.~\cite{LI2022102321} demonstrated how \ac{AR}-assisted \ac{DTs} enable operators to manage and coordinate multiple robots more effectively. Figure~\ref{fig:physical-digital} depicts an immersive dual view where users can interact with the physical setup of two collaborating robots while simultaneously observing their virtual counterparts through Microsoft HoloLens \ac{AR} glasses. This setup allows for real-time monitoring and simulation of manufacturing processes, improving robot operation control.
 
-    % \item \textbf{}
-    
-    The use of \ac{AR} in real-time and planned control modes for multi-robot manufacturing systems significantly improves interaction, operational 
-    safety, and efficiency. Li et al.~\cite{LI2022102321} demonstrated how operators can manage and coordinate multiple robots more effectively using 
-    \ac{AR}-assisted DTs. Figure~\ref{fig:physical-digital} illustrates the dual view where users interact with the physical setup of two collaborating 
-    robots and view their virtual counterparts via Microsoft Hololens \ac{AR} glasses. This immersive and intuitive control experience allows for 
-    real-time simulation and monitoring of manufacturing processes and robot operations.
-    
-    \begin{figure}[!htpb]
-        \centering
-        \includegraphics[width=0.85\linewidth]{figs/physical-digital.png}
-        \caption{\ac{AR}-assisted \ac{DT}-enabled multi-robot collaborative manufacturing system \cite{LI2022102321}}
-        \label{fig:physical-digital}
-    \end{figure}
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figs/physical-digital.png}
+    \caption{\ac{AR}-assisted \ac{DT}-enabled multi-robot collaborative manufacturing system \cite{LI2022102321}.}
+    \label{fig:physical-digital}
+\end{figure}
 
-    Despite the promising advancements, issues such as \ac{DT} model accuracy and network latency continue to affect system performance. Future work must 
-    focus on enhancing the fidelity and responsiveness of \ac{AR}-assisted \ac{DT} systems to fully realize their potential in industrial applications 
-    \cite{LI2022102321}.
+Despite these advancements, challenges such as \ac{DT} model accuracy and network latency still affect the overall system performance. Addressing these limitations is essential for realizing the full potential of \ac{AR}-assisted \ac{DT} systems in industrial applications~\cite{LI2022102321}. Ong et al.~\cite{ong2020} further explored \ac{AR}-assisted robot programming for welding applications, demonstrating that user-friendly interfaces can significantly reduce the complexity and duration of the programming process. These interfaces enable operators to define welding points and orientations using handheld pointers, thus enhancing task accuracy and efficiency by allowing validation within the actual robot workspace.
 
-    Additionally, Ong et al.~\cite{ong2020} presented an AR-assisted robot programming system for welding applications. Their user-friendly interface 
-    simplifies and accelerates the programming process by allowing users to define welding points and orientations using a handheld pointer. 
-    The \ac{AR} interface enables users to validate programmed tasks within the real robot workspace, enhancing both accuracy and efficiency.
-    
-    Further advancements include the use of smart glasses and smartphones for robot manipulation. Malí et al.~\cite{7819154} developed an \ac{AR} 
-    application that allows users to adjust robot axis values, highlight specific robot points with 3D arrows, navigate to invisible robot points using
-    leading lines, and provide instructions via text and touch interactions. This system was evaluated in a production cell with an industrial robot, 
-    demonstrating improved usability and interaction capabilities.
+Malí et al.~\cite{7819154} developed an \ac{AR} application that permits users to adjust robot axis values, visualize specific robot points through 3D arrows, and navigate hidden points using leading lines. Evaluated in an industrial setting, this application showed improvements in usability and interaction capabilities.
 
-    Puljiz et al.~\cite{puljiz2019conceptsendtoendaugmentedreality,puljiz2} explored various AR-based methods for robotic arm programming using devices like Microsoft HoloLens. 
-    Their approaches include hand-guided task programming, augmented trajectories, and the creation of spatial maps for waypoint placement and virtual 
-    trajectory execution. These methods enable intuitive and precise programming of robotic arms, facilitating seamless integration of virtual instructions 
-    with real-world robot operations.
-    
-    % analise do artigo - AR-assisted digital twin-enabled robot collaborative manufacturing system with human-in-the-loop - ref: LI2022102321
-    In today's highly competitive market, manufacturing is evolving towards large-scale individualization and personalization, leading to an increased demand for flexibility and automation in manufacturing systems. To meet these personalization requirements, human operators are increasingly integrated into the production process~\cite{1}, collaborating with industrial robots that are well-developed and play a significant role in efficiently handling complex manufacturing tasks~\cite{2,3}.
-    % rephrase this below sentence
-    However, most existing robotic systems still carry out pre-programmed tasks in a routine manner with limited intelligence.
+Puljiz et al.~\cite{puljiz2019conceptsendtoendaugmentedreality,puljiz2} explored various \ac{AR}-based methods for robotic arm programming using devices like the Microsoft HoloLens, implementing techniques such as hand-guided task programming, augmented trajectory visualization, and the creation of spatial maps for virtual waypoint placement. These methods facilitate intuitive and accurate robotic arm programming, enabling seamless integration between virtual commands and real-world operations.
 
-    To address this limitation, two effective human--robot collaborative alternatives have emerged. The first is robot learning, which aims to train robots by leveraging advanced \ac{AI} techniques~\cite{6}. The second, more pertinent to our interests, involves placing a human expert in-the-loop to teach or teleoperate the robot remotely.
+Modern manufacturing trends are characterized by a shift toward mass customization and increased flexibility, driven by the demand for individualized products. This necessitates more adaptable manufacturing systems where human operators collaborate with industrial robots to handle complex tasks~\cite{1,2,3}. However, existing robotic systems primarily execute pre-programmed tasks with limited intelligence.
 
-    % reformulate this part
-    % This second alternative represents the most useful approach, since it leverages the main concept of industry 5.0 (extend the existing capabilities of both humans and robots) - Integrating human intelligence in the multi-robot collaborative manufacturing process plays a promising role in today’s smart manufacturing to extend the existing capabilities of both humans and robots.
-    
-    Unlike traditional human--robot collaboration, multi-robot collaborative manufacturing with a human in the loop does not require workers to be physically present in the workspace or to collaborate solely in the physical realm. Instead, it enables manufacturing activities to be performed collaboratively with other equipment in a digitalized cyberspace by remotely teleoperating the robot. This paradigm is flexible in terms of space, safety, and technology, effectively bridging the gap between fully automated and fully manual manufacturing \cite{7}.
+To address this, two promising approaches have emerged: leveraging advanced \ac{AI} techniques for robot learning~\cite{6} and integrating a human-in-the-loop strategy for robot teleoperation. The latter, more aligned with Industry 5.0 principles, extends the capabilities of both humans and robots by incorporating human expertise into collaborative multi-robot processes~\cite{7}.
 
-    
-    Due to the complex scenario in manufacturing right now, there still exist several challenges to realize this human-in-the-loop collaborative manufacturing, such as:
-    \begin{itemize}
-        \item The lack of user-friendly interfaces for robot teleoperation, which require experienced operators to edit or program the robot.
-        \item The need for a more intuitive and user-friendly robot teleoperation system that can be easily operated by operators with relevant experience in the manufacturing industry but lacking experience in robot operation \cite{9}.
-    \end{itemize}
+Unlike traditional \ac{HRC}, multi-robot manufacturing with a human in the loop allows operators to interact with robots from remote locations, not limited to physical workspaces. This paradigm facilitates safer, more flexible manufacturing by bridging the gap between fully automated and manual operations~\cite{7}. However, significant challenges remain, including the need for more user-friendly teleoperation interfaces and systems that can be easily utilized by manufacturing operators without extensive robotics training~\cite{9}.
 
-    % according to the related work:
-    % Multi-agent based collaborative manufacturing:
-    "The main research works in this field have focused on proposing technological solutions to improve safety, productivity, and reduce costs."
-    In order to fill this research gap, wearable \ac{AR}-assisted system and \ac{DT} technologies allow users to observe and teleoperate the real robots accurately in an intuitive manner. 
-    % onde por estas 2 partes?
+Research in multi-agent collaborative manufacturing has focused on enhancing safety, productivity, and cost reduction. Wearable \ac{AR}-assisted systems and \ac{DT} technologies enable accurate and intuitive robot teleoperation. 
+% are the below examples needed?
+% For instance, teleoperation is widely utilized in surgical robots~\cite{22}, robotic manipulators~\cite{11}, aerial robots~\cite{23}, and underwater robots~\cite{24} due to its adaptability across temporal and spatial domains.
 
-    % AR-assisted robot teleoperation 
-    In multi-agent-based collaborative manufacturing, research has primarily focused on technological solutions to enhance safety, increase productivity, and reduce costs. Robot teleoperation allows users to remotely operate robots manually without physical contact, using suitable interfaces like gamepads or keyboards. This control paradigm, benefiting from a close coupling between user input and robot actions, is widely studied in robot control. Owing to its temporal and spatial adaptability, robot teleoperation has been extensively applied in surgical robots~\cite{22}, robotic manipulators~\cite{11}, aerial robots~\cite{23}, and underwater robots~\cite{24}.
-    %  confirm these citations above
-    
-    \ac{AR} enables workers to access both physical and virtual information in a hybrid environment and interact with virtual objects~\cite{26,27}. Thus, \ac{AR} is well-suited for teleoperation tasks, bridging the gap between human and machine systems \cite{this-article}. In recent years, various studies have combined \ac{AR} technology with robot teleoperation. For instance,~\cite{10} introduced an \ac{AR}-based teleoperation system utilizing RGB-D imaging and a posture demonstration device. This system transmits color and depth images of the remote robot environment to the local area, allowing the operator to perceive the environment and perform robot teleoperation.
-    %  confirm these citations above
-    
-    Another example is an \ac{AR}-assisted robot programming system that transforms robot work scenes into \ac{AR} environments, facilitating fast and intuitive robot path planning and task programming \cite{30}.
-    %  confirm these citations above
+By combining \ac{AR} with robot teleoperation, workers can access physical and virtual information simultaneously in a hybrid environment, interacting with virtual objects~\cite{26,27}. An example is an \ac{AR}-based teleoperation system utilizing RGB-D imaging, allowing operators to perceive the remote robot's environment and perform teleoperation~\cite{10}. Another system transforms robot workspaces into \ac{AR} environments for rapid and intuitive path planning and task programming~\cite{30}. These systems improve task performance by providing additional visual cues to enhance the operator's situational awareness~\cite{32}.
 
-    \cite{32} utilized \ac{AR} to provide additional visual information about the environment and the robot, aiming to enhance the operator's visual field with cues, thereby improving task performance.
-    %  confirm these citations above
+Recent advancements in smart manufacturing have led to the development of \ac{DT} models for robot control. For example, \cite{37} used the Unity engine to create a \ac{DT} of a robot arm that could learn manufacturing tasks virtually and replicate them in the physical world. The integration of \ac{DT} and \ac{VR} interfaces has also been proposed to design immersive human-in-the-loop robotic systems, where the \ac{DT} acts as an intermediary layer for task execution and quality monitoring~\cite{41,42}.
 
-    In smart manufacturing, recent studies have started to establish \ac{DT} of robots for device control purposes. For example, \cite{37} developed a \ac{DT} of a robot arm using the Unity engine to virtually learn manufacturing skills, which the physical robot arm could subsequently replicate in the physical space.
-    %  confirm these citations above
+Li et al.~\cite{this-article} proposed a comprehensive framework for an \ac{AR}-assisted, \ac{DT}-enabled robot collaborative manufacturing system featuring human-in-the-loop control. The system architecture, shown in Figure~\ref{f:system-framework}, introduces a multi-node communication mechanism to facilitate interactions among multiple robots and clients. It includes the design of an \ac{AR}-based teleoperation system for pose registration and motion planning, coupled with three \ac{DT}-enabled interaction approaches to achieve closed-loop interaction between virtual and physical robots.
 
-    Recognizing that human involvement remains beneficial and necessary in certain cases,\cite{41} combined \acp{DT} and \ac{VR} interfaces to design an immersive human-in-the-loop robotic assembly system. Similarly, in\cite{42}, the \ac{DT} functioned as an intermediate layer between the operator and a controlled machine (e.g., a robot arm), facilitating interaction and monitoring the quality of remote tasks through an intuitive, low-latency interface.
-    %  confirm these citations above
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figs/framework.jpg}
+    \caption{The architecture of a multi-robot, multi-client communication mechanism \cite{LI2022102321}.}
+    \label{f:system-framework}
+\end{figure}
 
-    Li et al ~\cite{this-article} proposed a framework for system design and implementation as an \ac{AR}-assisted, \ac{DT}-enabled robot collaborative manufacturing system featuring human-in-the-loop control.
-    
-    First, a multi-node communication mechanism is introduced to ensure effective communication among multiple robots and clients within the same system. Afterwards, the design of the \ac{AR}-based robot teleoperation system, including pose registration and motion planning, is detailed. Finally, three \ac{DT}-enabled interaction approaches are developed to achieve closed-loop interaction between the virtual and physical robots, resulting in an architecture described in the figure \ref{f:system-framework}.
+The \ac{DT} of the physical robot, modeled using the Unity engine, is displayed as a hologram in the remote workspace via \ac{AR} glasses, enabling teleoperation and remote monitoring. Pose registration involves aligning the virtual and physical robot models using the Vuforia Engine, while joint alignment translates \ac{DT} joint values into real-world coordinates.
 
-    \begin{figure}[!htpb]
-        \centering
-        \includegraphics[width=0.5\linewidth]{figs/framework.jpg}
-        \caption{The Architecture of Multi-robot Multi-client Communication Mechanism \cite{LI2022102321}}
-        \label{f:system-framework}
-    \end{figure}
+Therefore, a robot control approach aided by \ac{AR} technology offers several benefits:
+\begin{itemize}
+    \item Enhanced predictability of robot posture and motion trajectories.
+    \item Trajectory visualization to prevent safety issues.
+    \item An intuitive interface that overcomes spatial and physical limitations.
+\end{itemize}
 
-    During information transmission, the control communication flow between each robot and client is encrypted using a hash table. Moreover, in manufacturing practice, the system utilizes commercial cloud servers and employs Secure Sockets Layer \ac{SSL} and \ac{SSTP} encryption methods to ensure system stability and security.
+However, observing workspace and robot state information during task execution presents challenges, such as networking latency and positioning accuracy. Proposed solutions include time-sensitive networks and advanced communication technologies such as 5G~\cite{LI2022102321}.
 
-    To implement the concept of a multi-robot collaborative manufacturing system with human-in-the-loop control, a \ac{DT} of the physical robot is modeled using the Unity game engine. The robot twin is then ported to \ac{AR} glasses to enhance the immersive experience, providing both a teleoperation method and a more user-friendly observation approach for the robot. In the \ac{AR} glasses, the \ac{DT} of the robot, synchronized with the real robot, is projected as a hologram in the remote workspace. With the mapped \ac{DT} of the physical robot, remote control of the robot's movement is possible, while its state can be monitored and visualized via the robot \ac{DT}. By integrating the proposed communication mechanism and multiple \ac{AR} teleoperation systems, users can collaborate even when distributed across different locations, aligning with the collaborative manufacturing paradigm.
+The proposed system utilizes IP cameras for workspace monitoring, projecting video feeds onto \ac{AR} glasses for enhanced remote monitoring, as shown in Figure~\ref{f:workspace-visualization}.
 
-    The process of transferring the pose of the \ac{DT} to the physical robot, known as registration, consists mainly of two stages: displayed model alignment and joint alignment. In the model alignment stage, using the pre-designed virtual 3D robot model, the Vuforia Engine is employed to align the model targets between the physical and virtual robots, synchronizing the displayed robot pose. Joint value alignment then involves calculating a joint-value transformation matrix based on the pose-aligned models, converting the \ac{DT}'s joint values in the \ac{AR} coordinate system to the physical robot's joint values in the real-world coordinate system.
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figs/workspace-visualization.jpg}
+    \caption{Demonstration of the workspace observation approach \cite{LI2022102321}.}
+    \label{f:workspace-visualization}
+\end{figure}
+\FloatBarrier
 
 
-    Overall, a robot control method aided by \ac{AR} technology offers clear advantages over direct robot control, such as:
-    \begin{itemize}
-        \item Predictability for the final posture and motion trajectories of the physical robot.
-        \item Visualization of trajectories to prevent potential safety issues.
-        \item User-friendly interface, allowing the manufacturing system to be manipulated without spatial or human limitations.
-    \end{itemize}
+% do a conclusion of the state of art. i will transition into the methodology of proposing the system - taking into consideration several aspects of the state of art such as: using Unity 3D for robot model development, trying to implement the billateral communication of digital twins by utilizing a robot that already has \ac{ROS} working on it as well as the packages that allow it to move. besides that, the use of vuforia to do the pose registration of the robot. The suggestions of the visual and audio cues that can be implemented in AR.  the safety-zone interactions allow the user to be aware of the robot's movements and prevent accidents, as well as the audio implemented - these are great ideas.
+% the robot manipulation was implemented in an easy to understand by non-experient people, were implemented from the remote site - unity - by utilizing the Interface of an HHD device to manipulate each joint separately -  by pressing a publish button that will send the robot to the desired real location.
+%  from the \ac{ROS} side, by manipulating the robot through its console, unity digital twin will be updated in real time, and the robot position will be visible for the remote user by visualizing the robot's position in the HHD device.
+% the camera feed transmition is also good to mention because it allows the remote user to visualzie the workspace that is being worked on.
 
-    Apart from controlling the robot, observing the environmental information of the workspace and the robot's state during task execution remains challenging. In the proposed system, IP cameras monitor the workspace, and the video feed is projected to the \ac{AR} glasses via a video streaming server. This setup allows both the status of the robot and the real-time status of the workspace to be presented in the \ac{AR} glasses, enhancing remote monitoring efficiency, as illustrated in figure \ref{f:workspace-visualization}.
-
-    \begin{figure}[!htpb]
-        \centering
-        \includegraphics[width=0.7\linewidth]{figs/workspace-visualization.jpg}
-        \caption{Demonstration of workspace observation approach \cite{LI2022102321}}
-        \label{f:workspace-visualization}   
-    \end{figure}
-    \FloatBarrier
-
-    Nevertheless, several challenges persist. Networking latency and positioning accuracy are issues presented in the lab-based demonstration. To address networking latency, some novel communication mechanisms (e.g., time-sensitive networks) and technologies (e.g., 5G) are proposed \cite{LI2022102321}. 
-
-
-    % do a conclusion of the state of art. i will transition into the methodology of proposing the system - taking into consideration several aspects of the state of art such as: using Unity 3D for robot model development, trying to implement the billateral communication of digital twins by utilizing a robot that already has \ac{ROS} working on it as well as the packages that allow it to move. besides that, the use of vuforia to do the pose registration of the robot. The suggestions of the visual and audio cues that can be implemented in AR.  the safety-zone interactions allow the user to be aware of the robot's movements and prevent accidents, as well as the audio implemented - these are great ideas.
-    % the robot manipulation was implemented in an easy to understand by non-experient people, were implemented from the remote site - unity - by utilizing the Interface of an HHD device to manipulate each joint separately -  by pressing a publish button that will send the robot to the desired real location.
-    %  from the \ac{ROS} side, by manipulating the robot through its console, unity digital twin will be updated in real time, and the robot position will be visible for the remote user by visualizing the robot's position in the HHD device.
-    % the camera feed transmition is also good to mention because it allows the remote user to visualzie the workspace that is being worked on.
-
-    % do a conclusion of the state of art.
+% do a conclusion of the state of art.
 
 % \end{enumerate}
 
-
-\section{Future Trends in Human-Robot Collaboration - mantain this part here? where to put it?}
+% either this one or the below one
+\section{Future Trends in Human-Robot Collaboration}
 
 According to the 2019 article \textit{Human–Robot Collaboration in Manufacturing Applications: A Review} \cite{robotics8040100}, future directions in 
 \ac{HRC} are evolving due to advancements in cobot technologies, sensing methodologies, and algorithmic developments. The key trends identified include:
@@ -641,12 +586,7 @@ robots to perform more complex tasks. Recently, the scope has expanded to includ
 applying these methods across different application fields and tackling more intricate tasks. This expansion is driven by the emergence of new 
 cobots, advancements in sensing technologies, matured algorithms, and accumulated experience in designing collaborative workcells \cite{robotics8040100}.
 
-
-
 \section{Summary}
-
-
-
 
 Even though significant advancements in \ac{MR}-\ac{DT} implementations over the past, the state-of-the-art literature predominantly focuses on developing applications for on-site personnel. Remote collaboration, particularly in human-robot interaction \ac{HRI} scenarios, has received comparatively less attention, highlighting the need for systems that effectively facilitate both on-site and remote collaboration.
 % confirm if i can say this
@@ -672,6 +612,35 @@ In conclusion, the proposed system will enable remote users to manipulate the ro
 % a more accessible technology, and its role in human–robot collaboration can become much
 % more impactful and relevant to many different domains"
 
+
+% from chat - use this and remove the below future work and summary? - check this
+\section{Future Trends in Human-Robot Collaboration}
+
+As detailed in the 2019 article \textit{Human–Robot Collaboration in Manufacturing Applications: A Review}~\cite{robotics8040100}, the future of \ac{HRC} is shaped by ongoing advancements in collaborative robot technologies, sensing techniques, and algorithmic developments. These trends are instrumental in refining how robots and humans interact and collaborate. Key areas of development include:
+
+\begin{itemize}
+    \item \textbf{Enhanced Scene Understanding}: Future \ac{HRC} systems will prioritize comprehensive contextual awareness, encompassing not only environmental sensing but also interpreting human intentions, task progression, and monitoring dynamic changes. This will enable robots to predict human actions, detect potential risks, and adjust behaviors in real time, significantly improving operational safety and efficiency.
+
+    \item \textbf{Advanced Sensing and Data Fusion}: Achieving enhanced scene understanding necessitates sophisticated sensing methodologies and multi-modal data fusion. By integrating data from visual, tactile, and auditory sensors, robots can construct more nuanced models of their surroundings and human collaborators. Real-time data fusion will enable preemptive responses to hazards, enhancing safety and transparency, which are critical for increasing user trust in \ac{HRC} systems.
+
+    \item \textbf{Integration of Learning Techniques}: Incorporating \ac{ML} and adaptive learning algorithms is pivotal for advancing \ac{HRC}. Techniques such as reinforcement learning and learning-by-demonstration will empower robots to mimic human dexterity, adapt to non-repetitive tasks, and continuously improve from interaction data, leading to more intuitive and efficient collaboration.
+
+    \item \textbf{Improved Task Planning and Adaptive Learning}: The future of \ac{HRC} will be characterized by sophisticated task planning, supported by real-time adaptation mechanisms and complex task modeling. As robots become more adept at learning from structured and unstructured environments, their ability to seamlessly transition between tasks will reduce the need for human intervention in routine planning.
+
+    \item \textbf{User-Friendly Interfaces and Interaction Methods}: Given the rising complexity of \ac{HRC}, developing intuitive interfaces for non-expert users is essential. The implementation of \ac{AR} and \ac{VR} technologies will facilitate immersive, intuitive interactions, reducing cognitive load and improving system usability.
+\end{itemize}
+
+Overall, these emerging trends indicate a shift towards more intelligent, context-aware, and adaptive \ac{HRC} systems that prioritize both operational efficiency and user experience. Historically, the focus has been on enhancing safety standards and enabling robots to perform more complex tasks. This trajectory is now expanding, driven by advancements in cobots, sensing technologies, and algorithmic improvements, alongside accumulated experience in collaborative workcell design~\cite{robotics8040100}.
+
+\section{Summary}
+
+Despite the significant progress in \ac{MR}-\ac{DT} technologies, the state-of-the-art literature largely centers on on-site applications. The potential for enhancing remote collaboration, particularly within \ac{HRC}, remains underexplored. This gap highlights the need for systems that effectively integrate on-site and remote collaboration capabilities.
+
+The proposed project aims to address this gap by developing a generalized conceptual framework for remote collaboration in various scenarios. While on-site features such as digital twin pose registration and multimodal cues have been implemented, the primary focus will be on advancing remote collaboration and bidirectional communication between users.
+
+The project will leverage the Unity 3D engine for robot model development, \ac{ROS} for robot control, and Vuforia for pose registration. Visual and audio cues will be incorporated to enhance safety and situational awareness, with \ac{MR} elements integrated using Unity 3D. Additionally, a camera will provide workspace monitoring.
+
+Ultimately, the proposed system will empower remote users to manipulate the robot through \ac{HHD}, with real-time feedback displayed on the digital twin in Unity. By addressing these challenges, the project aims to advance remote collaboration in \ac{HRC}, contributing to the broader field of \ac{MR}-\ac{DT} applications.
 
 
 
