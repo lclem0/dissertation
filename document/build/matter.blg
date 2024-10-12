@@ -1,0 +1,22 @@
+[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
+[0] Config.pm:307> INFO - Logfile is 'build/matter.blg'
+[57] biber:322> INFO - === sáb out 12, 2024, 23:06:03
+[67] Biber.pm:415> INFO - Reading 'build/matter.bcf'
+[119] Biber.pm:943> INFO - Found 56 citekeys in bib section 0
+[128] Biber.pm:4256> INFO - Processing section 0
+[129] Utils.pm:75> INFO - Globbing data source 'bib/references.bib'
+[129] Utils.pm:91> INFO - Globbed data source 'bib/references.bib' to bib/references.bib
+[136] Biber.pm:4455> INFO - Looking for bibtex format file 'bib/references.bib' for section 0
+[142] bibtex.pm:1653> INFO - LaTeX decoding ...
+[272] bibtex.pm:1471> INFO - Found BibTeX data source 'bib/references.bib'
+[273] Utils.pm:293> WARN - Duplicate entry key: 'Weiss2021' in file 'bib/references.bib', skipping ...
+[364] Utils.pm:293> WARN - year field 'n.d.' in entry 'jugardUniversalRobots' is not an integer - this will probably not sort properly.
+[556] Utils.pm:293> WARN - BibTeX subsystem: /tmp/biber_tmp_5IBJ/references.bib_14812.utf8, line 858, warning: 59 characters of junk seen at toplevel
+[556] Utils.pm:293> WARN - BibTeX subsystem: /tmp/biber_tmp_5IBJ/references.bib_14812.utf8, line 941, warning: 1 characters of junk seen at toplevel
+[592] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[592] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[592] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'pt-PT'
+[592] Biber.pm:4090> INFO - No sort tailoring available for locale 'pt-PT'
+[619] bbl.pm:652> INFO - Writing 'build/matter.bbl' with encoding 'UTF-8'
+[652] bbl.pm:755> INFO - Output to build/matter.bbl
+[652] Biber.pm:128> INFO - WARNINGS: 4

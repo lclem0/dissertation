@@ -142,27 +142,158 @@ Regarding the on-site member's collaboration experience, as explained in the sta
     trial and error, requiring iterative testing and debugging to achieve a functional ROS-Unity connection.
 
     
+
+    \section{Robot Manipulation}
+When it it came to manipulate the digital version of the robot in the Unity environment, it was necessary to understand the Unity Robotics Hub package's way of doing so. A C\# script named \texttt{Controller.cs}, contained the necessary functions to control the robot's joints.
+
+
+After further analysis, three control methods were implemented to control the robot's joints:
+\begin{itemize}
+    \item \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and intuitive manner of controlling the robot, where a panel with a button for each joint was displayed, as shown in figure \ref{f:ui-control}. 
     
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.2\textwidth]{figs/toggle-1.png}
+        \caption{\ac{UI} panel to control the robot's joints individually when using the \ac{UI} Control method}
+        \label{f:ui-control}
+    \end{figure}
+    \FloatBarrier
+
+    Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled.
     
-    \section{New Control Types for Remote Operation}
-    To maintain previously developed code and introduce necessary functionalities for remote operation, three distinct control types were implemented in the \texttt{Controller.cs} script, responsible for controlling the digital twin version of the robot:
+    Upon activating a joint by pressing the desired button, its color turns green instead of the default red button and the user is able to choose between rotating this joint in either the positive or negative direction, also represented by a change in the default color of the corresponding directional arrow. These features are represented in figure --- add figures joint being selected as well as the direction of UI control.
     
-    \begin{enumerate}
-        \item \textbf{UIButtonControl:} Originally developed for the on-site member application, this control type features a UI interface with safety-zone functionalities. It allows operators to interact safely and efficiently with the robot. Its implementation was detailed in the previous chapter.
-        \item \textbf{Position Control:} This control type enables the manual control of the robot's joints through direct user input. It captures and sends the Unity digital twin's joint positions to the ROS environment upon user command, facilitating precise adjustments and real-time interaction.
-        \item \textbf{Joint State Subscription:} This control type continuously updates the Unity digital twin based on joint state data received from ROS. It ensures the digital twin accurately reflects the physical robot's status, automating synchronization between the Unity model and the ROS data.
-    \end{enumerate}
+   
+    \item \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows of the laptop, then sending its position into the ROS environment via Wi-fi. 
+    In order to change the Unity \ac{DT} robot state, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
     
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% good for introducing the control types when explaining them (jointControl and JointStateSub) - remove after having both control types well documented
-    % \subsubsection{Practical Implementation of Control Types}
-    % The \texttt{Controller.cs} script was enhanced to facilitate various operational modes:
-    % \begin{itemize}
-    %     \item \textbf{UI Button Control:} Offers a user-friendly interface that non-technical users can use to interact with the robot, simplifying the control mechanism and enhancing the user experience by utilizing pre-set safety zones and interactive controls.
-    %     \item \textbf{Position Control:} Allows operators to manipulate the robot's joints in real-time via direct interaction, providing a highly interactive and responsive control environment.
-    %     \item \textbf{Joint State Subscription:} Ensures that any changes in the robot's state in the ROS environment are immediately reflected in the Unity simulation, enhancing the accuracy of the digital twin.
-    % \end{itemize}
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    After updating the \ac{DT} robot's state, the user must press the "Publish" button within the user interface, shown in figure \ref{fig:publish_UI_button}. This action publishes the current joint states over Wi-Fi to the ROS environment in a different \ac{ROS} topic than the real robot joint states are defined. 
+
+    \begin{figure}[htpb]
+        \centering
+        \includegraphics[width=0.9\linewidth]{figs/publish.jpeg}
+        \caption{Publish button that sends Unity's \ac{DT} robot joint states into ROS the environment}
+        \label{fig:publish_UI_button}
+    \end{figure}
+    
+    Below, a pseudo-code showcasing how to manipulate the robot in Unity-ROS control mode is described.
+    \begin{algorithm}
+        \caption{Unity Input for Joint Selection and Movement}\label{alg:unity_input}
+        \begin{algorithmic}[1]
+            \State \textbf{Step 1: User Input for Joint Selection and Movement in Unity}
+            \While{Unity Simulation is running AND Unity-ROS Control is selected}
+                \If{RightArrowKeyPressed}
+                    \State Select next joint
+                \ElsIf{LeftArrowKeyPressed}
+                    \State Select previous joint
+                \EndIf
+                \If{UpArrowKeyPressed}
+                    \State Rotate selected joint in positive direction
+                \ElsIf{DownArrowKeyPressed}
+                    \State Rotate selected joint in negative direction
+                \EndIf
+                \If{PublishButtonPressed}
+                    \State joint\_states = GetCurrentJointStates()
+                    \State PublishToROSTopic('unity\_joint\_states', joint\_states)
+                \EndIf
+            \EndWhile
+        \end{algorithmic}
+    \end{algorithm}
+
+    In order to handle this communication process, two ROS nodes were created. 
+    The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package.
+    By creating a new node, called \texttt{joint\_state\_listener}, it then subscribes to the \texttt{unity\_joint\_states} topic, expecting to receive a JointState message type.
+    Afterwards, it initializes a publisher for the \texttt{move\_joint\_unity} topic, that converts this data into a Float64MultiArray format that will be further received by the second node.
+    
+    Regarding the second node, the \texttt{move\_unity.py} script was created in the \texttt{iris\_sami} package. It initializes the \texttt{test\_arm\_movement} node that listens for joint position commands on the \texttt{/move\_joint\_unity} topic.
+    Upon receiving this data, it moves the robotic arm to the desired position.
+
+    This robot position update can be performed either on the simulation environment, where it can be visualized through Rviz, or by utilizing the real UR10e robot. 
+
+    A pseudo-code explanation for the ROS nodes is presented in algorithm \ref{alg:combined_ros_node}.
+    (add a picture of the framework exchange between Unity and ROS and a pseudo code of the ROS nodes created)
+
+
+    % Part 2: ROS Node for Receiving Unity Joint States
+
+    \begin{algorithm}
+        \caption{Combined ROS Node for Receiving Unity Joint States and Moving the Robot}\label{alg:combined_ros_node}
+        \begin{algorithmic}[1]
+            \State \textbf{Step 2 and 3: Combined ROS Node for Receiving Unity Joint States and Moving the Robot}
+            
+            % Initialize first node
+            \State Initialize ROS Node: joint\_state\_listener
+            \State Subscribe to Topic: 'unity\_joint\_states'
+            
+            \While{Receiving JointState message from Unity}
+                \State float\_array\_data = ConvertToFloat64MultiArray(joint\_states)
+                \State PublishToROSTopic('move\_joint\_unity', float\_array\_data)
+            \EndWhile
+            
+            % Initialize second node dependent on the first node
+            \State \textbf{Precondition:} The \texttt{joint\_state\_listener} node must be running and publishing to the \texttt{'move\_joint\_unity'} topic.
+            \State Initialize ROS Node: test\_arm\_movement
+            \State Subscribe to Topic: 'move\_joint\_unity'
+            
+            \While{Receiving Float64MultiArray message from \texttt{move\_joint\_unity}}
+                \State MoveRobotArmTo(joint\_positions)
+                \If{ConnectedToRealRobot}
+                    \State MoveRealRobot()
+                \Else
+                    \State VisualizeInRviz()
+                \EndIf
+            \EndWhile
+        \end{algorithmic}
+    \end{algorithm}
+    
         
+
+    \item \textbf{ROS-Unity Control:} This method allowed the robot to be controlled either in simulation in ROS environment with the Rviz interface, or manually in the robot itself and this would be reflected on the \ac{DT} robot model displayed in the Unity environment.
+
+    Upon selecting this method, the \ac{DT} robot model would be updated in real-time according to the data that is being published into the \texttt{joint\_states} ROS topic.
+    
+    A new script was created in Unity, called \texttt{JointStateSubscriber.cs}, that subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is saved at each frame into a specific \texttt{.json} file. This file is then read by the \texttt{Controller.cs} script, updating the \ac{DT} robot model in Unity.
+    
+    By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent digital twin representation as well as enabling the bidirectional communication and robot manipulation.
+
+    Below, there is another pseudo-code that explains how the ROS-Unity control method works.
+    \begin{algorithm}
+        \caption{ROS-Unity Control via Joint States Subscription}\label{alg:ros_unity_control}
+        \begin{algorithmic}[1]
+            \State \textbf{Step 1: Subscribe to ROS \texttt{joint\_states} topic}
+            \State Attach the Unity Script to the Digital Robot Model Asset: \texttt{JointStateSubscriber.cs}
+            \State Upon Initialization, it subscribes to topic: \texttt{/joint\_states}
+    
+            \While{Receiving JointState message from ROS}
+                \State Extract joint names and positions from the message
+                \State Store joint positions in a dictionary structure
+                \State Save the joint positions to a \texttt{jointStateSubscriber.json} file
+            \EndWhile
+    
+            \State \textbf{Step 2: Update Unity \ac{DT} Robot Model}
+            \While{Simulation is Running}
+                \State Read the \texttt{jointStateSubscriber.json} file
+                \State Update the Unity \ac{DT} robot model using the joint positions from the file
+            \EndWhile
+    
+            \State \textbf{Step 3: Synchronize Real Robot with \ac{DT} Robot}
+            \State The Unity \ac{DT} robot model moves according to the real robot’s joint positions, ensuring a consistent Digital Twin representation.
+        \end{algorithmic}
+    \end{algorithm}
+    
+\end{itemize}
+
+    
+    % \section{New Control Types for Remote Operation}
+    % To maintain previously developed code and introduce necessary functionalities for remote operation, three distinct control types were implemented in the \texttt{Controller.cs} script, responsible for controlling the digital twin version of the robot:
+    
+    % \begin{enumerate}
+    %     \item \textbf{UIButtonControl:} Originally developed for the on-site member application, this control type features a UI interface with safety-zone functionalities. It allows operators to interact safely and efficiently with the robot. Its implementation was detailed in the previous chapter.
+    %     \item \textbf{Position Control:} This control type enables the manual control of the robot's joints through direct user input. It captures and sends the Unity digital twin's joint positions to the ROS environment upon user command, facilitating precise adjustments and real-time interaction.
+    %     \item \textbf{Joint State Subscription:} This control type continuously updates the Unity digital twin based on joint state data received from ROS. It ensures the digital twin accurately reflects the physical robot's status, automating synchronization between the Unity model and the ROS data.
+    % \end{enumerate}
+    
+ 
     
     \subsubsection{Integration Highlights}
     These two nodes addressed key aspects of system performance:

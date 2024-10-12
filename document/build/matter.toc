@@ -1,0 +1,79 @@
+\changetocdepth {2}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax
+\babel@toc {portuguese}{}
+\babel@toc {english}{}
+\contentsline {chapter}{Contents}{i}{section*.1}%
+\contentsline {chapter}{List of Figures}{iv}{section*.2}%
+\contentsline {chapter}{List of Tables}{vi}{section*.8}%
+\contentsline {chapter}{Acronyms}{vii}{chapter*.9}%
+\contentsline {chapter}{\chapternumberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Goals}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Thesis Structure}{2}{section.1.3}%
+\contentsline {chapter}{\chapternumberline {2}State of Art}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Key Drivers of Industry 5.0}{3}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Industry 4.0: The Fourth Industrial Revolution}{3}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Industry 5.0: Reintegrating the Human Element}{4}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Human-Robot Collaboration}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Collaborative Robots (Cobots)}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Digital Realities}{9}{section.2.4}%
+\contentsline {subsubsection}{Augmented Reality \ac {AR}}{10}{section*.27}%
+\contentsline {subsubsection}{Virtual Reality (\ac {VR})}{10}{section*.29}%
+\contentsline {subsubsection}{Mixed Reality (\ac {MR})}{11}{section*.30}%
+\contentsline {section}{\numberline {2.5}Digital Twins}{12}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Human-Robot Collaboration in Industrial Applications}{14}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Enhancing Human-Robot Collaboration through Augmented Reality and Digital Twin Implementation}{14}{subsection.2.6.1}%
+\contentsline {subsubsection}{Augmented Reality for Enhanced Interaction and Safety}{14}{section*.36}%
+\contentsline {subsubsection}{Human-Aware Motion Planning and Safety Improvements}{15}{section*.38}%
+\contentsline {subsubsection}{Implementation Techniques}{15}{section*.39}%
+\contentsline {subsubsection}{Benefits of Multimodal Feedback}{15}{section*.41}%
+\contentsline {subsection}{\numberline {2.6.2}Augmented Reality-Assisted Multi-Robot Systems for Enhanced Control and Coordination}{16}{subsection.2.6.2}%
+\contentsline {section}{\numberline {2.7}Future Trends in Human-Robot Collaboration}{19}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Summary}{20}{section.2.8}%
+\contentsline {chapter}{\chapternumberline {3}Implementation Tools}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Conceptual Model}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Digital Model Implementation of the Robot}{22}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Unity}{22}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Digital Robot Model - URDF Importer Package}{23}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Pose registration}{23}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Vuforia}{23}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Marker Detection}{23}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Billateral Communication}{24}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}UR10e ROS Documentation}{24}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Message Generation}{25}{subsection.3.4.2}%
+\contentsline {chapter}{\chapternumberline {4}Mixed Reality for Human-Robot Collaboration}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}On-site Application Features}{26}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Virtual Safety Zones}{26}{subsection.4.1.1}%
+\contentsline {subsubsection}{Safety Zone Breach Protocol}{27}{section*.55}%
+\contentsline {subsection}{\numberline {4.1.2}Interface}{27}{subsection.4.1.2}%
+\contentsline {subsubsection}{Joint Movement}{28}{section*.57}%
+\contentsline {subsubsection}{Buttons}{28}{section*.58}%
+\contentsline {section}{\numberline {4.2}Remote Collaboration}{29}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Robot Manipulation}{29}{section.4.3}%
+\contentsline {subsubsection}{Integration Highlights}{33}{section*.63}%
+\contentsline {section}{\numberline {4.4}Camera Feed Transmission}{33}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Hardware and Software Setup}{33}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}ROS Camera Node}{34}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Unity Camera Feed Integration}{34}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Data Transmission to Unity}{34}{subsection.4.4.4}%
+\contentsline {chapter}{\chapternumberline {5}Discussion and Evaluation}{36}{chapter.5}%
+\contentsline {chapter}{\chapternumberline {6}Conclusion and Future Work}{37}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Conclusion}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Future Work}{38}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Final Remarks}{39}{subsection.6.2.1}%
+\contentsline {chapter}{References}{40}{chapter*.65}%
+\contentsline {appendix}{\chapternumberline {A}Additional content}{43}{appendix.A}%
+\contentsline {section}{\numberline {A.1}Unity Robotics Hub Overview}{43}{section.A.1}%
+\contentsline {subsection}{\numberline {A.1.1}Available Documentation}{43}{subsection.A.1.1}%
+\contentsline {section}{\numberline {A.2}Establishing the Network Connection}{44}{section.A.2}%
+\contentsline {section}{\numberline {A.3}ROS Message Generation}{45}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Adapting to Specific Message Types}{45}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}ROS-TCP Connector and C\# Message Generation}{45}{subsection.A.3.2}%
+\contentsline {section}{\numberline {A.4}Position Control (1 control type) - Unity to ROS}{46}{section.A.4}%
+\contentsline {subsection}{\numberline {A.4.1}Saving and Sending Joint States}{46}{subsection.A.4.1}%
+\contentsline {subsection}{\numberline {A.4.2}ROS Integration for Position Control}{48}{subsection.A.4.2}%
+\contentsline {section}{\numberline {A.5}Joint State Subscription (2 control type) - ROS to Unity}{50}{section.A.5}%
+\contentsline {subsection}{\numberline {A.5.1}Saving ROS Data}{50}{subsection.A.5.1}%
+\contentsline {subsubsection}{Subscribing to ROS Topics and Data Serialization}{50}{section*.73}%
+\contentsline {subsubsection}{Explanation and Integration}{50}{section*.74}%
+\contentsline {subsubsection}{Practical Application and Visualization}{50}{section*.75}%

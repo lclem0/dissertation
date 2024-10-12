@@ -1,0 +1,41 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax
+\babel@toc {portuguese}{}
+\babel@toc {english}{}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Key enabling technologies in Industry 4.0~\cite {Ahmed2022}\relax }}{4}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Different levels of \ac {HRI} - \cite {Jahanmahin2022}\relax }}{6}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Human-robot collaborative workstation - \cite {MALIK2021102092}\relax }}{7}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Universal Robots UR5 cobot - \cite {jugardUniversalRobots}\relax }}{8}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Reality-Virtuality Continuum, from \cite {milgram1994}\relax }}{9}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Pokémon GO - an example of \ac {MR} application\relax }}{12}{figure.caption.31}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces A Digital Twin reference model \cite {dt_model}\relax }}{14}{figure.caption.34}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Visual and haptic interfaces used in the experiment~\cite {CHU2023313}.\relax }}{16}{figure.caption.42}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces \ac {AR}-assisted \ac {DT}-enabled multi-robot collaborative manufacturing system \cite {LI2022102321}.\relax }}{16}{figure.caption.43}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces The architecture of a multi-robot, multi-client communication mechanism \cite {LI2022102321}.\relax }}{18}{figure.caption.44}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Demonstration of the workspace observation approach \cite {LI2022102321}.\relax }}{19}{figure.caption.45}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Robot UR10e used for the development of the dissertation work, available at IRIS-LAB, University of Aveiro\relax }}{21}{figure.caption.48}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces ArUco marker used with the Logitech c922 camera for segmentation and manipulation of virtual environment\relax }}{24}{figure.caption.52}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Digital UR10 model related to the aruco marker, on Unity environment\relax }}{24}{figure.caption.53}%
+\addvspace {10pt}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Simulated environment showing the display of both the inner and outer safety zones, as well as the robot and the marker inside them\relax }}{27}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Interface featuring developed interactions\relax }}{28}{figure.caption.56}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Example from first joint control menu and toggle buttons for controller menu and safety-zones\relax }}{29}{figure.caption.60}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces \ac {UI} panel to control the robot's joints individually when using the \ac {UI} Control method\relax }}{30}{figure.caption.61}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Publish button that sends Unity's \ac {DT} robot joint states into ROS the environment\relax }}{31}{figure.caption.62}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Astra 3D Orbbec Camera used to transmit real-time video feed from robot environment to remote user\relax }}{34}{figure.caption.64}%
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\addvspace {10pt}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Unity Connection Inspector\relax }}{44}{figure.caption.66}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces JointState message generation in Unity, corresponding to the desired ROS message\relax }}{45}{figure.caption.67}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Unity debug console showing the current digital twin's joint positions\relax }}{46}{figure.caption.68}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces JSON format used to store Unity's digital twin joint states\relax }}{47}{figure.caption.69}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces UI Interface with Publishing button to send Unity's robot joint states into ROS the environment\relax }}{47}{figure.caption.70}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces JSON file containing the unity's joint states that were sent to ROS environment\relax }}{48}{figure.caption.71}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces Two scenarios showcasing the synchronization between Unity and ROS environments using Joint Control\relax }}{49}{figure.caption.72}%
+\contentsline {figure}{\numberline {A.8}{\ignorespaces Rviz environment with simulated Robot and correspondent joint values, in radians\relax }}{51}{figure.caption.76}%
+\contentsline {figure}{\numberline {A.9}{\ignorespaces JointStateSubscriber Json file with Robot's joint values, in radians\relax }}{52}{figure.caption.77}%

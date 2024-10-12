@@ -1,0 +1,2615 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Weiss2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=dc017630d546886d5e70afe84fed8b44}{%
+           family={Weiss},
+           familyi={W\bibinitperiod},
+           given={Astrid},
+           giveni={A\bibinitperiod}}}%
+        {{hash=44f8d9adc6081dfc9579ec054d2d2653}{%
+           family={Wortmeier},
+           familyi={W\bibinitperiod},
+           given={Ann\bibnamedelima Kathrin},
+           giveni={A\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=2d81f3b681ef2c779ced62cf0595fbd1}{%
+           family={Kubicek},
+           familyi={K\bibinitperiod},
+           given={Bettina},
+           giveni={B\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers Inc.}%
+      }
+      \strng{namehash}{61368675826fd4ce4144149d42c245e3}
+      \strng{fullhash}{557c9ccd0436551af76dcdd25e5e31a9}
+      \strng{bibnamehash}{557c9ccd0436551af76dcdd25e5e31a9}
+      \strng{authorbibnamehash}{557c9ccd0436551af76dcdd25e5e31a9}
+      \strng{authornamehash}{61368675826fd4ce4144149d42c245e3}
+      \strng{authorfullhash}{557c9ccd0436551af76dcdd25e5e31a9}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With the vision of Industry 4.0 and cobots, working conditions in industrial settings are starting to change. We review related literature from the fields of human-robot interaction, work and organizational psychology, and sociology of work, as well as an exemplary project case study, and identify research gaps regarding the implications of cobots for work environments. We argue that we are in a transition phase from automation to actual collaboration with robots in manufacturing, and that this will open up a new problem space for investigations, in which a practice lens will be crucial. Based on this, we propose a research agenda for social practice and workplace studies to explore the sociotechnical environment of Industry 4.0 involving cobots at the individual, team, and organizational levels.}
+      \field{issn}{21682305}
+      \field{issue}{4}
+      \field{journaltitle}{IEEE Transactions on Human-Machine Systems}
+      \field{month}{8}
+      \field{title}{Cobots in Industry 4.0: A Roadmap for Future Practice Studies on Human-Robot Collaboration}
+      \field{volume}{51}
+      \field{year}{2021}
+      \field{pages}{335\bibrangedash 345}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/THMS.2021.3092684
+      \endverb
+      \keyw{Human-robot teams,Industry 4.0,human-robot interaction (HRI),sociotechnical systems,workplace}
+    \endentry
+    \entry{Moller2022}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3f1ebb826d79cef897baf9475f09f86f}{%
+           family={Moller},
+           familyi={M\bibinitperiod},
+           given={Dietmar\bibnamedelima P.F.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=7cd73ab9dbfefe932f3b292077beeed4}{%
+           family={Vakilzadian},
+           familyi={V\bibinitperiod},
+           given={Hamid},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1482900fa4d16f85742359ee5df76f6d}{%
+           family={Haas},
+           familyi={H\bibinitperiod},
+           given={Roland\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{91c30db75e85a726ffce0c6fdceb8135}
+      \strng{fullhash}{09efff71408f4d70c1942b8b77d2839e}
+      \strng{bibnamehash}{09efff71408f4d70c1942b8b77d2839e}
+      \strng{authorbibnamehash}{09efff71408f4d70c1942b8b77d2839e}
+      \strng{authornamehash}{91c30db75e85a726ffce0c6fdceb8135}
+      \strng{authorfullhash}{09efff71408f4d70c1942b8b77d2839e}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In the past, manufacturing equipment was instrumented hard-wired. Industrial equipment such as sensors, controllers, and others are expensive, and upgrading manufacturing equipment in existing facilities is costly. The growing use of the Internet of Things (IoT) has driven cost reductions in sensors, controllers, and communications through high volumes of digital devices and value-added components. The manufacturing sector with its massive installed base of legacy equipment has also become an area of interest for the advances in innovative digital technologies. Meanwhile, the next level of innovation in manufacturing has been achieved, labeled by the term 4th Industrial Revolution, in short Industry 4.0. Industry 4.0 takes the automation of manufacturing processes to a new level by introducing customized and intelligent production technologies. Machines are connected and communicate with each other to ultimately make decisions, operate independently, or cooperate with humans in a customer-oriented production environment. This raises the question about the key issues of the next industrial enhancement and the term to call it? The change from Industry 4.0 to the next innovative industrial enhancement is termed Industry 5.0. However, Industry 5.0 has its root in the concept of Industry 4.0. Thus, the key issues of the transition from Industry 4.0 to Industry 5.0 can be seen in the goal of making manufacturability sustainable from economic, ecologic and societal perspectives. This requires building a circular economy with a focus on a human centric industry. The paper describes the development from Industry 4.0 to Industry 5.0.}
+      \field{isbn}{9781665480093}
+      \field{issn}{21540373}
+      \field{journaltitle}{IEEE International Conference on Electro Information Technology}
+      \field{title}{From Industry 4.0 towards Industry 5.0}
+      \field{volume}{2022-May}
+      \field{year}{2022}
+      \field{pages}{61\bibrangedash 68}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/eIT53891.2022.9813831
+      \endverb
+      \keyw{Industry 4.0,Industry 5.0,circular economy,human centric industry,sustainable manufacturability}
+    \endentry
+    \entry{Ahmed2022}{article}{}
+      \name{author}{3}{}{%
+        {{hash=1888a2764e7f83cf6afe375781138882}{%
+           family={Ahmed},
+           familyi={A\bibinitperiod},
+           given={Imran},
+           giveni={I\bibinitperiod}}}%
+        {{hash=988688ddf181de66da9d2f4dc9ca49ac}{%
+           family={Jeon},
+           familyi={J\bibinitperiod},
+           given={Gwanggil},
+           giveni={G\bibinitperiod}}}%
+        {{hash=5e071190ec9de33600de48969adb345b}{%
+           family={Piccialli},
+           familyi={P\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE Computer Society}%
+      }
+      \strng{namehash}{302d080b369ec3a6ba9e8a06c6cf1658}
+      \strng{fullhash}{2514fb27901755d51d4d53179f858086}
+      \strng{bibnamehash}{2514fb27901755d51d4d53179f858086}
+      \strng{authorbibnamehash}{2514fb27901755d51d4d53179f858086}
+      \strng{authornamehash}{302d080b369ec3a6ba9e8a06c6cf1658}
+      \strng{authorfullhash}{2514fb27901755d51d4d53179f858086}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Nowadays, Industry 4.0 can be considered a reality, a paradigm integrating modern technologies and innovations. Artificial intelligence (AI) can be considered the leading component of the industrial transformation enabling intelligent machines to execute tasks autonomously such as self-monitoring, interpretation, diagnosis, and analysis. AI-based methodologies (especially machine learning and deep learning support manufacturers and industries in predicting their maintenance needs and reducing downtime. Explainable artificial intelligence (XAI) studies and designs approaches, algorithms and tools producing human-understandable explanations of AI-based systems information and decisions. This article presents a comprehensive survey of AI and XAI-based methods adopted in the Industry 4.0 scenario. First, we briefly discuss different technologies enabling Industry 4.0. Then, we present an in-depth investigation of the main methods used in the literature: we also provide the details of what, how, why, and where these methods have been applied for Industry 4.0. Furthermore, we illustrate the opportunities and challenges that elicit future research directions toward responsible or human-centric AI and XAI systems, essential for adopting high-stakes industry applications.}
+      \field{issn}{19410050}
+      \field{issue}{8}
+      \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+      \field{month}{8}
+      \field{title}{From Artificial Intelligence to Explainable Artificial Intelligence in Industry 4.0: A Survey on What, How, and Where}
+      \field{volume}{18}
+      \field{year}{2022}
+      \field{pages}{5031\bibrangedash 5042}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1109/TII.2022.3146552
+      \endverb
+      \keyw{Artificial intelligence (AI),Industry 4.0,Internet of Things (IoT),cloud computing,cyber-physical system,explainable artificial intelligence (XAI)}
+    \endentry
+    \entry{GOLOVIANKO2023102}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f6dd517a3abc8ece2cc3ea124cf03d08}{%
+           family={Golovianko},
+           familyi={G\bibinitperiod},
+           given={Mariia},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f7da4039eb0cb31e96816101f8ae9f37}{%
+           family={Terziyan},
+           familyi={T\bibinitperiod},
+           given={Vagan},
+           giveni={V\bibinitperiod}}}%
+        {{hash=452c7d37004e7df149458cb0e1420d1d}{%
+           family={Branytskyi},
+           familyi={B\bibinitperiod},
+           given={Vladyslav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=8f6a7bb9fb25e8ee65bec4e4ce8593cd}{%
+           family={Malyk},
+           familyi={M\bibinitperiod},
+           given={Diana},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{e49420e86240e7cbf2ee37c97701675a}
+      \strng{fullhash}{de8889ce5f3b5787c118884afc36e476}
+      \strng{bibnamehash}{de8889ce5f3b5787c118884afc36e476}
+      \strng{authorbibnamehash}{de8889ce5f3b5787c118884afc36e476}
+      \strng{authornamehash}{e49420e86240e7cbf2ee37c97701675a}
+      \strng{authorfullhash}{de8889ce5f3b5787c118884afc36e476}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Smart manufacturing is being shaped nowadays by two different paradigms: Industry 4.0 proclaims transition to digitalization and automation of processes while emerging Industry 5.0 emphasizes human centricity. This turn can be explained by unprecedented challenges being faced recently by societies, such as, global climate change, pandemics, hybrid and conventional warfare, refugee crises. Sustainable and resilient processes require humans to get back into the loop of organizational decision-making. In this paper, we argue that the most reasonable way to marry the two extremes of automation and value-based human-driven processes is to create an Industry 4.0 + Industry 5.0 hybrid, which inherits the most valuable features of both - efficiency of the Industry 4.0 processes and sustainability of the Industry 5.0 decisions. Digital cognitive clones twinning human decision-making behavior are represented as an enabling technology for the future hybrid and as an accelerator (as well as resilience enabler) of the convergence of the digital and human worlds.}
+      \field{issn}{1877-0509}
+      \field{journaltitle}{Procedia Computer Science}
+      \field{note}{4th International Conference on Industry 4.0 and Smart Manufacturing}
+      \field{title}{Industry 4.0 vs. Industry 5.0: Co-existence, Transition, or a Hybrid}
+      \field{volume}{217}
+      \field{year}{2023}
+      \field{pages}{102\bibrangedash 113}
+      \range{pages}{12}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.procs.2022.12.206
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1877050922022840
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1877050922022840
+      \endverb
+      \keyw{Industry 4.0,Industry 5.0,digital clones,collective intelligence,resilience}
+    \endentry
+    \entry{industry5}{book}{}
+      \name{author}{6}{}{%
+        {{hash=a9bee3ff64e0ef4f06532e455eb1658f}{%
+           family={Commission},
+           familyi={C\bibinitperiod},
+           given={European},
+           giveni={E\bibinitperiod}}}%
+        {{hash=896b581273e82993943cdd2cbbd4d75a}{%
+           family={Research},
+           familyi={R\bibinitperiod},
+           given={Directorate-General},
+           giveni={D\bibinithyphendelim G\bibinitperiod},
+           prefix={for},
+           prefixi={f\bibinitperiod}}}%
+        {{hash=32f28a2c732e178e43a0ceeffa08ab08}{%
+           family={Innovation},
+           familyi={I\bibinitperiod}}}%
+        {{hash=57d64112cde2b20af824f20550a953a2}{%
+           family={Breque},
+           familyi={B\bibinitperiod},
+           given={M},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3418ee88fb0404710149843951359e95}{%
+           family={De\bibnamedelima Nul},
+           familyi={D\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={L},
+           giveni={L\bibinitperiod}}}%
+        {{hash=ac8bfec582b7a9cede5995944814406b}{%
+           family={Petridis},
+           familyi={P\bibinitperiod},
+           given={A},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Publications Office of the European Union}%
+      }
+      \strng{namehash}{11f28c4a6dd3649662f693d97138104b}
+      \strng{fullhash}{e720bc2f25dcfa8d5ec63463244f4005}
+      \strng{bibnamehash}{e720bc2f25dcfa8d5ec63463244f4005}
+      \strng{authorbibnamehash}{e720bc2f25dcfa8d5ec63463244f4005}
+      \strng{authornamehash}{11f28c4a6dd3649662f693d97138104b}
+      \strng{authorfullhash}{e720bc2f25dcfa8d5ec63463244f4005}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Industry 5.0 – Towards a sustainable, human-centric and resilient European industry}
+      \field{year}{2021}
+      \verb{doi}
+      \verb doi/10.2777/308407
+      \endverb
+    \endentry
+    \entry{su11164371}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5345efddc35011fcd0912e307fa90dab}{%
+           family={Nahavandi},
+           familyi={N\bibinitperiod},
+           given={Saeid},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{5345efddc35011fcd0912e307fa90dab}
+      \strng{fullhash}{5345efddc35011fcd0912e307fa90dab}
+      \strng{bibnamehash}{5345efddc35011fcd0912e307fa90dab}
+      \strng{authorbibnamehash}{5345efddc35011fcd0912e307fa90dab}
+      \strng{authornamehash}{5345efddc35011fcd0912e307fa90dab}
+      \strng{authorfullhash}{5345efddc35011fcd0912e307fa90dab}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Staying at the top is getting tougher and more challenging due to the fast-growing and changing digital technologies and AI-based solutions. The world of technology, mass customization, and advanced manufacturing is experiencing a rapid transformation. Robots are becoming even more important as they can now be coupled with the human mind by means of brain–machine interface and advances in artificial intelligence. A strong necessity to increase productivity while not removing human workers from the manufacturing industry is imposing punishing challenges on the global economy. To counter these challenges, this article introduces the concept of Industry 5.0, where robots are intertwined with the human brain and work as collaborator instead of competitor. This article also outlines a number of key features and concerns that every manufacturer may have about Industry 5.0. In addition, it presents several developments achieved by researchers for use in Industry 5.0 applications and environments. Finally, the impact of Industry 5.0 on the manufacturing industry and overall economy is discussed from an economic and productivity point of view, where it is argued that Industry 5.0 will create more jobs than it will take away.}
+      \field{issn}{2071-1050}
+      \field{journaltitle}{Sustainability}
+      \field{number}{16}
+      \field{title}{Industry 5.0—A Human-Centric Solution}
+      \field{volume}{11}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.3390/su11164371
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2071-1050/11/16/4371
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2071-1050/11/16/4371
+      \endverb
+    \endentry
+    \entry{10577684}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=9f0882258bdfdf7a3373fb88028a8533}{%
+           family={Mulongo},
+           familyi={M\bibinitperiod},
+           given={Ndala\bibnamedelima Yves},
+           giveni={N\bibinitperiod\bibinitdelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f0882258bdfdf7a3373fb88028a8533}
+      \strng{fullhash}{9f0882258bdfdf7a3373fb88028a8533}
+      \strng{bibnamehash}{9f0882258bdfdf7a3373fb88028a8533}
+      \strng{authorbibnamehash}{9f0882258bdfdf7a3373fb88028a8533}
+      \strng{authornamehash}{9f0882258bdfdf7a3373fb88028a8533}
+      \strng{authorfullhash}{9f0882258bdfdf7a3373fb88028a8533}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2024 International Conference on Smart Applications, Communications and Networking (SmartNets)}
+      \field{title}{Industry 5.0 a Novel Technological Concept}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/SmartNets61466.2024.10577684
+      \endverb
+      \keyw{Industries;Productivity;Economics;Service robots;Companies;Industrial facilities;Complexity theory;Industry 5.0;Manufacturing 5.0;Healthcare 5.0}
+    \endentry
+    \entry{Ogenyi2021}{article}{}
+      \name{author}{5}{}{%
+        {{hash=5b7931ebe839db57aa7361570d7ee2a7}{%
+           family={Ogenyi},
+           familyi={O\bibinitperiod},
+           given={Uchenna\bibnamedelima Emeoha},
+           giveni={U\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=e60286b1a7583069217270390ee5d2a1}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Jinguo},
+           giveni={J\bibinitperiod}}}%
+        {{hash=1f14a433675e94961d3665b616f6bc66}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Chenguang},
+           giveni={C\bibinitperiod}}}%
+        {{hash=62560a240379eeb10bc620d34c1b0f8d}{%
+           family={Ju},
+           familyi={J\bibinitperiod},
+           given={Zhaojie},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=32e93986e7071a9f42fb57cd7cdca3f3}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Honghai},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers Inc.}%
+      }
+      \strng{namehash}{d947f7c2e77c84448502eaeade2a1b71}
+      \strng{fullhash}{3342323bb916dd8fd0d2647f669a542f}
+      \strng{bibnamehash}{3342323bb916dd8fd0d2647f669a542f}
+      \strng{authorbibnamehash}{3342323bb916dd8fd0d2647f669a542f}
+      \strng{authornamehash}{d947f7c2e77c84448502eaeade2a1b71}
+      \strng{authorfullhash}{3342323bb916dd8fd0d2647f669a542f}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article presents a state-of-the-art survey on the robotic systems, sensors, actuators, and collaborative strategies for physical human-robot collaboration (pHRC). This article starts with an overview of some robotic systems with cutting-edge technologies (sensors and actuators) suitable for pHRC operations and the intelligent assist devices employed in pHRC. Sensors being among the essential components to establish communication between a human and a robotic system are surveyed. The sensor supplies the signal needed to drive the robotic actuators. The survey reveals that the design of new generation collaborative robots and other intelligent robotic systems has paved the way for sophisticated learning techniques and control algorithms to be deployed in pHRC. Furthermore, it revealed the relevant components needed to be considered for effective pHRC to be accomplished. Finally, a discussion of the major advances is made, some research directions, and future challenges are presented.}
+      \field{issn}{21682275}
+      \field{issue}{4}
+      \field{journaltitle}{IEEE Transactions on Cybernetics}
+      \field{month}{4}
+      \field{title}{Physical Human-Robot Collaboration: Robotic Systems, Learning Methods, Collaborative Strategies, Sensors, and Actuators}
+      \field{volume}{51}
+      \field{year}{2021}
+      \field{pages}{1888\bibrangedash 1901}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1109/TCYB.2019.2947532
+      \endverb
+      \keyw{Actuators,collaborative robots,human-robot collaboration (HRC),human-robot interaction,physical HRC (pHRC),robotic systems,sensors}
+    \endentry
+    \entry{Jahanmahin2022}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=d0f5c652fc9812dddbb388f455461f5e}{%
+           family={Jahanmahin},
+           familyi={J\bibinitperiod},
+           given={Roohollah},
+           giveni={R\bibinitperiod}}}%
+        {{hash=ed0d11653c4d51a6d695d666e6c49561}{%
+           family={Masoud},
+           familyi={M\bibinitperiod},
+           given={Sara},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cee84d7a8e16eb55afeefcb084f90d26}{%
+           family={Rickli},
+           familyi={R\bibinitperiod},
+           given={Jeremy},
+           giveni={J\bibinitperiod}}}%
+        {{hash=49e3bce8649a849ea6512f22f9adfab0}{%
+           family={Djuric},
+           familyi={D\bibinitperiod},
+           given={Ana},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Ltd}%
+      }
+      \strng{namehash}{5a528470106ddc87d97ad5729bbfc239}
+      \strng{fullhash}{08c9719399353ee5411e23ac7334a4f5}
+      \strng{bibnamehash}{08c9719399353ee5411e23ac7334a4f5}
+      \strng{authorbibnamehash}{08c9719399353ee5411e23ac7334a4f5}
+      \strng{authornamehash}{5a528470106ddc87d97ad5729bbfc239}
+      \strng{authorfullhash}{08c9719399353ee5411e23ac7334a4f5}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Human behavior, despite its complexity, follows structured principles. Better understanding the underlying concepts of human behavior in an industrial setting can help us to create more reliable and effective collaborative robotic environments. In factories, robots can interact with humans in unseen situations through sensing, processing, and predicting human behaviors. This work summarizes the efforts to express human behavior in industrial human-robot interactions (HRI) in manufacturing. For this purpose, all papers related to HRI in production systems, additive manufacturing, agent behavior, human cognition, cloud robotics, cooperative Markov decision process, multi-robot design, and collaborative robots are reviewed in this work. The discussion includes the existing methods, research gaps, and future research directions for envisioning a safer yet more efficient HRI practice. In detail, we discuss current research about human-centered HRI and robot-centered HRI based on the focus areas such as factorial analysis, predictive analysis, and control structures for social and/or industrial/manufacturing robots. In the last part, based on our findings, we report major limitations of the existing literature and propose future research directions such as cognitive modeling, perception development, interaction design, sensor-based control, and social effects in manufacturing.}
+      \field{issn}{07365845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{month}{12}
+      \field{title}{Human-robot interactions in manufacturing: A survey of human behavior modeling}
+      \field{volume}{78}
+      \field{year}{2022}
+      \verb{doi}
+      \verb 10.1016/j.rcim.2022.102404
+      \endverb
+      \keyw{Collaborative robots,Human behavior modeling,Human-robot interaction,Manufacturing}
+    \endentry
+    \entry{MALIK2021102092}{article}{}
+      \name{author}{2}{}{%
+        {{hash=42fc9ee59a881ccd738a894bde26abdb}{%
+           family={Malik},
+           familyi={M\bibinitperiod},
+           given={Ali\bibnamedelima Ahmad},
+           giveni={A\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=60249b88b91aaedd45c6062ea5443bc0}{%
+           family={Brem},
+           familyi={B\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f271e2c0dee26926a6f46efd06fadd1}
+      \strng{fullhash}{3f271e2c0dee26926a6f46efd06fadd1}
+      \strng{bibnamehash}{3f271e2c0dee26926a6f46efd06fadd1}
+      \strng{authorbibnamehash}{3f271e2c0dee26926a6f46efd06fadd1}
+      \strng{authornamehash}{3f271e2c0dee26926a6f46efd06fadd1}
+      \strng{authorfullhash}{3f271e2c0dee26926a6f46efd06fadd1}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Human-robot collaboration (HRC) can expand the level of automation in areas that have conventionally been difficult to automate such as assembly. However, the need of adaptability and the dynamics of human presence are keeping the full potential of human-robot collaborative systems difficult to achieve. This paper explores the opportunities of using a digital twin to address the complexity of collaborative production systems through an industrial case and a demonstrator. A digital twin, as a virtual counterpart of a physical human-robot assembly system, is built as a ‘front-runner’ for validation and control throughout its design, build and operation. The forms of digital twins along system's life cycle, its building blocks and the potential advantages are presented and discussed. Recommendations for future research and practice in the use of digital twins in the field of cobotics are given.}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{Digital twins for collaborative robots: A case study in human-robot interaction}
+      \field{volume}{68}
+      \field{year}{2021}
+      \field{pages}{102092}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2020.102092
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584520303021
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584520303021
+      \endverb
+      \keyw{Human-robot collaboration,Cobot,Collaborative robot,Digital twin,Demonstrator,Simulation}
+    \endentry
+    \entry{robotics8040100}{article}{}
+      \name{author}{5}{}{%
+        {{hash=af97a92fb975fa41dcfb640b7d630a9a}{%
+           family={Matheson},
+           familyi={M\bibinitperiod},
+           given={Eloise},
+           giveni={E\bibinitperiod}}}%
+        {{hash=43c5ca67c1f783336f19b2f6b179b127}{%
+           family={Minto},
+           familyi={M\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=46fbe009ebba8d3545c90a480b17eae4}{%
+           family={Zampieri},
+           familyi={Z\bibinitperiod},
+           given={Emanuele\bibnamedelimb G.\bibnamedelimi G.},
+           giveni={E\bibinitperiod\bibinitdelim G\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=8fcd628a96c2acb94a5a02bfd5d46472}{%
+           family={Faccio},
+           familyi={F\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4d79f91abba7ec6e6009905014d3f960}{%
+           family={Rosati},
+           familyi={R\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{ad2ab088efbc3da4d89536e2a1f885ac}
+      \strng{fullhash}{e17c0f4b923d2657e19c4ead38010273}
+      \strng{bibnamehash}{e17c0f4b923d2657e19c4ead38010273}
+      \strng{authorbibnamehash}{e17c0f4b923d2657e19c4ead38010273}
+      \strng{authornamehash}{ad2ab088efbc3da4d89536e2a1f885ac}
+      \strng{authorfullhash}{e17c0f4b923d2657e19c4ead38010273}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper provides an overview of collaborative robotics towards manufacturing applications. Over the last decade, the market has seen the introduction of a new category of robots—collaborative robots (or “cobots”)—designed to physically interact with humans in a shared environment, without the typical barriers or protective cages used in traditional robotics systems. Their potential is undisputed, especially regarding their flexible ability to make simple, quick, and cheap layout changes; however, it is necessary to have adequate knowledge of their correct uses and characteristics to obtain the advantages of this form of robotics, which can be a barrier for industry uptake. The paper starts with an introduction of human–robot collaboration, presenting the related standards and modes of operation. An extensive literature review of works published in this area is undertaken, with particular attention to the main industrial cases of application. The paper concludes with an analysis of the future trends in human–robot collaboration as determined by the authors.}
+      \field{issn}{2218-6581}
+      \field{journaltitle}{Robotics}
+      \field{number}{4}
+      \field{title}{Human–Robot Collaboration in Manufacturing Applications: A Review}
+      \field{volume}{8}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.3390/robotics8040100
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/2218-6581/8/4/100
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/2218-6581/8/4/100
+      \endverb
+    \endentry
+    \entry{barbazza2017agility}{article}{}
+      \name{author}{4}{}{%
+        {{hash=764704541c6d751761eb718a44365ed1}{%
+           family={Barbazza},
+           familyi={B\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=8fcd628a96c2acb94a5a02bfd5d46472}{%
+           family={Faccio},
+           familyi={F\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=377a7b242506dd64397748e5810cd283}{%
+           family={Oscari},
+           familyi={O\bibinitperiod},
+           given={Fabio},
+           giveni={F\bibinitperiod}}}%
+        {{hash=4d79f91abba7ec6e6009905014d3f960}{%
+           family={Rosati},
+           familyi={R\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{cb544fef6a582390e720c8e8e5ddd270}
+      \strng{fullhash}{42825ce870c19aa776a02b082145f5f8}
+      \strng{bibnamehash}{42825ce870c19aa776a02b082145f5f8}
+      \strng{authorbibnamehash}{42825ce870c19aa776a02b082145f5f8}
+      \strng{authornamehash}{cb544fef6a582390e720c8e8e5ddd270}
+      \strng{authorfullhash}{42825ce870c19aa776a02b082145f5f8}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Assembly Automation}
+      \field{number}{4}
+      \field{title}{Agility in Assembly Systems: A Comparison Model}
+      \field{volume}{37}
+      \field{year}{2017}
+      \field{pages}{411\bibrangedash 421}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1108/AA-10-2016-128
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1108/AA-10-2016-128
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1108/AA-10-2016-128
+      \endverb
+    \endentry
+    \entry{7140065}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=84d623ec027dcc4dee7271729a5294f3}{%
+           family={Guerin},
+           familyi={G\bibinitperiod},
+           given={Kelleher\bibnamedelima R.},
+           giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=a93733523c7a886c297c1feadfff2535}{%
+           family={Lea},
+           familyi={L\bibinitperiod},
+           given={Colin},
+           giveni={C\bibinitperiod}}}%
+        {{hash=762938d41b2939242c2dfb5b2865d792}{%
+           family={Paxton},
+           familyi={P\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=8143c093f5cb992b8a77c3b692b5b22d}{%
+           family={Hager},
+           familyi={H\bibinitperiod},
+           given={Gregory\bibnamedelima D.},
+           giveni={G\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d33eb748049d89a0698257d80e4232a}
+      \strng{fullhash}{c27c3d20fba5c12294e8c9f5e42ebe66}
+      \strng{bibnamehash}{c27c3d20fba5c12294e8c9f5e42ebe66}
+      \strng{authorbibnamehash}{c27c3d20fba5c12294e8c9f5e42ebe66}
+      \strng{authornamehash}{7d33eb748049d89a0698257d80e4232a}
+      \strng{authorfullhash}{c27c3d20fba5c12294e8c9f5e42ebe66}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2015 IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{title}{A framework for end-user instruction of a robot assistant for manufacturing}
+      \field{year}{2015}
+      \field{pages}{6167\bibrangedash 6174}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ICRA.2015.7140065
+      \endverb
+      \keyw{Service robots;Robot sensing systems;Collaboration;Manufacturing;Automation;Graphical user interfaces}
+    \endentry
+    \entry{cobot-definition}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=e686efe156b7d973c12b05e0ab58fbf8}{%
+           family={Colgate},
+           familyi={C\bibinitperiod},
+           given={{J. Edward}},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3c062eacf3e34c7a9d5f2e76ff0a3e95}{%
+           family={Wannasuphoprasit},
+           familyi={W\bibinitperiod},
+           given={Witaya},
+           giveni={W\bibinitperiod}}}%
+        {{hash=8aa9f583fa033864f4171a0aaa06b668}{%
+           family={Peshkin},
+           familyi={P\bibinitperiod},
+           given={{Michael A.}},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {English (US)}%
+      }
+      \strng{namehash}{66654126b582aabd404077dc19807f73}
+      \strng{fullhash}{03534f58fb52af383b1b38d13c526fa4}
+      \strng{bibnamehash}{03534f58fb52af383b1b38d13c526fa4}
+      \strng{authorbibnamehash}{03534f58fb52af383b1b38d13c526fa4}
+      \strng{authornamehash}{66654126b582aabd404077dc19807f73}
+      \strng{authorfullhash}{03534f58fb52af383b1b38d13c526fa4}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A 'cobot' is a robotic device which manipulates objects in collaboration with a human operator. A cobot provides assistance to the human operator by setting up virtual surfaces which can be used to constrain and guide motion. While conventional servo-actuated haptic displays may be used in this way also, an important distinction is that, while haptic displays are active devices which can supply energy to the human operator, cobots are intrinsically passive. This is because cobots do not use servos to implement constraint, but instead employ 'steerable' nonholonomic joints. As a consequence of their passivity, cobots are potentially well-suited to safety-critical tasks (e.g. surgery) or those which involve large interaction forces (e.g. automobile assembly). This paper focuses on the simplest possible cobot, which has only a single joint (a steerable wheel). Two control modes of this 'unicycle cobot', termed 'virtual caster' and 'virtual wall' control, are developed in detail. Experimental results are also presented.}
+      \field{month}{12}
+      \field{note}{Proceedings of the 1996 ASME International Mechanical Engineering Congress and Exposition ; Conference date: 17-11-1996 Through 22-11-1996}
+      \field{title}{Cobots: robots for collaboration with human operators}
+      \field{year}{1996}
+      \field{pages}{433\bibrangedash 439}
+      \range{pages}{7}
+    \endentry
+    \entry{jugardUniversalRobots}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=d37729fe315bfbf9789e9b4949a1b02f}{%
+           family={{JUGARD+KÜNSTNER GmbH}},
+           familyi={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{d37729fe315bfbf9789e9b4949a1b02f}
+      \strng{fullhash}{d37729fe315bfbf9789e9b4949a1b02f}
+      \strng{bibnamehash}{d37729fe315bfbf9789e9b4949a1b02f}
+      \strng{authorbibnamehash}{d37729fe315bfbf9789e9b4949a1b02f}
+      \strng{authornamehash}{d37729fe315bfbf9789e9b4949a1b02f}
+      \strng{authorfullhash}{d37729fe315bfbf9789e9b4949a1b02f}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.jugard-kuenstner.de/universal-robots/cobots/ur5e}}
+      \field{note}{Accessed: 2024-09-23}
+      \field{title}{UR5e - Collaborative Robot from Universal Robots}
+      \field{year}{n.d.}
+    \endentry
+    \entry{cobots-design}{article}{}
+      \name{author}{6}{}{%
+        {{hash=7c1a29f1b7a7f9aa10ceeaf12c12b47c}{%
+           family={Michalos},
+           familyi={M\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=c48992e82230d80bc885762d33e0a50e}{%
+           family={Makris},
+           familyi={M\bibinitperiod},
+           given={Sotiris},
+           giveni={S\bibinitperiod}}}%
+        {{hash=87433a42a7269c80aa6cfbd923da43fa}{%
+           family={Tsarouchi},
+           familyi={T\bibinitperiod},
+           given={Panagiota},
+           giveni={P\bibinitperiod}}}%
+        {{hash=a71924e1f84be966d64223c21155d6da}{%
+           family={Guasch},
+           familyi={G\bibinitperiod},
+           given={Toni},
+           giveni={T\bibinitperiod}}}%
+        {{hash=ed843e8bf957fd09c330b2be447e9aac}{%
+           family={Kontovrakis},
+           familyi={K\bibinitperiod},
+           given={Dimitris},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9a1d9a734ecac75171a7fd4f8671a2c0}{%
+           family={Chryssolouris},
+           familyi={C\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{725cfb53db74ba8b0efa9975f8561ae5}
+      \strng{fullhash}{7a58190529e4caa215152851e469ce9a}
+      \strng{bibnamehash}{7a58190529e4caa215152851e469ce9a}
+      \strng{authorbibnamehash}{7a58190529e4caa215152851e469ce9a}
+      \strng{authornamehash}{725cfb53db74ba8b0efa9975f8561ae5}
+      \strng{authorfullhash}{7a58190529e4caa215152851e469ce9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper deals with the design of assembly stations, where human-robot collaborative tasks are carried out. Based on the assembly process specifications, different control, safety and operator support strategies have to be implemented in order for the human safety and the overall system's productivity to be ensured. The variability of assembly processes (screwing, insertion, fixing etc.), components (small/big/flexible parts), robotic equipment (single arm, dual arm, overhead) and station layouts, dictates different approaches, in terms of human-robot interaction. Enabling technologies involve safety sensors for real time workspace supervision, certified robot control safe functionalities as well as systems for the operator's better integration into the collaborative environment via Augmented Reality and web services. The application of such concepts is examined in three pilot cases.}
+      \field{issn}{2212-8271}
+      \field{journaltitle}{Procedia CIRP}
+      \field{note}{CIRPe 2015 - Understanding the life cycle implications of manufacturing}
+      \field{title}{Design Considerations for Safe Human-robot Collaborative Workplaces}
+      \field{volume}{37}
+      \field{year}{2015}
+      \field{pages}{248\bibrangedash 253}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.procir.2015.08.014
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2212827115008550
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2212827115008550
+      \endverb
+      \keyw{Hybrid Assembly System,Robot,Human aspect,Safety,Assembly ;}
+    \endentry
+    \entry{cobot-2019collaborative}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8fcd628a96c2acb94a5a02bfd5d46472}{%
+           family={Faccio},
+           familyi={F\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=889ede51d74f86529aa6d43b0bf4be58}{%
+           family={Bottin},
+           familyi={B\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4d79f91abba7ec6e6009905014d3f960}{%
+           family={Rosati},
+           familyi={R\bibinitperiod},
+           given={Giulio},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b8f2c65ec16d18ee4456a2909ff8854}
+      \strng{fullhash}{cccbcadb25182caa43e8872c4533aa6e}
+      \strng{bibnamehash}{cccbcadb25182caa43e8872c4533aa6e}
+      \strng{authorbibnamehash}{cccbcadb25182caa43e8872c4533aa6e}
+      \strng{authornamehash}{4b8f2c65ec16d18ee4456a2909ff8854}
+      \strng{authorfullhash}{cccbcadb25182caa43e8872c4533aa6e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Advanced Manufacturing Technology}
+      \field{title}{Collaborative and Traditional Robotic Assembly: A Comparison Model}
+      \field{volume}{102}
+      \field{year}{2019}
+      \field{pages}{1355\bibrangedash 1372}
+      \range{pages}{18}
+      \verb{doi}
+      \verb 10.1007/s00170-018-03247-z
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s00170-018-03247-z
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00170-018-03247-z
+      \endverb
+    \endentry
+    \entry{cobots-implementation}{article}{}
+      \name{author}{4}{}{%
+        {{hash=841a084f847c34ae888df56d2aee713f}{%
+           family={Fechter},
+           familyi={F\bibinitperiod},
+           given={Manuel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d6f2b70cefe63dd38fcda2a9a6a6c91f}{%
+           family={Foith-Förster},
+           familyi={F\bibinithyphendelim F\bibinitperiod},
+           given={Petra},
+           giveni={P\bibinitperiod}}}%
+        {{hash=54b3d0710a04de9ec44fc461af318fd0}{%
+           family={Pfeiffer},
+           familyi={P\bibinitperiod},
+           given={Marc\bibnamedelima Sascha},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=509c536add6ee6b56bd34737c3249dca}{%
+           family={Bauernhansl},
+           familyi={B\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{109efd1a83d12e3890f40348123cbeb0}
+      \strng{fullhash}{29debf67bfd82c39d08a8414840da7aa}
+      \strng{bibnamehash}{29debf67bfd82c39d08a8414840da7aa}
+      \strng{authorbibnamehash}{29debf67bfd82c39d08a8414840da7aa}
+      \strng{authornamehash}{109efd1a83d12e3890f40348123cbeb0}
+      \strng{authorfullhash}{29debf67bfd82c39d08a8414840da7aa}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The fluctuation of markets and increasing product variants result in uncertain production volumes. Production systems must be able to continually rescale their output without loss of efficiency. This paper presents an axiomatic design approach to allocate complex final assembly tasks to process modules of human-robot collaboration in a flexibly linked layout. After a brief introduction into axiomatic design and the automation capability assessment, the systematic of task allocation to human workers and lightweight robots is described. This paper concludes with an automotive industry use case of the presented approach in the ARENA2036 research campus.}
+      \field{issn}{2212-8271}
+      \field{journaltitle}{Procedia CIRP}
+      \field{note}{26th CIRP Design Conference}
+      \field{title}{Axiomatic Design Approach for Human-robot Collaboration in Flexibly Linked Assembly Layouts}
+      \field{volume}{50}
+      \field{year}{2016}
+      \field{pages}{629\bibrangedash 634}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.procir.2016.04.186
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2212827116305686
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2212827116305686
+      \endverb
+      \keyw{Human-Robot Collaboration,Axiomatic Design,Scalability}
+    \endentry
+    \entry{milgram1994}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=c143bedf8db346a0c640ae3b120d42db}{%
+           family={Ladwig},
+           familyi={L\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod}}}%
+        {{hash=f9f8333bd98dc06743a2f6151cde4829}{%
+           family={Geiger},
+           familyi={G\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=8404271f4ae5ce86cd5ca6ca27bada6b}{%
+           family={Auer},
+           familyi={A\bibinitperiod},
+           given={Michael\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=b316fe23d774d697a708994ea955b3e8}{%
+           family={Langmann},
+           familyi={L\bibinitperiod},
+           given={Reinhard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{c6e267dc5e56e89345bf1aa9aa98bc1e}
+      \strng{fullhash}{c6e267dc5e56e89345bf1aa9aa98bc1e}
+      \strng{bibnamehash}{c6e267dc5e56e89345bf1aa9aa98bc1e}
+      \strng{authorbibnamehash}{c6e267dc5e56e89345bf1aa9aa98bc1e}
+      \strng{authornamehash}{c6e267dc5e56e89345bf1aa9aa98bc1e}
+      \strng{authorfullhash}{c6e267dc5e56e89345bf1aa9aa98bc1e}
+      \strng{editorbibnamehash}{7712cde05598db911c4becd2857aac96}
+      \strng{editornamehash}{7712cde05598db911c4becd2857aac96}
+      \strng{editorfullhash}{7712cde05598db911c4becd2857aac96}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Mixed Reality is defined as a combination of Reality, Augmented Reality, Augmented Virtuality and Virtual Reality. This innovative technology can aid with the transition between these stages. The enhancement of reality with synthetic images allows us to perform tasks more easily, such as the collaboration between people who are at different locations. Collaborative manufacturing, assembly tasks or education can be conducted remotely, even if the collaborators do not physically meet. This paper reviews both past and recent research, identifies benefits and limitations, and extracts design guidelines for the creation of collaborative Mixed Reality applications in technical settings.}
+      \field{booktitle}{Smart Industry {\&} Smart Education}
+      \field{isbn}{978-3-319-95678-7}
+      \field{title}{A Literature Review on Collaboration in Mixed Reality}
+      \field{year}{2019}
+      \field{pages}{591\bibrangedash 600}
+      \range{pages}{10}
+    \endentry
+    \entry{liu2022digitaltwin}{article}{}
+      \name{author}{3}{}{%
+        {{hash=581a43ab29ece40246cbb35d32c7519c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Y.K.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=432b2ad34673e7d223d89f2809aeb655}{%
+           family={Ong},
+           familyi={O\bibinitperiod},
+           given={S.K.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ea60886b3e56ab80762010b43dd61d72}{%
+           family={Nee},
+           familyi={N\bibinitperiod},
+           given={A.Y.C.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3cf468fda075784369e2f955783ea63}
+      \strng{fullhash}{341cc64b617a8fdfc5e58830f706822e}
+      \strng{bibnamehash}{341cc64b617a8fdfc5e58830f706822e}
+      \strng{authorbibnamehash}{341cc64b617a8fdfc5e58830f706822e}
+      \strng{authornamehash}{a3cf468fda075784369e2f955783ea63}
+      \strng{authorfullhash}{341cc64b617a8fdfc5e58830f706822e}
+      \field{extraname}{1}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advances in Manufacturing}
+      \field{title}{State-of-the-art survey on digital twin implementations}
+      \field{volume}{10}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 23}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/s40436-021-00375-w
+      \endverb
+    \endentry
+    \entry{Azuma1997}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=65a33080a179a3a436c552a32d1f64f0}{%
+           family={Azuma},
+           familyi={A\bibinitperiod},
+           given={Ronald\bibnamedelima T},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \strng{namehash}{65a33080a179a3a436c552a32d1f64f0}
+      \strng{fullhash}{65a33080a179a3a436c552a32d1f64f0}
+      \strng{bibnamehash}{65a33080a179a3a436c552a32d1f64f0}
+      \strng{authorbibnamehash}{65a33080a179a3a436c552a32d1f64f0}
+      \strng{authornamehash}{65a33080a179a3a436c552a32d1f64f0}
+      \strng{authorfullhash}{65a33080a179a3a436c552a32d1f64f0}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper surveys the field of Augmented Reality, in which 3-D virtual objects are integrated into a 3-D real environment in real time. It describes the medical, manufacturing, visualization, path planning, entertainment and military applications that have been explored. This paper describes the characteristics of Augmented Reality systems, including a detailed discussion of the tradeoffs between optical and video blending approaches. Registration and sensing errors are two of the biggest problems in building effective Augmented Reality systems, so this paper summarizes current efforts to overcome these problems. Future directions and areas requiring further research are discussed. This survey provides a starting point for anyone interested in researching or using Augmented Reality.}
+      \field{journaltitle}{Presence: Teleoperators and Virtual Environments}
+      \field{title}{A Survey of Augmented Reality}
+      \field{volume}{6}
+      \field{year}{1997}
+      \field{pages}{355\bibrangedash 385}
+      \range{pages}{31}
+      \verb{urlraw}
+      \verb http://www.cs.unc.edu/~azumaW:
+      \endverb
+      \verb{url}
+      \verb http://www.cs.unc.edu/~azumaW:
+      \endverb
+    \endentry
+    \entry{whatismixedreality}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=a81ac4e33fb3462b33cb7ad6c3058402}{%
+           family={Speicher},
+           familyi={S\bibinitperiod},
+           given={Maximilian},
+           giveni={M\bibinitperiod}}}%
+        {{hash=852aad698c27d0a117440dbac6a9891e}{%
+           family={Hall},
+           familyi={H\bibinitperiod},
+           given={Brian\bibnamedelima D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=a6553680b8b954db52f61c89671698e3}{%
+           family={Nebeling},
+           familyi={N\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Glasgow, Scotland Uk}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{6ae788a6c1f48888db1028ff6ce1515c}
+      \strng{fullhash}{e2367fc691752f42cb6a8fd3e6b45752}
+      \strng{bibnamehash}{e2367fc691752f42cb6a8fd3e6b45752}
+      \strng{authorbibnamehash}{e2367fc691752f42cb6a8fd3e6b45752}
+      \strng{authornamehash}{6ae788a6c1f48888db1028ff6ce1515c}
+      \strng{authorfullhash}{e2367fc691752f42cb6a8fd3e6b45752}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{What is Mixed Reality (MR)? To revisit this question given the many recent developments, we conducted interviews with ten AR/VR experts from academia and industry, as well as a literature survey of 68 papers. We find that, while there are prominent examples, there is no universally agreed on, one-size-fits-all definition of MR. Rather, we identified six partially competing notions from the literature and experts' responses. We then started to isolate the different aspects of reality relevant for MR experiences, going beyond the primarily visual notions and extending to audio, motion, haptics, taste, and smell. We distill our findings into a conceptual framework with seven dimensions to characterize MR applications in terms of the number of environments, number of users, level of immersion, level of virtuality, degree of interaction, input, and output. Our goal with this paper is to support classification and discussion of MR applications' design and provide a better means to researchers to contextualize their work within the increasingly fragmented MR landscape.}
+      \field{booktitle}{Proceedings of the 2019 CHI Conference on Human Factors in Computing Systems}
+      \field{isbn}{9781450359702}
+      \field{series}{CHI '19}
+      \field{title}{What is Mixed Reality?}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 15}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1145/3290605.3300767
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3290605.3300767
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3290605.3300767
+      \endverb
+      \keyw{virtual reality,taxonomy,mixed reality,literature review,expert interviews,conceptual framework,augmented reality}
+    \endentry
+    \entry{8712803}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=6bf9f4a478f7f9d50cbb535612f73b17}{%
+           family={Chusetthagarn},
+           familyi={C\bibinitperiod},
+           given={Dawit},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5204f27e716a1082adaf307a0314ed4e}{%
+           family={Visoottiviseth},
+           familyi={V\bibinitperiod},
+           given={Vasaka},
+           giveni={V\bibinitperiod}}}%
+        {{hash=1d7463de160da68b8ca7fbcfea7041e9}{%
+           family={Haga},
+           familyi={H\bibinitperiod},
+           given={Jason},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{117e9e6bfdbca38a232dc5b08960445e}
+      \strng{fullhash}{ed3c61ac456ede2e170007bb91e9a9c2}
+      \strng{bibnamehash}{ed3c61ac456ede2e170007bb91e9a9c2}
+      \strng{authorbibnamehash}{ed3c61ac456ede2e170007bb91e9a9c2}
+      \strng{authornamehash}{117e9e6bfdbca38a232dc5b08960445e}
+      \strng{authorfullhash}{ed3c61ac456ede2e170007bb91e9a9c2}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 22nd International Computer Science and Engineering Conference (ICSEC)}
+      \field{title}{A Prototype of Collaborative Augment Reality Environment for HoloLens}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 5}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICSEC.2018.8712803
+      \endverb
+    \endentry
+    \entry{microsoft_mixed_reality}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=140864078aeca1c7c35b4beb33c53c34}{%
+           family={{Microsoft}},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{fullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{bibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorbibnamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authornamehash}{140864078aeca1c7c35b4beb33c53c34}
+      \strng{authorfullhash}{140864078aeca1c7c35b4beb33c53c34}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://learn.microsoft.com/en-us/windows/mixed-reality/discover/mixed-reality}}
+      \field{note}{Accessed: September 16, 2024}
+      \field{title}{Mixed Reality}
+      \field{year}{2024}
+    \endentry
+    \entry{8477101}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f4149340bc388abb627321731645513a}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Fei},
+           giveni={F\bibinitperiod}}}%
+        {{hash=79de404a0f3ac5ccec6c28b5a79bc60f}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={He},
+           giveni={H\bibinitperiod}}}%
+        {{hash=fc503e8b62eecf2c1f583b4191d838e1}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ang},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ea60886b3e56ab80762010b43dd61d72}{%
+           family={Nee},
+           familyi={N\bibinitperiod},
+           given={A.\bibnamedelimi Y.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{fullhash}{091753558ab9df1f42b8f8478099705e}
+      \strng{bibnamehash}{091753558ab9df1f42b8f8478099705e}
+      \strng{authorbibnamehash}{091753558ab9df1f42b8f8478099705e}
+      \strng{authornamehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{authorfullhash}{091753558ab9df1f42b8f8478099705e}
+      \field{extraname}{1}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Industrial Informatics}
+      \field{number}{4}
+      \field{title}{Digital Twin in Industry: State-of-the-Art}
+      \field{volume}{15}
+      \field{year}{2019}
+      \field{pages}{2405\bibrangedash 2415}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/TII.2018.2873186
+      \endverb
+      \keyw{Data models;Industries;Computational modeling;Smart manufacturing;Patents;History;Data fusion;digital twin (DT);industry application;modeling}
+    \endentry
+    \entry{isprs-archives-XLII-4-W7-37-2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=69ebb74ec055f4d674f95ff6f2c335b2}{%
+           family={Soon},
+           familyi={S\bibinitperiod},
+           given={K.\bibnamedelimi H.},
+           giveni={K\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=6a4a3cf36252b4060706b8e1c512ff20}{%
+           family={Khoo},
+           familyi={K\bibinitperiod},
+           given={V.\bibnamedelimi H.\bibnamedelimi S.},
+           giveni={V\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{6729475d26e101bd250a4c2014312a1f}
+      \strng{fullhash}{6729475d26e101bd250a4c2014312a1f}
+      \strng{bibnamehash}{6729475d26e101bd250a4c2014312a1f}
+      \strng{authorbibnamehash}{6729475d26e101bd250a4c2014312a1f}
+      \strng{authornamehash}{6729475d26e101bd250a4c2014312a1f}
+      \strng{authorfullhash}{6729475d26e101bd250a4c2014312a1f}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences}
+      \field{title}{CITYGML MODELLING FOR SINGAPORE 3D NATIONAL MAPPING}
+      \field{volume}{XLII-4/W7}
+      \field{year}{2017}
+      \field{pages}{37\bibrangedash 42}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.5194/isprs-archives-XLII-4-W7-37-2017
+      \endverb
+      \verb{urlraw}
+      \verb https://isprs-archives.copernicus.org/articles/XLII-4-W7/37/2017/
+      \endverb
+      \verb{url}
+      \verb https://isprs-archives.copernicus.org/articles/XLII-4-W7/37/2017/
+      \endverb
+    \endentry
+    \entry{8361285}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=bd0a70e43bb489c4235f98fa6f60ed73}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Weichao},
+           giveni={W\bibinitperiod}}}%
+        {{hash=3fcf3b24da56d124471427e4417f7d5d}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Tianliang},
+           giveni={T\bibinitperiod}}}%
+        {{hash=5ce456a6714251a6b478fa284dfd5905}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Wendan},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f4149340bc388abb627321731645513a}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Fei},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e3eecd75408f2240333adbcd9b969ec}
+      \strng{fullhash}{afe5dbe981a3f9313dff5b8970f52d89}
+      \strng{bibnamehash}{afe5dbe981a3f9313dff5b8970f52d89}
+      \strng{authorbibnamehash}{afe5dbe981a3f9313dff5b8970f52d89}
+      \strng{authornamehash}{8e3eecd75408f2240333adbcd9b969ec}
+      \strng{authorfullhash}{afe5dbe981a3f9313dff5b8970f52d89}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2018 IEEE 15th International Conference on Networking, Sensing and Control (ICNSC)}
+      \field{title}{Digital twin modeling method for CNC machine tool}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 4}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/ICNSC.2018.8361285
+      \endverb
+      \keyw{Unified modeling language;Object oriented modeling;Mathematical model;Computational modeling;Data models;Atmospheric modeling;Machine tools;CNC machine tool (CNCMT);Digital Twin (DT);Smart manufacturing;Fault predict and diagnosis}
+    \endentry
+    \entry{TAO2018169}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f4149340bc388abb627321731645513a}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Fei},
+           giveni={F\bibinitperiod}}}%
+        {{hash=1276b0c695bd412950c2be5e737aeed5}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4ad65baa593962b61006f967951e667f}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yushan},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ea60886b3e56ab80762010b43dd61d72}{%
+           family={Nee},
+           familyi={N\bibinitperiod},
+           given={A.Y.C.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{fullhash}{22e251b9b60b07f4f48785e16fa3f4d0}
+      \strng{bibnamehash}{22e251b9b60b07f4f48785e16fa3f4d0}
+      \strng{authorbibnamehash}{22e251b9b60b07f4f48785e16fa3f4d0}
+      \strng{authornamehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{authorfullhash}{22e251b9b60b07f4f48785e16fa3f4d0}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Prognostics and health management (PHM) is crucial in the lifecycle monitoring of a product, especially for complex equipment working in a harsh environment. In order to improve the accuracy and efficiency of PHM, digital twin (DT), an emerging technology to achieve physical–virtual convergence, is proposed for complex equipment. A general DT for complex equipment is first constructed, then a new method using DT driven PHM is proposed, making effective use of the interaction mechanism and fused data of DT. A case study of a wind turbine is used to illustrate the effectiveness of the proposed method.}
+      \field{issn}{0007-8506}
+      \field{journaltitle}{CIRP Annals}
+      \field{number}{1}
+      \field{title}{Digital twin driven prognostics and health management for complex equipment}
+      \field{volume}{67}
+      \field{year}{2018}
+      \field{pages}{169\bibrangedash 172}
+      \range{pages}{4}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.cirp.2018.04.055
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0007850618300799
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0007850618300799
+      \endverb
+      \keyw{Maintenance,Condition monitoring,Digital twin}
+    \endentry
+    \entry{10.1007/978-3-030-23162-0_19}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=2aeefa245ae040783c649c0e34aab2e4}{%
+           family={Mamatha},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi N.},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=8404271f4ae5ce86cd5ca6ca27bada6b}{%
+           family={Auer},
+           familyi={A\bibinitperiod},
+           given={Michael\bibnamedelima E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=998df8e34a9e92ed2beb89b3830e3675}{%
+           family={Ram\bibnamedelima B.},
+           familyi={R\bibinitperiod\bibinitdelim B\bibinitperiod},
+           given={Kalyan},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{2aeefa245ae040783c649c0e34aab2e4}
+      \strng{fullhash}{2aeefa245ae040783c649c0e34aab2e4}
+      \strng{bibnamehash}{2aeefa245ae040783c649c0e34aab2e4}
+      \strng{authorbibnamehash}{2aeefa245ae040783c649c0e34aab2e4}
+      \strng{authornamehash}{2aeefa245ae040783c649c0e34aab2e4}
+      \strng{authorfullhash}{2aeefa245ae040783c649c0e34aab2e4}
+      \strng{editorbibnamehash}{8eb8bb53e811c050b80a882cb9671010}
+      \strng{editornamehash}{8eb8bb53e811c050b80a882cb9671010}
+      \strng{editorfullhash}{8eb8bb53e811c050b80a882cb9671010}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The advent of VLSI technology brings in its wake huge benefits to patients, doctors and designers, undreamt before, by bringing in automation and raising the level of care nurses are able to provide. Instead of walking to each patient's bedside to collect vital information, nurses can collect it in one location and concentrate their efforts on caring for those who need them the most. As an outcome of these requirements, a prospect arose to design a highly efficient patient care and monitoring system which can handle patients and multiple parametric measurements from every single patient in real time. Patient care and monitoring embedded systems are proposed in this work to acquire, store, display physiological information obtained from multi patients and are vital in operating rooms, emergency rooms, intensive care units, ambulances as well as at homes. The design exploits development of Novel, Fast Algorithms, Design of Architectures using labVIEW implementations.}
+      \field{booktitle}{Cyber-physical Systems and Digital Twins}
+      \field{isbn}{978-3-030-23162-0}
+      \field{title}{Design of Single Patient Care Monitoring System and Robot}
+      \field{year}{2020}
+      \field{pages}{203\bibrangedash 216}
+      \range{pages}{14}
+    \endentry
+    \entry{6296978}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=4f2ace35960196de1e4a38dabacbc3e9}{%
+           family={Doukas},
+           familyi={D\bibinitperiod},
+           given={Charalampos},
+           giveni={C\bibinitperiod}}}%
+        {{hash=1e8c0f25f4b16ae4e93267e21adf8b6d}{%
+           family={Maglogiannis},
+           familyi={M\bibinitperiod},
+           given={Ilias},
+           giveni={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ca52a1e5b9461a60c591d4d358780ac}
+      \strng{fullhash}{7ca52a1e5b9461a60c591d4d358780ac}
+      \strng{bibnamehash}{7ca52a1e5b9461a60c591d4d358780ac}
+      \strng{authorbibnamehash}{7ca52a1e5b9461a60c591d4d358780ac}
+      \strng{authornamehash}{7ca52a1e5b9461a60c591d4d358780ac}
+      \strng{authorfullhash}{7ca52a1e5b9461a60c591d4d358780ac}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2012 Sixth International Conference on Innovative Mobile and Internet Services in Ubiquitous Computing}
+      \field{title}{Bringing IoT and Cloud Computing towards Pervasive Healthcare}
+      \field{year}{2012}
+      \field{pages}{922\bibrangedash 926}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/IMIS.2012.26
+      \endverb
+      \keyw{Cloud computing;Medical services;Clouds;Biomedical monitoring;Mobile communication;Real time systems;Internet of Things (IoT);Cloud Computing;Patient Monitoring;Wearable Sensors}
+    \endentry
+    \entry{TaoFei}{article}{}
+      \name{author}{9}{}{%
+        {{hash=f4149340bc388abb627321731645513a}{%
+           family={Tao},
+           familyi={T\bibinitperiod},
+           given={Fei},
+           giveni={F\bibinitperiod}}}%
+        {{hash=6da920de727f4aec0d1a14c83cb1fac9}{%
+           family={Sui},
+           familyi={S\bibinitperiod},
+           given={Fangyuan},
+           giveni={F\bibinitperiod}}}%
+        {{hash=fc503e8b62eecf2c1f583b4191d838e1}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ang},
+           giveni={A\bibinitperiod}}}%
+        {{hash=42a5432916c6057414bbe3f1adae17eb}{%
+           family={Qi},
+           familyi={Q\bibinitperiod},
+           given={Qinglin},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=1276b0c695bd412950c2be5e737aeed5}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Meng},
+           giveni={M\bibinitperiod}}}%
+        {{hash=c0ad62d70084c9a7858a8772d5dfb35f}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Boyang},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3ca33718f783952a584295350b5241a6}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Zirong},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=f31f486e574cb291dfcf7585079784c8}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=359587029dccf7e357accb8795188f48}{%
+           family={Nee},
+           familyi={N\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{fullhash}{0bcd4ccd62f9e1b1c607b065a5b0931c}
+      \strng{bibnamehash}{0bcd4ccd62f9e1b1c607b065a5b0931c}
+      \strng{authorbibnamehash}{0bcd4ccd62f9e1b1c607b065a5b0931c}
+      \strng{authornamehash}{aee6731a830f7f2d502f4262bfb7e431}
+      \strng{authorfullhash}{0bcd4ccd62f9e1b1c607b065a5b0931c}
+      \field{extraname}{3}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Production Research}
+      \field{month}{02}
+      \field{title}{Digital twin-driven product design framework}
+      \field{volume}{57}
+      \field{year}{2018}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1080/00207543.2018.1443229
+      \endverb
+    \endentry
+    \entry{ROSEN2015567}{article}{}
+      \name{author}{4}{}{%
+        {{hash=f1d90913c921a7f9f8a6edb379e1e50c}{%
+           family={Rosen},
+           familyi={R\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+        {{hash=0b2ef71ab4754153ec6822c4d8e53d4c}{%
+           family={{von Wichert}},
+           familyi={v\bibinitperiod},
+           given={Georg},
+           giveni={G\bibinitperiod}}}%
+        {{hash=23de89ca99c189f99accb9225f5168ad}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={George},
+           giveni={G\bibinitperiod}}}%
+        {{hash=248b92f6c97403c0dba34d589d7ab7cc}{%
+           family={Bettenhausen},
+           familyi={B\bibinitperiod},
+           given={Kurt\bibnamedelima D.},
+           giveni={K\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{7b6ce660fabfb464343263e57e1e8b8d}
+      \strng{fullhash}{b86789754499712061779f951f3772ea}
+      \strng{bibnamehash}{b86789754499712061779f951f3772ea}
+      \strng{authorbibnamehash}{b86789754499712061779f951f3772ea}
+      \strng{authornamehash}{7b6ce660fabfb464343263e57e1e8b8d}
+      \strng{authorfullhash}{b86789754499712061779f951f3772ea}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Industrie 4.0 - the “brand” name of the German initiative driving the future of manufacturing - is one of several initiatives around the globe emphasizing the importance of industrial manufacturing for economy and society. Besides the socio-economical if not political question which has to be answered - including the question about the future of labor - there are a couple of substantial technical and technological questions that have to be taken care of as well.}
+      \field{issn}{2405-8963}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{note}{15th IFAC Symposium onInformation Control Problems inManufacturing}
+      \field{number}{3}
+      \field{title}{About The Importance of Autonomy and Digital Twins for the Future of Manufacturing}
+      \field{volume}{48}
+      \field{year}{2015}
+      \field{pages}{567\bibrangedash 572}
+      \range{pages}{6}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.ifacol.2015.06.141
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896315003808
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896315003808
+      \endverb
+      \keyw{Digital Twin,Autonomy,Manufacturing,Automation,Simulation}
+    \endentry
+    \entry{CIMINO2019103130}{article}{}
+      \name{author}{3}{}{%
+        {{hash=8e8dc96ea5aaa4e20774c243de1a2b8c}{%
+           family={Cimino},
+           familyi={C\bibinitperiod},
+           given={Chiara},
+           giveni={C\bibinitperiod}}}%
+        {{hash=31b308f0346b9bf09a8cab71e78b82c9}{%
+           family={Negri},
+           familyi={N\bibinitperiod},
+           given={Elisa},
+           giveni={E\bibinitperiod}}}%
+        {{hash=d0e402bd5b6db6e9aba399d0ae339fc1}{%
+           family={Fumagalli},
+           familyi={F\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{2bba1cbb0c7675dd8c1850e40c5fe008}
+      \strng{fullhash}{c8ae2644bdc7de31c1f25a005ac18755}
+      \strng{bibnamehash}{c8ae2644bdc7de31c1f25a005ac18755}
+      \strng{authorbibnamehash}{c8ae2644bdc7de31c1f25a005ac18755}
+      \strng{authornamehash}{2bba1cbb0c7675dd8c1850e40c5fe008}
+      \strng{authorfullhash}{c8ae2644bdc7de31c1f25a005ac18755}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In the Industry 4.0 era, the Digital Twin (DT), virtual copies of the system that are able to interact with the physical counterparts in a bi-directional way, seem to be promising enablers to replicate production systems in real time and analyse them. A DT should be capable to guarantee well-defined services to support various activities such as monitoring, maintenance, management, optimization and safety. Through an analysis of the current picture of manufacturing and a literature review about the already existing DT environment, this paper identifies what is still missing in the implemented DT to be compliant to their description in literature. Particular focuses of this paper are the degree of integration of the proposed DT with the control of the physical system, in particular with the Manufacturing Execution Systems (MES) when the production system is based on the Automation Pyramid, and the services offered from these environments, comparing them to the reference ones. This paper proposes also a practical implementation of a DT in a MES equipped assembly laboratory line of the School of Management of the Politecnico di Milano. The application has been created to pose the basis to overcome the missing implementation aspects found in literature. In such a way, the developed DT paves the way for future research to close the loop between the MES and the DT taking into consideration the number of services that a DT could offer in a single environment.}
+      \field{issn}{0166-3615}
+      \field{journaltitle}{Computers in Industry}
+      \field{title}{Review of digital twin applications in manufacturing}
+      \field{volume}{113}
+      \field{year}{2019}
+      \field{pages}{103130}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.compind.2019.103130
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0166361519304385
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0166361519304385
+      \endverb
+      \keyw{Industry 4.0,Manufacturing,Digital twin,Simulation,MES,CPS,Cyber-physical systems}
+    \endentry
+    \entry{dt_model}{article}{}
+      \name{author}{5}{}{%
+        {{hash=d303707b12ba0f88f5c4f0301ad5dc79}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Yuqian},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=09896aa5fbccc018f8f5276bd3c2cc51}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Chao},
+           giveni={C\bibinitperiod}}}%
+        {{hash=326e67561675ce5d29bdd49f2bc86fcf}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Kevin\bibnamedelima I-Kai},
+           giveni={K\bibinitperiod\bibinitdelim I\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=15f7572e3d5c19bf70e7bc8a1558f8bd}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Huiyue},
+           giveni={H\bibinitperiod}}}%
+        {{hash=43e8043d875498aa78c40bbb8623fb5b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Xun},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{da484492bd861a2f4b2fa8b5db2dd9d8}
+      \strng{fullhash}{f701479cfc7f12fd77c59563001bf6f6}
+      \strng{bibnamehash}{f701479cfc7f12fd77c59563001bf6f6}
+      \strng{authorbibnamehash}{f701479cfc7f12fd77c59563001bf6f6}
+      \strng{authornamehash}{da484492bd861a2f4b2fa8b5db2dd9d8}
+      \strng{authorfullhash}{f701479cfc7f12fd77c59563001bf6f6}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper reviews the recent development of Digital Twin technologies in manufacturing systems and processes, to analyze the connotation, application scenarios, and research issues of Digital Twin-driven smart manufacturing in the context of Industry 4.0. To understand Digital Twin and its future potential in manufacturing, we summarized the definition and state-of-the-art development outcomes of Digital Twin. Existing technologies for developing a Digital Twin for smart manufacturing are reviewed under a Digital Twin reference model to systematize the development methodology for Digital Twin. Representative applications are reviewed with a focus on the alignment with the proposed reference model. Outstanding research issues of developing Digital Twins for smart manufacturing are identified at the end of the paper.}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{Digital Twin-driven smart manufacturing: Connotation, reference model, applications and research issues}
+      \field{volume}{61}
+      \field{year}{2020}
+      \field{pages}{101837}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2019.101837
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519302480
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519302480
+      \endverb
+      \keyw{Smart manufacturing,Digital Twin,Industry 4.0,Cyber-physical System,Big Data,Standard}
+    \endentry
+    \entry{liu2022state}{article}{}
+      \name{author}{3}{}{%
+        {{hash=581a43ab29ece40246cbb35d32c7519c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Y.\bibnamedelimi K.},
+           giveni={Y\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=432b2ad34673e7d223d89f2809aeb655}{%
+           family={Ong},
+           familyi={O\bibinitperiod},
+           given={S.\bibnamedelimi K.},
+           giveni={S\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=ea60886b3e56ab80762010b43dd61d72}{%
+           family={Nee},
+           familyi={N\bibinitperiod},
+           given={A.\bibnamedelimi Y.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim Y\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{a3cf468fda075784369e2f955783ea63}
+      \strng{fullhash}{341cc64b617a8fdfc5e58830f706822e}
+      \strng{bibnamehash}{341cc64b617a8fdfc5e58830f706822e}
+      \strng{authorbibnamehash}{341cc64b617a8fdfc5e58830f706822e}
+      \strng{authornamehash}{a3cf468fda075784369e2f955783ea63}
+      \strng{authorfullhash}{341cc64b617a8fdfc5e58830f706822e}
+      \field{extraname}{2}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Advanced Manufacturing}
+      \field{number}{1}
+      \field{title}{State-of-the-art survey on digital twin implementations}
+      \field{volume}{10}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 23}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/s40436-021-00375-w
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s40436-021-00375-w
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s40436-021-00375-w
+      \endverb
+    \endentry
+    \entry{CHU2023313}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3cd72371fd8943c2af7054a2f9efe3ab}{%
+           family={Chu},
+           familyi={C\bibinitperiod},
+           given={Chih-Hsing},
+           giveni={C\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=eb508d181e191892618f9746c8bcf7cd}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Yu-Lun},
+           giveni={Y\bibinithyphendelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{30db3be5646a1052fbf768495cd291eb}
+      \strng{fullhash}{30db3be5646a1052fbf768495cd291eb}
+      \strng{bibnamehash}{30db3be5646a1052fbf768495cd291eb}
+      \strng{authorbibnamehash}{30db3be5646a1052fbf768495cd291eb}
+      \strng{authornamehash}{30db3be5646a1052fbf768495cd291eb}
+      \strng{authorfullhash}{30db3be5646a1052fbf768495cd291eb}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Artificial intelligence (AI) has been applied to a wide spectrum of industrial sectors, but manual operations remain indispensable in most manufacturing systems due to high complexity or costs involving in automation. A more practical approach is enabling humans to collaborate with machines complementary to each other. One critical issue in human-robot collaboration (HRC) is to assure the operator's productivity, safety, and trust while interacting with the robot. This paper presents an experimental study on user interface design in augmented reality (AR) for human-robot collaborative assembly in a shared workspace. The experiment aims to verify and cross-compare the effectiveness of visual and haptic cues in various forms that convey the robot intent to human. Analysis of the work performance and gazing behavior of participants shows that both cues can reduce their visual attention on the moving robot during the collaboration. The interface that provides the proximity of robot using visual cues is considered most useful. It is not intuitive to recognize complex information by vibration on different parts of the human hand in the experiment. Finally, human trust to robot has a higher correlation on the usability of a user interface than the work performance assisted by the interface. These findings may work as design guidelines for AR assisted human-robot interaction in smart manufacturing.}
+      \field{issn}{0278-6125}
+      \field{journaltitle}{Journal of Manufacturing Systems}
+      \field{title}{Augmented reality user interface design and experimental evaluation for human-robot collaborative assembly}
+      \field{volume}{68}
+      \field{year}{2023}
+      \field{pages}{313\bibrangedash 324}
+      \range{pages}{12}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.jmsy.2023.04.007
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0278612523000717
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0278612523000717
+      \endverb
+      \keyw{Augmented reality,Human-robot collaboration,User interface,Sensory cues,Manual assembly}
+    \endentry
+    \entry{doi:10.5772/5664}{article}{}
+      \name{author}{4}{}{%
+        {{hash=311b2265bbda0b0076560461fceb7683}{%
+           family={Green},
+           familyi={G\bibinitperiod},
+           given={Scott\bibnamedelima A.},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=ebb11475827ce7b6b5609294d4e15d5b}{%
+           family={Billinghurst},
+           familyi={B\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=7faa654fe863525820376f39307fdfae}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={XiaoQi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=b009410ae393f167b00ea35180976819}{%
+           family={Chase},
+           familyi={C\bibinitperiod},
+           given={J.\bibnamedelimi Geoffrey},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{d76bb5789f46ea5f51d2efd02b0ffc9e}
+      \strng{fullhash}{d2af7f205053931623006f59123b0e98}
+      \strng{bibnamehash}{d2af7f205053931623006f59123b0e98}
+      \strng{authorbibnamehash}{d2af7f205053931623006f59123b0e98}
+      \strng{authornamehash}{d76bb5789f46ea5f51d2efd02b0ffc9e}
+      \strng{authorfullhash}{d2af7f205053931623006f59123b0e98}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Advanced Robotic Systems}
+      \field{number}{1}
+      \field{title}{Human-Robot Collaboration: A Literature Review and Augmented Reality Approach in Design}
+      \field{volume}{5}
+      \field{year}{2008}
+      \field{pages}{1}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.5772/5664
+      \endverb
+      \verb{eprint}
+      \verb ://doi.org/10.5772/5664
+      \endverb
+      \verb{urlraw}
+      \verb ://doi.org/10.5772/5664
+      \endverb
+      \verb{url}
+      \verb ://doi.org/10.5772/5664
+      \endverb
+    \endentry
+    \entry{doi:10.1177/0018720814565188}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1d2a66bd2d959cf31497b04a640ef4e4}{%
+           family={Lasota},
+           familyi={L\bibinitperiod},
+           given={Przemyslaw\bibnamedelima A.},
+           giveni={P\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=9f5a8aee07e977fcbb224ed8ab077080}{%
+           family={Shah},
+           familyi={S\bibinitperiod},
+           given={Julie\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{b27d1cbb23ba89219f80d9f6f51163f8}
+      \strng{fullhash}{b27d1cbb23ba89219f80d9f6f51163f8}
+      \strng{bibnamehash}{b27d1cbb23ba89219f80d9f6f51163f8}
+      \strng{authorbibnamehash}{b27d1cbb23ba89219f80d9f6f51163f8}
+      \strng{authornamehash}{b27d1cbb23ba89219f80d9f6f51163f8}
+      \strng{authorfullhash}{b27d1cbb23ba89219f80d9f6f51163f8}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Human Factors}
+      \field{note}{PMID: 25790568}
+      \field{number}{1}
+      \field{title}{Analyzing the Effects of Human-Aware Motion Planning on Close-Proximity Human–Robot Collaboration}
+      \field{volume}{57}
+      \field{year}{2015}
+      \field{pages}{21\bibrangedash 33}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1177/0018720814565188
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1177/0018720814565188
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/0018720814565188
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/0018720814565188
+      \endverb
+    \endentry
+    \entry{LI2022102321}{article}{}
+      \name{author}{5}{}{%
+        {{hash=25a7b9fcaf3526f6b307031ed739df28}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Chengxi},
+           giveni={C\bibinitperiod}}}%
+        {{hash=17d64641c9501c33dda0578b773d6f4f}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Pai},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3a7bd14c1ee0348efc686c0a2e80a38c}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Shufei},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ccb158c9bea094e82f9cba0d15e0db91}{%
+           family={Pang},
+           familyi={P\bibinitperiod},
+           given={Yatming},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d6c67c64c17490eb9e5052f17f5fb9bb}{%
+           family={Lee},
+           familyi={L\bibinitperiod},
+           given={Carman\bibnamedelima K.M.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{d24ea85ccedfc2315a75142579980609}
+      \strng{fullhash}{6c5466bc67cef0328140374e459585de}
+      \strng{bibnamehash}{6c5466bc67cef0328140374e459585de}
+      \strng{authorbibnamehash}{6c5466bc67cef0328140374e459585de}
+      \strng{authornamehash}{d24ea85ccedfc2315a75142579980609}
+      \strng{authorfullhash}{6c5466bc67cef0328140374e459585de}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The teleoperation and coordination of multiple industrial robots play an important role in today’s industrial internet-based collaborative manufacturing systems. The user-friendly teleoperation approach allows operators from different manufacturing domains to reduce redundant learning costs and intuitively control the robot in advance. Nevertheless, only a few preliminary works have been introduced very recently, let alone its effective implementation in the manufacturing scenarios. To address the gap, this research proposes a novel multi-robot collaborative manufacturing system with human-in-the-loop control by leveraging the cutting-edge augmented reality (AR) and digital twin (DT) techniques. In the proposed system, the DTs of industrial robots are firstly mapped to physical robots and visualize them in the AR glasses. Meanwhile, a multi-robot communication mechanism is designed and implemented, to synchronize the state of robots in the twin. Moreover, a reinforcement learning algorithm is integrated into the robot motion planning to replace the conventional kinematics-based robot movement with corresponding target positions. Finally, three interactive AR-assisted DT modes, including real-time motion control, planned motion control, and robot monitoring mode are generated, which can be readily switched by human operators. Two experimental studies are conducted on (1) a single robot with a commonly used peg-in-hole experiment, and (2) the motion planning of multi-robot collaborative tasks, respectively. From the experimental results, it can be found that the proposed system can well handle the multi-robot teleoperation tasks with high efficiency and owns great potentials to be adopted in other complicated manufacturing scenarios in the near future.}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{AR-assisted digital twin-enabled robot collaborative manufacturing system with human-in-the-loop}
+      \field{volume}{76}
+      \field{year}{2022}
+      \field{pages}{102321}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2022.102321
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584522000102
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584522000102
+      \endverb
+      \keyw{Augmented reality,Digital twin,Collaborative manufacturing system,Reinforcement learning,Human-in-the-loop control}
+    \endentry
+    \entry{ong2020}{article}{}
+      \name{author}{4}{}{%
+        {{hash=432b2ad34673e7d223d89f2809aeb655}{%
+           family={Ong},
+           familyi={O\bibinitperiod},
+           given={S.K.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ea60886b3e56ab80762010b43dd61d72}{%
+           family={Nee},
+           familyi={N\bibinitperiod},
+           given={A.Y.C.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=72a397fb52f21c9cc47ff3640126d48e}{%
+           family={Yew},
+           familyi={Y\bibinitperiod},
+           given={A.W.W.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0ee6a432126aaca3ad8186ddfbadb35a}{%
+           family={Thanigaivel},
+           familyi={T\bibinitperiod},
+           given={N.K.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{f44b0458423b40fca3fea4877faed8ee}
+      \strng{fullhash}{615a009ff06cea51a96f71bfe01f52e2}
+      \strng{bibnamehash}{615a009ff06cea51a96f71bfe01f52e2}
+      \strng{authorbibnamehash}{615a009ff06cea51a96f71bfe01f52e2}
+      \strng{authornamehash}{f44b0458423b40fca3fea4877faed8ee}
+      \strng{authorfullhash}{615a009ff06cea51a96f71bfe01f52e2}
+      \field{extraname}{1}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Robotic welding demands high accuracy and precision. However, robot programming is often a tedious and time-consuming process that requires expert knowledge. This paper presents an augmented reality assisted robot welding task programming (ARWP) system using a user-friendly augmented reality (AR) interface that simplifies and speeds up the programming of robotic welding tasks. The ARWP system makes the programming of robot welding tasks more user-friendly and reduces the need for trained programmers and expertise in specific robotic systems. The AR interface simplifies the definition of a welding path as well as the welding gun orientation, and the system; the system can locate the welding seam of a workpiece quickly and generate a viable welding path based on the user input. The developed system is integrated with the touch-sensing capability of welding robots in order to locate the welding path accurately based on the user input, for fillet welding. The system is applicable to other welding processes and methods of seam localization. The system implementation is described and evaluated with a case study.}
+      \field{issn}{2195-3597}
+      \field{journaltitle}{Advances in Manufacturing}
+      \field{number}{1}
+      \field{title}{AR-Assisted Robot Welding Programming}
+      \field{volume}{8}
+      \field{year}{2020}
+      \field{pages}{40\bibrangedash 48}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1007/s40436-019-00283-0
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s40436-019-00283-0
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s40436-019-00283-0
+      \endverb
+    \endentry
+    \entry{7819154}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=cb1d2c7c422ee1ea91463fe6aae2ddb1}{%
+           family={Malý},
+           familyi={M\bibinitperiod},
+           given={Ivo},
+           giveni={I\bibinitperiod}}}%
+        {{hash=cc4de866f672127f983e89b5163a21ac}{%
+           family={Sedláček},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d9ca932893ae74db6b035f11d2854da0}{%
+           family={Leitão},
+           familyi={L\bibinitperiod},
+           given={Paulo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{89978b0a262dd8cff771f8de575b4e1f}
+      \strng{fullhash}{9088c8e32a9e6386adf4417524d62399}
+      \strng{bibnamehash}{9088c8e32a9e6386adf4417524d62399}
+      \strng{authorbibnamehash}{9088c8e32a9e6386adf4417524d62399}
+      \strng{authornamehash}{89978b0a262dd8cff771f8de575b4e1f}
+      \strng{authorfullhash}{9088c8e32a9e6386adf4417524d62399}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 IEEE 14th International Conference on Industrial Informatics (INDIN)}
+      \field{title}{Augmented reality experiments with industrial robot in industry 4.0 environment}
+      \field{year}{2016}
+      \field{pages}{176\bibrangedash 181}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/INDIN.2016.7819154
+      \endverb
+      \keyw{Data visualization;Industries;Glass;Service robots;Production;Augmented reality}
+    \endentry
+    \entry{puljiz2019conceptsendtoendaugmentedreality}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=dc477cca9e50417996df1439041c6ee4}{%
+           family={Puljiz},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=27a6d86fbb90b3c4c6caf63f685adce7}{%
+           family={Hein},
+           familyi={H\bibinitperiod},
+           given={Björn},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{cc29014515b94a7a0ccd9bad9d17cdb9}
+      \strng{fullhash}{cc29014515b94a7a0ccd9bad9d17cdb9}
+      \strng{bibnamehash}{cc29014515b94a7a0ccd9bad9d17cdb9}
+      \strng{authorbibnamehash}{cc29014515b94a7a0ccd9bad9d17cdb9}
+      \strng{authornamehash}{cc29014515b94a7a0ccd9bad9d17cdb9}
+      \strng{authorfullhash}{cc29014515b94a7a0ccd9bad9d17cdb9}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.RO}
+      \field{eprinttype}{arXiv}
+      \field{title}{Concepts for End-to-end Augmented Reality based Human-Robot Interaction Systems}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1910.04494
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1910.04494
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1910.04494
+      \endverb
+    \endentry
+    \entry{puljiz2}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=dc477cca9e50417996df1439041c6ee4}{%
+           family={Puljiz},
+           familyi={P\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3e9c8fe96d7d5105480462977adb288a}{%
+           family={Stöhr},
+           familyi={S\bibinitperiod},
+           given={Erik},
+           giveni={E\bibinitperiod}}}%
+        {{hash=066de0b131e742fae4b06c6e77e00d61}{%
+           family={Riesterer},
+           familyi={R\bibinitperiod},
+           given={Katharina\bibnamedelima S.},
+           giveni={K\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=27a6d86fbb90b3c4c6caf63f685adce7}{%
+           family={Hein},
+           familyi={H\bibinitperiod},
+           given={Björn},
+           giveni={B\bibinitperiod}}}%
+        {{hash=a614a6c6ae6d216c0989179e39072cea}{%
+           family={Kröger},
+           familyi={K\bibinitperiod},
+           given={Torsten},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{e699e0dafae200317676ddace8a70b70}
+      \strng{fullhash}{aaa436df8b162b78de712ab1d6283830}
+      \strng{bibnamehash}{aaa436df8b162b78de712ab1d6283830}
+      \strng{authorbibnamehash}{aaa436df8b162b78de712ab1d6283830}
+      \strng{authornamehash}{e699e0dafae200317676ddace8a70b70}
+      \strng{authorfullhash}{aaa436df8b162b78de712ab1d6283830}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}
+      \field{title}{General Hand Guidance Framework using Microsoft HoloLens}
+      \field{year}{2019}
+      \field{pages}{5185\bibrangedash 5190}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IROS40897.2019.8967649
+      \endverb
+    \endentry
+    \entry{1-ar-dt}{article}{}
+      \name{author}{2}{}{%
+        {{hash=68b200bd7e4ccb44eb8cb23871a9b49e}{%
+           family={Tipary},
+           familyi={T\bibinitperiod},
+           given={Bence},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3f62a284c2c4b6cc6fece707db3b469c}{%
+           family={Erdős},
+           familyi={E\bibinitperiod},
+           given={Gábor},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{2ac2a7fd468f8e9f8bca6c7d73a3962f}
+      \strng{fullhash}{2ac2a7fd468f8e9f8bca6c7d73a3962f}
+      \strng{bibnamehash}{2ac2a7fd468f8e9f8bca6c7d73a3962f}
+      \strng{authorbibnamehash}{2ac2a7fd468f8e9f8bca6c7d73a3962f}
+      \strng{authornamehash}{2ac2a7fd468f8e9f8bca6c7d73a3962f}
+      \strng{authorfullhash}{2ac2a7fd468f8e9f8bca6c7d73a3962f}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{Generic development methodology for flexible robotic pick-and-place workcells based on Digital Twin}
+      \field{volume}{71}
+      \field{year}{2021}
+      \field{pages}{102140}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2021.102140
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584521000259
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584521000259
+      \endverb
+      \keyw{Digital twin,Modeling,Flexibility,Robot,Calibration,Planning}
+    \endentry
+    \entry{2-ar-dt}{article}{}
+      \name{author}{3}{}{%
+        {{hash=af914d85214620980238500bec45cdbf}{%
+           family={{Parigi Polverini}},
+           familyi={P\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=cedd4a44c93ca699d2da0812138f4fa7}{%
+           family={Zanchettin},
+           familyi={Z\bibinitperiod},
+           given={Andrea\bibnamedelima Maria},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=ec6cde3c776ad73f8169810efa5d824d}{%
+           family={Rocco},
+           familyi={R\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{53cf4825a4edc0b1bc19efa9800a91ed}
+      \strng{fullhash}{97dd65eb491baf226232353ab67a12c2}
+      \strng{bibnamehash}{97dd65eb491baf226232353ab67a12c2}
+      \strng{authorbibnamehash}{97dd65eb491baf226232353ab67a12c2}
+      \strng{authornamehash}{53cf4825a4edc0b1bc19efa9800a91ed}
+      \strng{authorfullhash}{97dd65eb491baf226232353ab67a12c2}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{A constraint-based programming approach for robotic assembly skills implementation}
+      \field{volume}{59}
+      \field{year}{2019}
+      \field{pages}{69\bibrangedash 81}
+      \range{pages}{13}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2019.03.005
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584518305726
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584518305726
+      \endverb
+      \keyw{Robotic assembly,Collaborative robots,Task-level programming,Constraint-based programming}
+    \endentry
+    \entry{3-ar-dt}{article}{}
+      \name{author}{5}{}{%
+        {{hash=7281c5c68eb0f800d7d455774542f80a}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Jingang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=52be2543b32412660f12406bf0390afd}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Zhiyuan},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=93c8b1c5accaeea2d4c801365e52e2ba}{%
+           family={Bi},
+           familyi={B\bibinitperiod},
+           given={Zhuming},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=56bf7e47593c54f29a78e91a9aef1f2f}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Xuefeng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=52256181655e660efd42de46317040f9}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Guang},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{a099c7bb96f48d7864e83288beef1e78}
+      \strng{fullhash}{740964aeae9c0f381b44d349fe69d461}
+      \strng{bibnamehash}{740964aeae9c0f381b44d349fe69d461}
+      \strng{authorbibnamehash}{740964aeae9c0f381b44d349fe69d461}
+      \strng{authornamehash}{a099c7bb96f48d7864e83288beef1e78}
+      \strng{authorfullhash}{740964aeae9c0f381b44d349fe69d461}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{State-of-the-Art control strategies for robotic PiH assembly}
+      \field{volume}{65}
+      \field{year}{2020}
+      \field{pages}{101894}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2019.101894
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519302418
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519302418
+      \endverb
+      \keyw{Robotic assembly,Peg-in-hole (PiH) assembly,Control strategy,Design optimization,Error compensation,Literature review}
+    \endentry
+    \entry{6-ar-dt}{article}{}
+      \name{author}{1}{}{%
+        {{hash=fcdeef628f31c9c5305ee39311f1fcc6}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Guang-Zhong},
+           giveni={G\bibinithyphendelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{fcdeef628f31c9c5305ee39311f1fcc6}
+      \strng{fullhash}{fcdeef628f31c9c5305ee39311f1fcc6}
+      \strng{bibnamehash}{fcdeef628f31c9c5305ee39311f1fcc6}
+      \strng{authorbibnamehash}{fcdeef628f31c9c5305ee39311f1fcc6}
+      \strng{authornamehash}{fcdeef628f31c9c5305ee39311f1fcc6}
+      \strng{authorfullhash}{fcdeef628f31c9c5305ee39311f1fcc6}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science Robotics}
+      \field{number}{26}
+      \field{title}{Robot learning—Beyond imitation}
+      \field{volume}{4}
+      \field{year}{2019}
+      \field{pages}{eaaw3520}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1126/scirobotics.aaw3520
+      \endverb
+      \verb{eprint}
+      \verb https://www.science.org/doi/pdf/10.1126/scirobotics.aaw3520
+      \endverb
+      \verb{urlraw}
+      \verb https://www.science.org/doi/abs/10.1126/scirobotics.aaw3520
+      \endverb
+      \verb{url}
+      \verb https://www.science.org/doi/abs/10.1126/scirobotics.aaw3520
+      \endverb
+    \endentry
+    \entry{7-ar-dt}{article}{}
+      \name{author}{4}{}{%
+        {{hash=245ad80709ad2742f7540a4d8a9571b5}{%
+           family={Boschetti},
+           familyi={B\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod}}}%
+        {{hash=e559eb985cc6080e29e292d9e942182e}{%
+           family={Bottin},
+           familyi={B\bibinitperiod},
+           given={Matteo},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8fcd628a96c2acb94a5a02bfd5d46472}{%
+           family={Faccio},
+           familyi={F\bibinitperiod},
+           given={Maurizio},
+           giveni={M\bibinitperiod}}}%
+        {{hash=43c5ca67c1f783336f19b2f6b179b127}{%
+           family={Minto},
+           familyi={M\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{09f63851375aa53e76e307995a0dcd09}
+      \strng{fullhash}{30e6f66d60a49d46152d0d74520b5f02}
+      \strng{bibnamehash}{30e6f66d60a49d46152d0d74520b5f02}
+      \strng{authorbibnamehash}{30e6f66d60a49d46152d0d74520b5f02}
+      \strng{authornamehash}{09f63851375aa53e76e307995a0dcd09}
+      \strng{authorfullhash}{30e6f66d60a49d46152d0d74520b5f02}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1572-8145}
+      \field{journaltitle}{Journal of Intelligent Manufacturing}
+      \field{number}{5}
+      \field{title}{Multi-robot multi-operator collaborative assembly systems: a performance evaluation model}
+      \field{volume}{32}
+      \field{year}{2021}
+      \field{pages}{1455\bibrangedash 1470}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/s10845-020-01714-7
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10845-020-01714-7
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10845-020-01714-7
+      \endverb
+    \endentry
+    \entry{9-ar-dt}{article}{}
+      \name{author}{5}{}{%
+        {{hash=1cc5b342f3e4b2a4f82c3ab37a3a7b3d}{%
+           family={Azimifar},
+           familyi={A\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=a42a01196585c61fe412d05d975078cc}{%
+           family={Abrishamkar},
+           familyi={A\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=9470a26bf70c2540d04af86e906740e7}{%
+           family={Farzaneh},
+           familyi={F\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=0a295169c232e3443bfe679cded4263a}{%
+           family={Sarhan},
+           familyi={S\bibinitperiod},
+           given={A.A.D.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0f0c5839be8920a300c93dd531698236}{%
+           family={Amini},
+           familyi={A\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{01a01f21feb272b1464b924b738861fa}
+      \strng{fullhash}{32322212c51a1937c206b0f12ec168d6}
+      \strng{bibnamehash}{32322212c51a1937c206b0f12ec168d6}
+      \strng{authorbibnamehash}{32322212c51a1937c206b0f12ec168d6}
+      \strng{authornamehash}{01a01f21feb272b1464b924b738861fa}
+      \strng{authorfullhash}{32322212c51a1937c206b0f12ec168d6}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{Improving teleoperation system performance in the presence of estimated external force}
+      \field{volume}{46}
+      \field{year}{2017}
+      \field{pages}{86\bibrangedash 93}
+      \range{pages}{8}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2016.12.004
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584516301879
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584516301879
+      \endverb
+    \endentry
+    \entry{26-ar-dt}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e18ead9a57a2f26930ae340fa3722cef}{%
+           family={Masood},
+           familyi={M\bibinitperiod},
+           given={Tariq},
+           giveni={T\bibinitperiod}}}%
+        {{hash=0677d58a5e1825e3515c826a374bf73a}{%
+           family={Egger},
+           familyi={E\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{7ed81dbd94dd1577148848f009cc29e5}
+      \strng{fullhash}{7ed81dbd94dd1577148848f009cc29e5}
+      \strng{bibnamehash}{7ed81dbd94dd1577148848f009cc29e5}
+      \strng{authorbibnamehash}{7ed81dbd94dd1577148848f009cc29e5}
+      \strng{authornamehash}{7ed81dbd94dd1577148848f009cc29e5}
+      \strng{authorfullhash}{7ed81dbd94dd1577148848f009cc29e5}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{Augmented reality in support of Industry 4.0—Implementation challenges and success factors}
+      \field{volume}{58}
+      \field{year}{2019}
+      \field{pages}{181\bibrangedash 195}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2019.02.003
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584518304101
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584518304101
+      \endverb
+      \keyw{Augmented reality,Manufacturing,Technology,Organisation,Environment,TOE,Challenges,Critical success factors,Visualisation,Industry 4.0,Industrial digitalisation,Cyber-physical systems,Internet of things,IoT,Smart factory,Survey}
+    \endentry
+    \entry{27-ar-dt}{article}{}
+      \name{author}{5}{}{%
+        {{hash=85fe93c7a44354b9622c0f2ba88fff6d}{%
+           family={Hietanen},
+           familyi={H\bibinitperiod},
+           given={Antti},
+           giveni={A\bibinitperiod}}}%
+        {{hash=87f1ec93c9ad0a45bf01d8c853047853}{%
+           family={Pieters},
+           familyi={P\bibinitperiod},
+           given={Roel},
+           giveni={R\bibinitperiod}}}%
+        {{hash=04fe3dec8759446678cab64d262906d6}{%
+           family={Lanz},
+           familyi={L\bibinitperiod},
+           given={Minna},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ca8736df9c84c97c18d4ca65c9e5a1f6}{%
+           family={Latokartano},
+           familyi={L\bibinitperiod},
+           given={Jyrki},
+           giveni={J\bibinitperiod}}}%
+        {{hash=012445600154b5db5baecfb9cb545ff7}{%
+           family={Kämäräinen},
+           familyi={K\bibinitperiod},
+           given={Joni-Kristian},
+           giveni={J\bibinithyphendelim K\bibinitperiod}}}%
+      }
+      \strng{namehash}{8a189d8e8260e0ea9a0b82e0c4e3d9f5}
+      \strng{fullhash}{05d26c075fb35783a6af7424ff506ce0}
+      \strng{bibnamehash}{05d26c075fb35783a6af7424ff506ce0}
+      \strng{authorbibnamehash}{05d26c075fb35783a6af7424ff506ce0}
+      \strng{authornamehash}{8a189d8e8260e0ea9a0b82e0c4e3d9f5}
+      \strng{authorfullhash}{05d26c075fb35783a6af7424ff506ce0}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{AR-based interaction for human-robot collaborative manufacturing}
+      \field{volume}{63}
+      \field{year}{2020}
+      \field{pages}{101891}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2019.101891
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519307355
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519307355
+      \endverb
+      \keyw{Human-robot collaboration,Assembly,Augmented reality,User studies}
+    \endentry
+    \entry{10-ar-dt}{article}{}
+      \name{author}{5}{}{%
+        {{hash=fbcd0062e5a05f9db7e251a53e30f9d0}{%
+           family={Pan},
+           familyi={P\bibinitperiod},
+           given={Yong},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=a7640f732a0acfc718d3d654d0f08437}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Chengjun},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f50e38049a789de48989b37d60e4f965}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Dongnian},
+           giveni={D\bibinitperiod}}}%
+        {{hash=0a5b8cc12a597e2cf9f90f7cfb9688ba}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Zhengxu},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=c436bc8bebcf24cbfb756c65a861eeb1}{%
+           family={Hong},
+           familyi={H\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{4da2901c242d5cc29d0368871e67d719}
+      \strng{fullhash}{b699c307133a99e19aba29c92ef21032}
+      \strng{bibnamehash}{b699c307133a99e19aba29c92ef21032}
+      \strng{authorbibnamehash}{b699c307133a99e19aba29c92ef21032}
+      \strng{authornamehash}{4da2901c242d5cc29d0368871e67d719}
+      \strng{authorfullhash}{b699c307133a99e19aba29c92ef21032}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{Augmented reality-based robot teleoperation system using RGB-D imaging and attitude teaching device}
+      \field{volume}{71}
+      \field{year}{2021}
+      \field{pages}{102167}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2021.102167
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S073658452100051X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S073658452100051X
+      \endverb
+      \keyw{Robot teleoperation,Online teaching programming,Augmented reality,RGB-D imaging,AR registration}
+    \endentry
+    \entry{30-ar-dt}{article}{}
+      \name{author}{4}{}{%
+        {{hash=432b2ad34673e7d223d89f2809aeb655}{%
+           family={Ong},
+           familyi={O\bibinitperiod},
+           given={S.K.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=72a397fb52f21c9cc47ff3640126d48e}{%
+           family={Yew},
+           familyi={Y\bibinitperiod},
+           given={A.W.W.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=0ee6a432126aaca3ad8186ddfbadb35a}{%
+           family={Thanigaivel},
+           familyi={T\bibinitperiod},
+           given={N.K.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=ea60886b3e56ab80762010b43dd61d72}{%
+           family={Nee},
+           familyi={N\bibinitperiod},
+           given={A.Y.C.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{f44b0458423b40fca3fea4877faed8ee}
+      \strng{fullhash}{97d201adc389a12ac9cc4e2715f2243d}
+      \strng{bibnamehash}{97d201adc389a12ac9cc4e2715f2243d}
+      \strng{authorbibnamehash}{97d201adc389a12ac9cc4e2715f2243d}
+      \strng{authornamehash}{f44b0458423b40fca3fea4877faed8ee}
+      \strng{authorfullhash}{97d201adc389a12ac9cc4e2715f2243d}
+      \field{extraname}{2}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0736-5845}
+      \field{journaltitle}{Robotics and Computer-Integrated Manufacturing}
+      \field{title}{Augmented reality-assisted robot programming system for industrial applications}
+      \field{volume}{61}
+      \field{year}{2020}
+      \field{pages}{101820}
+      \range{pages}{1}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.rcim.2019.101820
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519300250
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0736584519300250
+      \endverb
+      \keyw{Augmented reality,Robot programming,Human-robot interaction}
+    \endentry
+    \entry{37-ar-dt}{article}{}
+      \name{author}{2}{}{%
+        {{hash=3d3e7a5c649ba35582ca57a2d478aa73}{%
+           family={Matulis},
+           familyi={M\bibinitperiod},
+           given={Marius},
+           giveni={M\bibinitperiod}}}%
+        {{hash=64c051cfb6299ab6d402a5a17093d14f}{%
+           family={Harvey},
+           familyi={H\bibinitperiod},
+           given={Carlo},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{92dd281d3d984737c08e52c01fa80204}
+      \strng{fullhash}{92dd281d3d984737c08e52c01fa80204}
+      \strng{bibnamehash}{92dd281d3d984737c08e52c01fa80204}
+      \strng{authorbibnamehash}{92dd281d3d984737c08e52c01fa80204}
+      \strng{authornamehash}{92dd281d3d984737c08e52c01fa80204}
+      \strng{authorfullhash}{92dd281d3d984737c08e52c01fa80204}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0097-8493}
+      \field{journaltitle}{Computers \& Graphics}
+      \field{title}{A robot arm digital twin utilising reinforcement learning}
+      \field{volume}{95}
+      \field{year}{2021}
+      \field{pages}{106\bibrangedash 114}
+      \range{pages}{9}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.cag.2021.01.011
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S009784932100011X
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S009784932100011X
+      \endverb
+      \keyw{Robot arm,Reinforcement learning,Artificial intelligence,Digital twin}
+    \endentry
+    \entry{41-ar-dt}{misc}{}
+      \name{author}{4}{}{%
+        {{hash=293bc77fa97f42e089ab48ab9ce9e52c}{%
+           family={Yigitbas},
+           familyi={Y\bibinitperiod},
+           given={Enes},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9487776dd4a927c3de89e65568aa5661}{%
+           family={Karakaya},
+           familyi={K\bibinitperiod},
+           given={Kadiray},
+           giveni={K\bibinitperiod}}}%
+        {{hash=99e26103a462b21f4425243cb2e1be6e}{%
+           family={Jovanovikj},
+           familyi={J\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+        {{hash=af382dc4ee2ef85f92a873e209159a0a}{%
+           family={Engels},
+           familyi={E\bibinitperiod},
+           given={Gregor},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8050b86ed40b1bd809ee088cb86e7439}
+      \strng{fullhash}{1dd6b788d11693b6b1c91c2fbf5a9832}
+      \strng{bibnamehash}{1dd6b788d11693b6b1c91c2fbf5a9832}
+      \strng{authorbibnamehash}{1dd6b788d11693b6b1c91c2fbf5a9832}
+      \strng{authornamehash}{8050b86ed40b1bd809ee088cb86e7439}
+      \strng{authorfullhash}{1dd6b788d11693b6b1c91c2fbf5a9832}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.HC}
+      \field{eprinttype}{arXiv}
+      \field{title}{Enhancing Human-in-the-Loop Adaptive Systems through Digital Twins and VR Interfaces}
+      \field{year}{2021}
+      \verb{eprint}
+      \verb 2103.10804
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2103.10804
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2103.10804
+      \endverb
+    \endentry
+    \entry{42-ar-dt}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=cae4024204576ac785b7029350f7889d}{%
+           family={Tsokalo},
+           familyi={T\bibinitperiod},
+           given={Ievgenii\bibnamedelima A.},
+           giveni={I\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4589e0a4a50e194bc03374c963eb7318}{%
+           family={Kuss},
+           familyi={K\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5517b4f310ffd55823c7313bb1dd9c79}{%
+           family={Kharabet},
+           familyi={K\bibinitperiod},
+           given={Ievgen},
+           giveni={I\bibinitperiod}}}%
+        {{hash=d3e7f971501ea31ce2bc16e2c490eb05}{%
+           family={Fitzek},
+           familyi={F\bibinitperiod},
+           given={Frank\bibnamedelimb H.\bibnamedelimi P.},
+           giveni={F\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=e5883236e64d11b6c74c9bddea54c831}{%
+           family={Reisslein},
+           familyi={R\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{c49c5ad852c87fe32bb58c1b744a6100}
+      \strng{fullhash}{43939e194b0e7206327588b75fb26e8f}
+      \strng{bibnamehash}{43939e194b0e7206327588b75fb26e8f}
+      \strng{authorbibnamehash}{43939e194b0e7206327588b75fb26e8f}
+      \strng{authornamehash}{c49c5ad852c87fe32bb58c1b744a6100}
+      \strng{authorfullhash}{43939e194b0e7206327588b75fb26e8f}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2019 IEEE Global Communications Conference (GLOBECOM)}
+      \field{title}{Remote Robot Control with Human-in-the-Loop over Long Distances Using Digital Twins}
+      \field{year}{2019}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/GLOBECOM38437.2019.9013428
+      \endverb
+      \keyw{Internet;Robot control;Manipulators;Delays;Visualization}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
