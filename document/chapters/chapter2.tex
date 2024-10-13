@@ -79,7 +79,7 @@ This involves developing robots that are, not only autonomous, but also capable 
 human-behavior and learning from human feedback. 
 
 However, \ac{HRI} can be broken down into different forms of interaction, whose categorization is based on various factors that define how 
-humans and robots share the workspace. This disctinction is represented in the figure \ref{fig:collab} and can be broken down into \textbf{Coexistence}, \textbf{Cooperation} and \textbf{Collaboration} \cite{Jahanmahin2022}. 
+humans and robots share the workspace. This disctinction is represented in the Figure \ref{fig:collab} and can be broken down into \textbf{Coexistence}, \textbf{Cooperation} and \textbf{Collaboration} \cite{Jahanmahin2022}. 
 Each one can be distinguished by the degree of interaction and task sharing between humans and robots:
 
 \begin{figure}[!htbp]
@@ -104,7 +104,7 @@ Each one can be distinguished by the degree of interaction and task sharing betw
 Underneath the image, the table further breaks down these distinctions, highlighting key factors like space, task relationship, possibility of contact, and the need for context awareness. This gradient from coexistence to collaboration shows the increasing complexity and interdependence in \ac{HRI}, as technology evolves to make robots more capable partners in industrial and service environments.
 
 % explanation of the below figure
-Below, the figure \ref{fig:hrc-workstation} illustrates a \ac{HRC} workspace, showcasing the interaction between a human worker and a robot within a shared environment. The workspace is divided into distinct yet overlapping areas: the robot's work envelope and the human's work envelope. These areas reflect the respective tasks of each party, with the robot likely performing repetitive or automated tasks, such as material handling within the feeding system, while the human focuses on more intricate tasks requiring dexterity and decision-making.
+Below, the Figure \ref{fig:hrc-workstation} illustrates a \ac{HRC} workspace, showcasing the interaction between a human worker and a robot within a shared environment. The workspace is divided into distinct yet overlapping areas: the robot's work envelope and the human's work envelope. These areas reflect the respective tasks of each party, with the robot likely performing repetitive or automated tasks, such as material handling within the feeding system, while the human focuses on more intricate tasks requiring dexterity and decision-making.
 
 The overlapping shared workspace demonstrates the core principle of \ac{HRC}, where humans and robots work together toward common goals, necessitating real-time coordination and communication. In this setup, advanced sensing technologies or machine vision are essential to ensure safety and prevent collisions, allowing both the human and robot to operate efficiently within close proximity.
 
@@ -177,7 +177,7 @@ Despite their advantages, integrating cobots into existing workflows poses chall
 %%%%%%%%%%%%%% 16set 18h04 a parte abaixo, está ok ver so se é preciso adicionar mais alguma figura
 \section{Digital Realities} 
 
-\ac{DR's} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
+\ac{DRs} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in Figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
 This continuum is divided into four principal stages: Reality, Augmented Reality \ac{AR}, \ac{AV}, and Virtual Reality \ac{VR}.
 
 \begin{figure}[h]
@@ -214,15 +214,17 @@ In this continuum, Reality represents the perception of an unaltered physical en
     % \end{figure}
 
 \subsubsection{Mixed Reality}
-    \ac{MR} continues to elude a universally accepted definition, with interpretations diverging significantly across academic and industrial domains. First conceptualized by Milgram and Kishino, MR occupies a transitional space within the Reality-Virtuality Continuum, serving as an intermediary that bridges \ac{AR} and \ac{AV} \cite{milgram1994}. In \ac{MR} environments, both digital and physical elements coexist and interact in real time, fostering a dynamic and seamless interface between the virtual and physical worlds.
+   
+    \ac{MR} continues to elude a universally accepted definition, with interpretations diverging significantly across academic and industrial domains. According to the Milgram and Kishino Reality-Virtuality Continuum, depicted in Figure \ref{f:real-virtual-continuum}, \ac{MR} occupies a transitional space between \ac{AR} and \ac{AV}, bridging the two concepts \cite{milgram1994}. Expanding on this, Microsoft’s \ac{MR} spectrum defines \ac{MR} as spanning a range of technologies, from \ac{AR} (where physical reality predominates, augmented with digital overlays) to \ac{AV} (where the virtual environment dominates, supplemented by real-world data) \cite{microsoft_mixed_reality}. 
 
-    According to Microsoft’s \ac{MR} spectrum \cite{microsoft_mixed_reality}, \ac{MR} spans a range of technologies, from \ac{AR} (where physical reality is predominant and augmented with digital overlays) to \ac{AV} (where the virtual environment dominates, supplemented by real-world data). \ac{MR}, therefore, facilitates an immersive interaction between the user and both physical and digital elements, allowing for bi-directional interaction between virtual objects and the real-world environment. For instance, in \ac{MR} users can interact with digital content as though it physically exists within the real-world space. This fluid integration forms the cornerstone of \ac{MR} applications, enabling new forms of collaboration, visualization, and interaction.
+    In \ac{MR} environments, digital and physical elements coexist and interact in real time, creating a dynamic interface where virtual and physical worlds seamlessly blend. This enables immersive, bi-directional interaction, where users engage with both digital objects and real-world elements, facilitating fluid communication between virtual entities and the physical environment. This integration enhances the user experience by enabling virtual objects to influence, and be influenced by, real-world contexts in a highly interactive manner, enabling new forms of collaboration, visualization, and interaction.
 
-    The inherent complexity of \ac{MR} arises from the challenge of ensuring a natural and intuitive integration of digital and physical elements. This requires advanced environmental sensing, real-time data fusion, and contextual understanding to deliver interactions that appear natural to the user. Consequently, the hardware requirements for \ac{MR} are more demanding than those for \ac{AR} or \ac{VR} alone. \ac{MR} systems typically employ spatial computing techniques, integrating high-fidelity sensors, advanced computational algorithms, and computer vision to recognize and map physical spaces, thus allowing for more sophisticated interactions.
+    The inherent complexity of \ac{MR} arises from the challenge of ensuring a natural and intuitive integration of digital and physical elements. This requires advanced environmental sensing, real-time data fusion, and contextual understanding to deliver interactions that appear natural to the user. 
+    % Consequently, the hardware requirements for \ac{MR} are more demanding than those for \ac{AR} or \ac{VR} alone. \ac{MR} systems typically employ spatial computing techniques, integrating high-fidelity sensors, advanced computational algorithms, and computer vision to recognize and map physical spaces, thus allowing for more sophisticated interactions.
 
-    Despite considerable advancements, the definition of \ac{MR} remains contested. Speicher, Hall, and Nebeling (2019) identified six competing notions of MR across both scholarly literature and industry practice, underscoring the fragmentation in its interpretation. Some experts argue that \ac{MR} represents an enhanced form of \ac{AR}, where users are not merely passive observers but active participants interacting with a responsive augmented space. In this interpretation, \ac{MR} is seen as a "stronger" form of \ac{AR}, exemplified by technologies such as Microsoft's HoloLens, where users can manipulate virtual elements within their physical environment.
+    Despite considerable advancements, the definition of \ac{MR} remains contested. Speicher, Hall, and Nebeling (2019) identified six competing notions of \ac{MR} across both scholarly literature and industry practice, underscoring the fragmentation in its interpretation. Some experts argue that \ac{MR} represents an enhanced form of \ac{AR}, where users are not merely passive observers but active participants interacting with a responsive augmented space. In this interpretation, \ac{MR} is seen as a "stronger" form of \ac{AR}, exemplified by technologies such as Microsoft's HoloLens, where users can manipulate virtual elements within their physical environment \cite{whatismixedreality}.
 
-    Other perspectives view \ac{MR} as a convergence of \ac{AR} and \ac{VR}, where the boundary between the real and virtual worlds is fluid and adaptable, creating immersive, hybrid experiences. For example, the widely known game Pokémon Go is sometimes cited as an \ac{MR} application, where a \ac{VR}-based digital environment enables users to interact with augmented digital elements such as Pokémons, overlaid onto the physical world, as depicted in figure \ref{f:pokemon-go} \cite{whatismixedreality}.
+    Other perspectives view \ac{MR} as a convergence of \ac{AR} and \ac{VR}, where the boundary between the real and virtual worlds is fluid and adaptable, creating immersive, hybrid experiences. For example, the widely known game Pokémon Go is sometimes cited as an \ac{MR} application, where a \ac{VR}-based digital environment enables users to interact with augmented digital elements such as Pokémons, overlaid onto the physical world, as depicted in Figure \ref{f:pokemon-go} \cite{whatismixedreality}.
 
     However, the definition most relevant to this project's development emphasizes \ac{MR} as a medium for collaboration, enabling users to interact across different realities—whether physical, augmented, or virtual. In this context, \ac{MR} supports shared experiences between users situated in distinct environments. For example, a physical space visualized by an on-site \ac{AR} user can be simultaneously recreated and experienced by a remote \ac{VR} user, allowing for real-time, collaborative interactions between participants in different realities. This collaborative dimension of \ac{MR} is central to the system proposed in this research, which adopts this definition as the foundational framework for enabling seamless interaction and cooperation between users in distinct digital and physical environments \cite{whatismixedreality}.
    
@@ -388,11 +390,11 @@ In this continuum, Reality represents the perception of an unaltered physical en
 
 \ac{DTs} are sophisticated digital replicas of physical entities, allowing for the simulation, analysis, and control of systems within a digital framework. These digital counterparts have emerged as pivotal technologies in a variety of domains, particularly in enhancing \ac{HRC}, as they offer real-time, interactive environments that mirror physical systems. The ability to replicate physical entities with high fidelity enables improved decision-making, operational efficiency, and flexibility across a wide range of industrial applications.
 
-This \ac{DT} concept was first introduced by NASA in the 1980s as part of its spacecraft monitoring systems, where virtual models were employed to replicate the conditions and behavior of spacecraft during missions. Over the past decades, advances in \ac{IOT}, sensor technology, and computational power have significantly evolved the capabilities of \ac{DTs}, moving beyond their original use case. Modern systems leverage real-time sensor data and advanced simulation techniques to enhance the accuracy and reliability of digital models, enabling more sophisticated predictions, real-time analytics, and simulations of complex systems \cite{liu2022digitaltwin}.
+This \ac{DT} concept was first introduced by NASA in the 1980s as part of its spacecraft monitoring systems, where virtual models were employed to replicate the conditions and behavior of spacecraft during missions. Over the past decades, advances in \ac{IOT}, sensor technology, and computational power have significantly improved the capabilities of \ac{DTs}, moving beyond their original use case. Modern systems leverage real-time sensor data and advanced simulation techniques to enhance the accuracy and reliability of digital models, enabling more sophisticated predictions, real-time analytics, and simulations of complex systems \cite{liu2022digitaltwin}.
 
 In nowadays manufacturing and industry scenarios, \ac{DTs} play a transformative role, particularly in smart manufacturing systems, where they enable detailed examination and prediction of the behavior of physical systems. This capability allows companies to optimize operations, reduce downtime, and improve overall system efficiency. Furthermore, in \ac{HRC}, \ac{DTs} facilitate safer and more productive work environments by dynamically adjusting robotic movements and operations to better align with human needs, thereby enhancing ergonomic interactions and mitigating safety risks \cite{8477101}.
 
-A prominent real-world implementation of this technology is seen in Singapore's Smart Nation Initiative, where the Land Transport Authority employs a \ac{DT} to simulate and evaluate potential policy decisions before their implementation. This application exemplifies the wide-ranging potential of \ac{DTs} to support decision-making processes in urban planning, infrastructure management, and beyond \cite{isprs-archives-XLII-4-W7-37-2017}. As these technologies evolve, their applications in both academic research and industrial practice are expanding rapidly.
+A prominent real-world implementation of this technology is seen in Singapore's Smart Nation Initiative, where the Land Transport Authority employs a \ac{DT} to simulate and evaluate potential policy decisions before their implementation. This application exemplifies the wide-ranging potential of \ac{DTs} to support decision-making processes in urban planning, infrastructure management, and beyond \cite{isprs-archives-XLII-4-W7-37-2017}. As these technologies evolve, their applications in both academic research and industrial practice are rapidly expanding.
 
 The academic landscape surrounding \ac{DTs} has seen extensive research exploring their versatility and potential, having been applied to a broad spectrum of areas, illustrating the profound impact of DTs on enhancing system efficiency, predictive maintenance, and overall operational performance \cite{8361285, TAO2018169, isprs-archives-XLII-4-W7-37-2017, 10.1007/978-3-030-23162-0_19, 6296978}.
 
@@ -406,22 +408,25 @@ This interaction is fundamental to the operation of true \ac{DTs}, allowing for 
 
 In contrast to true \ac{DTs}, some critics argue that many commercially available implementations, such as those provided by companies like Siemens, represent "digital shadows" rather than full \ac{DTs}. The distinction lies in the capability for bidirectional communication. In many digital shadow systems, changes in the physical system are reflected in the virtual model, but there is no capacity for the virtual model to directly control or alter the physical system. This one-way communication limits the interactive and predictive capabilities that define a true DT \cite{CIMINO2019103130}.
 
-To illustrate the distinction, figure \ref{f:dt-structure} presents a reference model of a \ac{DT}, showcasing the bidirectional flow of information between physical and digital entities. This structure is essential for enabling real-time interaction and feedback, a core characteristic of \ac{DTs} that differentiates them from digital shadows. True \ac{DTs} must facilitate a continuous, reciprocal exchange of data between physical and virtual domains, allowing the virtual model to reflect and affect the physical system \cite{dt_model}.
+To illustrate the distinction, Figure \ref{f:dt-structure} presents a reference model of a \ac{DT}, showcasing the bidirectional flow of information between physical and digital entities. This structure is essential for enabling real-time interaction and feedback, core characteristics that  differentiate \ac{DTs} from digital shadows. True \ac{DTs} must facilitate a continuous, reciprocal exchange of data between physical and virtual domains, allowing the virtual model to reflect and affect the physical system \cite{dt_model}.
 
 \begin{figure}[!htpb]
     \centering
     \includegraphics[width=0.4\linewidth]{figs/dt_reference_model.png}
-    \caption{A Digital Twin reference model \cite{dt_model}}
+    \caption{A Digital Twin reference model, emphasizing the importance of bidirectional communication between the physical object and its digital counterpart \cite{dt_model}}
     \label{f:dt-structure}
 \end{figure}
+\FloatBarrier
 
+Bidirectional communication's importance in \ac{DTs} is further emphasized by Liu et al.~\cite{liu2022state}, who argue that “a true DT must include bidirectional communication instead of having a virtual model that only updates according to a physical system.” This distinction between the types of communication and interaction is critical, as it defines the extent to which a \ac{DT} can be leveraged for control, simulation, and predictive purposes.
 
-Bidirectional communication's importance in \ac{DTs} is further emphasized by Liu et al.~, who argue that “a true DT must include bidirectional communication instead of having a virtual model that only updates according to a physical system.” This distinction between the types of communication and interaction is critical, as it defines the extent to which a \ac{DT} can be leveraged for control, simulation, and predictive purposes.
-Table \ref{tab:levels_of_control} illustrates the levels of control present in DT systems, from no interaction, to unidirectional data flows, and ultimately to bidirectional communication, which defines a fully functional DT \cite{liu2022state}.
+Table \ref{tab:levels_of_control} outlines different interaction levels within \ac{DT} systems, ranging from no interaction, where the physical and virtual systems are disconnected, to unidirectional data flow, where data is transferred from the physical to the virtual model, and culminating in bidirectional communication. The latter represents a fully functional \ac{DT}, where continuous exchange of data allows the virtual model to influence and control the physical system, achieving real-time synchronization and interaction.
+
+% Table \ref{tab:levels_of_control} illustrates interaction levels present in \ac{DT} systems, from no interaction, to unidirectional data flow, and ultimately to bidirectional communication, the latest defining a fully functional \ac{DT}.
 
 \begin{table}[!htpb]
     \centering
-    \caption{Levels of Control, adapted from \cite{liu2022state}}
+    \caption{Levels of Interaction in a Digital Twin system between the physical model and its digital counterpart, adapted from \cite{liu2022state}}
     \label{tab:levels_of_control}
     \begin{tabular}{@{}l>{\raggedright\arraybackslash}p{10cm}@{}}
     \toprule
@@ -439,7 +444,7 @@ Table \ref{tab:levels_of_control} illustrates the levels of control present in D
 
 
 \section{Human-Robot Collaboration in Industrial Applications}
-Following the detailed exploration of \ac{DT} and \ac{AR}, this section discusses how these technologies integrate into \ac{HRC}, demonstrating significant improvements in interaction, safety and efficacy in practical examples from industry solutions with specific emphasis on remote collaboration.
+Following the detailed exploration of \ac{DT} and \ac{MR}, this section discusses how these technologies integrate into \ac{HRC}, demonstrating significant improvements in interaction, safety and efficacy in practical examples from industry solutions with specific emphasis on remote collaboration.
 
 \subsection{Enhancing Human-Robot Collaboration through Augmented Reality and Digital Twin Implementation}
 
@@ -461,45 +466,118 @@ Lasota et al.~\cite{doi:10.1177/0018720814565188} conducted experiments to evalu
 
 The study utilized the \ac{ROS} to control a WidowX 250 Robot Arm, using the MoveIt framework for motion planning. This approach ensures modularity, adaptability, and ease of management in shared \ac{HRC} environments. Both \ac{AR} and \ac{DT} models were developed using the Microsoft HoloLens 2 for visual feedback and the SenseGlove Nova™ for haptic feedback, offering a comprehensive multimodal experience.
 
-Through the HoloLens, users could visualize the robot's planned trajectory and swept volume, anticipating its actions. Concurrently, the haptic interface provided vibration feedback to signal the robot's proximity and target destinations, as illustrated in Figure~\ref{fig:haptic-visual-cues}. These multimodal cues offered varying levels of detail, aiding coordination in tasks that required awareness of robot movements.
-
-\subsubsection{Benefits of Multimodal Feedback}
-
-Findings show that combining visual, haptic, and acoustic cues significantly improved task performance. Visual interfaces, especially those indicating proximity, excelled in usability, while haptic feedback proved invaluable in scenarios where visual input was insufficient or overloaded. Acoustic signals also served as alerts for sudden changes in the robot's motion, helping reduce operator anxiety in unpredictable environments.
-
-In a task where the operator and robot worked independently but in close proximity, the system enabled efficient coordination. The robot delivered materials while the operator performed assembly tasks, highlighting the potential for \ac{AR}-based interfaces to optimize \ac{HRC} in industrial settings.
+Through the HoloLens, users could visualize the robot's planned trajectory and swept volume, thus anticipating its actions. Concurrently, the haptic interface provided vibration feedback to signal the robot's proximity and target destinations, as illustrated in Figure~\ref{fig:haptic-visual-cues}. These multimodal cues offered varying levels of detail, aiding coordination in tasks that required awareness of robot movements.
 
 \begin{figure}[htp]
     \centering
-    \begin{subfigure}{.49\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.9\linewidth]{figs/haptic-cues.jpg}
-        \caption{Indicating the gripper’s destination using vibration on different human fingers.}
+        \includegraphics[width=0.6\linewidth]{figs/haptic-cues.jpg}
+        \caption{Cues indicating the gripper’s destination using vibration on different human fingers.}
         \label{fig:sfig1}
-    \end{subfigure}%
-    \begin{subfigure}{.49\textwidth}
+    \end{subfigure}
+    %  confirm if it was visual and haptic cues or just haptic cues
+
+    \vspace{0.5cm} % Adds space between the figures
+    
+    \begin{subfigure}{\textwidth}
         \centering
-        \includegraphics[width=0.9\linewidth]{figs/visual-cues.jpg}
-        \caption{Indicating the proximity of the gripper via vibration frequency changes.}
+        \includegraphics[width=0.6\linewidth]{figs/visual-cues.jpg}
+        \caption{Cues indicating the proximity of the gripper via vibration frequency changes.}
         \label{fig:sfig2}
     \end{subfigure}
+    
     \caption{Visual and haptic interfaces used in the experiment~\cite{CHU2023313}.}
     \label{fig:haptic-visual-cues}
 \end{figure}
 
+\subsubsection{Benefits of Multimodal Feedback}
+
+Findings show that combining visual, haptic, and acoustic cues significantly improve task performance. Visual interfaces, especially those indicating proximity, excelled in usability, while haptic feedback proved invaluable in scenarios where visual input was insufficient or overloaded. Acoustic signals also served as alerts for sudden changes in the robot's motion, helping reduce operator anxiety in unpredictable environments.
+
+In a task where the operator and robot worked independently but in close proximity, the system enabled efficient coordination. The robot delivered materials while the operator performed assembly tasks, highlighting the potential for \ac{AR}-based interfaces to optimize \ac{HRC} in industrial settings.
+
+
+% %%%%%%%%%%%%%%%%%%%%% previous version %%%%%%%%%%%%%%%%%%%%%
+% \subsection{Augmented Reality-Assisted Multi-Robot Systems for Enhanced Control and Coordination}
+% % below, update the correct references
+% Integrating \ac{AR} into multi-robot manufacturing systems offers significant improvements in interaction, operational safety, and efficiency, especially when applied to real-time and planned control modes.
+
+% Ong et al.~\cite{ong2020} further explored \ac{AR}-assisted robot programming for welding applications, demonstrating that user-friendly interfaces can significantly reduce the complexity and duration of the programming process. These interfaces enable operators to define welding points and orientations using handheld pointers, thus enhancing task accuracy and efficiency by allowing validation within the actual robot workspace.
+
+% Malí et al.~\cite{7819154} developed an \ac{AR} application that permits users to adjust robot axis values, visualize specific robot points through 3D arrows, and navigate hidden points using leading lines. Evaluated in an industrial setting, this application showed improvements in usability and interaction capabilities.
+
+% Puljiz et al.~\cite{puljiz2019conceptsendtoendaugmentedreality,puljiz2} explored various \ac{AR}-based methods for robotic arm programming using devices like the Microsoft HoloLens, implementing techniques such as hand-guided task programming, augmented trajectory visualization, and the creation of spatial maps for virtual waypoint placement. These methods facilitate intuitive and accurate robotic arm programming, enabling seamless integration between virtual commands and real-world operations.
+
+% Modern manufacturing trends are characterized by a shift toward mass customization and increased flexibility, driven by the demand for individualized products. This necessitates more adaptable manufacturing systems where human operators collaborate with industrial robots to handle complex tasks~\cite{1-ar-dt,2-ar-dt,3-ar-dt}. However, existing robotic systems primarily execute pre-programmed tasks with limited intelligence.
+
+% To address this, two promising approaches have emerged: leveraging advanced \ac{AI} techniques for robot learning~\cite{6-ar-dt} and integrating a human-in-the-loop strategy for robot teleoperation. The latter, more aligned with Industry 5.0 principles, extends the capabilities of both humans and robots by incorporating human expertise into collaborative multi-robot processes~\cite{7-ar-dt}.
+
+% Unlike traditional \ac{HRC}, multi-robot manufacturing with a human in the loop allows operators to interact with robots from remote locations, not limited to physical workspaces. This paradigm facilitates safer and more flexible manufacturing, by bridging the gap between fully automated and manual operations~\cite{7-ar-dt}. However, significant challenges remain, including the need for more user-friendly teleoperation interfaces and systems that can be easily utilized by manufacturing operators without extensive robotics training~\cite{9-ar-dt}.
+
+% Research in multi-agent collaborative manufacturing has focused on enhancing safety, productivity, and cost reduction. Wearable \ac{AR}-assisted systems and \ac{DT} technologies enable accurate and intuitive robot teleoperation. By combining \ac{AR} with robot teleoperation, workers can access physical and virtual information simultaneously in a hybrid environment, interacting with virtual objects~\cite{26-ar-dt,27-ar-dt}. An example is an \ac{AR}-based teleoperation system utilizing RGB-D imaging, allowing operators to perceive the remote robot's environment and perform teleoperation~\cite{10-ar-dt}. Another system transforms robot workspaces into \ac{AR} environments for rapid and intuitive path planning and task programming~\cite{30-ar-dt}. These systems improve task performance by providing additional visual cues to enhance the operator's situational awareness.
+
+% Recent advancements in smart manufacturing have led to the development of \ac{DT} models for robot control. For example, \cite{37-ar-dt} used the Unity engine to create a \ac{DT} of a robot arm that could learn manufacturing tasks virtually and replicate them in the physical world. The integration of \ac{DT} and \ac{VR} interfaces has also been proposed to design immersive human-in-the-loop robotic systems, where the \ac{DT} acts as an intermediary layer for task execution and quality monitoring~\cite{41-ar-dt,42-ar-dt}.
+
+% Li et al.~\cite{LI2022102321} demonstrated how \ac{AR}-assisted \ac{DTs} enable operators to manage and coordinate multiple robots more effectively.
+% Figure~\ref{fig:physical-digital} depicts an immersive dual view where users can interact with the physical setup of two collaborating robots while simultaneously observing their virtual counterparts through Microsoft HoloLens \ac{AR} glasses. This setup allows for real-time monitoring and simulation of manufacturing processes, improving robot operation control.
+
+% \begin{figure}[!htpb]
+%     \centering
+%     \includegraphics[width=0.85\linewidth]{figs/physical-digital.png}
+%     \caption{\ac{AR}-assisted \ac{DT}-enabled multi-robot collaborative manufacturing system \cite{LI2022102321}.}
+%     \label{fig:physical-digital}
+% \end{figure}
+
+% Their proposed comprehensive framework for an \ac{AR}-assisted, \ac{DT}-enabled robot collaborative manufacturing system features human-in-the-loop control. The system architecture, shown in Figure~\ref{f:system-framework}, introduces a multi-node communication mechanism to facilitate interactions among multiple robots and clients. It includes the design of an \ac{AR}-based teleoperation system for pose registration and motion planning, coupled with three \ac{DT}-enabled interaction approaches to achieve closed-loop interaction between virtual and physical robots.
+
+% \begin{figure}[!htpb]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{figs/framework.jpg}
+%     \caption{The architecture of a multi-robot, multi-client communication mechanism \cite{LI2022102321}.}
+%     \label{f:system-framework}
+% \end{figure}
+
+% The \ac{DT} of the physical robot, modeled using the Unity engine, is displayed as a hologram in the remote workspace via \ac{AR} glasses, enabling teleoperation and remote monitoring. Pose registration involves aligning the virtual and physical robot models using the Vuforia Engine, while joint alignment translates \ac{DT} joint values into real-world coordinates.
+
+% Therefore, a robot control approach aided by \ac{AR} technology offers several benefits:
+% \begin{itemize}
+%     \item Enhanced predictability of robot posture and motion trajectories.
+%     \item Trajectory visualization to prevent safety issues.
+%     \item An intuitive interface that overcomes spatial and physical limitations.
+% \end{itemize}
+
+% However, observing workspace and robot state information during task execution presents challenges, such as networking latency and positioning accuracy. Proposed solutions include time-sensitive networks and advanced communication technologies such as 5G~\cite{LI2022102321}.
+
+% The proposed system utilizes IP cameras for workspace monitoring, projecting video feeds onto \ac{AR} glasses for enhanced remote monitoring, as shown in Figure~\ref{f:workspace-visualization}.
+
+% \begin{figure}[!htpb]
+%     \centering
+%     \includegraphics[width=0.7\linewidth]{figs/workspace-visualization.jpg}
+%     \caption{Demonstration of the workspace observation approach \cite{LI2022102321}.}
+%     \label{f:workspace-visualization}
+% \end{figure}
+% \FloatBarrier
+
+
+% Despite these advancements, challenges such as \ac{DT} model accuracy and network latency still affect the overall system performance. Addressing these limitations is essential for realizing the full potential of \ac{AR}-assisted \ac{DT} systems in industrial applications~\cite{LI2022102321}.
+
+% do a conclusion of the state of art. i will transition into the methodology of proposing the system - taking into consideration several aspects of the state of art such as: using Unity 3D for robot model development, trying to implement the billateral communication of digital twins by utilizing a robot that already has \ac{ROS} working on it as well as the packages that allow it to move. besides that, the use of vuforia to do the pose registration of the robot. The suggestions of the visual and audio cues that can be implemented in AR.  the safety-zone interactions allow the user to be aware of the robot's movements and prevent accidents, as well as the audio implemented - these are great ideas.
+% the robot manipulation was implemented in an easy to understand by non-experient people, were implemented from the remote site - unity - by utilizing the Interface of an HHD device to manipulate each joint separately -  by pressing a publish button that will send the robot to the desired real location.
+%  from the \ac{ROS} side, by manipulating the robot through its console, unity digital twin will be updated in real time, and the robot position will be visible for the remote user by visualizing the robot's position in the HHD device.
+% the camera feed transmition is also good to mention because it allows the remote user to visualzie the workspace that is being worked on.
+
+% do a conclusion of the state of art.
+
+% \end{enumerate}
+
+% either this one or the below one
+
 \subsection{Augmented Reality-Assisted Multi-Robot Systems for Enhanced Control and Coordination}
-% below, update the correct references
-Integrating \ac{AR} into multi-robot manufacturing systems offers significant improvements in interaction, operational safety, and efficiency, especially when applied to real-time and planned control modes. Li et al.~\cite{LI2022102321} demonstrated how \ac{AR}-assisted \ac{DTs} enable operators to manage and coordinate multiple robots more effectively.
-Figure~\ref{fig:physical-digital} depicts an immersive dual view where users can interact with the physical setup of two collaborating robots while simultaneously observing their virtual counterparts through Microsoft HoloLens \ac{AR} glasses. This setup allows for real-time monitoring and simulation of manufacturing processes, improving robot operation control.
 
-\begin{figure}[!htpb]
-    \centering
-    \includegraphics[width=0.85\linewidth]{figs/physical-digital.png}
-    \caption{\ac{AR}-assisted \ac{DT}-enabled multi-robot collaborative manufacturing system \cite{LI2022102321}.}
-    \label{fig:physical-digital}
-\end{figure}
+Integrating \ac{AR} into multi-robot manufacturing systems offers significant improvements in interaction, operational safety, and efficiency, especially when applied to real-time and planned control modes.
 
-Despite these advancements, challenges such as \ac{DT} model accuracy and network latency still affect the overall system performance. Addressing these limitations is essential for realizing the full potential of \ac{AR}-assisted \ac{DT} systems in industrial applications~\cite{LI2022102321}. Ong et al.~\cite{ong2020} further explored \ac{AR}-assisted robot programming for welding applications, demonstrating that user-friendly interfaces can significantly reduce the complexity and duration of the programming process. These interfaces enable operators to define welding points and orientations using handheld pointers, thus enhancing task accuracy and efficiency by allowing validation within the actual robot workspace.
+Ong et al.~\cite{ong2020} further explored \ac{AR}-assisted robot programming for welding applications, demonstrating that user-friendly interfaces can significantly reduce the complexity and duration of the programming process. These interfaces enable operators to define welding points and orientations using handheld pointers, thus enhancing task accuracy and efficiency by allowing validation within the actual robot workspace.
 
 Malí et al.~\cite{7819154} developed an \ac{AR} application that permits users to adjust robot axis values, visualize specific robot points through 3D arrows, and navigate hidden points using leading lines. Evaluated in an industrial setting, this application showed improvements in usability and interaction capabilities.
 
@@ -509,17 +587,23 @@ Modern manufacturing trends are characterized by a shift toward mass customizati
 
 To address this, two promising approaches have emerged: leveraging advanced \ac{AI} techniques for robot learning~\cite{6-ar-dt} and integrating a human-in-the-loop strategy for robot teleoperation. The latter, more aligned with Industry 5.0 principles, extends the capabilities of both humans and robots by incorporating human expertise into collaborative multi-robot processes~\cite{7-ar-dt}.
 
-Unlike traditional \ac{HRC}, multi-robot manufacturing with a human in the loop allows operators to interact with robots from remote locations, not limited to physical workspaces. This paradigm facilitates safer, more flexible manufacturing by bridging the gap between fully automated and manual operations~\cite{7-ar-dt}. However, significant challenges remain, including the need for more user-friendly teleoperation interfaces and systems that can be easily utilized by manufacturing operators without extensive robotics training~\cite{9-ar-dt}.
+Unlike traditional \ac{HRC}, multi-robot manufacturing with a human in the loop allows operators to interact with robots from remote locations, not limited to physical workspaces. This paradigm facilitates safer and more flexible manufacturing, by bridging the gap between fully automated and manual operations~\cite{7-ar-dt}. However, significant challenges remain, including the need for more user-friendly teleoperation interfaces and systems that can be easily utilized by manufacturing operators without extensive robotics training~\cite{9-ar-dt}.
 
-Research in multi-agent collaborative manufacturing has focused on enhancing safety, productivity, and cost reduction. Wearable \ac{AR}-assisted systems and \ac{DT} technologies enable accurate and intuitive robot teleoperation. 
-% are the below examples needed?
-% For instance, teleoperation is widely utilized in surgical robots~\cite{22}, robotic manipulators~\cite{11}, aerial robots~\cite{23}, and underwater robots~\cite{24} due to its adaptability across temporal and spatial domains.
-
-By combining \ac{AR} with robot teleoperation, workers can access physical and virtual information simultaneously in a hybrid environment, interacting with virtual objects~\cite{26-ar-dt,27-ar-dt}. An example is an \ac{AR}-based teleoperation system utilizing RGB-D imaging, allowing operators to perceive the remote robot's environment and perform teleoperation~\cite{10-ar-dt}. Another system transforms robot workspaces into \ac{AR} environments for rapid and intuitive path planning and task programming~\cite{30-ar-dt}. These systems improve task performance by providing additional visual cues to enhance the operator's situational awareness.
+Research in multi-agent collaborative manufacturing has focused on enhancing safety, productivity, and cost reduction. Wearable \ac{AR}-assisted systems and \ac{DT} technologies enable accurate and intuitive robot teleoperation. By combining \ac{AR} with robot teleoperation, workers can access physical and virtual information simultaneously in a hybrid environment, interacting with virtual objects~\cite{26-ar-dt,27-ar-dt}. An example is an \ac{AR}-based teleoperation system utilizing RGB-D imaging, allowing operators to perceive the remote robot's environment and perform teleoperation~\cite{10-ar-dt}. Another system transforms robot workspaces into \ac{AR} environments for rapid and intuitive path planning and task programming~\cite{30-ar-dt}. These systems improve task performance by providing additional visual cues to enhance the operator's situational awareness.
 
 Recent advancements in smart manufacturing have led to the development of \ac{DT} models for robot control. For example, \cite{37-ar-dt} used the Unity engine to create a \ac{DT} of a robot arm that could learn manufacturing tasks virtually and replicate them in the physical world. The integration of \ac{DT} and \ac{VR} interfaces has also been proposed to design immersive human-in-the-loop robotic systems, where the \ac{DT} acts as an intermediary layer for task execution and quality monitoring~\cite{41-ar-dt,42-ar-dt}.
 
-Li et al.~\cite{LI2022102321} proposed a comprehensive framework for an \ac{AR}-assisted, \ac{DT}-enabled robot collaborative manufacturing system featuring human-in-the-loop control. The system architecture, shown in Figure~\ref{f:system-framework}, introduces a multi-node communication mechanism to facilitate interactions among multiple robots and clients. It includes the design of an \ac{AR}-based teleoperation system for pose registration and motion planning, coupled with three \ac{DT}-enabled interaction approaches to achieve closed-loop interaction between virtual and physical robots.
+Li et al.~\cite{LI2022102321} demonstrated how \ac{AR}-assisted \ac{DTs} enable operators to manage and coordinate multiple robots more effectively.
+Figure~\ref{fig:physical-digital} depicts an immersive dual view where users can interact with the physical setup of two collaborating robots while simultaneously observing their virtual counterparts through Microsoft HoloLens \ac{AR} glasses. This setup allows for real-time monitoring and simulation of manufacturing processes, improving robot operation control.
+
+\begin{figure}[!htpb]
+    \centering
+    \includegraphics[width=0.85\linewidth]{figs/physical-digital.png}
+    \caption{\ac{AR}-assisted \ac{DT}-enabled multi-robot collaborative manufacturing system \cite{LI2022102321}.}
+    \label{fig:physical-digital}
+\end{figure}
+
+Their proposed comprehensive framework for an \ac{AR}-assisted, \ac{DT}-enabled robot collaborative manufacturing system features human-in-the-loop control. The system architecture, shown in Figure~\ref{f:system-framework}, introduces a multi-node communication mechanism to facilitate interactions among multiple robots and clients. It includes the design of an \ac{AR}-based teleoperation system for pose registration and motion planning, coupled with three \ac{DT}-enabled interaction approaches to achieve closed-loop interaction between virtual and physical robots.
 
 \begin{figure}[!htpb]
     \centering
@@ -539,7 +623,7 @@ Therefore, a robot control approach aided by \ac{AR} technology offers several b
 
 However, observing workspace and robot state information during task execution presents challenges, such as networking latency and positioning accuracy. Proposed solutions include time-sensitive networks and advanced communication technologies such as 5G~\cite{LI2022102321}.
 
-The proposed system utilizes IP cameras for workspace monitoring, projecting video feeds onto \ac{AR} glasses for enhanced remote monitoring, as shown in Figure~\ref{f:workspace-visualization}.
+The proposed system also utilizes IP cameras for workspace monitoring, projecting video feeds onto \ac{AR} glasses for enhanced remote monitoring, as shown in Figure~\ref{f:workspace-visualization}.
 
 \begin{figure}[!htpb]
     \centering
@@ -550,16 +634,9 @@ The proposed system utilizes IP cameras for workspace monitoring, projecting vid
 \FloatBarrier
 
 
-% do a conclusion of the state of art. i will transition into the methodology of proposing the system - taking into consideration several aspects of the state of art such as: using Unity 3D for robot model development, trying to implement the billateral communication of digital twins by utilizing a robot that already has \ac{ROS} working on it as well as the packages that allow it to move. besides that, the use of vuforia to do the pose registration of the robot. The suggestions of the visual and audio cues that can be implemented in AR.  the safety-zone interactions allow the user to be aware of the robot's movements and prevent accidents, as well as the audio implemented - these are great ideas.
-% the robot manipulation was implemented in an easy to understand by non-experient people, were implemented from the remote site - unity - by utilizing the Interface of an HHD device to manipulate each joint separately -  by pressing a publish button that will send the robot to the desired real location.
-%  from the \ac{ROS} side, by manipulating the robot through its console, unity digital twin will be updated in real time, and the robot position will be visible for the remote user by visualizing the robot's position in the HHD device.
-% the camera feed transmition is also good to mention because it allows the remote user to visualzie the workspace that is being worked on.
+% Despite these advancements, challenges such as \ac{DT} model accuracy and network latency still affect the overall system performance. Addressing these limitations is essential for realizing the full potential of \ac{AR}-assisted \ac{DT} systems in industrial applications~\cite{LI2022102321}.
 
-% do a conclusion of the state of art.
 
-% \end{enumerate}
-
-% either this one or the below one
 \section{Future Trends in Human-Robot Collaboration}
 
 According to the 2019 article \textit{Human–Robot Collaboration in Manufacturing Applications: A Review} \cite{robotics8040100}, future directions in 
@@ -586,16 +663,16 @@ cobots, advancements in sensing technologies, matured algorithms, and accumulate
 
 \section{Summary}
 
-Even though significant advancements in \ac{MR}-\ac{DT} implementations over the past, the state-of-the-art literature predominantly focuses on developing applications for on-site personnel. Remote collaboration, particularly in \ac{HRC} scenarios, has received comparatively less attention, highlighting the need for systems that effectively facilitate both on-site and remote collaboration.
+Even though significant advancements in \ac{AR}-\ac{DT} implementations over the past, the state-of-the-art literature predominantly focuses on developing applications for on-site personnel. Remote collaboration, particularly in \ac{HRC} scenarios, has received comparatively less attention, highlighting the need for systems that effectively facilitate both on-site and remote collaboration.
 % confirm if i can say this
 
 Therefore, the proposed project aims to facilitate and integrate better remote collaboration by proposing a generalized conceptual system applicable across various application scenarios.
 
 Despite having developed on-site features, such as digital twin pose registration alongside audio and visual cues, focus will be mainly on the remote collaboration part implementation and the billateral communication between users.
 
-Unity 3D engine will be further explored for robot model development, \ac{ROS} will be used for robot control, and Vuforia for pose registration. It will also incorporate visual and audio cues to enhance user safety and awareness, \ac{MR} elements also implemented with Unity 3D. IP cameras will enable workspace monitoring. 
+Unity 3D engine will be further explored for robot model development, \ac{ROS} will be used for robot control, and Vuforia for pose registration. It will also incorporate visual and audio cues to enhance user safety and awareness, \ac{MR} elements also implemented with Unity 3D. A camera will enable workspace monitoring. 
 
-In conclusion, the proposed system will enable remote users to manipulate the robot using handheld devices, with the robot's real-time position displayed in the Unity digital twin. By addressing these challenges, the project aims to enhance remote collaboration in human-robot interaction scenarios, contributing to the broader field of \ac{MR}-\ac{DT} applications.
+In conclusion, the proposed system will enable remote users to manipulate the robot using \ac{HHD}, with the robot's real-time position displayed in the Unity \ac{DT}. By addressing these challenges, the project aims to enhance remote collaboration in \ac{HRC} scenarios, contributing to the broader field of \ac{MR}-\ac{DT} applications.
 
 
 % %add this part somewhere
