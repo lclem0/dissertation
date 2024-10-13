@@ -79,7 +79,8 @@ This involves developing robots that are, not only autonomous, but also capable 
 human-behavior and learning from human feedback. 
 
 However, \ac{HRI} can be broken down into different forms of interaction, whose categorization is based on various factors that define how 
-humans and robots share the workspace. This disctinction is represented in the figure \ref{fig:collab} and can be summarized as follows \cite{Jahanmahin2022}:
+humans and robots share the workspace. This disctinction is represented in the figure \ref{fig:collab} and can be broken down into \textbf{Coexistence}, \textbf{Cooperation} and \textbf{Collaboration} \cite{Jahanmahin2022}. 
+Each one can be distinguished by the degree of interaction and task sharing between humans and robots:
 
 \begin{figure}[!htbp]
     \centering
@@ -90,22 +91,17 @@ humans and robots share the workspace. This disctinction is represented in the f
 \end{figure} 
 
 \begin{itemize}
-    \item \textbf{\ac{HRCx}}: In this form of interaction, humans and robots do not directly interact.
-    Both carry out their tasks independently, without contact. Usually this interaction does not involve synchronized work 
-    or communication between the two parties.
+    \item \textbf{\ac{HRCx}}: In this form of interaction, humans and robots operate in the same environment but perform entirely independent tasks without interaction. The workspace is separated, there is no contact, and context awareness is unnecessary since the tasks are unrelated.
+    Usually this interaction does not involve synchronized work or communication between the two parties. 
 
-    \item \textbf{\ac{HRCp}}: Here, humans and robots share both the workspace and the task objective. Cooperation occurs when humans
-    and robots work towards a common goal, and advanced technologies such as sensors or machine vision rarely may be used to detect and prevent collisions.
-    However, there is limited physical interaction between them.
+    \item \textbf{\ac{HRCp}}: Here, humans and robots share the workspace and work on linked tasks, towards a common goal. Advanced technologies such as sensors or machine vision may be used to detect and prevent collisions. Contact is possible, though not essential and actions are largely independent  with occasional coordinated efforts.
 
-    \item \textbf{Human-Robot Collaboration (\ac{HRC})}: This is the most integrated form of \ac{HRI}, where humans and robots, not only share the workspace and objectives, but also interact directly.
-    %  as shown in the picture \ref{fig:hrc-workstation}. 
-    
-    % One key area within Human-Robot Interaction (\ac{HRI}) is Human-Robot Collaboration (\ac{HRC}), which specifically focuses on scenarios where humans and robots cooperate directly to achieve common goals.
-
-    In \ac{HRC}, physical contact may occur (e.g., through shared manipulation of an object) or there can be non-physical collaboration, such as verbal communication, gestures, or pattern recognition. In collaborative environments, humans usually perform tasks requiring fine motor skills or decision-making, while robots handle repetitive, strenuous, or hazardous tasks.
+    \item \textbf{Human-Robot Collaboration (\ac{HRC})}: represents the most advanced and integrated form of \ac{HRI}. In \ac{HRC}, humans and robots not only share a common workspace but also actively collaborate on shared objectives. This collaboration can involve direct physical contact, such as the joint manipulation of objects, or non-physical interaction, including verbal communication, gestures, or pattern recognition.
+    Within such environments, humans often handle tasks that require fine motor skills, decision-making, or creative problem-solving, while robots take on repetitive, strenuous, or hazardous activities, ensuring efficiency and safety. This synergy enhances productivity by leveraging the unique strengths of both humans and robots, creating a dynamic partnership where each complements the other’s capabilities.
 
 \end{itemize}
+
+Underneath the image, the table further breaks down these distinctions, highlighting key factors like space, task relationship, possibility of contact, and the need for context awareness. This gradient from coexistence to collaboration shows the increasing complexity and interdependence in \ac{HRI}, as technology evolves to make robots more capable partners in industrial and service environments.
 
 % explanation of the below figure
 Below, the figure \ref{fig:hrc-workstation} illustrates a \ac{HRC} workspace, showcasing the interaction between a human worker and a robot within a shared environment. The workspace is divided into distinct yet overlapping areas: the robot's work envelope and the human's work envelope. These areas reflect the respective tasks of each party, with the robot likely performing repetitive or automated tasks, such as material handling within the feeding system, while the human focuses on more intricate tasks requiring dexterity and decision-making.
@@ -147,7 +143,7 @@ This cobots emergence represents a paradigm shift in industrial automation, emph
 
 % \subsubsection{Background and Evolution of Cobots}
 
-The concept of cobots was first introduced by J. Edward Colgate and Michael Pashkin in 1996 \cite{cobot-definition}, laying the groundwork for practical applications in \ac{HRC}. Commercializing cobots began with the release of the UR5 model by Universal Robots in 2008 \cite{robotics8040100}, marking a significant milestone in the advancement of \ac{HRC} and then facilitating the integration of collaborative robotics into industrial workflows.
+The concept of cobots was first introduced by J. Edward Colgate and Michael Pashkin in 1996 \cite{cobot-definition}, laying the groundwork for practical applications in \ac{HRC}. Commercializing cobots began with the release of the UR5 model by Universal Robots in 2008 \cite{robotics8040100}, marking a significant milestone in the advancement of \ac{HRC} and facilitating the integration of collaborative robotics into industrial workflows.
 
 \begin{figure}[!htbp]
     \centering
@@ -175,13 +171,13 @@ These attributes are particularly beneficial in high-risk applications and indus
 When assessing the applicability of cobots versus traditional robots, several distinctions emerge. Cobots excel in tasks that require adaptability and human-like dexterity, such as assembly, placement, handling, and quality inspection. Their versatility and ease of integration make them suitable for low-volume, high-mix production environments, where agility is crucial. However, traditional robots retain an advantage in scenarios that demand high payload capacity, speed, and precision, particularly in heavy-duty manufacturing applications \cite{robotics8040100}.
 
 
-Despite their advantages, integrating cobots into existing workflows poses challenges. Issues such as interoperability with legacy systems, programming complexity for non-standard tasks, and optimizing cobot performance in dynamic environments require further research and development. Additionally, advancements in artificial intelligence and machine learning could unlock new capabilities for cobots, enabling them to autonomously adapt to changing tasks and work conditions, thereby extending their utility beyond predefined, structured environments.
+Despite their advantages, integrating cobots into existing workflows poses challenges. Issues such as interoperability with legacy systems, programming complexity for non-standard tasks, and optimizing cobot performance in dynamic environments require further research and development. Additionally, advancements in \ac{AI} and \ac{ML} could unlock new capabilities for cobots, enabling them to autonomously adapt to changing tasks and work conditions, thereby extending their utility beyond predefined, structured environments.
 
 
 %%%%%%%%%%%%%% 16set 18h04 a parte abaixo, está ok ver so se é preciso adicionar mais alguma figura
 \section{Digital Realities} 
 
-Digital Realities \ac{DRs} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
+\ac{DR's} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
 This continuum is divided into four principal stages: Reality, Augmented Reality \ac{AR}, \ac{AV}, and Virtual Reality \ac{VR}.
 
 \begin{figure}[h]
@@ -193,7 +189,7 @@ This continuum is divided into four principal stages: Reality, Augmented Reality
 
 In this continuum, Reality represents the perception of an unaltered physical environment, devoid of any virtual modifications. As we progress along the continuum towards the virtual side, different digital realities offer increasingly immersive experiences by blending or replacing real-world content with virtual elements.
 
-\subsubsection{Augmented Reality \ac{AR}}
+\subsubsection{Augmented Reality }
     \ac{AR} enhances a user's interaction with their physical environment by overlaying dynamic digital content, such as 3D objects, information layers, or media, onto the real world \cite{liu2022digitaltwin}. The main goal of \ac{AR} is to seamlessly integrate virtual objects with the user's surrounding physical context, facilitating real-time interaction between the virtual and physical realms \cite{Azuma1997}. The ultimate goal is for users to experience both virtual and real entities as coexisting within the same space, generating a cohesive and interactive environment.
 
     Achieving this level of integration requires accurate spatial registration, a process that ensures that virtual elements are properly aligned with real-world objects in both location and scale. The spatial coherence between the two realities is critical for creating an effective \ac{AR} experience, where virtual objects respond to changes in the environment and user interaction in real-time.
@@ -202,13 +198,13 @@ In this continuum, Reality represents the perception of an unaltered physical en
     % These technologies have transformed numerous industries, offering new possibilities in fields ranging from manufacturing and design to healthcare and entertainment.
 
 
-\subsubsection{Virtual Reality (\ac{VR})}
+\subsubsection{Virtual Reality}
     
     Within the Reality-Virtuality Continuum proposed by Milgram and Kishino, \ac{VR} occupies the extreme end of the spectrum, representing a complete substitution of a user’s perception of the physical world with a fully immersive synthetic environment. In this stage, the user is entirely isolated from their real surroundings, perceiving only the artificially constructed virtual environment, which is typically presented through a range of immersive devices such as \ac{HMDs} \cite{milgram1994}.
 
     Modern \ac{VR} systems achieve this full immersion by leveraging advanced \ac{HMDs}, such as the Oculus Quest 2, which present stereoscopic images directly to the user’s eyes through built-in displays or projection systems. These devices often incorporate additional features like head tracking, which enables the user’s head movements to influence their viewpoint in the virtual environment, further enhancing the sense of immersion and presence \cite{whatismixedreality}. Some systems also include positional tracking through external sensors or inside-out tracking via integrated cameras, allowing users to physically navigate virtual spaces, augmenting both interaction fidelity and spatial awareness.
 
-    \ac{VR} is particularly effective in applications that require the user to be completely enveloped in an artificial environment, thus enabling the simulation of real-world scenarios, historical reconstructions, or entirely imaginative worlds. This sense of "presence," wherein users perceive the virtual environment as real, is fundamental to \ac{VR}'s efficacy across various domains, including gaming, education, training, and simulation. Additionally, \ac{VR}'s potential to create deeply immersive and isolated experiences makes it especially valuable in fields like remote collaboration, where users can interact with simulated environments or models that are otherwise inaccessible \cite{8712803}.
+    \ac{VR} is particularly effective in applications that require the user to be completely enveloped in an artificial environment, thus enabling the simulation of real-world scenarios, historical reconstructions, or entirely imaginative worlds. This sense of "presence," wherein users perceive the virtual environment as real, is fundamental to \ac{VR}'s efficacy across various domains, including gaming, education, training, and simulation. Additionally, \ac{VR} potential to create deeply immersive and isolated experiences makes it especially valuable in fields like remote collaboration, where users can interact with simulated environments or models that are otherwise inaccessible \cite{8712803}.
 
     % \begin{figure}[h]
     %     \centering
@@ -217,7 +213,7 @@ In this continuum, Reality represents the perception of an unaltered physical en
     %     \label{f:quest-2-vr}
     % \end{figure}
 
-\subsubsection{Mixed Reality (\ac{MR})}
+\subsubsection{Mixed Reality}
     \ac{MR} continues to elude a universally accepted definition, with interpretations diverging significantly across academic and industrial domains. First conceptualized by Milgram and Kishino, MR occupies a transitional space within the Reality-Virtuality Continuum, serving as an intermediary that bridges \ac{AR} and \ac{AV} \cite{milgram1994}. In \ac{MR} environments, both digital and physical elements coexist and interact in real time, fostering a dynamic and seamless interface between the virtual and physical worlds.
 
     According to Microsoft’s \ac{MR} spectrum \cite{microsoft_mixed_reality}, \ac{MR} spans a range of technologies, from \ac{AR} (where physical reality is predominant and augmented with digital overlays) to \ac{AV} (where the virtual environment dominates, supplemented by real-world data). \ac{MR}, therefore, facilitates an immersive interaction between the user and both physical and digital elements, allowing for bi-directional interaction between virtual objects and the real-world environment. For instance, in \ac{MR} users can interact with digital content as though it physically exists within the real-world space. This fluid integration forms the cornerstone of \ac{MR} applications, enabling new forms of collaboration, visualization, and interaction.
