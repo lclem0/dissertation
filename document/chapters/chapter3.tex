@@ -15,6 +15,7 @@ In order to start addressing the mentioned challenges, a first effort has been m
 \end{figure}
 
 
+
 \section{Digital Model Implementation of the Robot}
 \label{section:digital-model}
 
@@ -133,13 +134,17 @@ After understanding that the ROS topic responsible for publishing the current st
 
 introduction to implementation tools, unity game engine, vuforia for pose registration, urdf importer for unity, robot operating system, aruco marker for robot alignment, networking and protocols, conclusion
 
+The chapter will explore each tool in detail, providing a thorough explanation of its selection, its integration within the project, and its contribution to the broader \ac{MR}-based \ac{HRC} framework.
+
 \chapter{Implementation Tools}%
 \label{chapter:tools}
 
-As introduced in section~\ref{section:Goals}, the primary objective of this dissertation is to explore and implement the concept of Human-Robot Collaboration (\ac{HRC}) by leveraging Mixed Reality (\ac{MR}) technologies. To achieve this goal, a comprehensive framework integrating hardware and software components is designed, facilitating remote collaboration in real-time. This chapter outlines the critical tools used in the implementation of the digital twin, as well as the hardware and software resources required for bi-directional robot control.
+Achieving the successful integration of Human-Robot Collaboration (\ac{HRC}) and Mixed Reality (\ac{MR}) technologies requires a careful selection of advanced tools, spanning both software and hardware domains. The goal of this dissertation is to construct a robust \ac{MR}-based \ac{DT} framework that allows real-time, remote collaboration and bi-directional robot control. The implementation of such a system introduces several key challenges, including the alignment of physical and digital entities, real-time data communication, and the creation of immersive, user-friendly interfaces. This chapter systematically introduces the key implementation tools used throughout the development of the project, explaining their roles in addressing these challenges. 
+The tools discussed in this chapter were chosen for their specific contributions to the project’s overall goal. 
 
-\section{Conceptual Model}
-The implementation began by using the UR10e robotic arm (figure \ref{f:ur10e_iris}), housed at the IRIS Lab, as the core physical entity in this human-robot collaborative system. The UR10e robot served as the dynamic agent for performing collaborative tasks, where its physical attributes were mirrored in a digital environment, establishing a fundamental digital twin concept.
+\section{UR10e Robot}
+
+In order to start adressing the aforementioned challenges, a first effort has been made. A robotic arm from Universal Robots, UR10e, shown in the figure \ref{f:ur10e_iris}, available at IRIS LAB.
 
 \begin{figure}[h]
     \centering
@@ -148,18 +153,49 @@ The implementation began by using the UR10e robotic arm (figure \ref{f:ur10e_iri
     \label{f:ur10e_iris}
 \end{figure}
 
+The UR10e model is one of Universal Robots' most advanced cobots, featuring a payload capacity of 12.5 kg, and a reach of 1300 mm, being designed to automate a wide range of tasks that typically require human input, such as assembly, packaging, and pick-and-place operations \footnote{UR10e \url{https://www.universal-robots.com/products/ur10-robot/} Accessed: 2024-10-15}.
+
+UR10e's integrated force sensors and collision detection technologies allow to collaborate safely with humans in shared workspaces, making it ideal for \ac{HRC} scenarios. Besides, it offers significant flexibility in terms of programming and adaptability. Its console is intuitive and allows imported pre-programmed scripts, therefore being easily deployed across various industrial tasks with minimal programming experience required by the operator.
+
+This robot, as the core physical entity in this human-robot collaborative system, serves as the dynamic agent for performing collaborative tasks, where its physical attributes were mirrored in an immersive digital environment, regarding the fundamental \ac{DT} concept.
+
+\section{Simulation Environment}
+
+\subsection{Unity}
+
+Unity, developed by Unity Technologies, was selected as the primary platform for developing the \ac{MR} environment in this project. Originally designed for game development, Unity has evolved into a powerful tool for creating interactive 3D applications, including \ac{AR}, \ac{VR}, and \ac{MR}. Its robust architecture and versatility in rendering complex virtual environments make it an ideal choice for building a dynamic \ac{DT} of the UR10e robotic arm. This ability to seamlessly integrate external data sources, such as sensor inputs from real-world hardware, enables a high degree of interactivity and realism in the simulation.
+
+Unity’s integrated development environment (\ac{IDE}) allows for rapid prototyping and iterative design of both the virtual space and the \ac{MR} user interface. Moreover, the engine's cross-platform compatibility supports a range of devices, including desktop systems and mobile platforms, and can handle real-time rendering of high-fidelity 3D models, essential for \ac{MR} applications. 
+Through the Unity-based simulation, operators can not only control the physical UR10e robot remotely but also visualize real-world tasks in a digital, augmented environment, ensuring accurate synchronization between physical and virtual realms.
+
+In addition, Unity’s robust asset management and scripting support, primarily through C#, provide developers with the tools to easily simulate complex environments, manage interactive objects, and implement advanced functionality such as collision detection and user input handling. These features enable a realistic and immersive experience for both on-site and remote users, improving the overall effectiveness of the \ac{HRC} system.
+
+\subsection{Digital Model Implementation of the Robot}
+
+% Here, you can explain how the **Unity URDF Importer package** facilitated the import and management of the robot’s digital model, enabling the creation of a precise digital twin. This section should delve into the **Unity Robotics Hub**, explain why this package was selected, and describe how it contributed to the simulation of the UR10e’s movements and the development of bi-directional communication between the physical and digital environments.
+
+
+
+
+
+
+
+% As introduced in section~\ref{section:Goals}, the primary objective of this dissertation is to explore and implement the concept of Human-Robot Collaboration (\ac{HRC}) by leveraging Mixed Reality (\ac{MR}) technologies. To achieve this goal, a comprehensive framework integrating hardware and software components is designed, facilitating remote collaboration in real-time. This chapter outlines the critical tools used in the implementation of the digital twin, as well as the hardware and software resources required for bi-directional robot control.
+
+
+
 \section{Digital Model Implementation of the Robot}
 \label{section:digital-model}
 
-\subsection{Unity}
-Unity, a widely recognized game engine developed by Unity Technologies, was selected as the primary platform for the \ac{MR} environment. Beyond its gaming origins, Unity has gained prominence for developing interactive 3D applications, particularly in \ac{AR}, \ac{VR}, and \ac{MR}. Unity's versatility in creating immersive simulations, coupled with its ability to integrate external data, made it a suitable choice for developing a digital twin for the UR10e robot.
-
-By leveraging its integrated development environment (\ac{IDE}), Unity supports rapid prototyping of both virtual environments and \ac{MR} interfaces. The platform is compatible with multiple hardware interfaces and supports real-time rendering of 3D models. The Unity-based environment facilitates not only remote robot control but also the visualization of real-world robotic tasks in an augmented setting.
 
 \subsection{Digital Robot Model - URDF Importer Package}
-To mirror the UR10e robot in Unity, the Universal Robot Description Format (\ac{URDF}) was essential. Unity Robotics Hub's URDF Importer package was used to import the robot’s CAD model into the simulation environment \footnote{Unity Robotics Hub \url{https://github.com/Unity-Technologies/Unity-Robotics-Hub} Accessed: 2024-02-02}. However, due to the complexity of importing the UR10e model directly, a closely related UR10 model was used from an open-source repository \footnote{PositronicsLab \url{https://github.com/PositronicsLab/reveal_packages/tree/master/industrial_arm/scenario/models/urdf/ur10} Accessed: 2024-02-05}. 
+In order to correctly mirror the UR10e physical robot model and establish a functional \ac{DT} bidirectional synchronization, the (\ac{URDF}) model of the robot was imported to Unity simulation environment. Unity Robotics Hub's \ac{URDF} Importer package was used for this very purpose \footnote{Unity Robotics Hub \url{https://github.com/Unity-Technologies/Unity-Robotics-Hub} Accessed: 2024-02-02}.
+This package provided several key advantages during the implementation of the \ac{DT} for the UR10e robot.
 
-This digital model laid the groundwork for performing bidirectional communication between the physical and digital environments. Integrating this URDF model allowed for real-time visualization of robot movements within the Unity environment, providing a key foundation for developing the digital twin.
+The \textit{Unity \ac{URDF} Importer} package significantly facilitated the integration of the \ac{URDF} file, enabling the precise recreation of the UR10e robot's physical structure, including its joints and linkages. This seamless integration supported real-time simulation of the robot's movements and configurations within the \ac{Unity} environment. Additionally, it allowed the visualization and fine-tuning of physics properties to accurately reflect the robot's real-world dynamics. Essential for bilateral communication between virtual and physical robots, the package also streamlined sensor data import from \ac{ROS}, enhancing the realism of simulations and optimizing development and testing processes.
+
+
+This digital model implementation laid the groundwork for performing bidirectional communication between the physical and digital environments. 
 
 \section{Pose Registration}
 Pose registration is a crucial step in aligning the digital model with the physical robot. In this project, Vuforia, a cutting-edge \ac{AR} software platform, was integrated with Unity to accomplish this alignment.
@@ -201,6 +237,10 @@ In figure \ref{f:ur10_marker_unity}, the successful pose registration is demonst
 
 \section{Bidirectional Communication}
 
+% Adding a detailed explanation of how **ROS (Robot Operating System)** was integrated with Unity via **ROS-TCP-Connector** for real-time control and communication would also be a logical progression after this.
+
 \subsection{UR10e ROS Documentation}
 While Unity was chosen for its ability to create immersive environments, ROS (Robot Operating System) was selected to facilitate communication between the physical robot and its digital twin. The UR10e robot runs on ROS Noetic, which was configured on Ubuntu 20.04. By using ROS-TCP-Connector and ROS-TCP-Endpoint packages \footnote{Unity ROS Connector \url{https://github.com/Unity-Technologies/ROS-TCP-Connector} Accessed: 2024-02-02}
 
+% a resume for each definition of the tools used in the implementation of the project - removeeeeeeeeeeeeeeeeeeee?
+% Unity serves as the central development platform, integrating 3D models and real-time visualization to create the \ac{DT}. Vuforia, in conjunction with \ac{AR} markers, ensures precise pose registration between the physical robot and its digital counterpart. Additionally, \ac{ROS} (Robot Operating System) serves as the middleware facilitating real-time communication between the physical robot and the Unity environment. Together, these tools form the backbone of the system's functionality, enabling seamless collaboration between human operators and robotic systems in both physical and virtual spaces.
