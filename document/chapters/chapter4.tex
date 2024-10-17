@@ -2,9 +2,38 @@
 \label{chapter:on-site}
 % \chapter{On-site Member's Application}% first title of section
 
+
+\section{Framework}
+
+Figure~\ref{fig:project_framework} illustrates the  proposed framework of the \ac{MR}-based \ac{HRC} system. This framework links two distinct environments—on-site and remote—using a sophisticated communication pipeline to enable real-time, collaborative robot manipulation.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/framework-1.jpeg}
+    \caption{Overview of the proposed \ac{MR}-based \ac{HRC} system framework integrating remote and on-site environments.}
+    \label{fig:project_framework}
+\end{figure}
+
+
+In the *On-Site Environment*, the UR10e robotic arm serves as the physical entity to be manipulated.
+This member interacts with the robotic arm using a custom \ac{MR} application built in Unity, enabling real-time robot manipulation. Three distinct methods were developed for this robot manipulation, that will be further explained. Pose registration between the physical robot and its \ac{DT} is handled via the Vuforia package, implemented also in the Unity environnment, which uses ArUco markers to ensure precise alignment of the robot’s \ac{DT} with its real-world counterpart. This \ac{DT} is rendered and can be controlled within Unity, facilitating seamless communication and visualization.
+
+The UR10e robot is connected via ethernet to the \ac{ROS} middleware, enabling sensor data exchange and robot control between the Unity \ac{DT} and the physical robot. \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, both previously developed and available at the IRIS LAB github repository \footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment for controlling the UR10e through RViz, enabling trajectory planning, joint state feedback, and real-time execution robotic manipulation.
+
+The communication between the \ac{ROS} middleware and the \ac{MR}-environment in Unity is established using Unity’s \ac{ROS}-TCP-Connector and \ac{ROS}-TCP-Endpoint, enabling bidirectional communication over a TCP/IP protocol.
+
+In the *Remote Environment*, the remote member accesses the same version of the Unity application, which allows them to monitor and manipulate the robot from a different location. The remote member's interface is designed to visualize the robot’s state and its workspace in real time, offering control over certain robotic functions. Communication between the remote member and the on-site system is facilitated through Unity's mixed reality environment, which syncs with the \ac{ROS}-based on-site control system.
+
+The *Middleware* serves as the bridge between the physical and virtual worlds. It not only synchronizes robot state data but also manages the real-time feedback loop between the \ac{DT} in Unity and the physical robot in the on-site environment. Data flows bidirectionally between the environments, ensuring that actions taken by either the on-site or remote member are reflected in both the \ac{DT} and the real-world robot. This setup ensures high operational consistency and collaborative efficiency, aligning the real robot with its digital counterpart in an immersive mixed-reality interface.
+
+This framework effectively enables remote manipulation and monitoring of the robotic arm while maintaining full synchronization between the physical and digital environments, crucial for collaborative tasks. As a result, the system fosters an immersive, intuitive, and real-time interaction experience, bridging physical and digital spaces through mixed-reality technologies.
+
+
+
+
+
+\section{}
 After having properly implemented the bidirectional communication between both environments, the on-site and the remote, allowing both members to interact with the robot, the next step was to complement the already built application as well as its interface. 
-
-
 
 Afterwards, the framework required to integrate the \ac{MR} technologies with the robotic arm was thoroughly discussed with the supervisors, leading to the following components:
 \begin{itemize}
