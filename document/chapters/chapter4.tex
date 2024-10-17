@@ -5,7 +5,7 @@
 
 \section{Framework}
 
-Figure~\ref{fig:project_framework} illustrates the  proposed framework of the \ac{MR}-based \ac{HRC} system. This framework links two distinct environments—on-site and remote—using a sophisticated communication pipeline to enable real-time, collaborative robot manipulation.
+Figure~\ref{fig:project_framework}  illustrates the proposed framework of the \ac{MR}-based \ac{HRC} system. This framework seamlessly integrates two distinct environments—on-site and remote—through a robust communication pipeline designed to enable real-time, collaborative robot manipulation.
 
 \begin{figure}[h]
     \centering
@@ -14,22 +14,20 @@ Figure~\ref{fig:project_framework} illustrates the  proposed framework of the \a
     \label{fig:project_framework}
 \end{figure}
 
+In the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled and manipulated. The on-site member interacts with this robotic arm through a custom \ac{MR} application developed in Unity, enabling intuitive real-time robot manipulation. Three distinct control methods were developed within the application to facilitate manipulation, which will be explained in subsequent sections.
 
-In the *On-Site Environment*, the UR10e robotic arm serves as the physical entity to be manipulated.
-This member interacts with the robotic arm using a custom \ac{MR} application built in Unity, enabling real-time robot manipulation. Three distinct methods were developed for this robot manipulation, that will be further explained. Pose registration between the physical robot and its \ac{DT} is handled via the Vuforia package, implemented also in the Unity environnment, which uses ArUco markers to ensure precise alignment of the robot’s \ac{DT} with its real-world counterpart. This \ac{DT} is rendered and can be controlled within Unity, facilitating seamless communication and visualization.
+Pose registration between the physical robot and its \ac{DT} is executed using Vuforia's capabilities, integrated within Unity. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
 
-The UR10e robot is connected via ethernet to the \ac{ROS} middleware, enabling sensor data exchange and robot control between the Unity \ac{DT} and the physical robot. \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, both previously developed and available at the IRIS LAB github repository \footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment for controlling the UR10e through RViz, enabling trajectory planning, joint state feedback, and real-time execution robotic manipulation.
+The robot is connected via Ethernet to a laptop running Ubuntu 20.04 with \ac{ROS} Noetic, which serves as the middleware layer. This middleware enables seamless data exchange, including robot's data and control commands, between the Unity \ac{DT} and the physical robot. The \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, developed by the IRIS Lab and available on GitHub\footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment that supports key functionalities such as trajectory planning and robotic manipulation and visualization through RViz.
+These packages were further enhanced, enabling bidirectional communication between the \ac{MR} environment and the UR10e. 
 
-The communication between the \ac{ROS} middleware and the \ac{MR}-environment in Unity is established using Unity’s \ac{ROS}-TCP-Connector and \ac{ROS}-TCP-Endpoint, enabling bidirectional communication over a TCP/IP protocol.
+Communication between the \ac{ROS} middleware and Unity’s \ac{MR} environment is established using Unity’s \ac{ROS}-TCP-Connector and \ac{ROS}-TCP-Endpoint packages. These packages enable bidirectional communication over a \ac{TCP/IP} protocol, ensuring real-time synchronization between the virtual and physical environments. This communication architecture is fundamental for maintaining the \ac{DT}'s fidelity, reflecting real-world changes in the Unity model and vice versa.
 
-In the *Remote Environment*, the remote member accesses the same version of the Unity application, which allows them to monitor and manipulate the robot from a different location. The remote member's interface is designed to visualize the robot’s state and its workspace in real time, offering control over certain robotic functions. Communication between the remote member and the on-site system is facilitated through Unity's mixed reality environment, which syncs with the \ac{ROS}-based on-site control system.
+Regarding the \textbf{Remote Environment}, a remote participant accesses the same Unity-based application. This allows the remote member to visualize and manipulate the robot in real time, from a separate location. The remote \ac{UI} provides real-time visualization of the robot’s state and its workspace, enabling remote collaboration. The synchronization between the remote and on-site environments is facilitated through Unity’s mixed-reality capabilities, which, in conjunction with the \ac{ROS}-based control, enable the remote user to execute commands and receive real-time feedback.
 
-The *Middleware* serves as the bridge between the physical and virtual worlds. It not only synchronizes robot state data but also manages the real-time feedback loop between the \ac{DT} in Unity and the physical robot in the on-site environment. Data flows bidirectionally between the environments, ensuring that actions taken by either the on-site or remote member are reflected in both the \ac{DT} and the real-world robot. This setup ensures high operational consistency and collaborative efficiency, aligning the real robot with its digital counterpart in an immersive mixed-reality interface.
+The Middleware layer, acting as the system’s backbone, ensures the continuous synchronization of data between the physical robot and its \ac{DT}. It manages the real-time feedback loop, maintaining bidirectional data flow between the virtual robot in Unity and the physical robot in the on-site environment. This configuration guarantees that any actions performed by either the on-site or remote user are consistently reflected in both the physical and digital realms, preserving operational coherence and maximizing collaborative efficiency.
 
-This framework effectively enables remote manipulation and monitoring of the robotic arm while maintaining full synchronization between the physical and digital environments, crucial for collaborative tasks. As a result, the system fosters an immersive, intuitive, and real-time interaction experience, bridging physical and digital spaces through mixed-reality technologies.
-
-
-
+This framework provides an immersive and responsive mixed-reality environment, bridging the gap between physical and digital spaces. The system enables real-time robot manipulation and monitoring from both on-site and remote locations, making it a versatile platform for collaborative tasks in advanced industrial applications. The seamless integration of \ac{MR}, \ac{DT}, and \ac{HRC} technologies significantly enhances user interaction, safety, and productivity, while offering an intuitive interface for remote and on-site collaboration.
 
 
 \section{}
