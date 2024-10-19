@@ -10,3 +10,66 @@ The following developed features, for enhancing the on-site environment, were te
 
 
     However, due to the complexity of importing the UR10e model directly, a closely related UR10 model was used from an open-source repository \footnote{PositronicsLab \url{https://github.com/PositronicsLab/reveal_packages/tree/master/industrial_arm/scenario/models/urdf/ur10} Accessed: 2024-02-05}. 
+
+
+
+
+
+    % use case scenario - from chat, change it
+    \section{Use Case Scenario: Collaborative Robot-Assisted Assembly Task}
+    \label{sec:use_case}
+    
+    To validate the application developed in this project, we propose a practical use case scenario in which a human-robot collaborative system is used to assist in a real-time assembly task. The scenario involves a remote user and an on-site operator working together to assemble a complex product, such as a LEGO structure, using the robotic arm UR10e to perform precise tasks like identifying, picking, and placing components.
+    
+    \subsection{Assembly Task Description}
+    The task requires the human operator and the robotic arm to collaborate in assembling various parts of the product. The on-site user prepares the workspace by organizing components and configuring the robot, while the remote user oversees the assembly process and directly controls the robot's movements via the \ac{MR} interface. The robot, equipped with a mounted camera, captures a live video feed of the workspace, streamed to the remote participant in real time. This video allows the remote user to see exactly what the robot is observing, thus ensuring precise actions for component identification, manipulation, and placement.
+    
+    \subsection{Features Utilized in the Assembly Process}
+    
+    \begin{itemize}
+        \item \textbf{On-Site and Remote Collaboration:} The \ac{MR}-based system allows both the on-site and remote users to collaboratively control and monitor the robot’s actions. The on-site operator can use the developed \ac{HHD} interface for fine-tuning the robot’s movements, while the remote user manipulates the robot using the virtual interface, synchronizing real-world and digital movements.
+        
+        \item \textbf{Digital Twin (\ac{DT}) Synchronization:} The \ac{DT} of the UR10e, aligned through Vuforia using ArUco markers, ensures that both the remote and on-site members are consistently aware of the robot’s state. Any movement of the robot, either from remote commands or physical interactions, is accurately mirrored in the Unity-based \ac{MR} interface.
+    
+        \item \textbf{Real-time Video Streaming:} The live camera feed mounted on the UR10e arm streams a real-time video of the robot’s workspace to the remote user, providing full visual context of the assembly task. This reduces the burden on the on-site operator to manually share visual information, allowing the remote user to have a direct perspective of the task and make adjustments as needed.
+    
+        TODO - correc this part 
+        \item \textbf{Safety Zones:} Despite the developed virtual safety zones, displayed in the \ac{MR} interface, being more relevant for the on-site user to prevent collisions during robot operation, these can be easily modified regarding the use-case scenario described. Instead of halting its movement if the on-site member enters the robot working area, visual and auditory alerts are triggered, improving the safety of the interaction. The robot will automatically halt if it detects an on-site user breaching the predefined zones, preventing potential accidents.
+    
+        \item \textbf{Bidirectional Control and Feedback:} The bilateral communication established through ROS-TCP Connector allows commands from the remote user to be executed in real time by the robot, and the robot’s state is reflected back to the digital environment. This ensures that the robot follows precise trajectories, and real-time feedback from the ROS environment ensures synchronization between the virtual and physical models.
+    
+        \item \textbf{Camera Feed Transmission:} The camera feed enhances situational awareness for the remote participant, who can directly monitor the assembly process through the robot’s perspective. This feature reduces the cognitive load on the on-site operator, enabling the remote user to make real-time decisions regarding component handling and placement, ultimately improving task efficiency.
+    
+    \end{itemize}
+    
+    \subsection{Potential Industrial Applications}
+    
+    This human-robot collaborative system has wide-ranging applications in several industries that rely on precise assembly tasks:
+    
+    \begin{itemize}
+        \item \textbf{Electronics Manufacturing:} In industries such as electronics manufacturing, where delicate components need to be assembled with high precision, the system could be applied to remotely assemble small and fragile parts. The real-time video feed and \ac{MR} interface would ensure that the remote operator has full visibility of the workspace, while the robot performs tasks requiring high precision, like picking and placing tiny components.
+    
+        \item \textbf{Automotive Assembly:} In automotive production, remote technicians could assist on-site workers in installing or assembling complex parts. For example, during the assembly of engines or electric vehicle batteries, the robot could handle heavy or dangerous components while the human operator provides real-time guidance from a safe distance.
+    
+        \item \textbf{Aerospace Component Assembly:} Aerospace applications often involve complex, high-value assemblies where precision is critical. The collaborative system could enable engineers to remotely guide robotic arms to fit components with tight tolerances, reducing human error and improving task consistency.
+    
+        \item \textbf{Medical Device Manufacturing:} In medical device manufacturing, this system could ensure the safe and precise assembly of small, intricate parts, where any mistake could be costly. Remote experts could oversee the assembly process, while robots assist in handling and assembling the delicate components of surgical instruments or diagnostic devices.
+    
+    \end{itemize}
+    
+    \subsection{Advantages of the System}
+    The integration of the developed \ac{MR}-based system into such industrial applications offers several advantages:
+    
+    \begin{itemize}
+        \item \textbf{Enhanced Remote Collaboration:} The real-time synchronization between the digital twin and physical robot, combined with live camera feeds, allows remote experts to have full control over assembly tasks without being physically present, enabling global collaboration.
+        
+        \item \textbf{Improved Efficiency and Precision:} The ability to delegate repetitive or precision-dependent tasks to the robot, while the human focuses on higher-level decision-making, improves overall task efficiency. The \ac{MR} interface provides a more intuitive control mechanism than traditional robotic interfaces.
+        
+        \item \textbf{Safety:} The implementation of virtual safety zones and real-time feedback mechanisms ensures that human workers remain safe while working closely with robots. This reduces the risk of accidents in high-risk environments such as automotive and aerospace manufacturing.
+    
+        \item \textbf{Cost-Effective and Scalable:} By enabling remote operation, the system reduces the need for on-site presence, minimizing travel costs and downtime. It is also scalable across multiple sites, allowing experts to manage operations in various locations without needing to be physically present.
+    
+    \end{itemize}
+    
+    In summary, this use case scenario illustrates the practical value of the developed features in collaborative human-robot assembly tasks. The combination of real-time robot manipulation, live video streaming, and digital twin synchronization offers a powerful toolset for modern industrial environments, enhancing productivity, safety, and collaboration.
+    
