@@ -18,28 +18,31 @@ and upskilling their workforce.
 In recent years, Industry 4.0 has marked a paradigm shift toward the digitization of manufacturing processes. By integrating technologies such as the \ac{IoT}, \ac{AI}, and automation, Industry 4.0 has fostered highly interconnected and intelligent manufacturing ecosystems. These advancements have led to a notable decrease in the reliance on human labor, as automation takes center stage in many operations.
 However, as factories become increasingly autonomous, the unique cognitive and adaptive capabilities that humans bring to complex decision-making, creativity, and problem-solving remain irreplaceable, and experts argue that complete removal of humans from the manufacturing processes is not feasible. Instead, there is a growing emphasis on fostering collaborative partnerships between humans and intelligent machinery \cite{Weiss2021}.
 
-As collaborative environments evolve, robots have become indispensable in various domains, leading to increased complexity in these scenarios.  Therefore, advanced solutions are needed to enhance \ac{HRC}. 
-One promising approach consists on integrating Mixed Reality (\ac{MR}) technologies, which encompass both \ac{VR} and Augmented Reality (\ac{AR}) by blending the physical and digital world, thus providing immersive experiences that transcend traditional reality and overcome geographical constraints, enabling real-time collaboration among individuals from different locations.
+As collaborative environments evolve, robots have become indispensable in various domains, leading to increased complexity in these scenarios. Therefore, advanced solutions are needed to enhance \ac{HRC}. For instance, in flexible manufacturing systems, robots must adapt to frequent changes in production tasks, requiring advanced cognitive capabilities to handle non-repetitive operations. Additionally, in collaborative assembly lines, robots need to interact safely and efficiently with human workers, often in unstructured environments where unpredictable human movements pose significant safety and operational challenges. One promising approach consists on integrating Mixed Reality (\ac{MR}) technologies as a medium for collaboration, encompassing \ac{VR} for the remote user and Augmented Reality (\ac{AR}) for the on-site one, by blending the physical and digital world. By providing immersive experiences that transcend traditional reality and overcome geographical constraints, this relationship enables real-time collaboration among individuals from different locations \cite{whatismixedreality}.
+* TODO: add more references - por 3/4 aqui - verificar melhor ao longo do resto do texto, 4 que façam sentido
 
 However, the potential of \ac{MR} to enhance remote collaboration is currently hindered by several critical limitations. These include, not only limited perspective and context capture, which impede remote collaborators' understanding and decision-making capabilities, as well as a lack of multisensory data collection, restricting comprehensive environmental comprehension. 
-Additionally, \ac{MR} interaction with physical objects often lacks the precision required for detailed tasks, particularly in dynamic scenarios. 
-
-These challenges diminish the effectiveness of \ac{MR} in facilitating thorough context sharing and impact the overall efficiency and safety of 
+Additionally, \ac{MR} interaction with physical objects often lacks the precision required for detailed tasks, particularly in dynamic scenarios. These challenges diminish the effectiveness of \ac{MR} in facilitating thorough context sharing and impact the overall efficiency and safety of 
 collaborative tasks.
+* TODO: add more references - verificar melhor ao longo do resto do texto algumas que façam sentido aqui
+
 \FloatBarrier
 
 \section{Goals}
 \label{section:Goals}
 % \input{chapters/introduction/goals}
-The primary goal of this dissertation consists on leveraging Mixed Reality (\ac{MR}) alongside a static robotic arm (UR10e) to support remote collaboration scenarios. 
-This involves transforming Human-Robot Collaboration (\ac{HRC}) by integrating Mixed-Realities (\ac{MR}) technologies and robotic capabilities to enhance both on-site and remote collaboration experiences.
+% The primary goal of this dissertation consists on leveraging (\ac{MR}) alongside a static robotic arm (UR10e) to support remote collaboration scenarios. 
 
-In order to properly achieve this, the main goal can be broken down into the following objectives:
+The primary goal of this dissertation is to enhance remote collaboration between human operators by utilizing a robotic arm (UR10e) and \ac{MR} technologies. This framework enables dynamic and immersive collaboration, where both on-site and remote participants can interact with both the robot and the shared environment in real time. 
 
+% In order to properly achieve this, the main goal can be broken down into the following objectives:
+According to the collaborative element being addressed, namely: 
 \begin{itemize}
     \item \textbf{On-Site Interaction:}
     \begin{itemize}
-        \item Enable dynamic and real-time collaboration with the robot within the designated environment.
+        \item Enable dynamic and real-time robot manipulation through \ac{AR} within the designated environment.
+        \item Infer robot state
+        \item Visualize and interact with the robot's workspace through \ac{AR} safety-zones, enhancing the user's situational awareness.
         \item Utilize \ac{HHDs}, such as tablets or smartphones, to share live views of the surroundings, allowing remote collaborators 
         to gain a comprehensive understanding of the collaborative space.
         % \item Explore the potential of using advanced technologies like the Hololens 2 to enhance the immersive experience of remote collaboration. 
@@ -47,39 +50,21 @@ In order to properly achieve this, the main goal can be broken down into the fol
     \end{itemize}
     \item \textbf{Remote Visualization and Interaction:}
     \begin{itemize}
-        \item Provide remote participants with a foundational 2D interface, such as a laptop screen, to visualize the collaboration scenario and 
+        \item Provide remote member with a foundational \ac{UI} interface, such as a laptop screen, to visualize the collaboration scenario and 
         task context.
-        \item Establish a bidirectional communication, enabling remote operation of the robot via the \ac{MR} application, enhancing the user's ability to interact and manipulate the collaborative environment.
+        \item Establish a bidirectional communication, enabling remote operation of the robot arm via the \ac{MR} application, enhancing the user's ability to interact with the on-site physical space of his/her counterpart.
         % \item Investigate the use of \ac{VR} headsets, such as the Oculus Quest, for a more immersive remote collaboration experience. - deixo estar?????
     \end{itemize}
-    \item \textbf{Automation and Immersion:}
-    \begin{itemize}
-        \item Integrate a camera into the robot to automate the process of environment sharing with remote participants, assisting on-site participants 
-        by delegating visual sharing to the robot.
-        \item Incorporate visual and audio cues to enhance the user's perception and interaction within the collaborative space.
-        % \item Incorporate headsets for environmental visualization to enhance the remote participant's perception and interaction with the collaborative 
-        % space. - deixo estar?????
-    \end{itemize}
-    % \item \textbf{Communication Efficiency:}
-    % \begin{itemize}
-    %     \item Improve communication between on-site and remote members by integrating information-sharing tools, such as voice and annotations, 
-    %     to facilitate more effective collaboration. - deixo estar?????
-    % \end{itemize}
 \end{itemize}
-
-%use robust framework?????
-By addressing these objectives, this dissertation aims to establish a framework that enhances remote collaboration through the innovative use 
-of Mixed-Reality (\ac{MR}) and robotic technologies.
-
 
 
 \section{Thesis Structure}
 % \input{chapters/introduction/structure}
-
-This dissertation is structured across six chapters, each representing a logical progression in the development of this work within the context of Human-Robot Collaboration (\ac{HRC}) and Industry 5.0.
+* TODO: confirmar se sao efetivamente 6 capitulos 
+This dissertation is structured across six chapters, each representing a logical progression in the development of this work within the context of \ac{HRC} and Industry 5.0.
 %  The following sections provide a comprehensive overview of each chapter and its contribution to the overall thesis.
 
-The first chapter introduces the project by framing the motivation behind this work as well as defining the baseline for this dissertation's development. The following chapter presents a thorough state-of-the-art review, with a focus on key concepts such as Industry 5.0, Human-Robot Collaboration (\ac{HRC}), Collaborative Robots, \ac{DRs}, and \ac{DTs}. It also includes an analysis of two case studies involving Augmented Reality (\ac{AR})-Digital Twin (\ac{DT}) solutions in industrial settings. The third chapter discusses the various implementation tools utilized in the project development, such as Unity, Vuforia, and ROS.
+The first chapter introduces the project by framing the motivation behind this work as well as defining the baseline for this dissertation's development. The following chapter presents a thorough state-of-the-art review, with a focus on key concepts such as Industry 5.0, \ac{HRC}, Collaborative Robots, \ac{DRs}, and \ac{DTs}. It also includes an analysis of two case studies involving \ac{AR}-\ac{DT} solutions in industrial settings. The third chapter discusses the various implementation tools utilized in the project development, such as Unity, Vuforia, and ROS.
 Chapter four outlines the framework established for the project and details the specific features implemented, distinguishing those meant for remote members from those designed for on-site collaborators. The fifth chapter is devoted to evaluating the developed features, identifying their limitations, and presenting an application example where the solution could be effectively implemented. Finally, the sixth chapter concludes the thesis by summarizing the project's achievements and suggesting possible directions for future work.
 
 % Chapter 1: Motivation and Goals
