@@ -13,7 +13,7 @@ Figure~\ref{fig:project_framework} illustrates the proposed framework of the \ac
     \caption{Overview of the proposed \ac{MR}-based \ac{HRC} system framework integrating remote and on-site environments.}
     \label{fig:project_framework}
 \end{figure}
-
+* TODO: verify when on-site uses member and verify if it should be changed to another name (user, counterpart - verify with Bernardo's notes)
 First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled and manipulated. The on-site member interacts with this robotic arm through a custom \ac{MR} application developed in Unity, chosen due to its robust \ac{MR} capabilities, which facilitate the creation of immersive, interactive environments, enabling intuitive real-time robot manipulation.
 
 After implementing the robot digital model into the simulation environment, the next step was to align it with the physical robot. Pose registration between the physical robot and its digital counterpart is executed using Vuforia's capabilities. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
@@ -97,21 +97,20 @@ After further analysis, three control methods were implemented to control the ro
         \end{algorithmic}
     \end{algorithm}
 
-    To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which publishes to the standard \texttt{joint\_states} topic, a separate \ac{ROS} topic \texttt{(unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution.
-% keep here
-    In order to handle this communication process, two ROS nodes were created. 
-    The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package.
-    By creating a new node, called \texttt{joint\_state\_listener}, it then subscribes to the \texttt{unity\_joint\_states} topic, expecting to receive a JointState message type.
-    Afterwards, it initializes a publisher for the \texttt{move\_joint\_unity} topic, that converts this data into a Float64MultiArray format that will be further received by the second node.
+    To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which publishes to the standard \texttt{joint\_states} topic, a separate \ac{ROS} topic \texttt{(unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution. 
     
-    Regarding the second node, the \texttt{move\_unity.py} script was created in the \texttt{iris\_sami} package. It initializes the \texttt{test\_arm\_movement} node that listens for joint position commands on the \texttt{/move\_joint\_unity} topic.
-    Upon receiving this data, it moves the robotic arm to the desired position.
+    In order to handle this communication process, two new \texttt{python} scripts were created in order to start two new \ac{ROS} nodes, the \texttt{joint\_state\_listener} and the \texttt{move\_unity} nodes. The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package, initializing the node that subscribes to the \texttt{unity\_joint\_states} topic, expecting to receive a JointState message type. It then initializes a publisher for the \texttt{move\_joint\_unity} topic, converting this data into a Float64MultiArray format that will be further received by the second node. Regarding this second node, \texttt{move\_unity}, created within the \texttt{iris\_sami} package, it subscribes the \texttt{move\_joint\_unity} topic  to joint position commands, moving the robotic arm to the desired position. This robot position update can be performed either on the simulation environment, where it can be visualized through Rviz, or by utilizing the real UR10e robot. 
+    
+    % The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package.
+    % By creating a new node, called \texttt{joint\_state\_listener}, it then subscribes to the \texttt{unity\_joint\_states} topic, expecting to receive a JointState message type.
+    % Afterwards, it initializes a publisher for the \texttt{move\_joint\_unity} topic, that converts this data into a Float64MultiArray format that will be further received by the second node.
+    
+    % Regarding the second node, the \texttt{move\_unity.py} script was created in the . It initializes the \texttt{test\_arm\_movement} node that listens for joint position commands on the \texttt{/move\_joint\_unity} topic.
+    % Upon receiving this data, it moves the robotic arm to the desired position.
 
-    This robot position update can be performed either on the simulation environment, where it can be visualized through Rviz, or by utilizing the real UR10e robot. 
 
-    A pseudo-code explanation for the ROS nodes is presented in algorithm \ref{alg:combined_ros_node}.
-    (add a picture of the framework exchange between Unity and ROS and a pseudo code of the ROS nodes created)
-
+    A pseudo-code explanation for the \ac{ROS} nodes is presented in algorithm \ref{alg:combined_ros_node}.
+    * TODO: add a picture of the framework exchange between Unity and ROS 
 
     % Part 2: ROS Node for Receiving Unity Joint States
 
@@ -147,15 +146,15 @@ After further analysis, three control methods were implemented to control the ro
     
         
 
-    \item \textbf{ROS-Unity Control:} This method allowed the robot to be controlled either in simulation in ROS environment with the Rviz interface, or manually in the robot itself and this would be reflected on the \ac{DT} robot model displayed in the Unity environment.
-
-    Upon selecting this method, the \ac{DT} robot model would be updated in real-time according to the data that is being published into the \texttt{joint\_states} ROS topic.
+    \item \textbf{\ac{ROS}-Unity Control:} This control method allowed the robot to be controlled firstly via Rviz simulation or manually in the robot itself, in the \ac{ROS} middleware environment. These changes would be applied on the \ac{DT} robot model displayed in the Unity \ac{MR} environment. Upon selecting this method, the \ac{DT} robot model would be updated in real-time according to the data that is being published into the \texttt{joint\_states} \ac{ROS} topic.
     
-    A new script was created in Unity, called \texttt{JointStateSubscriber.cs}, that subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is saved at each frame into a specific \texttt{.json} file. This file is then read by the \texttt{Controller.cs} script, updating the \ac{DT} robot model in Unity.
+    In order to properly achieve this communication and data trasnfer, a new script was created in Unity, \texttt{JointStateSubscriber.cs}. This script subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is saved at each frame into a specific \texttt{.json} file within the \ac{MR} environment. This file is constantly being read by the \texttt{Controller.cs} script whenever the simulation is running, updating the \ac{DT} robot model accordingly.
     
-    By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent digital twin representation as well as enabling the bidirectional communication and robot manipulation.
+    By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent \ac{DT} representation through the bidirectional communication established between the \ac{MR} environment and the \ac{ROS} middleware.
 
-    Below, there is another pseudo-code that explains how the ROS-Unity control method works.
+    * TODO: add here a figure of the Unity-ROS control method, showing the robot being controlled in the Unity environment while the real robot is moving as well.
+
+    Below, there is another pseudo-code explaining how the \ac{ROS}-Unity control method works.
     \begin{algorithm}
         \caption{ROS-Unity Control via Joint States Subscription}\label{alg:ros_unity_control}
         \begin{algorithmic}[1]
@@ -182,203 +181,150 @@ After further analysis, three control methods were implemented to control the ro
     
 \end{itemize}
 
-    
-    % \section{New Control Types for Remote Operation}
-    % To maintain previously developed code and introduce necessary functionalities for remote operation, three distinct control types were implemented in the \texttt{Controller.cs} script, responsible for controlling the digital twin version of the robot:
-    
-    % \begin{enumerate}
-    %     \item \textbf{UIButtonControl:} Originally developed for the on-site member application, this control type features a UI interface with safety-zone functionalities. It allows operators to interact safely and efficiently with the robot. Its implementation was detailed in the previous chapter.
-    %     \item \textbf{Position Control:} This control type enables the manual control of the robot's joints through direct user input. It captures and sends the Unity digital twin's joint positions to the ROS environment upon user command, facilitating precise adjustments and real-time interaction.
-    %     \item \textbf{Joint State Subscription:} This control type continuously updates the Unity digital twin based on joint state data received from ROS. It ensures the digital twin accurately reflects the physical robot's status, automating synchronization between the Unity model and the ROS data.
-    % \end{enumerate}
-    
  
-    
-    \subsubsection{Integration Highlights}
-    These two nodes addressed key aspects of system performance:
-    \begin{itemize}
-        \item \textbf{Synchronization:} Ensures that changes in Unity’s control environment are accurately and timely reflected in the robot's physical movements.
-        \item \textbf{Modularity:} Separates data handling and robot control into different nodes to improve system reliability and ease of maintenance.
-    \end{itemize}
-
-
-
-
-
-
-\section{On-site Application Features}
+\section{On-site Mixed-Reality Features}
 \label{section:on-site-features}
 % \input{chapters/on-site/on-site-features} commented this part because text is below - choose whether to use this or the text below
-Regarding the on-site member's collaboration experience, as explained in the state of art review, by implementing different sensorial cues, such as visual and audio, it will enhance the user experience into a more intuitive and immersive way.
+After having properly implemented the control methods, the next step was to develop features that would enhance the on-site user's experience when interacting with the robot. These features were designed to improve user safety, facilitate robot manipulation, and provide an intuitive interface for controlling the robot's joints. The following sections detail the key features developed to enhance the on-site counterpart's interaction with the robot in the \ac{MR} environment.
+
+% Regarding the on-site member's collaboration experience, as explained in the state of art review, by implementing different sensorial cues, such as visual and audio, it will enhance the user experience into a more intuitive and immersive way.
     
-    \subsection{Virtual Safety Zones}
-    \label{subsection:virtual-safety-zones} 
-    % \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
+\subsection{Virtual Safety Zones}
+\label{subsection:virtual-safety-zones} 
+% \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
 
-        The implementation of virtual safety zones is a critical feature designed to enhance on-site member's safety when interacting with the robot. 
+As explained in the state of art, implementating different sensorial cues enhances the user experience into a more intuitive and immersive way. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance on-site member's safety when interacting with the robot. In order to achieve this, two safety zones were developed, as shown in figure \ref{fig:dual-safety}, to address specific safety and user experience concerns: 
 
-        Two safety zones were developed, as shown in figure \ref{fig:dual-safety}, to address specific safety and user experience concerns:
+\begin{itemize}
+\item \textbf{Outer Safety Zone}: Initially, only the outer safety zone was developed. The purpose of creating this zone was to provide an 
+early warning to users as they approach the hazardous area near the robot. This approach consisted on changing its color as a visual alert. 
+However, this method proved ineffective because, once inside it, users could not perceive the color change, rendering the warning system inadequate.
 
-        \begin{itemize}
-            \item \textbf{Outer Safety Zone}: Initially, only the outer safety zone was developed. The purpose of creating this zone was to provide an 
-            early warning to users as they approach the hazardous area near the robot. This approach consisted on changing its color as a visual alert. 
-            However, this method proved ineffective because, once inside it, users could not perceive the color change, rendering the warning system inadequate.
-            
-            \item \textbf{Inner Safety Zone}: To overcome the limitations of the outer zone, an additional, inner safety zone was introduced. 
-            This design ensures a two-step safety mechanism:
+\item \textbf{Inner Safety Zone}: To overcome this outer zone limitation, an additional inner safety zone was integrated. This design ensures a two-step safety mechanism that properly alerts users when they are in close proximity to the robot.
 
-                \textbf{Visual Alert}: Upon entering the outer safety zone, the color of the inner sphere changes to red. 
-                This alteration serves as a visual cue, indicating that the user is getting closer to a high-risk area.
+    \textbf{Visual Alert}: Upon entering the outer safety zone, the color of the inner sphere changes to red. This change serves as a visual cue, ndicating that the user is getting closer to a high-risk area.
 
-                \textbf{Auditory Warning}: Entering the inner safety zone triggers an auditory alarm. This sound alert signifies that the user has 
-                breached into the robot working area, enhancing the effectiveness of the safety mechanism.
-        \end{itemize}
+    \textbf{Auditory Warning}: Entering the inner safety zone triggers an auditory alarm signifying that the user has breached into the robot working area, enhancing the effectiveness of the safety mechanism.
+\end{itemize}
 
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=0.5\linewidth]{figs/dual-safetyzone-robot.png}
-            \caption{Simulated environment showing the display of both the inner and outer safety zones, as well as the robot and the marker inside them}
-            \label{fig:dual-safety}
-        \end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{figs/dual-safetyzone-robot.png}
+\caption{Simulated environment showing the display of both the inner and outer safety zones, as well as the robot and the marker inside them}
+\label{fig:dual-safety}
+\end{figure}
+* TODO: re-do this figure with the most recent version of the UI
 
-        \subsubsection{Safety Zone Breach Protocol}
+\subsubsection{Safety Zone Breach Protocol}
 
-            A crucial safety feature is that if the on-site member enters the safety zone area while the robot is in motion, the robot 
-            automatically stops. This immediate halt ensures that potential accidents or injuries are avoided by preventing any interaction 
-            with the robot when a user is within a designated dangerous area.
-                
-    \subsection{Interface}
+Still regarding the safety-zone feature, a crucial safety protocol was implemented to ensure user safety when interacting with the robot. If the user member enters the safety zone area while the robot is in motion, the robot automatically stops. This immediate halt ensures that potential accidents or injuries are avoided by preventing any interaction with the robot when a user is within a designated dangerous area.
+    
+\subsection{Interface}
 
-        The interface, which incorporates the safety-zone features detailed earlier, is illustrated in figure \ref{} (take another picture with the most recent interface) 
-        Within this interface, one can observe the panel for controlling the robot joints. Additionally, there are two green buttons 
-        positioned at the top and bottom right corners of the interface, designated for activating the safety-zone and joint movement functions, 
-        respectively. This subsequent features will be explained below.
+The interface, which incorporates the safety-zone features detailed earlier, is illustrated in Figure~\ref{}.
+* TODO: re-do this figure with the most recent version of the UI
 
-        \begin{figure}[h]
-            \centering
-            \includegraphics[width=1\linewidth]{figs/interface.png}
-            \caption{Interface featuring developed interactions}
-            \label{fig: interface}
-        \end{figure}
+Within this interface, one can observe the panel for controlling the robot joints. Additionally, there are two green buttons 
+positioned at the top and bottom right corners of the interface, designated for activating the safety-zone and joint movement functions, 
+respectively. This subsequent features will be explained below.
 
-        \subsubsection{Joint Movement} - this is explained also in the previous chapter (3) - includes a pseudo-code snippet
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\linewidth]{figs/interface.png}
+\caption{Interface featuring developed interactions}
+\label{fig: interface}
+\end{figure}
 
-            This feature allows users to manipulate the robot's joints via a user-friendly interface, as depicted in the figure \ref{fig:joint-1} 
-            by the first joint. Its functionality works as follows:
+\subsubsection{Joint Movement} - this is explained also in the previous chapter (3) - includes a pseudo-code snippet
+
+This feature allows users to manipulate the robot's joints via a user-friendly interface, as depicted in the figure \ref{fig:joint-1} 
+by the first joint. Its functionality works as follows:
 
 
-            \begin{itemize}
-                \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the 
-                selected joint's central red circle turns green.
-                \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
-                positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
-                intuitive operation.
-                \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its button.
-                \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
-                This prevents unintended actions and enhances the accuracy of adjustments.
-            \end{itemize}
-        
-        
-        \subsubsection{Buttons}
-        
-            Two buttons, shown in figure \ref{fig:joint-toggle}, were introduced to toggle the activation and deactivation of the joint menu 
-            functionalities \ref{fig:toggle-joint} and the safety zones \ref{fig:toggle-safety}. Upon deactivation, the button will turn gray. 
-            This design allows users to easily switch these features on or off, providing flexibility in controlling the safety mechanisms and movement 
-            operations within the \ac{XR} environment.
-            
-            
-            \begin{figure}[h]
-            \centering
-            \begin{subfigure}[b]{0.31\textwidth}    
-                \centering
-                \includegraphics[width=1\linewidth]{figs/joint-1.png}
-                \caption{Joint Control for first Joint}
-                \label{fig:joint-1}
-                \end{subfigure}
-            \hfill % This command adds space between the subfigures
-            \begin{subfigure}[b]{0.31\textwidth}
-                \centering
-                \includegraphics[width=0.3\linewidth]{figs/clicked_joints.png}
-                \caption{Controller Menu Toggle}
-                \label{fig:toggle-joint}
-            \end{subfigure}
-            \hfill
-            \begin{subfigure}[b]{0.31\textwidth}
-                \centering
-                \includegraphics[width=0.3\linewidth]{figs/unclick_sz.png}
-                \caption{Safety-zone Toggle}
-                \label{fig:toggle-safety}
-            \end{subfigure}
-            \caption{Example from first joint control menu and toggle buttons for controller menu and safety-zones}
-            \label{fig:joint-toggle}
-            \end{figure}
-        
+\begin{itemize}
+    \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the 
+    selected joint's central red circle turns green.
+    \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
+    positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
+    intuitive operation.
+    \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its button.
+    \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
+    This prevents unintended actions and enhances the accuracy of adjustments.
+\end{itemize}
+
+
+\subsubsection{Buttons}
+
+Two buttons, shown in figure \ref{fig:joint-toggle}, were introduced to toggle the activation and deactivation of the joint menu 
+functionalities \ref{fig:toggle-joint} and the safety zones \ref{fig:toggle-safety}. Upon deactivation, the button will turn gray. 
+This design allows users to easily switch these features on or off, providing flexibility in controlling the safety mechanisms and movement 
+operations within the \ac{XR} environment.
+
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.31\textwidth}    
+    \centering
+    \includegraphics[width=1\linewidth]{figs/joint-1.png}
+    \caption{Joint Control for first Joint}
+    \label{fig:joint-1}
+    \end{subfigure}
+\hfill % This command adds space between the subfigures
+\begin{subfigure}[b]{0.31\textwidth}
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/clicked_joints.png}
+    \caption{Controller Menu Toggle}
+    \label{fig:toggle-joint}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{0.31\textwidth}
+    \centering
+    \includegraphics[width=0.3\linewidth]{figs/unclick_sz.png}
+    \caption{Safety-zone Toggle}
+    \label{fig:toggle-safety}
+\end{subfigure}
+\caption{Example from first joint control menu and toggle buttons for controller menu and safety-zones}
+\label{fig:joint-toggle}
+\end{figure}
+
 % \section{Video Demo}
 %     The video demonstration (\href{https://www.youtube.com/watch?v=SMQ0yXhdnUo}{https://www.youtube.com/watch?v=SMQ0yXhdnUo}) showcases 
 %     the successful implementation of the previously described features. Testing of the application was conducted using a laptop paired
 %      with the camera depicted in the figure \ref{fig:camera-c922}. This approach was chosen due to encountered challenges in properly
 %       building the application for android \ac{HHD}.
-            
 
-% previously was a chapter - re-define its order in the document
-\section{Remote Collaboration}
-% \label{chapter:remote}
-% \begin{introduction}
-% The development of the remote member's application will be thoroughly explained in this chapter.
-% \end{introduction}
+\section{Camera Feed Transmission}
 
+In order to enhance the remote participant's understanding of the on-site environment and task performance, I integrated a live camera feed from a camera that was attached to the robot. This feed was then displayed in the Unity application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
 
+\subsection{Hardware and Software Setup}
+An Orbbec Astra camera, displayed in the figure \ref{fig:astra-camera}, was provided by the project supervisors was used to capture the live video feed. This 3D camera was chosen for its high-quality video output and compatibility with the ROS environment, enabling seamless integration into the Unity application.
 
-    Building on the foundation of the application that facilitated on-site member interactions, the next critical step was to establish a robust connection to the UR10e robot. This connection was essential for accurately developing a digital twin of the robotic arm, allowing for real-time manipulation and visualization within a Unity environment.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/AstraSeries_3.jpg}
+    \caption{Astra 3D Orbbec Camera used to transmit real-time video feed from robot environment to remote user}
+    \label{fig:astra-camera}
+\end{figure}
+\FloatBarrier
 
-    To achieve this, it was necessary to extend the initial project by developing a complementary application focused on the remote manipulation 
-    of the robotic arm through Unity. 
+To integrate the camera into the ROS environment, an existing GitHub repository \footnote{Github Repository used to integrate Astra Orbbec Camera in the ROS environment \url{https://github.com/orbbec/ros_astra_camera} Accessed: 2024-10-04} tailored for the Astra camera integration was used. This repository contained the necessary drivers and ROS nodes to enable the camera's functionality within the ROS framework.
 
-    This bridge facilitated communication between the ROS environment on Ubuntu and the Unity application on Windows, enabling real-time visualization 
-    and control of the robot within Unity.
+\subsection{ROS Camera Node}
+To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer was used to visualize the live feed, ensuring the camera was functioning correctly and capturing the desired video data.
 
-    However, this integration posed significant challenges. Despite the potential of the ROS-TCP-Connector, the documentation provided limited guidance 
-    on adapting the connection to different robots beyond the examples in the online tutorial. As a result, the development process relied heavily on 
-    trial and error, requiring iterative testing and debugging to achieve a functional ROS-Unity connection.
+\subsection{Unity Camera Feed Integration}
+From the Unity side, the \texttt{CameraFeedReceiver.cs} (verify the name of the script) script was developed to receive and display the live camera feed. This script was then atached to an UI interface (confirm the name of the element) that displayed the video feed in real-time. 
+add a figure of the UI interface with the view of the camera - The figure (add figure) illustrates the camera feed in the Unity application, showcasing the live video stream from the robot's environment.
 
+\subsection{Data Transmission to Unity} 
     
+However, the raw image data generated by the camera was too heavy to be transmitted efficiently over Wi-Fi, so this data needed to be republished using the \texttt{image\_transport} package.
+By utilizing the following \ac{ROS} command 
+\begin{verbatim}
+    rosrun image_transport republish raw 
+    in:=/camera/color/image_raw out:=/camera/image_repub
+\end{verbatim}
+the image data was republished in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
 
-    
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    do below here - add photos or video that mimic the process, same images
-    
-    \section{Camera Feed Transmission}
-
-    In order to enhance the remote participant's understanding of the on-site environment and task performance, I integrated a live camera feed from a camera that was attached to the robot. This feed was then displayed in the Unity application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
-
-    \subsection{Hardware and Software Setup}
-    An Orbbec Astra camera, displayed in the figure \ref{fig:astra-camera}, was provided by the project supervisors was used to capture the live video feed. This 3D camera was chosen for its high-quality video output and compatibility with the ROS environment, enabling seamless integration into the Unity application.
-    
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.7\textwidth]{figs/AstraSeries_3.jpg}
-        \caption{Astra 3D Orbbec Camera used to transmit real-time video feed from robot environment to remote user}
-        \label{fig:astra-camera}
-    \end{figure}
-    \FloatBarrier
-
-    To integrate the camera into the ROS environment, an existing GitHub repository \footnote{Github Repository used to integrate Astra Orbbec Camera in the ROS environment \url{https://github.com/orbbec/ros_astra_camera} Accessed: 2024-10-04} tailored for the Astra camera integration was used. This repository contained the necessary drivers and ROS nodes to enable the camera's functionality within the ROS framework.
-
-    \subsection{ROS Camera Node}
-    To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer was used to visualize the live feed, ensuring the camera was functioning correctly and capturing the desired video data.
-
-    \subsection{Unity Camera Feed Integration}
-    From the Unity side, the \texttt{CameraFeedReceiver.cs} (verify the name of the script) script was developed to receive and display the live camera feed. This script was then atached to an UI interface (confirm the name of the element) that displayed the video feed in real-time. 
-    add a figure of the UI interface with the view of the camera - The figure (add figure) illustrates the camera feed in the Unity application, showcasing the live video stream from the robot's environment.
-
-    \subsection{Data Transmission to Unity} 
-     
-    However, the raw image data generated by the camera was too heavy to be transmitted efficiently over Wi-Fi, so this data needed to be republished using the \texttt{image\_transport} package.
-    By utilizing the following \ac{ROS} command 
-    \begin{verbatim}
-        rosrun image_transport republish raw 
-        in:=/camera/color/image_raw out:=/camera/image_repub
-    \end{verbatim}
-    the image data was republished in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
-    
 
