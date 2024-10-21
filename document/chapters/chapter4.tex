@@ -47,7 +47,12 @@ In order to properly develop new ways of controlling the \ac{DT} version of the 
 
 After further analysis, three control methods were implemented to control the robot's joints:
 \begin{itemize}
-    \item \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and intuitive manner of controlling the robot, where a panel with a button for each joint was displayed, as shown in figure \ref{f:ui-control}. 
+    *TODO: add figures of: joint button selected and not selected (red and green)
+    *TODO: add figures of: joint direction selected and not selected (white and green)
+    * TODO: confirm if it is not possible to move the robot using other methods whenever the \ac{UI} interface is active. 
+    * TODO: add a figure of the toggle button activated and deactivated (green and gray) as well as the impact it has on the menu - showing it activated and deactivated (take a screenshot of the whole interface with the menu activated and deactivated)
+
+    \item \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig: interface}.
     
     \begin{figure}[h]
         \centering
@@ -55,13 +60,38 @@ After further analysis, three control methods were implemented to control the ro
         \caption{\ac{UI} panel to control the robot's joints individually when using the \ac{UI} Control method}
         \label{f:ui-control}
     \end{figure}
-    \FloatBarrier
+    % \FloatBarrier
 
-    Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled.
+    % Upon pressing a joint's respective button, its color changes from the default red to green, allowing the user to understand which joint is currently selected. Besides, the user can also choose between rotating the selected joint in either the positive or negative direction, which is also represented by a change in the default color of the corresponding directional arrow. These features are represented in Figure: 
+
+    In this control method, only a joint can be moved at a time, so whenever two joints are selected in the \ac{UI} menu, none of the remaining joints will be able to rotate.
+    The developed features of the \ac{UI} control method are described below:
+    \begin{itemize}
+        \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the selected joint's central red circle turns green.
+        \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
+        positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
+        intuitive operation.
+        \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its respective button.
+        \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
+        This prevents unintended actions and enhances the accuracy of adjustments.
+    \end{itemize}
     
-    Upon activating a joint by pressing the desired button, its color turns green instead of the default red button and the user is able to choose between rotating this joint in either the positive or negative direction, also represented by a change in the default color of the corresponding directional arrow. These features are represented in figure 
-    *TODO: add figures joint being selected as well as the direction of UI control.
-    
+   
+    % Additionally, there is a button that activates/deactivates the \ac{UI} menu. If the user wants more space to visualize the robot's movements, they can easily hide the \ac{UI} menu by pressing this button. This feature is represented in the Figure~\ref{fig:toggle-1} and it is also useful whenever the user wants to use other control methods, as it provides more space to visualize the robot's movements and moving the robot via the \ac{UI} interface is not possible anymore. 
+
+    % this or the below commented version?
+    In addition to the core controls, the \ac{UI} features a toggle button that allows the user to activate or deactivate the entire robot control panel. This is particularly useful when the user requires a larger viewport to observe the robot's movements or when switching between different control methods. When the \ac{UI} panel is hidden, the robot remains visible, but interaction via the \ac{UI} is disabled, freeing up screen space for other actions (Figure~\ref{fig: interface}). 
+    % This toggle functionality also allows users to switch between different control methods while maintaining a clean and efficient workspace.
+
+    % check which figure is this one and wheter to leave it or not?
+    % \begin{figure}[h]
+    % \centering
+    % \includegraphics[width=1\linewidth]{figs/interface.png}
+    % \caption{Interface featuring developed interactions}
+    % \label{fig: interface}
+    % \end{figure}
+
+
     \item \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
          
     After updating the \ac{DT} robot's state, the user must press the "Publish" button within the \ac{UI}, shown in figure \ref{fig:publish_UI_button}. This action publishes the current \ac{DT} joint states using the \ac{ROS}-\ac{TCP}-Connector/Endpoint packages to the \ac{ROS} middleware, into a new \ac{ROS} topic. 
@@ -223,45 +253,10 @@ Still regarding the safety-zone feature, a crucial safety protocol was implement
 %  the remaining part should be in this part - explaining the rest of the UI features
 \subsection{Interface}
 
-The interface, which incorporates the safety-zone features detailed earlier, is illustrated in Figure~\ref{}.
+% The interface, which incorporates the safety-zone features detailed earlier, is illustrated in Figure~\ref{}.
 * TODO: re-do this figure with the most recent version of the UI
 
-Within this interface, one can observe the panel for controlling the robot joints. Additionally, there are two green buttons 
-positioned at the top and bottom right corners of the interface, designated for activating the safety-zone and joint movement functions, 
-respectively. This subsequent features will be explained below.
-
-\begin{figure}[h]
-\centering
-\includegraphics[width=1\linewidth]{figs/interface.png}
-\caption{Interface featuring developed interactions}
-\label{fig: interface}
-\end{figure}
-
-\subsubsection{Joint Movement} - this is explained also in the previous chapter (3) - includes a pseudo-code snippet
-
-This feature allows users to manipulate the robot's joints via a user-friendly interface, as depicted in the figure \ref{fig:joint-1} 
-by the first joint. Its functionality works as follows:
-
-
-\begin{itemize}
-    \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the 
-    selected joint's central red circle turns green.
-    \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
-    positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
-    intuitive operation.
-    \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its button.
-    \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
-    This prevents unintended actions and enhances the accuracy of adjustments.
-\end{itemize}
-
-
-\subsubsection{Buttons}
-
-Two buttons, shown in figure \ref{fig:joint-toggle}, were introduced to toggle the activation and deactivation of the joint menu 
-functionalities \ref{fig:toggle-joint} and the safety zones \ref{fig:toggle-safety}. Upon deactivation, the button will turn gray. 
-This design allows users to easily switch these features on or off, providing flexibility in controlling the safety mechanisms and movement 
-operations within the \ac{XR} environment.
-
+Besides the above described panel for controlling the digital robot's joints and the toggle button to activate/deactivate it, the interface also features another green button, designated for activating/deactivating the safety-zone functions. Upon deactivation, the button will turn gray. This design allows users to easily switch these features on or off, providing flexibility in controlling the safety mechanisms and movement operations within the \ac{MR} environment.
 
 \begin{figure}[h]
 \centering
@@ -295,6 +290,8 @@ operations within the \ac{XR} environment.
 %      with the camera depicted in the figure \ref{fig:camera-c922}. This approach was chosen due to encountered challenges in properly
 %       building the application for android \ac{HHD}.
 
+
+% continue here
 \section{Camera Feed Transmission}
 
 In order to enhance the remote participant's understanding of the on-site environment and task performance, I integrated a live camera feed from a camera that was attached to the robot. This feed was then displayed in the Unity application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
