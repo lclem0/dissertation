@@ -46,13 +46,13 @@ In order to properly develop new ways of controlling the \ac{DT} version of the 
 
 
 After further analysis, three control methods were implemented to control the robot's joints:
-\begin{itemize}
+% \begin{itemize}
     *TODO: add figures of: joint button selected and not selected (red and green)
     *TODO: add figures of: joint direction selected and not selected (white and green)
     * TODO: confirm if it is not possible to move the robot using other methods whenever the \ac{UI} interface is active. 
     * TODO: add a figure of the toggle button activated and deactivated (green and gray) as well as the impact it has on the menu - showing it activated and deactivated (take a screenshot of the whole interface with the menu activated and deactivated)
 
-    \item \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig: interface}.
+    \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig: interface}.
     
     \begin{figure}[h]
         \centering
@@ -92,7 +92,7 @@ After further analysis, three control methods were implemented to control the ro
     % \end{figure}
 
 
-    \item \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
+    \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
          
     After updating the \ac{DT} robot's state, the user must press the "Publish" button within the \ac{UI}, shown in figure \ref{fig:publish_UI_button}. This action publishes the current \ac{DT} joint states using the \ac{ROS}-\ac{TCP}-Connector/Endpoint packages to the \ac{ROS} middleware, into a new \ac{ROS} topic. 
 
@@ -176,7 +176,7 @@ After further analysis, three control methods were implemented to control the ro
     
         
 
-    \item \textbf{\ac{ROS}-Unity Control:} This control method allowed the robot to be controlled firstly via Rviz simulation or manually in the robot itself, in the \ac{ROS} middleware environment. These changes would be applied on the \ac{DT} robot model displayed in the Unity \ac{MR} environment. Upon selecting this method, the \ac{DT} robot model would be updated in real-time according to the data that is being published into the \texttt{joint\_states} \ac{ROS} topic.
+    \textbf{\ac{ROS}-Unity Control:} This control method allowed the robot to be controlled firstly via Rviz simulation or manually in the robot itself, in the \ac{ROS} middleware environment. These changes would be applied on the \ac{DT} robot model displayed in the Unity \ac{MR} environment. Upon selecting this method, the \ac{DT} robot model would be updated in real-time according to the data that is being published into the \texttt{joint\_states} \ac{ROS} topic.
     
     In order to properly achieve this communication and data trasnfer, a new script was created in Unity, \texttt{JointStateSubscriber.cs}. This script subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is saved at each frame into a specific \texttt{.json} file within the \ac{MR} environment. This file is constantly being read by the \texttt{Controller.cs} script whenever the simulation is running, updating the \ac{DT} robot model accordingly.
     
@@ -209,7 +209,7 @@ After further analysis, three control methods were implemented to control the ro
         \end{algorithmic}
     \end{algorithm}
     
-\end{itemize}
+% \end{itemize}
 
  
 \section{On-site Mixed-Reality Features}
@@ -294,25 +294,37 @@ Besides the above described panel for controlling the digital robot's joints and
 % continue here
 \section{Camera Feed Transmission}
 
-In order to enhance the remote participant's understanding of the on-site environment and task performance, I integrated a live camera feed from a camera that was attached to the robot. This feed was then displayed in the Unity application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
+In order to enhance the remote participant's understanding of the on-site environment and task performance, another camera was added, allowing for feed transmission. 
 
 \subsection{Hardware and Software Setup}
-An Orbbec Astra camera, displayed in the figure \ref{fig:astra-camera}, was provided by the project supervisors was used to capture the live video feed. This 3D camera was chosen for its high-quality video output and compatibility with the ROS environment, enabling seamless integration into the Unity application.
+An Orbbec Astra camera~\footnote{\url{https://www.orbbec.com/products/structured-light-camera/astra-series/} Acessed:2024-10-22}, displayed in the figure \ref{fig:astra-camera}, was provided by the project supervisors was used to capture the live video feed. This 3D camera was chosen for its high-quality video output and compatibility with the \ac{ROS} environment.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth]{figs/AstraSeries_3.jpg}
+    \includegraphics[width=0.5\textwidth]{figs/AstraSeries_3.jpg}
     \caption{Astra 3D Orbbec Camera used to transmit real-time video feed from robot environment to remote user}
     \label{fig:astra-camera}
 \end{figure}
 \FloatBarrier
 
-To integrate the camera into the ROS environment, an existing GitHub repository \footnote{Github Repository used to integrate Astra Orbbec Camera in the ROS environment \url{https://github.com/orbbec/ros_astra_camera} Accessed: 2024-10-04} tailored for the Astra camera integration was used. This repository contained the necessary drivers and ROS nodes to enable the camera's functionality within the ROS framework.
+To integrate the camera into the \ac{ROS} environment, an existing GitHub repository \footnote{\url{https://github.com/orbbec/ros_astra_camera} Accessed: 2024-10-04} tailored for the Astra camera integration was used. This repository contained the necessary drivers and \ac{ROS} nodes to enable the camera's functionality within the middleware framework.
+
 
 \subsection{ROS Camera Node}
 To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer was used to visualize the live feed, ensuring the camera was functioning correctly and capturing the desired video data.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figs/camera-feed.png}
+    \caption{RViz image viewer displaying the live camera feed from the Astra camera}
+    \label{fig:camera-feed}
+\end{figure}
+
 \subsection{Unity Camera Feed Integration}
+
+After the camera live feed was displayed in the Rviz simulation within the on-site environment, this data had to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
+
+
 From the Unity side, the \texttt{CameraFeedReceiver.cs} (verify the name of the script) script was developed to receive and display the live camera feed. This script was then atached to an UI interface (confirm the name of the element) that displayed the video feed in real-time. 
 add a figure of the UI interface with the view of the camera - The figure (add figure) illustrates the camera feed in the Unity application, showcasing the live video stream from the robot's environment.
 
