@@ -311,18 +311,16 @@ To integrate the camera into the \ac{ROS} environment, an existing GitHub reposi
 
 
 \subsection{ROS Camera Node}
-To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer was used to visualize the live feed, ensuring the camera was functioning correctly and capturing the desired video data.
+To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer displays the live feed, ensuring the camera is functioning correctly and capturing the desired video data.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/camera-feed.png}
-    \caption{RViz image viewer displaying the live camera feed from the Astra camera}
-    \label{fig:camera-feed}
-\end{figure}
+* TODO: add a picture of the UI showing that the camera live feed from Rviz
+* TODO: need to explain better how the image transmission is sent to the Unity, needed to compress the image data into a different format, from raw to compressed, to be able to send it over Wi-Fi - used the image_transport package to republish the image data in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
+after launching the camera node, the image data was republished using the image_transport package, which allowed for smoother and real-time transmission to the Unity environment.º
+* TODO: reorganize this part better
 
 \subsection{Unity Camera Feed Integration}
 
-After the camera live feed was displayed in the Rviz simulation within the on-site environment, this data had to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
+After the camera live feed was displayed in the Rviz simulation within the on-site environment, this data needs to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
 
 
 From the Unity side, the \texttt{CameraFeedReceiver.cs} (verify the name of the script) script was developed to receive and display the live camera feed. This script was then atached to an UI interface (confirm the name of the element) that displayed the video feed in real-time. 
