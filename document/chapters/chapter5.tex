@@ -1,5 +1,25 @@
 \chapter{Discussion and Evaluation}
-\section{Issues}
+
+In this section, I will provide a critical discussion and evaluation of the developed \ac{MR} environment, implemented in Unity, as part of this dissertation's objectives.
+
+The primary goal of this project consists on enhancing remote collaboration between human operators by utilizing a robotic arm (UR10e) and \ac{MR}. In order to achieve this, a framework allowing for an interactive, fully functional \ac{MR} application that facilitate bidirectional communication between the robot and its \ac{DT} was developed. It features a friendly \ac{UI} that enables the visualization and control of the robotic arm, where the \ac{DT} was designed to respond in real-time to the robot's physical movements, and vice versa. The achieved bidirectional communication ensures that the \ac{MR} system operates not as a mere digital shadow of the robot but as a true \ac{DT}, capable of reflecting and influencing the physical entity.
+
+One of the key features developed was a seamless control method integrated within the \ac{MR} environment, allowing the user to manipulate the robot via the \ac{UI}. This interface includes joint selection buttons, directional controls, and toggle switches for precise manipulation of each robotic joint.  This setup enabled users to control the robot's movements via through the \ac{MR} interface and send this position update to the \ac{ROS} middleware, with real-time synchronization ensuring the robot accurately mirrors the \ac{DT}'s state after the publication of control commands.
+
+A critical enhancement to the user experience was the development of two safety zones integrated into the \ac{UI}. These zones are designed to improve user safety and operational awareness when interacting with the robot in real-time. Upon entering the "Outer Safety Zone", which has a bigger radius, an visual alarm starts beeping and it triggers a color change in the "Inner Safety Zone" indicating that the user is approaching the robot's workspace. Whenever this "Inner Safety Zone" is breached, an auditory alerts plays until the user leaves this hazardous area, ensuring the user understands the potential danger. This feature is crucial for preventing accidents and ensuring user safety during robot operation.
+Visual alerts such as color changes, combined with auditory warnings, enhance the immersive experience and ensure that users are aware of potential dangers while operating the robot. However, it must be noted that the accuracy of these safety zones is contingent upon the proper alignment of the camera with the \ac{AR} marker, as any misalignment impacts the precision of distance measurement.
+% rewrite the part
+
+Another significant addition was the implementation of a live camera feed, allowing a remote participant to view the robot’s workspace in real-time. This feed is crucial for remote collaboration, enabling users from different locations to have a synchronized understanding of the robot’s surroundings. The camera feed is transmitted from the \ac{ROS} middleware to the Unity \ac{MR} environment via \ac{TCP}/\ac{IP} after image compression. Compression was necessary due to the substantial bandwidth required for raw video data transmission. This feature offers an important perspective for remote users, aiding in monitoring and providing assistance when necessary.
+
+Both the joint control interface and the safety-zone mechanisms were designed to be toggled on/off, thereby ensuring that the user has the option to clear the \ac{UI} for an unobstructed view of the on-site environment.
+
+\section{Challenges and Issues Faced}
+%  continue here
+
+
+
+
 Issues found during the development:
 
 The following developed features, for enhancing the on-site environment, were tested while using a laptop with the previously described camera.
