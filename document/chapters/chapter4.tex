@@ -14,6 +14,7 @@ Figure~\ref{fig:project_framework} illustrates the proposed framework of the \ac
     \label{fig:project_framework}
 \end{figure}
 * TODO: verify when on-site uses member and verify if it should be changed to another name (user, counterpart - verify with Bernardo's notes)
+* TODO: add to the figure the camera display and the camera in the on-site environment 
 First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled and manipulated. The on-site member interacts with this robotic arm through a custom \ac{MR} application developed in Unity, chosen due to its robust \ac{MR} capabilities, which facilitate the creation of immersive, interactive environments, enabling intuitive real-time robot manipulation.
 
 After implementing the robot digital model into the simulation environment, the next step was to align it with the physical robot. Pose registration between the physical robot and its digital counterpart is executed using Vuforia's capabilities. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
@@ -223,7 +224,7 @@ After having properly implemented the control methods, the next step was to deve
 \label{subsection:virtual-safety-zones} 
 % \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
 
-As explained in the state of art, implementating different sensorial cues enhances the user experience into a more intuitive and immersive way. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance on-site member's safety when interacting with the robot. In order to achieve this, two safety zones were developed, as shown in figure \ref{fig:dual-safety}, to address specific safety and user experience concerns: 
+As explained in section \ref{sec:hrc-in-industry}, implementating different sensorial cues enhances the user experience into a more intuitive and immersive way. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance on-site member's safety when interacting with the robot. In order to achieve this, two safety zones were developed, as shown in figure \ref{fig:dual-safety}, to address specific safety and user experience concerns: 
 
 \begin{itemize}
 \item \textbf{Outer Safety Zone}: Initially, only the outer safety zone was developed. The purpose of creating this zone was to provide an 
@@ -310,30 +311,53 @@ An Orbbec Astra camera~\footnote{\url{https://www.orbbec.com/products/structured
 To integrate the camera into the \ac{ROS} environment, an existing GitHub repository \footnote{\url{https://github.com/orbbec/ros_astra_camera} Accessed: 2024-10-04} tailored for the Astra camera integration was used. This repository contained the necessary drivers and \ac{ROS} nodes to enable the camera's functionality within the middleware framework.
 
 
-\subsection{ROS Camera Node}
-To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer displays the live feed, ensuring the camera is functioning correctly and capturing the desired video data.
+\subsection{ROS Camera Node and Camera Transmission}
 
-* TODO: add a picture of the UI showing that the camera live feed from Rviz
-* TODO: need to explain better how the image transmission is sent to the Unity, needed to compress the image data into a different format, from raw to compressed, to be able to send it over Wi-Fi - used the image_transport package to republish the image data in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
-after launching the camera node, the image data was republished using the image_transport package, which allowed for smoother and real-time transmission to the Unity environment.º
-* TODO: reorganize this part better
+To enable the camera feed within the \ac{ROS} environment, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. This node captures live video data from the camera and displays it within the RViz interface to ensure the camera’s functionality and the accuracy of the captured data. This data needs to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
+
+However, transmitting the raw image data over the \ac{TCP} Connector/Endpoint package that enables the connection between both environments presents significant challenges due to its size and bandwidth requirements, which could affect real-time collaboration.
+To overcome this, the \texttt{image\_transport} package is used. This package allows for the conversion of the raw image stream into a compressed format, reducing the data size without compromising significant image quality. In order to republish the image in a compressed format, the following \ac{ROS} command is used:
+
+\begin{verbatim}
+     rosrun image_transport republish raw 
+     in:=/camera/color/image_raw out:=/camera/image_repub 
+\end{verbatim}
+
+By compressing the image data, smoother and more efficient real-time transmission to the Unity environment was achieved, ensuring minimal delay and consistent visual feedback for remote collaborators.
 
 \subsection{Unity Camera Feed Integration}
 
-After the camera live feed was displayed in the Rviz simulation within the on-site environment, this data needs to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
+After having compressed the image data, the next step was to integrate it into the Unity \ac{MR} environment. To facilitate this, a new script, \texttt{CameraFeedReceiver.cs} was developed, which handled the reception of the video feed and its subsequent rendering within the Unity application. The script was then attached to a designated \ac{UI} panel, ensuring the live camera feed could be displayed in real time for the remote users. 
+
+*TODO: add a figure of the camera transmission in unity and rviz. should i say that it provided situational awareness of robot's surroundings, since it was not atached to the robot itself. 
+The live feed provided critical situational awareness of the robot’s surroundings, aiding the remote operator in better understanding and interacting with the environment. Figure \ref{} illustrates this setup, showing the live camera feed within the Unity interface.
 
 
-From the Unity side, the \texttt{CameraFeedReceiver.cs} (verify the name of the script) script was developed to receive and display the live camera feed. This script was then atached to an UI interface (confirm the name of the element) that displayed the video feed in real-time. 
-add a figure of the UI interface with the view of the camera - The figure (add figure) illustrates the camera feed in the Unity application, showcasing the live video stream from the robot's environment.
 
-\subsection{Data Transmission to Unity} 
+
+% To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer displays the live feed, ensuring the camera is functioning correctly and capturing the desired video data.
+
+% * TODO: add a picture of the UI showing that the camera live feed from Rviz
+% * TODO: need to explain better how the image transmission is sent to the Unity, needed to compress the image data into a different format, from raw to compressed, to be able to send it over Wi-Fi - used the image\_transport package to republish the image data in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
+% after launching the camera node, the image data was republished using the image\_transport package, which allowed for smoother and real-time transmission to the Unity environment.
+% * TODO: reorganize this part better
+
+% \subsection{Unity Camera Feed Integration}
+
+% After the camera live feed was displayed in the Rviz simulation within the on-site environment, this data needs to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
+
+
+% From the Unity side, the \texttt{CameraFeedReceiver.cs} (verify the name of the script) script was developed to receive and display the live camera feed. This script was then atached to an UI interface (confirm the name of the element) that displayed the video feed in real-time. 
+% add a figure of the UI interface with the view of the camera - The figure (add figure) illustrates the camera feed in the Unity application, showcasing the live video stream from the robot's environment.
+
+% \subsection{Data Transmission to Unity} 
     
-However, the raw image data generated by the camera was too heavy to be transmitted efficiently over Wi-Fi, so this data needed to be republished using the \texttt{image\_transport} package.
-By utilizing the following \ac{ROS} command 
-\begin{verbatim}
-    rosrun image_transport republish raw 
-    in:=/camera/color/image_raw out:=/camera/image_repub
-\end{verbatim}
-the image data was republished in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
+% However, the raw image data generated by the camera was too heavy to be transmitted efficiently over Wi-Fi, so this data needed to be republished using the \texttt{image\_transport} package.
+% By utilizing the following \ac{ROS} command 
+% \begin{verbatim}
+%     rosrun image_transport republish raw 
+%     in:=/camera/color/image_raw out:=/camera/image_repub
+% \end{verbatim}
+% the image data was republished in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
 
 

@@ -1,5 +1,5 @@
 \chapter{Discussion and Evaluation}
-
+\section{Issues}
 Issues found during the development:
 
 The following developed features, for enhancing the on-site environment, were tested while using a laptop with the previously described camera.
@@ -19,6 +19,10 @@ The following developed features, for enhancing the on-site environment, were te
         \item \textbf{Modularity:} Separates data handling and robot control into different nodes to improve system reliability and ease of maintenance.
     \end{itemize}
 
+
+    \subsection{Real-Time Data Transmission Challenges and Solutions}
+
+    One of the main challenges in transmitting real-time video data to the Unity environment was the limitation of bandwidth over Wi-Fi. Transmitting uncompressed video data would lead to latency issues, impeding smooth real-time visualization. By employing the \texttt{image\_transport} package to compress the video stream, we significantly reduced the data size, enabling efficient transmission. The compressed data was then successfully received and displayed in Unity with minimal latency, ensuring that remote users could monitor the robot’s environment in near real time.
 
 
     % use case scenario - from chat, change it
