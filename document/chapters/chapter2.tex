@@ -177,7 +177,6 @@ Despite their advantages, integrating cobots still encounters challenges for som
 Moreover, \ac{MR} technologies are becoming increasingly pivotal in advancing cobot integration, offering immersive, real-time interfaces that enhance \ac{HRC}. By overlaying digital information onto the physical workspace, \ac{MR} facilitates better situational awareness and task execution for both operators and cobots. Coupled with \ac{DT} systems, \ac{MR} enables real-time monitoring and control of cobots in dynamic and remote settings, enhancing operational flexibility. Integrating \ac{MR} into cobot applications thus allows for more intuitive interactions, improved safety, and higher precision in collaborative environments. As part of Industry 5.0, these technologies collectively contribute to creating more responsive, human-centered manufacturing systems.
 %%%%%%%%%%%%%% 16set 18h04 a parte abaixo, está ok ver so se é preciso adicionar mais alguma figura
 \section{Digital Realities} 
-
 \ac{DRs} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in Figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
 This continuum is divided into four principal stages: Reality, \ac{AR}, \ac{AV}, and \ac{VR}.
 
@@ -190,7 +189,7 @@ This continuum is divided into four principal stages: Reality, \ac{AR}, \ac{AV},
 
 In this continuum, Reality represents the perception of an unaltered physical environment, devoid of any virtual modifications. As we progress along the continuum towards the virtual side, different digital realities offer increasingly immersive experiences by blending or replacing real-world content with virtual elements.
 
-\subsubsection{Augmented Reality}
+\subsection{Augmented Reality}
     \ac{AR} enhances a user's interaction with their physical environment by overlaying dynamic digital content, such as 3D objects, information layers, or media, onto the real world \cite{liu2022digitaltwin}. The main goal of \ac{AR} is to seamlessly integrate virtual objects with the user's surrounding physical context, facilitating real-time interaction between the virtual and physical realms allowing users to experience both virtual and real entities as coexisting within the same space, generating a cohesive and interactive environment \cite{Azuma1997}.
     
     Figure \ref{f:ar-example} \footnote{\url{https://www.cad-schroer.de/news-events/artikel/mixed-reality-augmented-reality-virtual-reality-definition-und-uebersicht/}, Acessed: 2024-10-19} provides a clear representation of \ac{AR} being employed in an industrial maintenance scenario. The user views real-time digital overlays on a physical machine, providing essential information such as the machine’s current status and highlighting critical components for maintenance or repair. This visual guidance significantly enhances the user’s understanding of tasks by seamlessly blending virtual instructions with the real environment, thereby improving efficiency and reducing the potential for human error.
@@ -209,7 +208,7 @@ In this continuum, Reality represents the perception of an unaltered physical en
 
     * TODO: add more references to the above 2 paragraphs
 
-\subsubsection{Virtual Reality}
+\subsection{Virtual Reality}
     
     Within the Reality-Virtuality Continuum proposed by Milgram and Kishino, \ac{VR} occupies the extreme end of the spectrum, representing a complete substitution of a user’s perception of the physical world with a fully immersive synthetic environment. In this state, the user is entirely isolated from their real surroundings, perceiving only the artificially constructed virtual environment, typically presented through a range of immersive devices such as \ac{HMDs} \cite{milgram1994}. Figure~\ref{f:real-virtual-continuum} \footnote{\url{https://en.wikipedia.org/wiki/Immersion_\%28virtual_reality\%29\#/media/File:Reality_check_ESA384313.jpg}} illustrates this immersive experience where the user interacts with a virtual environment through \ac{VR} equipment.
 
@@ -233,7 +232,8 @@ In this continuum, Reality represents the perception of an unaltered physical en
     %     \label{f:quest-2-vr}
     % \end{figure}
 
-\subsubsection{Mixed Reality}
+\subsection{Mixed Reality}
+\label{subsection:digital-realities}
    
     \ac{MR} continues to elude a universally accepted definition, with interpretations diverging significantly across academic and industrial domains. According to the Milgram and Kishino Reality-Virtuality Continuum, depicted in Figure \ref{f:real-virtual-continuum}, \ac{MR} occupies a transitional space between \ac{AR} and \ac{AV}, bridging the two concepts \cite{milgram1994}. Expanding on this, Microsoft’s \ac{MR} spectrum defines \ac{MR} as spanning a range of technologies, from \ac{AR} (where physical reality predominates, augmented with digital overlays) to \ac{AV} (where the virtual environment dominates, supplemented by real-world data) \cite{microsoft_mixed_reality}. 
 
@@ -247,9 +247,7 @@ In this continuum, Reality represents the perception of an unaltered physical en
 
     Other perspectives view \ac{MR} as a convergence of \ac{AR} and \ac{VR}, where the boundary between the real and virtual worlds is fluid and adaptable, creating immersive, hybrid experiences. For example, the widely known game Pokémon Go is sometimes cited as an \ac{MR} application, where a \ac{VR}-based digital environment enables users to interact with augmented digital elements such as Pokémons, overlaid onto the physical world \cite{whatismixedreality}.
 
-
     However, the definition most relevant to this project's development emphasizes \ac{MR} as a powerful medium for collaboration, enabling users to interact across different realities—whether physical, augmented, or virtual. In this context, \ac{MR} facilitates shared experiences between users located in distinct environments. For example, a physical space visualized by an on-site \ac{AR} user can be simultaneously recreated and experienced by a remote \ac{VR} user, allowing real-time collaborative interactions between participants situated in different realities. This capacity for cross-reality collaboration enhances both the user’s understanding of the workspace and the efficiency of the collaboration process.
-
 
     An example of this collaborative interaction is depicted in Figure \ref{f:mr-example-collab}, where a trainer (remote) and trainee (on-site) engage in a task that bridges physical and virtual worlds. In this scenario, the trainee uses \ac{VR} technology to operate within a virtual environment, while the trainer remotely observes and provides guidance. Through this setup, the trainer can not only visualize the trainee's actions but also trigger events or scenarios via a dedicated interface, enhancing the learning experience. This type of interaction exemplifies the capabilities of remote training, where an expert can guide an on-site operator using real-time augmented indications displayed on \ac{AR} glasses or tablets. By providing direct visual and auditory feedback, the remote trainer assists in troubleshooting, guiding the trainee through complex tasks or maintenance operations. This form of collaboration allows geographically distant participants to work synchronously in a highly interactive environment, increasing both efficiency and accuracy in training processes \cite{Mayer2023}.
   
@@ -473,20 +471,15 @@ Table \ref{tab:levels_of_control} outlines different interaction levels within \
 \label{sec:hrc-in-industry}
 Following the detailed exploration of \ac{DT} and \ac{MR}, this section discusses how these technologies integrate into \ac{HRC}, demonstrating significant improvements in interaction, safety and efficacy in practical examples from industry solutions with specific emphasis on remote collaboration.
 
+The articles cited below often reference \ac{AR}, however, it is important to note that in many cases, the features described under \ac{AR} align more closely with the concept of \ac{MR} as a medium for collaboration, as explained in \ref{subsection:digital-realities}. This distinction is crucial, as the developed system is more aligned with \ac{MR}’s capability to further facilitate shared virtual and physical environments, enhancing interaction and collaborative processes across industrial applications.
+
 \subsection{Enhancing Human-Robot Collaboration through Augmented Reality and Digital Twin Implementation}
  
-
-% \subsubsection{Augmented Reality for Enhanced Interaction and Safety}
-
 Chu et al.~\cite{CHU2023313} reviewed various studies on integrating \ac{AR} with \ac{DT} to improve \ac{HRC} using visual and haptic feedback interfaces. Their work emphasizes the value of \ac{AR} in enhancing human-robot communication by providing both egocentric (shared remote views) and exocentric (spatial visualization of the robot relative to the workspace) perspectives, thereby improving spatial awareness and interaction quality. 
 
 Green et al.~\cite{doi:10.5772/5664} further highlight that multimodal \ac{AR} interfaces—incorporating visual, haptic, and acoustic cues—can significantly enhance \ac{HRC}. Multimodal approaches help overcome challenges like limited \ac{FOV} in \ac{HMDs}, making the interaction more intuitive. For instance, audio-tactile feedback is particularly beneficial for individuals with visual impairments, providing alternative sensory channels without compromising performance. Visual \ac{AR} cues, implemented through \ac{HMDs}, help users navigate complex environments by overlaying relevant information, thus enhancing navigation without impeding robotic movement.
 
-% \subsubsection{Human-Aware Motion Planning and Safety Improvements}
-
 Lasota et al.~\cite{doi:10.1177/0018720814565188} conducted experiments to evaluate the impact of human-aware motion planning on \ac{HRC}, demonstrating substantial improvements in task performance and team fluency. Compared to standard robotic systems, participants working with human-aware robots completed tasks more efficiently, exhibited greater concurrent motion, and experienced less idle time for both human and robot. Moreover, they maintained greater separation distances, which reduced collision risks and increased perceived safety. These results illustrate the dual advantage of human-aware planning: it not only enhances task efficiency but also elevates worker comfort and safety, which are critical for minimizing stress-related risks in industrial environments.
-
-% \subsubsection{Implementation Techniques}
 
 The study utilized the \ac{ROS} to control a WidowX 250 Robot Arm, using the MoveIt framework for motion planning. This approach ensures modularity, adaptability, and ease of management in shared \ac{HRC} environments. Both \ac{AR} and \ac{DT} models were developed using the Microsoft HoloLens 2 for visual feedback and the SenseGlove Nova™ for haptic feedback, offering a comprehensive multimodal experience.
 
@@ -500,7 +493,6 @@ Through the HoloLens, users could visualize the robot's planned trajectory and s
         \caption{Cues indicating the gripper’s destination using vibration on different human fingers.}
         \label{fig:sfig1}
     \end{subfigure}
-    %  confirm if it was visual and haptic cues or just haptic cues
 
     \vspace{0.5cm} % Adds space between the figures
     
