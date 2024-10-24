@@ -1,51 +1,38 @@
-\chapter{Discussion and Evaluation}
+\chapter{Discussion}
+*TODO: por introducoes em todos os capitulos
+*TODO: nao ha necessidade de constatar o que foi implementado de novo, porque isso ja esta no capitulo anterior.
+por o caso de futura aplicacao neste capitulo, 1 ou 2
+*TODO: reformulate how does it make sense, since there were no performed user tests, how should i say that no evaluation can be done, since the focus remained on implementing the interface and functionalities and not in perform user test cases - there was time for this
 
-In this section, a critical discussion and evaluation of the developed \ac{MR} environment will be done, regarding this dissertation's objectives.
+In this section, a critical discussion of the developed \ac{MR} environment will be done, regarding this dissertation's objectives.
 
-\section{\ac{MR}-Environment}
-The primary goal of this project consists on enhancing remote collaboration between human operators by utilizing a robotic arm (UR10e) and \ac{MR}. In order to achieve this, a framework allowing for an interactive, fully functional \ac{MR} application that facilitates bidirectional communication between the robot and its \ac{DT} was developed. It features a friendly \ac{UI} that enables the visualization and control of the robotic arm, where the \ac{DT} was designed to respond in real-time to the robot's physical movements, and vice versa. The achieved bidirectional communication ensures that the \ac{MR} system operates not as a mere digital shadow of the robot but as a true \ac{DT}, capable of reflecting and influencing the physical entity.
+\section{Mixed Reality reflection on the proposed framework}
 
-One of the key features developed was a seamless control method integrated within the \ac{MR} environment, allowing the user to manipulate the robot via the \ac{UI}. This interface includes joint's selection buttons, directional controls, and toggle switches for precise manipulation of each robotic joint.  This setup enables users to control the robot's movements through the \ac{MR} interface and send this position update to the \ac{ROS} middleware, with real-time synchronization ensuring the robot accurately mirrors the \ac{DT}'s state.
-
-The development of two safety zones within the \ac{UI} was a critical enhancement aimed at ensuring user safety and improving operational awareness when interacting with the robot. These zones function by providing real-time alerts to the user. When the user enters the "Outer Safety Zone", which has a larger radius, not only a visual alert starts blinking, but also the color of the "Inner Safety Zone" changes, signaling that the user is approaching the robot's workspace. These visual cue escalate the user's awareness of proximity to the robot. If he gets even closer to the robot and breaches the "Inner Safety Zone", an auditory alarm is triggered, continuously alerting the user to their presence within a hazardous area. This layered approach—combining visual color changes and auditory alarms—ensures that users are fully aware of any potential danger during robot operation, thereby preventing accidents. Moreover, the combination of these sensorial cues also contributes to a more immersive interaction experience, increasing awareness without overwhelming the user.
-However, the accuracy of these safety zones is heavily dependent on the alignment between the camera and the \ac{AR} marker. Misalignment between the them can lead to inaccuracies in distance measurements, affecting the reliability of the safety zones. Maintaining precise marker tracking is therefore essential for ensuring both the accuracy of safety zone alerts and the overall safety of the system during operation.
-
-Another significant feature was the implementation of a live camera feed, allowing the remote participant to view the robot’s workspace in real-time. This feed is crucial for remote collaboration, enabling users from different locations to have a synchronized understanding of the robot’s surroundings. The camera feed is transmitted from the \ac{ROS} middleware to the Unity \ac{MR} environment via \ac{TCP}/\ac{IP} after image compression. Compression was necessary due to the substantial bandwidth required for raw video data transmission. This feature offers an important perspective for remote users, aiding in monitoring and providing assistance when necessary.
-
-Both the joint control interface and the safety-zone mechanisms were designed to be toggled on/off, thereby ensuring that the user has the option to clear the \ac{UI} for an unobstructed view of the environment.
-
-\section{Challenges and Issues Faced}
+\subsection{Challenges and Issues Faced}
 %  continue here
 Though the development of these functionalities was successful, several challenges were encountered during the implementation phase that required substantial effort. The first hurdle was the integration of the robot’s digital model into the Unity environment using the Unity Robotics Hub's \texttt{URDF Importer} package. Unfortunately, an exact UR10e model was not available on-line, and a UR10 model was used instead \footnote{PositronicsLab \url{https://github.com/PositronicsLab/reveal_packages/tree/master/industrial_arm/scenario/models/urdf/ur10} Accessed: 2024-02-05}. This change did not pose any significant problem, as the physical properties and kinematics between the two models are the same, allowing for accurate simulation.
 
 Ensuring accurate pose registration and alignment between the physical robot and its \ac{DT} in Unity presented a challenge. This required using a marker for precise \ac{AR} visualization. After testing several methods, an ArUco marker proved most effective for reliable tracking and better model alignment. Implementing this through Vuforia \ac{SDK} within Unity, along with relative positioning between the marker and digital model, was essential for maintaining synchronization between the physical and digital entities. However, practical issues arose during testing, as the camera and laptop needed to be moved frequently to maintain proper marker alignment.
 
-When establishing the bidirectional communication between the \ac{ROS} middleware and the Unity \ac{MR} environment, the Unity Robotics Hub repositories played a critical role \footnote{}. Integrating these tools was not straightforward due to the lack of comprehensive documentation, particularly around generating and handling \ac{ROS} messages from within Unity’s \texttt{C\#} environment. \ac{ROS} messages needed to be generated, transmitted, and handled effectively, but interfacing between \texttt{C\#} and \ac{ROS} message types such as \texttt{JointState.msg} proved challenging. This complexity arose in part while dealing with the intricacies of \ac{ROS} message handling in Unity’s \texttt{C\#} ecosystem and the need to ensure that messages were correctly serialized and deserialized for communication. Once the messages were correctly generated on the Unity side, the robot's joint states were transmitted from \ac{ROS} and saved as a \texttt{JSON} file in Unity. This \texttt{JSON} file was then used to update the \ac{DT} in real-time, maintaining the synchronization between the physical robot and its virtual counterpart. The reverse process, where joint coordinates are sent from Unity to \ac{ROS}, also posed difficulties due to the complexity of publishing these messages back to the \ac{ROS} environment. This step was crucial to ensure that changes made in the Unity environment could correctly influence the physical robot.
+When establishing the bidirectional communication between the \ac{ROS} middleware and the Unity \ac{MR} environment, the Unity Robotics Hub repositories played a critical role~\footnote{\url{https://github.com/Unity-Technologies/Unity-Robotics-Hub}}. Integrating these tools was not straightforward due to the lack of comprehensive documentation, particularly around generating and handling \ac{ROS} messages from within Unity’s \texttt{C\#} environment. \ac{ROS} messages needed to be generated, transmitted, and handled effectively, but interfacing between \texttt{C\#} and \ac{ROS} message types such as \texttt{JointState.msg} proved challenging. This complexity arose in part while dealing with the intricacies of \ac{ROS} message handling in Unity’s \texttt{C\#} ecosystem and the need to ensure that messages were correctly serialized and deserialized for communication. Once the messages were correctly generated on the Unity side, the robot's joint states were transmitted from \ac{ROS} and saved as a \texttt{JSON} file in Unity. This \texttt{JSON} file was then used to update the \ac{DT} in real-time, maintaining the synchronization between the physical robot and its virtual counterpart. The reverse process, where joint coordinates are sent from Unity to \ac{ROS}, also posed difficulties due to the complexity of publishing these messages back to the \ac{ROS} environment. This step was crucial to ensure that changes made in the Unity environment could correctly influence the physical robot.
 
 One additional challenge was the live camera feed transmission from \ac{ROS} to Unity, which proved to be too large to transmit efficiently over the network, resulting in significant latency. To address this, the image data had to be compressed using the \texttt{image\_transport} package in \ac{ROS}, which allowed the camera feed to be republished in a more compact format. This enabled real-time transmission over a \ac{TCP}/\ac{IP} connection, ensuring that the remote user could observe the robot’s workspace without excessive delay.
 
 In conclusion, while the implementation of the core functionalities of the \ac{MR} application—such as robot control, bidirectional communication, and user interface elements—was successful, the project encountered significant obstacles mainly related to the lack of documentation that enables the integration of external tools and the handling of \ac{ROS} messages in Unity. Despite these challenges, the system ultimately achieved the goal of creating an immersive and functional \ac{MR} remote collaboration platform.
 
 
-\section{Use Case Scenario: Collaborative Robot-Assisted Assembly Task}
-*TODO: explain this part of the use case scenario better - improve it
-A detailed application scenario for the developed \ac{MR} application could involve a collaborative LEGO assemly task, where an on-site operator and a remote expert work together to assemble a complex LEGO structure using the UR10e robotic arm.
+\subsection{Use Case Scenario: Collaborative Robot-Assisted Assembly Task}
 
-The on-site user initiates the task by organizing the workspace and placing the necessary LEGO pieces. The remote expert, using the developed \ac{MR} interface, connects to the environment and visualizes both the workspace that the on-site member is sharing as well as the robot’s perspective through the live camera feed. Both users can interact with the robotic arm in real-time. While the remote user can only do it via the \ac{MR} interface, the on-site user can also manipulate the real robot either directly through the \ac{MR} interface or by issuing commands via the \ac{ROS} middleware, depending on the complexity of the task.
+The developed \ac{MR} system can be applied to a wide range of collaborative tasks involving \ac{HRI}. For example, in an assembly task, the on-site user and the remote expert can work together using a robotic arm, aided by the system’s \ac{MR} interface. This enables both users to visualize the workspace and the robot’s actions in real-time, enhancing their collaborative decision-making. 
 
-% \subsection{Collaborative Process}
+Core functionalities of the system include using a \ac{DT} to ensure synchronization between the physical robot and its virtual counterpart, allowing both users to control and monitor the robot in real-time. The live camera feed from the robot provides additional visual context for remote experts, enabling precise instructions and adjustments during complex tasks. Safety zones are implemented to ensure that on-site operators can interact safely with the robot, halting operations if predefined zones are breached.
 
-The \ac{DT} robot in Unity environment mirrors the on-site robot's physical actions, allowing the remote user to understand the real-time state of the robot. The remote user can identify specific LEGO pieces and their placements by observing the robot's workspace in real-time, provided by the camera live feed. Through the \ac{MR} interface, the expert manipulates the \ac{DT}, being able to publish the desired positions into the real robot. 
+\subsubsection{Application Areas}
+This developed \ac{MR} framework can be adapted to industries such as automotive or electronics assembly, as well as healthcare, where precision and real-time collaboration are essential. The remote expert can guide on-site technicians in performing intricate tasks while maintaining full visibility of the robot’s actions through the \ac{MR} interface. However, regarding ergonomics and safety features, these would need to be tailored to industry-specific needs, ensuring that the system promotes both efficiency and user well-being.
 
-% Task Coordination:
-The on-site user may position larger LEGO blocks or prepare specific segments of the structure, while the remote user takes control of the more precise and intricate assembly steps. The real-time updates of the DT and bidirectional communication allow the robot to switch seamlessly between both users’ inputs, ensuring accurate piece placement and synchronization of actions.
+For example, a use case scenario could be using the \ac{MR} system to facilitate collaboration between an on-site technician and a remote expert during a complex LEGO assembly. The on-site user arranges the LEGO pieces while the remote expert guides the process via the \ac{MR} interface, visualizing the robot’s workspace and controlling the UR10e robotic arm. While the on-site user positions larger LEGO blocks, the remote user, viewing the real-time camera feed and \ac{DT} synchronization, handles intricate placements with precision. Both users interact with the robot using the \ac{MR} interface, allowing seamless handoffs and clear coordination. Virtual safety zones ensure that on-site users are protected from accidental robot movements. This application highlights how the system can improve teamwork, task accuracy, and efficiency in precise, component-based tasks, with the real-time updates and collaboration capabilities ensuring minimal errors during assembly.
 
-% Utilization of Safety and Control Features:
-
-To ensure user safety during this collaborative assembly task, virtual safety zones surrounding the robot's working area are activated. These zones prevent the robot from moving too close to the on-site user and in case the user accidentally breaches these zones, the robot will halt its movement and auditory alerts would sound. This feature enhances the safety of the interaction, preventing potential accidents during the task.
-
-% Control Methods:
-% Three control modes enhance this task's flexibility. The on-site user may utilize the UI control for manual, direct adjustments to the robot’s movements, whereas the remote expert can use the Unity-ROS control method to command precise joint movements from their location. Both users have synchronized perspectives, thanks to the camera feed and DT updates, allowing them to work efficiently without unnecessary delays.
+On the other hand, regarding the healthcare setting, the \ac{MR} system could be deployed to assist in a remote surgical procedure. An on-site surgeon collaborates with a remote expert who oversees the operation via the \ac{MR} interface. The robotic arm assists with precise movements during surgery, such as handling instruments or holding tissues. Again, the live camera feed from the robot provides the remote expert with a surgeon’s view of the operation, while the \ac{DT} in the \ac{MR} interface mirrors the robot's real-time movements. The remote expert can adjust the robot’s actions, guiding the on-site surgeon through critical parts of the procedure. Gesture-based interactions can further enhance communication between the two participants, allowing natural, intuitive commands during surgery. Here, the system can enhance precision, reduce risk, and facilitate collaboration between geographically distant medical professionals in high-stakes environments like surgeries.
 
 
 
@@ -54,17 +41,29 @@ To ensure user safety during this collaborative assembly task, virtual safety zo
 
 
 
+% *TODO: explain this part of the use case scenario better - improve it
+% A detailed application scenario for the developed \ac{MR} application could involve a collaborative LEGO assemly task, where an on-site operator and a remote expert work together to assemble a complex LEGO structure using the UR10e robotic arm.
+
+% The on-site user initiates the task by organizing the workspace and placing the necessary LEGO pieces. The remote expert, using the developed \ac{MR} interface, connects to the environment and visualizes both the workspace that the on-site member is sharing as well as the robot’s perspective through the live camera feed. Both users can interact with the robotic arm in real-time. While the remote user can only do it via the \ac{MR} interface, the on-site user can also manipulate the real robot either directly through the \ac{MR} interface or by issuing commands via the \ac{ROS} middleware, depending on the complexity of the task.
+
+% % \subsection{Collaborative Process}
+
+% The \ac{DT} robot in Unity environment mirrors the on-site robot's physical actions, allowing the remote user to understand the real-time state of the robot. The remote user can identify specific LEGO pieces and their placements by observing the robot's workspace in real-time, provided by the camera live feed. Through the \ac{MR} interface, the expert manipulates the \ac{DT}, being able to publish the desired positions into the real robot. 
+
+% % Task Coordination:
+% The on-site user may position larger LEGO blocks or prepare specific segments of the structure, while the remote user takes control of the more precise and intricate assembly steps. The real-time updates of the DT and bidirectional communication allow the robot to switch seamlessly between both users’ inputs, ensuring accurate piece placement and synchronization of actions.
+
+% % Utilization of Safety and Control Features:
+
+% To ensure user safety during this collaborative assembly task, virtual safety zones surrounding the robot's working area are activated. These zones prevent the robot from moving too close to the on-site user and in case the user accidentally breaches these zones, the robot will halt its movement and auditory alerts would sound. This feature enhances the safety of the interaction, preventing potential accidents during the task.
+
+% % Control Methods:
+% % Three control modes enhance this task's flexibility. The on-site user may utilize the UI control for manual, direct adjustments to the robot’s movements, whereas the remote expert can use the Unity-ROS control method to command precise joint movements from their location. Both users have synchronized perspectives, thanks to the camera feed and DT updates, allowing them to work efficiently without unnecessary delays.
 
 
-
-
-
-
-
-
-
-
-
+% *TODO: refine this example case
+% An example case could involve using the system in an automotive assembly process. In this scenario, a remote expert guides the on-site technician through \ac{AR} during complex assembly tasks, offering real-time feedback and instructions. Furthermore, the system could monitor the worker’s movements, providing feedback on ergonomics to ensure proper posture and technique, reducing the risk of injury.
+% By assessing the impact on assembly time, error rates, and productivity over an extended period, this study could yield valuable insights into both individual and collaborative task performance. This investigation would also explore how prolonged \ac{AR} device usage affects user comfort, preventing issues like fatigue, cognitive overload, or physical strain. Technicians’ interactions with \ac{AR} tools such as the HoloLens 2 would be closely evaluated, ensuring sustained comfort and efficiency in real-world industrial settings.
 
 
 % % use case scenario - change it
