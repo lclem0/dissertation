@@ -2,6 +2,11 @@
 \label{chapter:on-site}
 % \chapter{On-site Member's Application}% first title of section
 
+\begin{introduction}
+    This chapter presents the development of a comprehensive framework for implementing a Mixed Reality environment in Human-Robot Collaboration. 
+    % By allowing both on-site and remote manipulation through a communication pipeline, this system enables real-time robot manipulation and monitoring. 
+    The framework leverages advanced technologies such as Mixed-Reality, Digital Twins, and ROS, ensuring precise synchronization between physical and digital models. It discusses the tools, control methods, and User Interface enhancements designed to optimize both on-site and remote user experiences, aiming towards an intuitive, immersive collaboration.
+\end{introduction}
 
 \section{Framework}
 
@@ -13,9 +18,8 @@ Figure~\ref{fig:project_framework} illustrates the proposed framework of the \ac
     \caption{Overview of the proposed \ac{MR}-based \ac{HRC} system framework integrating remote and on-site environments.}
     \label{fig:project_framework}
 \end{figure}
-* TODO: verify when on-site uses member and verify if it should be changed to another name (user, counterpart - verify with Bernardo's notes)
-* TODO: add to the figure the camera display and the camera in the on-site environment 
-First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled and manipulated. The on-site member interacts with this robotic arm through a custom \ac{MR} application developed in Unity, chosen due to its robust \ac{MR} capabilities, which facilitate the creation of immersive, interactive environments, enabling intuitive real-time robot manipulation.
+
+First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled and manipulated. The on-site user interacts with this robotic arm through a custom \ac{MR} application developed in Unity, chosen due to its robust \ac{MR} capabilities, which facilitate the creation of immersive, interactive environments, enabling intuitive real-time robot manipulation.
 
 After implementing the robot digital model into the simulation environment, the next step was to align it with the physical robot. Pose registration between the physical robot and its digital counterpart is executed using Vuforia's capabilities. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
 
@@ -32,7 +36,7 @@ The Middleware layer, acting as the system’s backbone, ensures the continuous 
 This framework provides an immersive and responsive \ac{MR} environment, bridging the gap between physical and digital spaces. The system enables real-time robot manipulation and monitoring from both on-site and remote locations, making it a versatile platform for collaborative tasks in advanced industrial applications. The seamless integration of \ac{MR}, \ac{DT}, and \ac{HRC} technologies significantly enhances user interaction, safety, and productivity, while offering an intuitive interface for remote and on-site collaboration.
 
 
-*TODO: see where to start explaining what was done regarding the control methods.
+% *TODO: see where to start explaining what was done regarding the control methods.
 Three distinct control methods were developed within the application to facilitate manipulation, which will be explained further below.
 
 
@@ -224,7 +228,7 @@ After having properly implemented the control methods, the next step was to deve
 \label{subsection:virtual-safety-zones} 
 % \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
 
-As explained in section \ref{sec:hrc-in-industry}, implementating different sensorial cues enhances the user experience into a more intuitive and immersive way. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance on-site member's safety when interacting with the robot. In order to achieve this, two safety zones were developed, as shown in figure \ref{fig:dual-safety}, to address specific safety and user experience concerns: 
+As explained in section \ref{sec:hrc-in-industry}, implementating different sensorial cues enhances the user experience into a more intuitive and immersive way. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance on-site user's safety when interacting with the robot. In order to achieve this, two safety zones were developed, as shown in figure \ref{fig:dual-safety}, to address specific safety and user experience concerns: 
 
 \begin{itemize}
 \item \textbf{Outer Safety Zone}: Initially, only the outer safety zone was developed. The purpose of creating this zone was to provide an 
@@ -247,8 +251,7 @@ However, this method proved ineffective because, once inside it, users could not
 * TODO: re-do this figure with the most recent version of the UI
 
 \subsubsection{Safety Zone Breach Protocol}
-* TODO: which one, the inside or the outside safety zone that stops the robot? - confirm this part
-Still regarding the safety-zone feature, a crucial safety protocol was implemented to ensure user safety when interacting with the robot. If the user member enters the safety zone area while the robot is in motion, the robot automatically stops. This immediate halt ensures that potential accidents or injuries are avoided by preventing any interaction with the robot when a user is within a designated dangerous area.
+Still regarding the safety-zone feature, a crucial safety protocol was implemented to ensure user safety when interacting with the robot. If the user member enters the "Outer-Safety Zone" area while the robot is in motion, the robot automatically stops. This immediate halt ensures that potential accidents or injuries are avoided by preventing any interaction with the robot when a user is within a designated dangerous area.
     
 % this interface section - the feature of controlling it using the UI must be put in the UI COntrol method above
 %  the remaining part should be in this part - explaining the rest of the UI features
