@@ -42,7 +42,7 @@ Three distinct control methods were developed within the application to facilita
 
 \section{Mixed Reality Environment}
 
-Regarding the Unity developed \ac{MR} environment, the development started by implementing the proper UR10e digital model. This model was then aligned with the physical robot through Vuforia's pose registration capabilities, ensuring that the \ac{DT} would accurately mirror the robot movements and configurations.
+Regarding the Unity developed \ac{MR} environment, it started by implementing the proper UR10e digital model. This model was then aligned with the physical robot through Vuforia's pose registration capabilities, ensuring that the \ac{DT} would accurately mirror the robot movements and configurations.
 
 The base robot manipulation provided by the \ac{URDF}-Importer package consisted on moving each joint individually by selecting the desired joint and then moving it with by using the keyboard directional arrows. This method was improved to three distinct control methods that enhance user experience and facilitate robot manipulation.
 
@@ -50,65 +50,92 @@ The base robot manipulation provided by the \ac{URDF}-Importer package consisted
 In order to properly develop new ways of controlling the \ac{DT} version of the robot, it was necessary to understand the C\# script named \texttt{Controller.cs}, which contained all the necessary functions to control the robot's joints.
 
 
-After further analysis, three control methods were implemented to control the robot's joints:
+After further analysis, three methods were developed to control the robot's joints:
 % \begin{itemize}
-    *TODO: add figures of: joint button selected and not selected (red and green)
-    *TODO: add figures of: joint direction selected and not selected (white and green)
+    % *TODO: add figures of: joint button selected and not selected (red and green)
+    % *TODO: add figures of: joint direction selected and not selected (white and green)
     * TODO: confirm if it is not possible to move the robot using other methods whenever the \ac{UI} interface is active. 
     * TODO: add a figure of the toggle button activated and deactivated (green and gray) as well as the impact it has on the menu - showing it activated and deactivated (take a screenshot of the whole interface with the menu activated and deactivated)
 
-    \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. 
-    
-    The final \ac{UI} that was used in the mixed reality application can be seen below. in the figure we can see the menu interface on the left part represented by each joint ativation toggle button alognside with two directional arrows that enable the rotation movement either in the positive or negative direction of the selected joint. this control method was implemented in order to allow the robot to be manipulated through this menu interface. On the top part of this menu that allows the maniupulation of each joint individually, there is a image of the robot showing the relative number of each joint, just to clarify that the joint count starts from the bottom joint to the end-effector. this can also be seen in figure. upon selecting the specific joint, its button is activated and this can be seen by the change of its color into   
-    
-    
-    Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig:}.
-    
+    \subsection{UI Control}
+    % \textbf{UI Control Method}:
+    This method is designed to provide users with an intuitive, user-friendly interface for manipulating the \ac{DT} of the UR10e robot. 
+
+    Figure \ref{f:ui-control} illustrates the \ac{UI} developed in Unity, highlighting its primary control panel on the left (1), which includes a detailed joint selection menu, directional arrows, and a reference image of the robot with joint labels (2 and 3). This panel is central to controlling the digital model of the robot, while other \ac{UI} features shown in the figure will be explained in subsequent sections.
+
     \begin{figure}[h]
         \centering
-        \includegraphics[width=0.2\textwidth]{figs/toggle-1.png}
-        \caption{\ac{UI} panel to control the robot's joints individually when using the \ac{UI} Control method}
+        \includegraphics[width=\textwidth]{figs/interface-numerada-2.png}
+        \caption{\ac{UI} panel (2) for the \ac{MR} Unity environment, enabling control of the digital model of the UR10e robot using the \ac{UI} Control method. Users can manipulate each joint individually, with active joints displayed in green to indicate selection (5). The reference image of the robot (3), labeled with joint numbers (J1 to J6), aids in joint identification from base to end-effector. Directional arrows for each joint (2,4,5) facilitate movement control in positive or negative directions, offering intuitive joint-level manipulation within the simulation.}
         \label{f:ui-control}
     \end{figure}
-    % \FloatBarrier
 
-    % Upon pressing a joint's respective button, its color changes from the default red to green, allowing the user to understand which joint is currently selected. Besides, the user can also choose between rotating the selected joint in either the positive or negative direction, which is also represented by a change in the default color of the corresponding directional arrow. These features are represented in Figure: 
-
-    In this control method, only a joint can be moved at a time, so whenever two joints are selected in the \ac{UI} menu, none of the remaining joints will be able to rotate.
-    The developed features of the \ac{UI} control method are described below:
+    \textbf{Interface Structure and Joint Manipulation}:
     \begin{itemize}
-        \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the selected joint's central red circle turns green.
-        \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
-        positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
-        intuitive operation.
-        \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its respective button.
-        \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
-        This prevents unintended actions and enhances the accuracy of adjustments.
+        \item \textbf{Joint Selection}: Each joint has a central button labeled with its identifier (e.g., J1, J2). To activate a joint, the user clicks the corresponding button, which changes color from red to green, signaling that the joint is selected for movement (4 and 5). This selection process helps avoid confusion and accidental manipulation of multiple joints.
+
+        \item \textbf{Movement Control}: Once a joint is selected, the user can manipulate its position by clicking the directional arrows on either side of the central button. Pressing the right arrow rotates the joint in the positive direction, while the left arrow rotates it in the negative direction. This control mirrors the real-time responsiveness typically provided by keyboard arrows, ensuring an intuitive experience.
+
+        \item \textbf{Continuous Movement}: The selected joint will continue moving in the chosen direction as long as its central control button and the directional arrow remain selected. To stop the movement, the user can simply deselect the joint by clicking the central button again, which reverts to its default color, or deactivate its rotation direction.
     \end{itemize}
+
+    \textbf{Key Features and Operational Rules}:
+    \begin{enumerate}
+        \item \textbf{Single Joint Activation}: Only one joint can be active for rotation at any time. If multiple joints are selected (i.e., their buttons are green), the system prevents movement in any direction until only one joint is selected.
+
+        % \item \textbf{Directional Exclusivity}: When a rotation direction is chosen (e.g., pressing the right arrow), the opposite direction is temporarily disabled, as shown in Figures 4 and 5. This feature prevents conflicting commands, reinforcing safe and logical control of the robot.
+    \end{enumerate}
+
+    \textbf{Additional Design Considerations}:
+    \begin{itemize}
+        \item \textbf{Visual Reference for Joint Positioning}: The overlay image at the top of the joint control panel serves as a quick-reference guide for users to confirm joint positions relative to the physical robot. This visual aid is useful in remote collaboration or complex tasks where clear identification of each joint’s location is essential.
+
+        \item \textbf{UI Responsiveness and Feedback}: To ensure a smooth interaction, the interface provides visual feedback for each action (e.g., button color changes) and restricts movement based on user inputs, making the control process both transparent and manageable.
+    \end{itemize}
+
+    This structured approach to joint manipulation promotes safe, precise, and efficient interaction with the robot, supporting the usability goals of the \ac{MR} application. By minimizing the likelihood of accidental commands and providing continuous, clear visual feedback, the interface helps maintain control clarity and operational awareness throughout the interaction.
+    % The design is especially advantageous in collaborative environments, where multiple participants may need to observe and understand the robot’s operations in real time.
+
+
+    
+    % \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. 
+    
+    % The final \ac{UI} that was used in the mixed reality application can be seen below. regarding the digital model control method, the main part of the \ac{UI} consists on the menu panel with the joints and the figure of the robot on top of it, as displayed in the 1 figure of the figure \ref{f:ui-control}. the remaining elements will be explained further below when introducing the advanced features that were implemented besides the robot manipulation. so the menu, represented in the left part of figure 1 can be seen in figure 2 as an up-close version. the top part of it shows a figure of the real ur10e robot with the joints relative position superimposed into the robot, allowing the user to identify which joint to control if he has some doubts. this robot's joint overlay is represented in the figure 3, where it is visible that the joint's count occurs as it is often refered in robotics, starting from the base and counting up until reaching the end-effector joint of the robot. below this, there is the UI menu that enables the digital model manipulation within the unity environment, where each row represents a joint and in order to properly interact with it, the central Joint x (x for each joint number) must be selected and afterwards, either by pressing the right or left arrow, the selected joint will rotate in the corresponding direction, either in the positive or negative direction. the figure 4 shows, again, an up-close view of the first joint properties as default, and in the figure below, number 5, the activation of this joint is shown. this is visible because both the central joint button that represent the joint selection is green, showcasing its selection, and both the right and left arrows are enabled, visible again by the change in its default color. However, it is not possible to rotate a robot's joint in both directions at the same time, so the developed interface only allows the user to manipulate one joint at a time, and in one direction. if the user activates the central button for more than one joint, and then tries to rotate one of the selected joints in any direction, the digital model will not perform this action. Is is necessary that only the desired joint must be activated with the central button as green.
+    
+    % we can see the menu interface on the left part represented by each joint ativation toggle button alognside with two directional arrows that enable the rotation movement either in the positive or negative direction of the selected joint. this control method was implemented in order to allow the robot to be manipulated through this menu interface. On the top part of this menu that allows the maniupulation of each joint individually, there is a image of the robot showing the relative number of each joint, just to clarify that the joint count starts from the bottom joint to the end-effector. this can also be seen in figure. upon selecting the specific joint, its button is activated and this can be seen by the change of its color.   
+    
+    
+    % Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig:}.
     
    
-    % Additionally, there is a button that activates/deactivates the \ac{UI} menu. If the user wants more space to visualize the robot's movements, they can easily hide the \ac{UI} menu by pressing this button. This feature is represented in the Figure~\ref{fig:toggle-1} and it is also useful whenever the user wants to use other control methods, as it provides more space to visualize the robot's movements and moving the robot via the \ac{UI} interface is not possible anymore. 
+    % % \FloatBarrier
 
-    % this or the below commented version?
-    In addition to the core controls, the \ac{UI} features a toggle button that allows the user to activate or deactivate the entire robot control panel. This is particularly useful when the user requires a larger viewport to observe the robot's movements or when switching between different control methods. When the \ac{UI} panel is hidden, the robot remains visible, but interaction via the \ac{UI} is disabled, freeing up screen space for other actions (Figure~\ref{fig: interface}). 
-    % This toggle functionality also allows users to switch between different control methods while maintaining a clean and efficient workspace.
+    % % Upon pressing a joint's respective button, its color changes from the default red to green, allowing the user to understand which joint is currently selected. Besides, the user can also choose between rotating the selected joint in either the positive or negative direction, which is also represented by a change in the default color of the corresponding directional arrow. These features are represented in Figure: 
 
-    % check which figure is this one and wheter to leave it or not?
-    % \begin{figure}[h]
-    % \centering
-    % \includegraphics[width=1\linewidth]{figs/interface.png}
-    % \caption{Interface featuring developed interactions}
-    % \label{fig: interface}
-    % \end{figure}
+    % In this control method, only a joint can be moved at a time, so whenever two joints are selected in the \ac{UI} menu, none of the remaining joints will be able to rotate.
+    % The developed features of the \ac{UI} control method are described below:
+    % \begin{itemize}
+    %     \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the selected joint's central red circle turns green.
+    %     \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
+    %     positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
+    %     intuitive operation.
+    %     \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its respective button.
+    %     \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
+    %     This prevents unintended actions and enhances the accuracy of adjustments.
+    % \end{itemize}
+    
+   
 
-
-    \textbf{Unity-ROS Control:} This method enabled the robot to be controled during the runtime simulation in the Unity environment via the keyboard arrows. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
+    \subsection{Unity to Robot}
+    % \textbf{Unity-ROS Control:} 
+    Similarly to the previous described method, this one also enables the digital robot model to be controled from the \ac{MR} environment. However, whenever needed, it updates the newly defined digital robot position into the real on-site UR10e robot. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
          
-    After updating the \ac{DT} robot's state, the user must press the "Publish" button within the \ac{UI}, shown in figure \ref{fig:publish_UI_button}. This action publishes the current \ac{DT} joint states using the \ac{ROS}-\ac{TCP}-Connector/Endpoint packages to the \ac{ROS} middleware, into a new \ac{ROS} topic. 
+    After updating the \ac{DT}, upon pressing the "Publish" button within the \ac{UI}, shown in figure \ref{fig:publish_UI_button}, the robot's joint state coordinates are sent to real robot. This happens because the current \ac{DT} joint states are published to the \ac{ROS} middleware, using the \ac{ROS}-\ac{TCP}-Connector/Endpoint packages.
+    
 
     \begin{figure}[htpb]
         \centering
-        \includegraphics[width=0.9\linewidth]{figs/publish.jpeg}
+        \includegraphics[width=\linewidth]{figs/publish-button.png}
         \caption{Publish button that sends Unity's \ac{DT} robot joint states into ROS the environment}
         \label{fig:publish_UI_button}
     \end{figure}
@@ -137,7 +164,7 @@ After further analysis, three control methods were implemented to control the ro
         \end{algorithmic}
     \end{algorithm}
 
-    To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which publishes to the standard \texttt{joint\_states} topic, a separate \ac{ROS} topic \texttt{(unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution. 
+    To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which are being constantly published to the standard \texttt{joint\_states} topic, a separate \ac{ROS} topic \texttt{(unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution. 
     
     In order to handle this communication process, two new \texttt{python} scripts were created in order to start two new \ac{ROS} nodes, the \texttt{joint\_state\_listener} and the \texttt{move\_unity} nodes. The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package, initializing the node that subscribes to the \texttt{unity\_joint\_states} topic, expecting to receive a JointState message type. It then initializes a publisher for the \texttt{move\_joint\_unity} topic, converting this data into a Float64MultiArray format that will be further received by the second node. Regarding this second node, \texttt{move\_unity}, created within the \texttt{iris\_sami} package, it subscribes the \texttt{move\_joint\_unity} topic  to joint position commands, moving the robotic arm to the desired position. This robot position update can be performed either on the simulation environment, where it can be visualized through Rviz, or by utilizing the real UR10e robot. 
     
@@ -183,9 +210,10 @@ After further analysis, three control methods were implemented to control the ro
             \EndWhile
         \end{algorithmic}
     \end{algorithm}
+
     
         
-
+    \subsection{Robot to Unity}
     \textbf{\ac{ROS}-Unity Control:} This control method allowed the robot to be controlled firstly via Rviz simulation or manually in the robot itself, in the \ac{ROS} middleware environment. These changes would be applied on the \ac{DT} robot model displayed in the Unity \ac{MR} environment. Upon selecting this method, the \ac{DT} robot model would be updated in real-time according to the data that is being published into the \texttt{joint\_states} \ac{ROS} topic.
     
     In order to properly achieve this communication and data trasnfer, a new script was created in Unity, \texttt{JointStateSubscriber.cs}. This script subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is saved at each frame into a specific \texttt{.json} file within the \ac{MR} environment. This file is constantly being read by the \texttt{Controller.cs} script whenever the simulation is running, updating the \ac{DT} robot model accordingly.
@@ -293,11 +321,32 @@ Besides the above described panel for controlling the digital robot's joints and
 \label{fig:joint-toggle}
 \end{figure}
 
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/mao-toca-ui-refeita.png}
+    \caption{teste}
+    \label{fig:hand-pointing-feature}
+\end{figure}
+
 % \section{Video Demo}
 %     The video demonstration (\href{https://www.youtube.com/watch?v=SMQ0yXhdnUo}{https://www.youtube.com/watch?v=SMQ0yXhdnUo}) showcases 
 %     the successful implementation of the previously described features. Testing of the application was conducted using a laptop paired
 %      with the camera depicted in the figure \ref{fig:camera-c922}. This approach was chosen due to encountered challenges in properly
 %       building the application for android \ac{HHD}.
+*TODO: see this
+    % this or the below commented version?
+    In addition to the core controls, the \ac{UI} features a toggle button that allows the user to activate or deactivate the entire robot control panel. This is particularly useful when the user requires a larger viewport to observe the robot's movements or when switching between different control methods. When the \ac{UI} panel is hidden, the robot remains visible, but interaction via the \ac{UI} is disabled, freeing up screen space for other actions (Figure~\ref{fig: interface}). 
+    % This toggle functionality also allows users to switch between different control methods while maintaining a clean and efficient workspace.
+
+    % check which figure is this one and wheter to leave it or not?
+    % \begin{figure}[h]
+    % \centering
+    % \includegraphics[width=1\linewidth]{figs/interface.png}
+    % \caption{Interface featuring developed interactions}
+    % \label{fig: interface}
+    % \end{figure}
 
 
 % continue here
