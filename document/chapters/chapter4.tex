@@ -42,7 +42,7 @@ Three distinct control methods were developed within the application to facilita
 
 \section{Mixed Reality Environment}
 
-Regarding the Unity developed \ac{MR} environment, the development started by implementing the proper UR10e digital model. This model was then aligned with the physical robot through Vuforia's pose registration capabilities, ensuring that later the \ac{DT} would accurately mirror the robot movements and configurations.
+Regarding the Unity developed \ac{MR} environment, the development started by implementing the proper UR10e digital model. This model was then aligned with the physical robot through Vuforia's pose registration capabilities, ensuring that the \ac{DT} would accurately mirror the robot movements and configurations.
 
 The base robot manipulation provided by the \ac{URDF}-Importer package consisted on moving each joint individually by selecting the desired joint and then moving it with by using the keyboard directional arrows. This method was improved to three distinct control methods that enhance user experience and facilitate robot manipulation.
 
@@ -57,7 +57,12 @@ After further analysis, three control methods were implemented to control the ro
     * TODO: confirm if it is not possible to move the robot using other methods whenever the \ac{UI} interface is active. 
     * TODO: add a figure of the toggle button activated and deactivated (green and gray) as well as the impact it has on the menu - showing it activated and deactivated (take a screenshot of the whole interface with the menu activated and deactivated)
 
-    \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig: interface}.
+    \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. 
+    
+    The final \ac{UI} that was used in the mixed reality application can be seen below. in the figure we can see the menu interface on the left part represented by each joint ativation toggle button alognside with two directional arrows that enable the rotation movement either in the positive or negative direction of the selected joint. this control method was implemented in order to allow the robot to be manipulated through this menu interface. On the top part of this menu that allows the maniupulation of each joint individually, there is a image of the robot showing the relative number of each joint, just to clarify that the joint count starts from the bottom joint to the end-effector. this can also be seen in figure. upon selecting the specific joint, its button is activated and this can be seen by the change of its color into   
+    
+    
+    Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig:}.
     
     \begin{figure}[h]
         \centering
