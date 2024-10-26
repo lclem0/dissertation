@@ -35,8 +35,6 @@ The Middleware layer, acting as the system’s backbone, ensures the continuous 
 
 This framework provides an immersive and responsive \ac{MR} environment, bridging the gap between physical and digital spaces. The system enables real-time robot manipulation and monitoring from both on-site and remote locations, making it a versatile platform for collaborative tasks in advanced industrial applications. The seamless integration of \ac{MR}, \ac{DT}, and \ac{HRC} technologies significantly enhances user interaction, safety, and productivity, while offering an intuitive interface for remote and on-site collaboration.
 
-
-% *TODO: see where to start explaining what was done regarding the control methods.
 Three distinct control methods were developed within the application to facilitate manipulation, which will be explained further below.
 
 
@@ -51,50 +49,48 @@ In order to properly develop new ways of controlling the \ac{DT} version of the 
 
 
 After further analysis, three methods were developed to control the robot's joints:
-% \begin{itemize}
-    % *TODO: add figures of: joint button selected and not selected (red and green)
-    % *TODO: add figures of: joint direction selected and not selected (white and green)
     % * TODO: confirm if it is not possible to move the robot using other methods whenever the \ac{UI} interface is active. 
-    % * TODO: add a figure of the toggle button activated and deactivated (green and gray) as well as the impact it has on the menu - showing it activated and deactivated (take a screenshot of the whole interface with the menu activated and deactivated)
 
-    \subsection{UI Control}
-    % \textbf{UI Control Method}:
-    This method is designed to provide users with an intuitive, user-friendly interface for manipulating the \ac{DT} of the UR10e robot. 
+\subsection{UI Control}
+\label{subsection:ui-control-method}
+% \textbf{UI Control Method}:
+This method is designed to provide users with an intuitive, user-friendly interface for manipulating the \ac{DT} of the UR10e robot. 
 
-    Figure \ref{f:ui-control} illustrates the \ac{UI} developed in Unity, highlighting its primary control panel on the left (1), which includes a detailed joint selection menu, directional arrows, and a reference image of the robot with joint labels (2 and 3). This panel is central to controlling the digital model of the robot, while other \ac{UI} features shown in the figure will be explained in subsequent sections.
+Figure \ref{f:ui-control} illustrates the \ac{UI} developed in Unity, highlighting its primary control panel on the left (1), which includes a detailed joint selection menu, directional arrows, and a reference image of the robot with joint labels (2 and 3). This panel is central to controlling the digital model of the robot, while other \ac{UI} features shown in the figure will be explained in subsequent sections.
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=\textwidth]{figs/interface-numerada-2.png}
-        \caption{\ac{UI} panel (2) for the \ac{MR} Unity environment, enabling control of the digital model of the UR10e robot using the \ac{UI} Control method. Users can manipulate each joint individually, with active joints displayed in green to indicate selection (5). The reference image of the robot (3), labeled with joint numbers (J1 to J6), aids in joint identification from base to end-effector. Directional arrows for each joint (2,4,5) facilitate movement control in positive or negative directions, offering intuitive joint-level manipulation within the simulation.}
-        \label{f:ui-control}
-    \end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{figs/interface-numerada-2.png}
+    \caption{\ac{UI} panel (2) for the \ac{MR} Unity environment, enabling control of the digital model of the UR10e robot using the \ac{UI} Control method. Users can manipulate each joint individually, with active joints displayed in green to indicate selection (5). The reference image of the robot (3), labeled with joint numbers (J1 to J6), aids in joint identification from base to end-effector. Directional arrows for each joint (2,4,5) facilitate movement control in positive or negative directions, offering intuitive joint-level manipulation within the simulation.}
+    \label{f:ui-control}
+\end{figure}
 
-    \textbf{Interface Structure and Joint Manipulation}:
-    \begin{itemize}
-        \item \textbf{Joint Selection}: Each joint has a central button labeled with its identifier (e.g., J1, J2). To activate a joint, the user clicks the corresponding button, which changes color from red to green, signaling that the joint is selected for movement (4 and 5). This selection process helps avoid confusion and accidental manipulation of multiple joints.
 
-        \item \textbf{Movement Control}: Once a joint is selected, the user can manipulate its position by clicking the directional arrows on either side of the central button. Pressing the right arrow rotates the joint in the positive direction, while the left arrow rotates it in the negative direction. This control mirrors the real-time responsiveness typically provided by keyboard arrows, ensuring an intuitive experience.
+\textbf{Interface Structure and Joint Manipulation}:
+\begin{itemize}
+    \item \textbf{Joint Selection}: Each joint has a central button labeled with its identifier (e.g., J1, J2). To activate a joint, the user clicks the corresponding button, which changes color from red to green, signaling that the joint is selected for movement (4 and 5). This selection process helps avoid confusion and accidental manipulation of multiple joints.
 
-        \item \textbf{Continuous Movement}: The selected joint will continue moving in the chosen direction as long as its central control button and the directional arrow remain selected. To stop the movement, the user can simply deselect the joint by clicking the central button again, which reverts to its default color, or deactivate its rotation direction.
-    \end{itemize}
+    \item \textbf{Movement Control}: Once a joint is selected, the user can manipulate its position by clicking the directional arrows on either side of the central button. Pressing the right arrow rotates the joint in the positive direction, while the left arrow rotates it in the negative direction. This control mirrors the real-time responsiveness typically provided by keyboard arrows, ensuring an intuitive experience.
 
-    \textbf{Key Features and Operational Rules}:
-    \begin{enumerate}
-        \item \textbf{Single Joint Activation}: Only one joint can be active for rotation at any time. If multiple joints are selected (i.e., their buttons are green), the system prevents movement in any direction until only one joint is selected.
+    \item \textbf{Continuous Movement}: The selected joint will continue moving in the chosen direction as long as its central control button and the directional arrow remain selected. To stop the movement, the user can simply deselect the joint by clicking the central button again, which reverts to its default color, or deactivate its rotation direction.
+\end{itemize}
 
-        % \item \textbf{Directional Exclusivity}: When a rotation direction is chosen (e.g., pressing the right arrow), the opposite direction is temporarily disabled, as shown in Figures 4 and 5. This feature prevents conflicting commands, reinforcing safe and logical control of the robot.
-    \end{enumerate}
+\textbf{Operational Rules}:
+\begin{itemize}
+    \item \textbf{Single Joint Activation}: Only one joint can be active for rotation at any time. If multiple joints are selected (i.e., their buttons are green), the system prevents movement in any direction until only one joint is selected.
 
-    \textbf{Additional Design Considerations}:
-    \begin{itemize}
-        \item \textbf{Visual Reference for Joint Positioning}: The overlay image at the top of the joint control panel serves as a quick-reference guide for users to confirm joint positions relative to the physical robot. This visual aid is useful in remote collaboration or complex tasks where clear identification of each joint’s location is essential.
+    % \item \textbf{Directional Exclusivity}: When a rotation direction is chosen (e.g., pressing the right arrow), the opposite direction is temporarily disabled, as shown in Figures 4 and 5. This feature prevents conflicting commands, reinforcing safe and logical control of the robot.
+\end{itemize}
 
-        \item \textbf{UI Responsiveness and Feedback}: To ensure a smooth interaction, the interface provides visual feedback for each action (e.g., button color changes) and restricts movement based on user inputs, making the control process both transparent and manageable.
-    \end{itemize}
+\textbf{Additional Design Considerations}:
+\begin{itemize}
+    \item \textbf{Visual Reference for Joint Positioning}: The overlay image at the top of the joint control panel serves as a quick-reference guide for users to confirm joint positions relative to the physical robot. This visual aid is useful in remote collaboration or complex tasks where clear identification of each joint’s location is essential.
 
-    This structured approach to joint manipulation promotes safe, precise, and efficient interaction with the robot, supporting the usability goals of the \ac{MR} application. By minimizing the likelihood of accidental commands and providing continuous, clear visual feedback, the interface helps maintain control clarity and operational awareness throughout the interaction.
-    % The design is especially advantageous in collaborative environments, where multiple participants may need to observe and understand the robot’s operations in real time.
+    \item \textbf{UI Responsiveness and Feedback}: To ensure a smooth interaction, the interface provides visual feedback for each action (e.g., button color changes) and restricts movement based on user inputs, making the control process both transparent and manageable.
+\end{itemize}
+
+This structured approach to joint manipulation promotes safe, precise, and efficient interaction with the robot, supporting the usability goals of the \ac{MR} application. By minimizing the likelihood of accidental commands and providing continuous, clear visual feedback, the interface helps maintain control clarity and operational awareness throughout the interaction.
+% The design is especially advantageous in collaborative environments, where multiple participants may need to observe and understand the robot’s operations in real time.
 
 
     
@@ -126,135 +122,123 @@ After further analysis, three methods were developed to control the robot's join
     
    
 
-    \subsection{Unity to Robot}
-    % \textbf{Unity-ROS Control:} 
-    Similarly to the previous described method, this one also enables the digital robot model to be controled from the \ac{MR} environment. However, when needed, it updates the newly defined digital robot position into the real on-site UR10e robot. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
-         
-    After moving the digital model to the desired position, by pressing the "Publish" button within the \ac{UI}, as shown in Figure \ref{fig:publish_UI_button}, the robot's joints coordinates are published to the \ac{ROS} middleware, using the \ac{ROS}-\ac{TCP}-Connector/Endpoint packages.
-    
-
-    \begin{figure}[htpb]
-        \centering
-        \includegraphics[width=\linewidth]{figs/publish-button.png}
-        \caption{Publish button that sends Unity's \ac{DT} robot joint states into ROS the environment}
-        \label{fig:publish_UI_button}
-    \end{figure}
-
-    To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which are being constantly published to the standard \texttt{joint\_states} topic, a separate \ac{ROS} topic \texttt{(unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution. Below, there is a pseudo-code snippet explaining how to update the \ac{DT} in Unity and send the new desired robot position to the \ac{ROS} middleware.
-
-    \begin{algorithm}
-        \caption{Unity Input for Joint Selection and Movement}\label{alg:unity_input}
-        \begin{algorithmic}[1]
-            \State \textbf{Step 1: User Input for Joint Selection and Movement in Unity}
-            \While{Unity Simulation is running AND Unity-ROS Control is enabled}
-                \If{RightArrowKeyPressed}
-                    \State Select next joint
-                \ElsIf{LeftArrowKeyPressed}
-                    \State Select previous joint
-                \EndIf
-                \If{UpArrowKeyPressed}
-                    \State Rotate selected joint in positive direction
-                \ElsIf{DownArrowKeyPressed}
-                    \State Rotate selected joint in negative direction
-                \EndIf
-                \If{PublishButtonPressed}
-                    \State joint\_states = GetCurrentJointStates()
-                    \State PublishToROSTopic('unity\_joint\_states', joint\_states)
-                \EndIf
-            \EndWhile
-        \end{algorithmic}
-    \end{algorithm}
-
-    
-    In order to handle this communication process, two new \ac{ROS} nodes were created, the \texttt{joint\_state\_listener} and the \texttt{move\_unity} nodes. The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package, initializing the node that subscribes to the \texttt{unity\_joint\_states} topic, which receives a JointState message type. It then initializes the publisher for the \texttt{move\_joint\_unity} topic, converting this data into a Float64MultiArray format which will be further received by the second node. This second node called \texttt{move\_unity}, created within the \texttt{iris\_sami} package, subscribes to the \texttt{move\_joint\_unity} topic, listening to new joint position values, moving the robotic arm to this desired position. This real-time update can be visualized either on the simulation environment, through Rviz, or by utilizing the real UR10e robot. Another pseudo-code explanation regarding how both \ac{ROS} nodes work, is presented below.
-
-    
-    % The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package.
-    % By creating a new node, called \texttt{joint\_state\_listener}, it then subscribes to the \texttt{unity\_joint\_states} topic, expecting to receive a JointState message type.
-    % Afterwards, it initializes a publisher for the \texttt{move\_joint\_unity} topic, that converts this data into a Float64MultiArray format that will be further received by the second node.
-    
-    % Regarding the second node, the \texttt{move\_unity.py} script was created in the . It initializes the \texttt{test\_arm\_movement} node that listens for joint position commands on the \texttt{/move\_joint\_unity} topic.
-    % Upon receiving this data, it moves the robotic arm to the desired position.
-
-    % Part 2: ROS Node for Receiving Unity Joint States
-
-    \begin{algorithm}
-        \caption{Combined ROS Node for Receiving Unity Joint States and Moving the Robot}\label{alg:combined_ros_node}
-        \begin{algorithmic}[1]
-            \State \textbf{Step 2 and 3: Combined ROS Node for Receiving Unity Joint States and Moving the Robot}
-            
-            % Initialize first node
-            \State Initialize ROS Node: joint\_state\_listener
-            \State Subscribe to Topic: 'unity\_joint\_states'
-            
-            \While{Receiving JointState message from Unity}
-                \State float\_array\_data = ConvertToFloat64MultiArray(joint\_states)
-                \State PublishToROSTopic('move\_joint\_unity', float\_array\_data)
-            \EndWhile
-            
-            % Initialize second node dependent on the first node
-            \State \textbf{Precondition:} The \texttt{joint\_state\_listener} node must be running and publishing to the \texttt{'move\_joint\_unity'} topic.
-            \State Initialize ROS Node: test\_arm\_movement
-            \State Subscribe to Topic: 'move\_joint\_unity'
-            
-            \While{Receiving Float64MultiArray message from \texttt{move\_joint\_unity}}
-                \State MoveRobotArmTo(joint\_positions)
-                \If{ConnectedToRealRobot}
-                    \State MoveRealRobot()
-                \Else
-                    \State VisualizeInRviz()
-                \EndIf
-            \EndWhile
-        \end{algorithmic}
-    \end{algorithm}
-
-    
+\subsection{Unity to Robot}
+% \textbf{Unity-ROS Control:} 
+Similarly to the previous described method, this one also enables the digital robot model to be controled from the \ac{MR} environment. However, when needed, it updates the newly defined digital robot position into the real on-site UR10e robot. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
         
-    \subsection{Robot to Unity}
-    * TODO: add here a figure of the Robot to Unity - real robot and superimposed dt in unity
-
-    % \textbf{\ac{ROS}-Unity Control:}
-    Opposite to the above described method which controlls the \ac{DT} and then updates the robot position, in this control method, the on-site user moves the robot and the remote counterpart visualizes this update instantly within the \ac{MR} environment.
-    
-    In order to properly achieve this communication and data transfer, the \texttt{JointStateSubscriber.cs} script was created in Unity. It subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is updated in real time into a specific \texttt{.json} file within the \ac{MR} environment. This file is constantly being read by the \texttt{Controller.cs} script whenever this control method is enabled, updating the \ac{DT} robot model accordingly.
-    
-    By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent \ac{DT} representation through the bidirectional communication established between the \ac{MR} environment and the \ac{ROS} middleware. Below, there is another pseudo-code explaining how the \ac{ROS}-Unity control method works.
+After moving the digital model to the desired position, by pressing the "Publish" button within the \ac{UI}, as shown in Figure \ref{fig:publish_UI_button}, the robot's joints coordinates are published to the \ac{ROS} middleware, using the \ac{ROS}-\ac{TCP}-Connector/Endpoint packages.
 
 
-    \begin{algorithm}
-        \caption{ROS-Unity Control via Joint States Subscription}\label{alg:ros_unity_control}
-        \begin{algorithmic}[1]
-            \State \textbf{Step 1: Subscribe to ROS \texttt{joint\_states} topic}
-            \State Attach the Unity Script to the Digital Robot Model Asset: \texttt{JointStateSubscriber.cs}
-            \State Upon Initialization, it subscribes to topic: \texttt{/joint\_states}
-    
-            \While{Receiving JointState message from \ac{ROS}}
-                \State Extract joint names and positions from the message and store them in a dictionary data structure
-                % \State Store them in a dictionary structure
-                \State Save the dictionary data to the \texttt{jointStateSubscriber.json}
-            \EndWhile
-    
-            \State \textbf{Step 2: Update Unity \ac{DT} Robot Model}
-            \While{Simulation is Running}
-                \State Read the \texttt{jointStateSubscriber.json}
-                \State Update the Unity \ac{DT} robot model using the joint positions from the dictionary structure
-            \EndWhile
-    
-            \State \textbf{Step 3: Synchronize Real Robot with \ac{DT} Robot}
-            \State The Unity \ac{DT} robot model moves according to the real robot’s joint positions, ensuring a consistent bidirectional \ac{DT} representation.
-        \end{algorithmic}
-    \end{algorithm}
-    
-% \end{itemize}
+\begin{figure}[htpb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figs/publish-button.png}
+    \caption{Publish button that sends Unity's \ac{DT} robot joint states into ROS the environment}
+    \label{fig:publish_UI_button}
+\end{figure}
 
- 
+To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which are being constantly published to the standard \texttt{joint\_states} topic, a separate \ac{ROS} topic \texttt{(unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution. Below, there is a pseudo-code snippet explaining how to update the \ac{DT} in Unity and send the new desired robot position to the \ac{ROS} middleware.
+
+\begin{algorithm}
+    \caption{Unity Input for Joint Selection and Movement}\label{alg:unity_input}
+    \begin{algorithmic}[1]
+        \State \textbf{Step 1: User Input for Joint Selection and Movement in Unity}
+        \While{Unity Simulation is running AND Unity-ROS Control is enabled}
+            \If{RightArrowKeyPressed}
+                \State Select next joint
+            \ElsIf{LeftArrowKeyPressed}
+                \State Select previous joint
+            \EndIf
+            \If{UpArrowKeyPressed}
+                \State Rotate selected joint in positive direction
+            \ElsIf{DownArrowKeyPressed}
+                \State Rotate selected joint in negative direction
+            \EndIf
+            \If{PublishButtonPressed}
+                \State joint\_states = GetCurrentJointStates()
+                \State PublishToROSTopic('unity\_joint\_states', joint\_states)
+            \EndIf
+        \EndWhile
+    \end{algorithmic}
+\end{algorithm}
+
+
+In order to handle this communication process, two new \ac{ROS} nodes were created, the \texttt{joint\_state\_listener} and the \texttt{move\_unity} nodes. The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package, initializing the node that subscribes to the \texttt{unity\_joint\_states} topic, which receives a JointState message type. It then initializes the publisher for the \texttt{move\_joint\_unity} topic, converting this data into a Float64MultiArray format which will be further received by the second node. This second node called \texttt{move\_unity}, created within the \texttt{iris\_sami} package, subscribes to the \texttt{move\_joint\_unity} topic, listening to new joint position values, moving the robotic arm to this desired position. This real-time update can be visualized either on the simulation environment, through Rviz, or by utilizing the real UR10e robot. Another pseudo-code explanation regarding how both \ac{ROS} nodes work, is presented below.
+
+% Part 2: ROS Node for Receiving Unity Joint States
+
+\begin{algorithm}
+    \caption{Combined ROS Node for Receiving Unity Joint States and Moving the Robot}\label{alg:combined_ros_node}
+    \begin{algorithmic}[1]
+        \State \textbf{Step 2 and 3: Combined ROS Node for Receiving Unity Joint States and Moving the Robot}
+        
+        \State Initialize ROS Node: joint\_state\_listener
+        \State Subscribe to Topic: 'unity\_joint\_states'
+        
+        \While{Receiving JointState message from Unity}
+            \State float\_array\_data = ConvertToFloat64MultiArray(joint\_states)
+            \State PublishToROSTopic('move\_joint\_unity', float\_array\_data)
+        \EndWhile
+        
+        \State \textbf{Precondition:} The \texttt{joint\_state\_listener} node must be running and publishing to the \texttt{'move\_joint\_unity'} topic.
+        \State Initialize ROS Node: test\_arm\_movement
+        \State Subscribe to Topic: 'move\_joint\_unity'
+        
+        \While{Receiving Float64MultiArray message from \texttt{move\_joint\_unity}}
+            \State MoveRobotArmTo(joint\_positions)
+            \If{ConnectedToRealRobot}
+                \State MoveRealRobot()
+            \Else
+                \State VisualizeInRviz()
+            \EndIf
+        \EndWhile
+    \end{algorithmic}
+\end{algorithm}
+
+
+    
+\subsection{Robot to Unity}
+* TODO: add here a figure of the Robot to Unity - real robot and superimposed dt in unity
+
+Opposite to the above described method which controlls the \ac{DT} and then updates the robot position, in this control method, the on-site user moves the robot and the remote counterpart visualizes this update instantly within the \ac{MR} environment.
+
+In order to properly achieve this communication and data transfer, the \texttt{JointStateSubscriber.cs} script was created in Unity. It subscribes to the \texttt{joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is updated in real time into a specific \texttt{.json} file within the \ac{MR} environment. This file is constantly being read by the \texttt{Controller.cs} script whenever this control method is enabled, updating the \ac{DT} robot model accordingly.
+
+By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent \ac{DT} representation through the bidirectional communication established between the \ac{MR} environment and the \ac{ROS} middleware. Below, there is another pseudo-code explaining how the \ac{ROS}-Unity control method works.
+
+
+\begin{algorithm}
+    \caption{ROS-Unity Control via Joint States Subscription}\label{alg:ros_unity_control}
+    \begin{algorithmic}[1]
+        \State \textbf{Step 1: Subscribe to ROS \texttt{joint\_states} topic}
+        \State Attach the Unity Script to the Digital Robot Model Asset: \texttt{JointStateSubscriber.cs}
+        \State Upon Initialization, it subscribes to topic: \texttt{/joint\_states}
+
+        \While{Receiving JointState message from \ac{ROS}}
+            \State Extract joint names and positions from the message and store them in a dictionary data structure
+            % \State Store them in a dictionary structure
+            \State Save the dictionary data to the \texttt{jointStateSubscriber.json}
+        \EndWhile
+
+        \State \textbf{Step 2: Update Unity \ac{DT} Robot Model}
+        \While{Simulation is Running}
+            \State Read the \texttt{jointStateSubscriber.json}
+            \State Update the Unity \ac{DT} robot model using the joint positions from the dictionary structure
+        \EndWhile
+
+        \State \textbf{Step 3: Synchronize Real Robot with \ac{DT} Robot}
+        \State The Unity \ac{DT} robot model moves according to the real robot’s joint positions, ensuring a consistent bidirectional \ac{DT} representation.
+    \end{algorithmic}
+\end{algorithm}
+
+
+
 \section{On-site Mixed-Reality Features}
 \label{section:on-site-features}
 % \input{chapters/on-site/on-site-features} commented this part because text is below - choose whether to use this or the text below
 After having implemented the \ac{DT}-Robot bidirectional communication between the on-site and remote members, the next step consisted on developing features that could enhance both users' experience when interacting with the collaboration environment. These features were designed to improve user safety, facilitate robot manipulation, and provide an intuitive interface. The following sections detail these key features development and implementation.
 
 % Regarding the on-site member's collaboration experience, as explained in the state of art review, by implementing different sensorial cues, such as visual and audio, it will enhance the user experience into a more intuitive and immersive way.
-    
+
 \subsection{Virtual Safety Zones}
 \label{subsection:virtual-safety-zones} 
 % \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
@@ -274,84 +258,38 @@ However, this method proved ineffective because, once inside it, users could not
 
 \item \textbf{Sensorial Cues:  }
 
-    \textbf{Visual}: Upon entering the Outer-Safety Zone, the color of the Inner sphere changes to red, reverting to its default color if the user exits this critical area. This visual cue alerts the user to increased proximity to a high-risk zone. Additionally, a blinking warning appears at the bottom center of the interface, switching between both circular danger signs shown in Figure \ref{fig:blinking-sign}. This flashing indicator amplifies the alert, reinforcing the awareness of approaching the operational robot area, remaining active as long as the user is within this Outer-Safety Zone.
+\textbf{Visual}: Upon entering the Outer-Safety Zone, the color of the Inner sphere changes to red, reverting to its default color if the user exits this critical area. This visual cue alerts the user to increased proximity to a high-risk zone. Additionally, a blinking warning appears at the bottom center of the interface, switching between both circular danger signs shown in Figure \ref{fig:blinking-sign}. This flashing indicator amplifies the alert, reinforcing the awareness of approaching the operational robot area, remaining active as long as the user is within this Outer-Safety Zone.
 
-    % *TODO: add a figure representing the blinking warning upon entering the outer safety zone 
+% *TODO: add a figure representing the blinking warning upon entering the outer safety zone 
 
-    \textbf{Auditory}: Entering the Inner-Safety Zone triggers an audio alarm signifying that the user has breached into the robot working area, enhancing the effectiveness of the safety mechanism.
+\textbf{Auditory}: Entering the Inner-Safety Zone triggers an audio alarm signifying that the user has breached into the robot working area, enhancing the effectiveness of the safety mechanism.
 
-    \begin{figure}[h]
-        \centering
-        \includegraphics[width=0.7\linewidth]{figs/warning-sign.png}
-        \caption{Warning blinking sign displayed in the bottom part of the \ac{UI} to alert the on-site user of proximity to the Robot}
-        \label{fig:blinking-sign}
-    \end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figs/warning-sign.png}
+    \caption{Warning blinking sign displayed in the bottom part of the \ac{UI} to alert the on-site user of proximity to the Robot}
+    \label{fig:blinking-sign}
+\end{figure}
 
 \item \textbf{Breach Protocol:} Besides the above described sensorial cues whose goal consists on improving user's awareness, another feature was implemented to ensure user's safety when interacting with the robot. If the on-site counterpart enters the Outer-Safety Zone area while the robot is in motion, the robot automatically stops. This immediate halt ensures that potential accidents or injuries are avoided by preventing any interaction with the robot when a user is within this designated dangerous area.
 \end{itemize}
-
-
     
 % this interface section - the feature of controlling it using the UI must be put in the UI COntrol method above
 %  the remaining part should be in this part - explaining the rest of the UI features
-\subsection{Interface}
+\subsection{Additional Interface Features}
 
 % The interface, which incorporates the safety-zone features detailed earlier, is illustrated in Figure~\ref{}.
-* TODO: re-do this figure with the most recent version of the UI
+% * TODO: re-do this figure with the most recent version of the UI
 
-Besides the above described panel for controlling the digital robot's joints and the toggle button to activate/deactivate it, the interface also features another green button, designated for activating/deactivating the safety-zone functions. Upon deactivation, the button will turn gray. This design allows users to easily switch these features on or off, providing flexibility in controlling the safety mechanisms and movement operations within the \ac{MR} environment.
+Beyond the joint control panel explained in Section \ref{subsection:ui-control-method}, several additional features were integrated into the \ac{MR} application aimed at enhancing user flexibility and clarity. Positioned in the upper right corner of the \ac{UI}, two green toggle buttons provide control over distinct interface functionalities.
 
-% \begin{figure}[h]
-% \centering
-% \begin{subfigure}[b]{0.31\textwidth}    
-%     \centering
-%     \includegraphics[width=1\linewidth]{figs/joint-1.png}
-%     \caption{Joint Control for first Joint}
-%     \label{fig:joint-1}
-%     \end{subfigure}
-% \hfill % This command adds space between the subfigures
-% \begin{subfigure}[b]{0.31\textwidth}
-%     \centering
-%     \includegraphics[width=0.3\linewidth]{figs/clicked_joints.png}
-%     \caption{Controller Menu Toggle}
-%     \label{fig:toggle-joint}
-% \end{subfigure}
-% \hfill
-% \begin{subfigure}[b]{0.31\textwidth}
-%     \centering
-%     \includegraphics[width=0.3\linewidth]{figs/unclick_sz.png}
-%     \caption{Safety-zone Toggle}
-%     \label{fig:toggle-safety}
-% \end{subfigure}
-% \caption{Example from first joint control menu and toggle buttons for controller menu and safety-zones}
-% \label{fig:joint-toggle}
-% \end{figure}
-
-
-
-% \section{Video Demo}
-%     The video demonstration (\href{https://www.youtube.com/watch?v=SMQ0yXhdnUo}{https://www.youtube.com/watch?v=SMQ0yXhdnUo}) showcases 
-%     the successful implementation of the previously described features. Testing of the application was conducted using a laptop paired
-%      with the camera depicted in the figure \ref{fig:camera-c922}. This approach was chosen due to encountered challenges in properly
-%       building the application for android \ac{HHD}.
-*TODO: see this
-    % this or the below commented version?
-    In addition to the core controls, the \ac{UI} features a toggle button that allows the user to activate or deactivate the entire robot control panel. This is particularly useful when the user requires a larger viewport to observe the robot's movements or when switching between different control methods. When the \ac{UI} panel is hidden, the robot remains visible, but interaction via the \ac{UI} is disabled, freeing up screen space for other actions (Figure~\ref{fig:teste}). 
-    % This toggle functionality also allows users to switch between different control methods while maintaining a clean and efficient workspace.
-
-    % check which figure is this one and wheter to leave it or not?
-    % \begin{figure}[h]
-    % \centering
-    % \includegraphics[width=1\linewidth]{figs/interface.png}
-    % \caption{Interface featuring developed interactions}
-    % \label{fig: interface}
-    % \end{figure}
+The lower button, as shown in Figure \ref{fig:menu-toggle-button}, enables users to activate (1) or deactivate (2) the joint control panel, changing to gray when inactive. Deactivating this panel provides an unobstructed view of the shared workspace, enhancing awareness for both on-site and remote users. The upper button operates similarly but controls the visibility and functionality of the safety zones. When toggled off, both safety zones disappear and their associated alerts are disabled. This configuration allows users to customize the interface to match the specific task requirements, reducing visual distractions when safety zones are unnecessary.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figs/mao-toca-ui-refeita-numbers.png}
-    \caption{teste}
-    \label{fig:teste}
+    \caption{Illustration of the activation and deactivation functionality for the robot control panel within the \ac{MR} interface. In the left image (1), the control panel is fully active, displaying joint selection buttons as well as corresponding directional arrows, along with a reference image of the robot. The right image (2) shows the interface after control panel deactivation by pressing the toggle button (highlighted in red), enabling a clearer view of the environment.}
+    \label{fig:menu-toggle-button}
 \end{figure}
 
 
