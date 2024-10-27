@@ -768,6 +768,35 @@ Afterwards, the framework required to integrate the \ac{MR} technologies with th
 
     
 
+
+    CONTROL METHOD FOR THE USER INTERFACE
+    % \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. 
+    
+    % The final \ac{UI} that was used in the mixed reality application can be seen below. regarding the digital model control method, the main part of the \ac{UI} consists on the menu panel with the joints and the figure of the robot on top of it, as displayed in the 1 figure of the figure \ref{f:ui-control}. the remaining elements will be explained further below when introducing the advanced features that were implemented besides the robot manipulation. so the menu, represented in the left part of figure 1 can be seen in figure 2 as an up-close version. the top part of it shows a figure of the real ur10e robot with the joints relative position superimposed into the robot, allowing the user to identify which joint to control if he has some doubts. this robot's joint overlay is represented in the figure 3, where it is visible that the joint's count occurs as it is often refered in robotics, starting from the base and counting up until reaching the end-effector joint of the robot. below this, there is the UI menu that enables the digital model manipulation within the unity environment, where each row represents a joint and in order to properly interact with it, the central Joint x (x for each joint number) must be selected and afterwards, either by pressing the right or left arrow, the selected joint will rotate in the corresponding direction, either in the positive or negative direction. the figure 4 shows, again, an up-close view of the first joint properties as default, and in the figure below, number 5, the activation of this joint is shown. this is visible because both the central joint button that represent the joint selection is green, showcasing its selection, and both the right and left arrows are enabled, visible again by the change in its default color. However, it is not possible to rotate a robot's joint in both directions at the same time, so the developed interface only allows the user to manipulate one joint at a time, and in one direction. if the user activates the central button for more than one joint, and then tries to rotate one of the selected joints in any direction, the digital model will not perform this action. Is is necessary that only the desired joint must be activated with the central button as green.
+    
+    % we can see the menu interface on the left part represented by each joint ativation toggle button alognside with two directional arrows that enable the rotation movement either in the positive or negative direction of the selected joint. this control method was implemented in order to allow the robot to be manipulated through this menu interface. On the top part of this menu that allows the maniupulation of each joint individually, there is a image of the robot showing the relative number of each joint, just to clarify that the joint count starts from the bottom joint to the end-effector. this can also be seen in figure. upon selecting the specific joint, its button is activated and this can be seen by the change of its color.   
+    
+    
+    % Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig:}.
+    
+   
+    % % \FloatBarrier
+
+    % % Upon pressing a joint's respective button, its color changes from the default red to green, allowing the user to understand which joint is currently selected. Besides, the user can also choose between rotating the selected joint in either the positive or negative direction, which is also represented by a change in the default color of the corresponding directional arrow. These features are represented in Figure: 
+
+    % In this control method, only a joint can be moved at a time, so whenever two joints are selected in the \ac{UI} menu, none of the remaining joints will be able to rotate.
+    % The developed features of the \ac{UI} control method are described below:
+    % \begin{itemize}
+    %     \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the selected joint's central red circle turns green.
+    %     \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
+    %     positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
+    %     intuitive operation.
+    %     \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its respective button.
+    %     \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
+    %     This prevents unintended actions and enhances the accuracy of adjustments.
+    % \end{itemize}
+    
+   
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     do below here - add photos or video that mimic the process, same images

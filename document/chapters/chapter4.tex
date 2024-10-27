@@ -93,35 +93,6 @@ This structured approach to joint manipulation promotes safe, precise, and effic
 % The design is especially advantageous in collaborative environments, where multiple participants may need to observe and understand the robot’s operations in real time.
 
 
-    
-    % \textbf{UI Control:} This method allowed the user to control the \ac{DT} version of the robot by moving each joint individually through an Unity \ac{UI}. Its purpose consisted on being user-friendly and an intuitive manner of controlling the robot. 
-    
-    % The final \ac{UI} that was used in the mixed reality application can be seen below. regarding the digital model control method, the main part of the \ac{UI} consists on the menu panel with the joints and the figure of the robot on top of it, as displayed in the 1 figure of the figure \ref{f:ui-control}. the remaining elements will be explained further below when introducing the advanced features that were implemented besides the robot manipulation. so the menu, represented in the left part of figure 1 can be seen in figure 2 as an up-close version. the top part of it shows a figure of the real ur10e robot with the joints relative position superimposed into the robot, allowing the user to identify which joint to control if he has some doubts. this robot's joint overlay is represented in the figure 3, where it is visible that the joint's count occurs as it is often refered in robotics, starting from the base and counting up until reaching the end-effector joint of the robot. below this, there is the UI menu that enables the digital model manipulation within the unity environment, where each row represents a joint and in order to properly interact with it, the central Joint x (x for each joint number) must be selected and afterwards, either by pressing the right or left arrow, the selected joint will rotate in the corresponding direction, either in the positive or negative direction. the figure 4 shows, again, an up-close view of the first joint properties as default, and in the figure below, number 5, the activation of this joint is shown. this is visible because both the central joint button that represent the joint selection is green, showcasing its selection, and both the right and left arrows are enabled, visible again by the change in its default color. However, it is not possible to rotate a robot's joint in both directions at the same time, so the developed interface only allows the user to manipulate one joint at a time, and in one direction. if the user activates the central button for more than one joint, and then tries to rotate one of the selected joints in any direction, the digital model will not perform this action. Is is necessary that only the desired joint must be activated with the central button as green.
-    
-    % we can see the menu interface on the left part represented by each joint ativation toggle button alognside with two directional arrows that enable the rotation movement either in the positive or negative direction of the selected joint. this control method was implemented in order to allow the robot to be manipulated through this menu interface. On the top part of this menu that allows the maniupulation of each joint individually, there is a image of the robot showing the relative number of each joint, just to clarify that the joint count starts from the bottom joint to the end-effector. this can also be seen in figure. upon selecting the specific joint, its button is activated and this can be seen by the change of its color.   
-    
-    
-    % Apart from the joints' buttons, there is also a figure of the robot displayed in the top part of the panel, showing each joint's relative number, and thus allowing an easier identification of the joint to be controlled. This menu is displayed in the Figure~\ref{fig:}.
-    
-   
-    % % \FloatBarrier
-
-    % % Upon pressing a joint's respective button, its color changes from the default red to green, allowing the user to understand which joint is currently selected. Besides, the user can also choose between rotating the selected joint in either the positive or negative direction, which is also represented by a change in the default color of the corresponding directional arrow. These features are represented in Figure: 
-
-    % In this control method, only a joint can be moved at a time, so whenever two joints are selected in the \ac{UI} menu, none of the remaining joints will be able to rotate.
-    % The developed features of the \ac{UI} control method are described below:
-    % \begin{itemize}
-    %     \item \textbf{Joint Selection}: Users can activate a joint by clicking on it. Upon activation, the selected joint's central red circle turns green.
-    %     \item \textbf{Movement Control}: By clicking on the selected joint's directional arrows within the interface, it moves in either a 
-    %     positive or negative direction. This functionality mimics the real-time movement control similar to using keyboard arrow keys, ensuring 
-    %     intuitive operation.
-    %     \item \textbf{Continuous Movement}: The selected joint continues to move until we deactivate its respective button.
-    %     \item \textbf{Single Joint Activation}: To ensure precise control, joint movement is only possible when one joint is selected at a time. 
-    %     This prevents unintended actions and enhances the accuracy of adjustments.
-    % \end{itemize}
-    
-   
-
 \subsection{Unity to Robot}
 % \textbf{Unity-ROS Control:} 
 Similarly to the previous described method, this one also enables the digital robot model to be controled from the \ac{MR} environment. However, when needed, it updates the newly defined digital robot position into the real on-site UR10e robot. In order to change the \ac{DT}, the user has to press the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
@@ -293,45 +264,26 @@ The lower button, as shown in Figure \ref{fig:menu-toggle-button}, enables users
 \end{figure}
 
 
-% continue here
+
 \subsection{Camera Feed Transmission}
 
-In order to enhance the remote user's understanding of the on-site environment and task performance, another camera was added, allowing for feed transmission. 
+To improve situational awareness for remote users, an additional camera was integrated, providing real-time visual context directly from the robot’s perspective and reducing on-site operator's responsibility for managing environmental views.
 
-\subsubsection{Hardware and Software Setup}
-An Orbbec Astra camera~\footnote{\url{https://www.orbbec.com/products/structured-light-camera/astra-series/} Acessed:2024-10-22}, displayed in the figure \ref{fig:astra-camera}, was provided by the project supervisors was used to capture the live video feed. This 3D camera was chosen for its high-quality video output and compatibility with the \ac{ROS} environment.
+The Orbbec Astra 3D camera~\footnote{\url{https://www.orbbec.com/products/structured-light-camera/astra-series/} Acessed:2024-10-22}, shown in Figure \ref{fig:astra-camera}, was chosen for its high-resolution video output and compatibility with the \ac{ROS} framework. This camera was mounted directly onto the robot, offering an immersive view that aligns with the robot’s operational perspective. Integration into the \ac{ROS} environment was facilitated through the Astra camera’s dedicated GitHub  repository~\footnote{\url{https://github.com/orbbec/ros\_astra\_camera} Accessed: 2024-10-04}, which provided essential drivers and nodes for \ac{ROS} compatibility.
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figs/AstraSeries_3.jpg}
-    \caption{Astra 3D Orbbec Camera used to transmit real-time video feed from robot environment to remote user}
-    \label{fig:astra-camera}
-\end{figure}
-\FloatBarrier
+The live feed from the Astra camera was managed via the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package, enabling continuous data capture and real-time display in RViz for preliminary verification. This configuration ensured proper camera functionality within the \ac{ROS} environment and accurate data capture. However, when transmitting the uncompressed image data to the Unity \ac{MR} application, bandwidth and latency challenges arose, potentially impacting real-time collaboration. To address this, the \ac{ROS} \texttt{image\_transport} package was implemented, which converted the raw video stream into a compressed format, reducing data size while preserving essential image quality. The following command facilitated the data compression:
 
-To integrate the camera into the \ac{ROS} environment, an existing GitHub repository \footnote{\url{https://github.com/orbbec/ros_astra_camera} Accessed: 2024-10-04} tailored for the Astra camera integration was used. This repository contained the necessary drivers and \ac{ROS} nodes to enable the camera's functionality within the middleware framework.
-
-
-\subsubsection{ROS Camera Node and Camera Transmission}
-
-To enable the camera feed within the \ac{ROS} environment, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. This node captures live video data from the camera and displays it within the RViz interface to ensure the camera’s functionality and the accuracy of the captured data. This data needs to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
-
-However, transmitting the raw image data over the \ac{TCP} Connector/Endpoint package that enables the connection between both environments presents significant challenges due to its size and bandwidth requirements, which could affect real-time collaboration.
-To overcome this, the \texttt{image\_transport} package is used. This package allows for the conversion of the raw image stream into a compressed format, reducing the data size without compromising significant image quality. In order to republish the image in a compressed format, the following \ac{ROS} command is used:
-
-\begin{verbatim}
-     rosrun image_transport republish raw 
-     in:=/camera/color/image_raw out:=/camera/image_repub 
+\begin{verbatim} 
+    rosrun image_transport republish raw in:=/camera/color/image_raw 
+    out:=/camera/image_repub 
 \end{verbatim}
 
-By compressing the image data, smoother and more efficient real-time transmission to the Unity environment was achieved, ensuring minimal delay and consistent visual feedback for remote collaborators.
+By compressing the image data, the system achieved more efficient and stable real-time transmission to Unity, providing continuous visual feedback with minimal latency. Afterwards, this compressed camera feed was integrated into Unity using a custom \texttt{CameraFeedReceiver.cs} script, responsible for receiving and rendering the feed into the \ac{UI} panel. This setup allowed the remote user to view the robot’s perspective in real time, independent of the on-site operator’s actions. 
 
-\subsubsection{Unity Camera Feed Integration}
-
-After having compressed the image data, the next step was to integrate it into the Unity \ac{MR} environment. To facilitate this, a new script, \texttt{CameraFeedReceiver.cs} was developed, which handled the reception of the video feed and its subsequent rendering within the Unity application. The script was then attached to a designated \ac{UI} panel, ensuring the live camera feed could be displayed in real time for the remote users. 
-
+This dual-view capability offers the remote user a comprehensive visual overview by combining the on-site provided view with the camera feed directly from the robot’s perspective, potentially enhancing spatial awareness and operational context. Figure \ref{} demonstrates the live feed display in Unity, showcasing how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly. This feature may support more informed decision-making in future implementations of remote \ac{MR} systems for \ac{HRC}.
+% "how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly" - this sentence means that it can visualize the robots working view and manipulate the robot to make informed decisions and move it to where it wants to.  
 *TODO: add a figure of the camera transmission in unity and rviz. should i say that it provided situational awareness of robot's surroundings, since it was not atached to the robot itself. 
-The live feed provided critical situational awareness of the robot’s surroundings, aiding the remote operator in better understanding and interacting with the environment. Figure \ref{} illustrates this setup, showing the live camera feed within the Unity interface.
+
 
 
 
