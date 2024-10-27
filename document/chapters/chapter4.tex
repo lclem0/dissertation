@@ -1,4 +1,4 @@
-\chapter{Mixed Reality for Human-Robot Collaboration}
+\chapter{Mixed Reality for Human-Robot Collaboration}   
 \label{chapter:on-site}
 % \chapter{On-site Member's Application}% first title of section
 
@@ -27,7 +27,7 @@ First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm 
 
 After implementing the robot digital model into the simulation environment, the next step was to align it with the physical robot. Pose registration between the physical robot and its digital counterpart is executed using Vuforia's capabilities. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
 
-The robot is connected via Ethernet to a laptop running Ubuntu 20.04 with \ac{ROS} Noetic, which serves as the middleware layer. This setup facilitates seamless data exchange between the Unity \ac{DT} and the physical robot. The \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, developed by the IRIS Lab and available on GitHub\footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment that supports critical functionalities such as trajectory planning and robotic manipulation and visualization through RViz.
+The robot is connected via Ethernet to a laptop running Ubuntu 20.04 with \ac{ROS} Noetic, which serves as the middleware layer. This setup facilitates seamless data exchange between the Unity \ac{DT} and the physical robot. The \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, developed by the IRIS Lab and available on GitHub~\footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment that supports critical functionalities such as trajectory planning and robotic manipulation and visualization through RViz.
 
 To tailor these packages to the specific needs of this project, several enhancements were made. These modifications included the integration of bidirectional data flow between \ac{ROS} and Unity, enabling the Unity-based \ac{DT} to mirror the real-time movements of the physical robot. In particular, new \ac{ROS} nodes were created to subscribe to joint state data from the physical robot and publish these updates to Unity, ensuring precise synchronization between the physical and virtual environments. Additionally, new publishing mechanisms were implemented to send commands from Unity back to \ac{ROS}, allowing for full control of the robot through the \ac{MR} interface. 
 
@@ -241,7 +241,7 @@ However, this method proved ineffective because, once inside it, users could not
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\linewidth]{figs/warning-sign.png}
+    \includegraphics[width=0.7\linewidth]{figs/sign-alert.png}
     \caption{Warning blinking sign displayed in the bottom part of the \ac{UI} to alert the on-site user of proximity to the Robot}
     \label{fig:blinking-sign}
 \end{figure}
