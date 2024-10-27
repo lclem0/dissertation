@@ -1,16 +1,20 @@
-\chapter{Mixed Reality for Human-Robot Collaboration}%
+\chapter{Mixed Reality for Human-Robot Collaboration}
 \label{chapter:on-site}
 % \chapter{On-site Member's Application}% first title of section
 
 \begin{introduction}
-    This chapter presents the development of a comprehensive framework for implementing a Mixed Reality environment in Human-Robot Collaboration. 
-    % By allowing both on-site and remote manipulation through a communication pipeline, this system enables real-time robot manipulation and monitoring. 
-    The framework leverages advanced technologies such as Mixed-Reality, Digital Twins, and ROS, ensuring precise synchronization between physical and digital models. It discusses the tools, control methods, and User Interface enhancements designed to optimize both on-site and remote user experiences, aiming towards an intuitive, immersive collaboration.
+    % This chapter presents the development of a comprehensive framework for implementing a Mixed Reality environment in Human-Robot Collaboration. 
+    % % By allowing both on-site and remote manipulation through a communication pipeline, this system enables real-time robot manipulation and monitoring. 
+    % The framework leverages advanced technologies such as Mixed-Reality, Digital Twins, and ROS, ensuring precise synchronization between physical and digital models. It discusses the tools, control methods, and User Interface enhancements designed to optimize both on-site and remote user experiences, aiming towards an intuitive, immersive collaboration.
+    The primary objective of this project is to enhance remote human-robot collaboration through a framework incorporating a UR10e robotic arm and a Mixed Reality interface. This framework leverages real-time, bidirectional communication, allowing the Mixed-Reality system to function as an active, synchronized Digital Twin rather than a static digital replica. With an intuitive user interface, the system aims to provide remote operators with robust visualization and precise control capabilities as well as enabling seamless monitoring and manipulation of the robotic arm within the collaborative environment
+
 \end{introduction}
 
-\section{Framework}
+    % * TODO: read all of chapter 4 and improve it 
 
-Figure~\ref{fig:project_framework} illustrates the proposed framework of the \ac{MR}-based \ac{HRC} system. This framework seamlessly integrates two distinct environments—on-site and remote—through a robust communication pipeline designed to enable real-time, collaborative robot manipulation.
+\section{System Framework and Architecture}
+
+This section details the foundational architecture enabling seamless \ac{MR} integration within the \ac{HRC} environment, connecting on-site and remote interactions. Figure~\ref{fig:project_framework} illustrates the proposed framework of the system, through a robust communication pipeline designed to enable real-time, collaborative robot manipulation.
 
 \begin{figure}[h]
     \centering
@@ -19,15 +23,15 @@ Figure~\ref{fig:project_framework} illustrates the proposed framework of the \ac
     \label{fig:project_framework}
 \end{figure}
 
-First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled and manipulated. The on-site user interacts with this robotic arm through a custom \ac{MR} application developed in Unity, chosen due to its robust \ac{MR} capabilities, which facilitate the creation of immersive, interactive environments, enabling intuitive real-time robot manipulation.
+First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled. The on-site user interacts with this robotic arm through a custom \ac{MR} application developed in Unity, chosen due to its robust \ac{MR} capabilities, which facilitates the creation of immersive, interactive environments, enabling intuitive real-time robot manipulation.
 
 After implementing the robot digital model into the simulation environment, the next step was to align it with the physical robot. Pose registration between the physical robot and its digital counterpart is executed using Vuforia's capabilities. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
 
 The robot is connected via Ethernet to a laptop running Ubuntu 20.04 with \ac{ROS} Noetic, which serves as the middleware layer. This setup facilitates seamless data exchange between the Unity \ac{DT} and the physical robot. The \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, developed by the IRIS Lab and available on GitHub\footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment that supports critical functionalities such as trajectory planning and robotic manipulation and visualization through RViz.
 
-To tailor these packages to the specific needs of this project, several enhancements were made. These modifications included the integration of bidirectional data flow between \ac{ROS} and Unity, enabling the Unity-based \ac{DT} to mirror the real-time movements of the physical robot. In particular, new \ac{ROS} nodes were created to subscribe to joint state data from the physical robot and publish these updates to Unity, ensuring precise synchronization between the physical and virtual environments. Additionally, new publishing mechanisms were implemented to send commands from Unity back to \ac{ROS}, allowing for full control of the robot through the \ac{MR} interface. These modifications were essential for realizing the bidirectional communication required for accurate \ac{DT} manipulation.
+To tailor these packages to the specific needs of this project, several enhancements were made. These modifications included the integration of bidirectional data flow between \ac{ROS} and Unity, enabling the Unity-based \ac{DT} to mirror the real-time movements of the physical robot. In particular, new \ac{ROS} nodes were created to subscribe to joint state data from the physical robot and publish these updates to Unity, ensuring precise synchronization between the physical and virtual environments. Additionally, new publishing mechanisms were implemented to send commands from Unity back to \ac{ROS}, allowing for full control of the robot through the \ac{MR} interface. 
 
-This communication between the \ac{ROS} middleware and Unity’s \ac{MR} environment is established using Unity’s \ac{ROS}-\ac{TCP}-Connector and \ac{ROS}-\ac{TCP}-Endpoint packages. These packages enable bidirectional communication over a \ac{TCP}/\ac{IP} protocol, ensuring real-time synchronization between the virtual and physical environments. This communication architecture is fundamental for maintaining the \ac{DT}'s fidelity, reflecting real-world changes in the Unity model and vice versa, as referred in the section \ref{sec:dt}.
+This communication between the \ac{ROS} middleware and Unity’s \ac{MR} environment is established using Unity’s \ac{ROS}-\ac{TCP}-Connector and \ac{ROS}-\ac{TCP}-Endpoint packages. These packages establish communication over a \ac{TCP}/\ac{IP} protocol, ensuring real-time synchronization between the virtual and physical environments. This architecture is fundamental for maintaining the \ac{DT}'s fidelity, reflecting real-world changes in the Unity model and vice versa, as referred in the section \ref{sec:dt}.
 
 Regarding the \textbf{Remote Environment}, a remote participant accesses the same Unity-\ac{MR} application. This allows the remote member to visualize and manipulate the robot in real time, from a separate location. The remote \ac{UI} provides real-time visualization of the robot’s state and its workspace, enabling remote collaboration. The synchronization between the remote and on-site environments is facilitated through Unity’s \ac{MR} capabilities, which, in conjunction with the \ac{ROS}-based control, enable the remote user to execute commands and receive real-time feedback.
 
@@ -44,14 +48,14 @@ Regarding the Unity developed \ac{MR} environment, it started by implementing th
 
 The base robot manipulation provided by the \ac{URDF}-Importer package consisted on moving each joint individually by selecting the desired joint and then moving it with by using the keyboard directional arrows. This method was improved to three distinct control methods that enhance user experience and facilitate robot manipulation.
 
-\section{Robot Manipulation}
+\section{Robot Manipulation Methods}
 In order to properly develop new ways of controlling the \ac{DT} version of the robot, it was necessary to understand the C\# script named \texttt{Controller.cs}, which contained all the necessary functions to control the robot's joints.
 
 
-After further analysis, three methods were developed to control the robot's joints:
+After further analysis, three methods were developed to provide intuitive, precise control over the \ac{DT} and real-time robot manipulation:
     % * TODO: confirm if it is not possible to move the robot using other methods whenever the \ac{UI} interface is active. 
 
-\subsection{UI Control}
+\subsection{UI Control Panel and Joint Manipulation}
 \label{subsection:ui-control-method}
 % \textbf{UI Control Method}:
 This method is designed to provide users with an intuitive, user-friendly interface for manipulating the \ac{DT} of the UR10e robot. 
@@ -203,14 +207,14 @@ By maintaining this synchronization between the real robot and the virtual envir
 
 
 
-\section{On-site Mixed-Reality Features}
+\section{Mixed-Reality Features}
 \label{section:on-site-features}
 % \input{chapters/on-site/on-site-features} commented this part because text is below - choose whether to use this or the text below
 After having implemented the \ac{DT}-Robot bidirectional communication between the on-site and remote members, the next step consisted on developing features that could enhance both users' experience when interacting with the collaboration environment. These features were designed to improve user safety, facilitate robot manipulation, and provide an intuitive interface. The following sections detail these key features development and implementation.
 
 % Regarding the on-site member's collaboration experience, as explained in the state of art review, by implementing different sensorial cues, such as visual and audio, it will enhance the user experience into a more intuitive and immersive way.
 
-\subsection{Virtual Safety Zones}
+\subsection{Virtual Safety Zones and Sensorial Cues}
 \label{subsection:virtual-safety-zones} 
 % \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
 
@@ -247,7 +251,7 @@ However, this method proved ineffective because, once inside it, users could not
     
 % this interface section - the feature of controlling it using the UI must be put in the UI COntrol method above
 %  the remaining part should be in this part - explaining the rest of the UI features
-\subsection{Additional Interface Features}
+\subsection{Flexible Interface Options for User Customization}
 
 % The interface, which incorporates the safety-zone features detailed earlier, is illustrated in Figure~\ref{}.
 % * TODO: re-do this figure with the most recent version of the UI
@@ -265,7 +269,7 @@ The lower button, as shown in Figure \ref{fig:menu-toggle-button}, enables users
 
 
 
-\subsection{Camera Feed Transmission}
+\subsection{Enhanced Remote Visualization Through Camera Feed Transmission}
 
 To improve situational awareness for remote users, an additional camera was integrated, providing real-time visual context directly from the robot’s perspective and reducing on-site operator's responsibility for managing environmental views.
 
@@ -313,15 +317,15 @@ This dual-view capability offers the remote user a comprehensive visual overview
 % \end{verbatim}
 % the image data was republished in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
 
-*TODO: is this useful to any integration part of this chapter???? 
-The primary goal of this project consists on enhancing remote collaboration between human operators by utilizing a robotic arm (UR10e) and \ac{MR}. In order to achieve this, a framework allowing for an interactive, fully functional \ac{MR} application that facilitates bidirectional communication between the robot and its \ac{DT} was developed. It features a friendly \ac{UI} that enables the visualization and control of the robotic arm, where the \ac{DT} was designed to respond in real-time to the robot's physical movements, and vice versa. The achieved bidirectional communication ensures that the \ac{MR} system operates not as a mere digital shadow of the robot but as a true \ac{DT}, capable of reflecting and influencing the physical entity.
 
-One of the key features developed was a seamless control method integrated within the \ac{MR} environment, allowing the user to manipulate the robot via the \ac{UI}. This interface includes joint's selection buttons, directional controls, and toggle switches for precise manipulation of each robotic joint.  This setup enables users to control the robot's movements through the \ac{MR} interface and send this position update to the \ac{ROS} middleware, with real-time synchronization ensuring the robot accurately mirrors the \ac{DT}'s state.
 
-The development of two safety zones within the \ac{UI} was a critical enhancement aimed at ensuring user safety and improving operational awareness when interacting with the robot. These zones function by providing real-time alerts to the user. When the user enters the "Outer Safety Zone", which has a larger radius, not only a visual alert starts blinking, but also the color of the "Inner Safety Zone" changes, signaling that the user is approaching the robot's workspace. These visual cue escalate the user's awareness of proximity to the robot. If he gets even closer to the robot and breaches the "Inner Safety Zone", an auditory alarm is triggered, continuously alerting the user to their presence within a hazardous area. This layered approach—combining visual color changes and auditory alarms—ensures that users are fully aware of any potential danger during robot operation, thereby preventing accidents. Moreover, the combination of these sensorial cues also contributes to a more immersive interaction experience, increasing awareness without overwhelming the user.
-However, the accuracy of these safety zones is heavily dependent on the alignment between the camera and the \ac{AR} marker. Misalignment between the them can lead to inaccuracies in distance measurements, affecting the reliability of the safety zones. Maintaining precise marker tracking is therefore essential for ensuring both the accuracy of safety zone alerts and the overall safety of the system during operation.
+% *TODO: is this useful to any integration part of this chapter????  - from chapter 5 beginning
+% One of the key features developed was a seamless control method integrated within the \ac{MR} environment, allowing the user to manipulate the robot via the \ac{UI}. This interface includes joint's selection buttons, directional controls, and toggle switches for precise manipulation of each robotic joint.  This setup enables users to control the robot's movements through the \ac{MR} interface and send this position update to the \ac{ROS} middleware, with real-time synchronization ensuring the robot accurately mirrors the \ac{DT}'s state.
 
-Another significant feature was the implementation of a live camera feed, allowing the remote participant to view the robot’s workspace in real-time. This feed is crucial for remote collaboration, enabling users from different locations to have a synchronized understanding of the robot’s surroundings. The camera feed is transmitted from the \ac{ROS} middleware to the Unity \ac{MR} environment via \ac{TCP}/\ac{IP} after image compression. Compression was necessary due to the substantial bandwidth required for raw video data transmission. This feature offers an important perspective for remote users, aiding in monitoring and providing assistance when necessary.
+% The development of two safety zones within the \ac{UI} was a critical enhancement aimed at ensuring user safety and improving operational awareness when interacting with the robot. These zones function by providing real-time alerts to the user. When the user enters the "Outer Safety Zone", which has a larger radius, not only a visual alert starts blinking, but also the color of the "Inner Safety Zone" changes, signaling that the user is approaching the robot's workspace. These visual cue escalate the user's awareness of proximity to the robot. If he gets even closer to the robot and breaches the "Inner Safety Zone", an auditory alarm is triggered, continuously alerting the user to their presence within a hazardous area. This layered approach—combining visual color changes and auditory alarms—ensures that users are fully aware of any potential danger during robot operation, thereby preventing accidents. Moreover, the combination of these sensorial cues also contributes to a more immersive interaction experience, increasing awareness without overwhelming the user.
+% However, the accuracy of these safety zones is heavily dependent on the alignment between the camera and the \ac{AR} marker. Misalignment between the them can lead to inaccuracies in distance measurements, affecting the reliability of the safety zones. Maintaining precise marker tracking is therefore essential for ensuring both the accuracy of safety zone alerts and the overall safety of the system during operation.
 
-Both the joint control interface and the safety-zone mechanisms were designed to be toggled on/off, thereby ensuring that the user has the option to clear the \ac{UI} for an unobstructed view of the environment.
+% Another significant feature was the implementation of a live camera feed, allowing the remote participant to view the robot’s workspace in real-time. This feed is crucial for remote collaboration, enabling users from different locations to have a synchronized understanding of the robot’s surroundings. The camera feed is transmitted from the \ac{ROS} middleware to the Unity \ac{MR} environment via \ac{TCP}/\ac{IP} after image compression. Compression was necessary due to the substantial bandwidth required for raw video data transmission. This feature offers an important perspective for remote users, aiding in monitoring and providing assistance when necessary.
+
+% Both the joint control interface and the safety-zone mechanisms were designed to be toggled on/off, thereby ensuring that the user has the option to clear the \ac{UI} for an unobstructed view of the environment.
 
