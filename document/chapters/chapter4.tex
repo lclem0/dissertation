@@ -163,7 +163,6 @@ In order to handle this communication process, two new \ac{ROS} nodes were creat
 
     
 \subsection{Robot to Unity}
-* TODO: add here a figure of the Robot to Unity - real robot and superimposed dt in unity
 
 Opposite to the above described method which controlls the \ac{DT} and then updates the robot position, in this control method, the on-site user moves the robot and the remote counterpart visualizes this update instantly within the \ac{MR} environment.
 
@@ -196,6 +195,15 @@ By maintaining this synchronization between the real robot and the virtual envir
     \end{algorithmic}
 \end{algorithm}
 
+*TODO: comment the figure better
+Figure~\ref{fig:robot-unity} shows this
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/super-imposed-robot.png}
+    \caption{}
+    \label{fig:robot-unity}
+\end{figure}
 
 
 \section{Mixed-Reality Features}
@@ -209,10 +217,16 @@ After having implemented the \ac{DT}-Robot bidirectional communication between t
 \label{subsection:virtual-safety-zones} 
 % \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
 
-As explained in section \ref{sec:hrc-in-industry}, introducing different sensorial cues enhances on-site users' experience into a more intuitive and immersive experience. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance safety when interacting with the robot. Alongside these two safety zones' development, other features that address specific safety and user's concerns are explained below:  
+As explained in section \ref{sec:hrc-in-industry}, introducing different sensorial cues enhances on-site users' experience into a more intuitive and immersive experience. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance safety when interacting with the robot. Figure \ref{fig:safety-zones} displays the developed safety-zones that aim to increase awareness around the robot's working space. Alongside these two safety zones' development, other features that address specific safety and user's concerns are explained below:  
 % as shown in Figure \ref{fig:blinking-sign}. 
-* TODO: re-do this figure with the most recent version of the UI and safety-zones
+% * TODO: re-do this figure with the most recent version of the UI and safety-zones
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/safet-zones.png}
+    \caption{\ac{MR} application \ac{UI}, with safety-zones aumenting the robot's working area in order to address user's safety}
+    \label{fig:safety-zones}
+\end{figure}
 
 \begin{itemize}
 \item \textbf{Outer Safety Zone:} Initially, only this safety zone was created. The purpose of creating it was to provide an 
@@ -243,15 +257,15 @@ However, this method proved ineffective because, once inside it, users could not
 \subsection{Flexible Interface Options for User Customization}
 
 % The interface, which incorporates the safety-zone features detailed earlier, is illustrated in Figure~\ref{}.
-% * TODO: re-do this figure with the most recent version of the UI
 
 Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several additional features were integrated into the \ac{MR} application aimed at enhancing user flexibility and clarity. Positioned in the upper right corner of the \ac{UI}, two green toggle buttons provide control over distinct interface functionalities.
 
 The lower button, as shown in Figure \ref{fig:menu-toggle-button}, enables users to activate (1) or deactivate (2) the joint control panel, changing to gray when inactive. Deactivating this panel provides an unobstructed view of the shared workspace, enhancing awareness for both on-site and remote users. The upper button operates in a similar way, but controls the visibility and functionality of the safety zones. When toggled off, both safety zones disappear and their associated alerts are disabled. This configuration allows users to customize the interface to match the specific task requirements, reducing visual distractions when safety zones are unnecessary.
 
+* TODO: comment this better
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figs/mao-toca-ui-refeita-numbers.png}
+    \includegraphics[width=\linewidth]{figs/all-features.png}
     \caption{Illustration of the activation and deactivation functionality for the robot control panel within the \ac{MR} interface. In the left image (1), the control panel is fully active, displaying joint selection buttons as well as corresponding directional arrows, along with a reference image of the robot. The right image (2) shows the interface after control panel deactivation by pressing the toggle button (highlighted in red), enabling a clearer view of the environment.}
     \label{fig:menu-toggle-button}
 \end{figure}
@@ -280,9 +294,20 @@ However, when transmitting the uncompressed image data to the Unity \ac{MR} appl
     out:=/camera/image_repub 
 \end{verbatim}
 
-Afterwards, this compressed camera feed had to be integrated into Unity. To do this, the \texttt{CameraFeedReceiver.cs} script was developed, responsible for receiving and rendering the feed into the \ac{UI} panel. This setup allowed the remote user to view the robot’s perspective in real time, independent of the on-site operator’s actions. This dual-view capability offers the remote user a comprehensive visual overview by combining the on-site provided view with the camera feed directly from the robot’s perspective, potentially enhancing spatial awareness and operational context. Figure \ref{} demonstrates the live feed display in Unity, showcasing how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly. This feature may support more informed decision-making in future implementations of remote \ac{MR} systems for \ac{HRC}.
+Afterwards, this compressed camera feed had to be integrated into Unity. To do this, the \texttt{CameraFeedReceiver.cs} script was developed, responsible for receiving and rendering the feed into the \ac{UI} panel. This setup allowed the remote user to view the robot’s perspective in real time, independent of the on-site operator’s actions. This dual-view capability offers the remote user a comprehensive visual overview by combining the on-site provided view with the camera feed directly from the robot’s perspective, potentially enhancing spatial awareness and operational context.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\linewidth]{figs/camera-feed-transmission-3.png}
+    \caption{Real-time camera feed integration from the robot’s perspective within the \ac{MR} environment. On the left image, Unity displays the \ac{MR} \ac{UI} seen by the remote user, with emphasis on the live feed coming from the camera mounted on the robot, aiming to enhance situational awareness. The right picture shows the RViz simulation where the camera feed is captured through the \ac{ROS} Middleware setup. This live camera transmission between on-site and remote users is previously compressed, ensuring the proper quality and minimal latency between environments, enabling synchronized visualization.}
+    \label{fig:camera-feed}
+\end{figure}
+
+
+Figure \ref{fig:camera-feed} demonstrates the live feed display in Unity, showcasing how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly. This feature may support more informed decision-making in future implementations of remote \ac{MR} systems for \ac{HRC}.
+
+
 % "how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly" - this sentence means that it can visualize the robots working view and manipulate the robot to make informed decisions and move it to where it wants to.  
-*TODO: add a figure of the camera transmission in unity and rviz. should i say that it provided situational awareness of robot's surroundings, since it was not atached to the robot itself. 
 
 
 
