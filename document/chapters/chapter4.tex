@@ -9,7 +9,6 @@
     The primary objective of this project is to enhance remote human-robot collaboration through a framework incorporating a UR10e robotic arm and a mixed reality interface. This framework leverages real-time, bidirectional communication, allowing the mixed-reality system to function as an active, synchronized digital twin rather than a static digital replica. With an intuitive user interface, the system aims to provide remote operators with robust visualization and precise control capabilities as well as enabling seamless monitoring and manipulation of the robotic arm within the collaborative environment
 \end{introduction}
 
-    % * TODO: read all of chapter 4 and improve it 
 
 \section{System Framework and Architecture}
 
@@ -47,7 +46,6 @@ In order to properly develop new ways of controlling the \ac{DT} version of the 
 
 These methods are explained in detail below.
 
-    % * TODO: confirm if it is not possible to move the robot using other methods whenever the \ac{UI} interface is active. 
 
 \subsection{UI Control Panel and Joint Manipulation}
 \label{subsection:ui-control-method}
@@ -102,7 +100,7 @@ After moving the digital model to the desired position, by pressing the "Publish
     \label{fig:publish_UI_button}
 \end{figure}
 
-To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which are being constantly published to the standard \texttt{/joint\_states} topic, a separate \ac{ROS} topic \texttt{(/unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution. Below, there is a pseudo-code snippet explaining how to update the \ac{DT} in Unity and send the new desired robot position to the \ac{ROS} middleware.
+To avoid conflicts with the \ac{ROS} node responsible for controlling the real robot's joints, which are being constantly published to the standard \texttt{/joint\_states} topic, a separate \ac{ROS} topic \texttt{(/unity\_joint\_states)} was created to handle the joint data coming from Unity. This ensures that data from Unity does not interfere with the real robot’s ongoing operations. When the "Publish" button is pressed, the Unity-defined joint states are sent to this new topic, and only when necessary are they relayed to the real robot for movement execution. Algorithm \ref{alg:unity_input} represents a pseudo-code snippet that explains how to update the \ac{DT} in Unity and send the new desired robot position to the \ac{ROS} middleware.
 
 \begin{algorithm}
     \caption{Unity Input for Joint Selection and Movement}\label{alg:unity_input}
@@ -128,7 +126,7 @@ To avoid conflicts with the \ac{ROS} node responsible for controlling the real r
 \end{algorithm}
 
 
-In order to handle this communication process, two new \ac{ROS} nodes were created, \texttt{joint\_state\_listener} and \texttt{move\_unity}. The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package, initializing the node that subscribes to the \texttt{/unity\_joint\_states} topic, which receives a JointState message type. It then starts the publisher for the \texttt{/move\_joint\_unity} topic, converting this data into a Float64MultiArray format which will be further received by the second node. This second node called \texttt{move\_unity}, created within the \texttt{iris\_sami} package, subscribes to the \texttt{/move\_joint\_unity} topic, listening to new joint position values, moving the robotic arm to this desired position. This real-time update can be visualized either on the simulation environment, through Rviz, or by utilizing the real UR10e robot. Another pseudo-code explanation regarding how both \ac{ROS} nodes work, is presented below.
+In order to handle this communication process, two new \ac{ROS} nodes were created, \texttt{joint\_state\_listener} and \texttt{move\_unity}. The \texttt{unity\_joint\_subscriber.py} script was developed within the \texttt{iris\_ur10e} package, initializing the node that subscribes to the \texttt{/unity\_joint\_states} topic, which receives a JointState message type. It then starts the publisher for the \texttt{/move\_joint\_unity} topic, converting this data into a Float64MultiArray format which will be further received by the second node. This second node called \texttt{move\_unity}, created within the \texttt{iris\_sami} package, subscribes to the \texttt{/move\_joint\_unity} topic, listening to new joint position values, moving the robotic arm to this desired position. This real-time update can be visualized either on the simulation environment, through Rviz, or by utilizing the real UR10e robot. Another pseudo-code algorithm explanation regarding how both \ac{ROS} nodes work, is presented in \ref{alg:combined_ros_node}.
 
 % Part 2: ROS Node for Receiving Unity Joint States
 
@@ -168,7 +166,7 @@ Opposite to the above described method which controlls the \ac{DT} and then upda
 
 In order to properly achieve this communication and data transfer, the \texttt{JointStateSubscriber.cs} script was created in Unity. It subscribes to the \texttt{/joint\_states} topic, and stores the information regarding the joint positions in a dictionary structure that is updated in real time into a specific \texttt{.json} file within the \ac{MR} environment. This file is constantly being read by the \texttt{Controller.cs} script whenever this control method is enabled, updating the \ac{DT} robot model accordingly.
 
-By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent \ac{DT} representation through the bidirectional communication established between the \ac{MR} environment and the \ac{ROS} middleware. Below, there is another pseudo-code explaining how the \ac{ROS}-Unity control method works.
+By maintaining this synchronization between the real robot and the virtual environment, the Unity scene accurately reflects the robot's live state, ensuring a consistent \ac{DT} representation through the bidirectional communication established between the \ac{MR} environment and the \ac{ROS} middleware. Below, algorithm \ref{alg:ros_unity_control} explains how this \ac{ROS}-Unity control method works.
 
 
 \begin{algorithm}
@@ -195,13 +193,12 @@ By maintaining this synchronization between the real robot and the virtual envir
     \end{algorithmic}
 \end{algorithm}
 
-*TODO: comment the figure better
-Figure~\ref{fig:robot-unity} shows this
+Figure~\ref{fig:robot-unity} illustrates this real-time synchronization between the UR10e robot and its \ac{DT} within the \ac{MR} environment. As the on-site user manipulates the physical robot, its digital counterpart updates instantly within Unity, providing the remote user with a synchronized visual representation of the robot’s movements.
 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figs/super-imposed-robot.png}
-    \caption{}
+    \caption{Real-time synchronization of the UR10e robot’s \ac{DT} in Unity environment, showing an accurately overlay of the robot. This synchronization enables remote users to monitor the robot's state within the \ac{MR} environment, reflecting live updates via bidirectional \ac{ROS}-Unity communication}
     \label{fig:robot-unity}
 \end{figure}
 
@@ -218,8 +215,6 @@ After having implemented the \ac{DT}-Robot bidirectional communication between t
 % \input{chapters/on-site/subsections/virtual-safety-zones} commented this part because text is below - choose whether to use this or the text below
 
 As explained in section \ref{sec:hrc-in-industry}, introducing different sensorial cues enhances on-site users' experience into a more intuitive and immersive experience. Therefore, visualizing the working zone of the robot is a critical feature designed to enhance safety when interacting with the robot. Figure \ref{fig:safety-zones} displays the developed safety-zones that aim to increase awareness around the robot's working space. Alongside these two safety zones' development, other features that address specific safety and user's concerns are explained below:  
-% as shown in Figure \ref{fig:blinking-sign}. 
-% * TODO: re-do this figure with the most recent version of the UI and safety-zones
 
 \begin{figure}[h]
     \centering
@@ -238,7 +233,6 @@ However, this method proved ineffective because, once inside it, users could not
 \item \textbf{Sensorial Cues:  }
 \textbf{Visual}: Upon entering the Outer-Safety Zone, the color of the Inner sphere changes to red, reverting to its default color if the user exits this critical area. This visual cue alerts the user to increased proximity to a high-risk zone. Additionally, a blinking warning appears at the bottom center of the interface, switching between both circular danger signs shown in Figure \ref{fig:blinking-sign}. This flashing indicator amplifies the alert, reinforcing the awareness of approaching the operational robot area, remaining active as long as the user is within this Outer-Safety Zone.
 
-% *TODO: add a figure representing the blinking warning upon entering the outer safety zone 
 
 \textbf{Auditory}: Entering the Inner-Safety Zone triggers an audio alarm signifying that the user has breached into the robot working area, enhancing the effectiveness of the safety mechanism.
 
@@ -256,18 +250,15 @@ However, this method proved ineffective because, once inside it, users could not
 %  the remaining part should be in this part - explaining the rest of the UI features
 \subsection{Flexible Interface Options for User Customization}
 
-% The interface, which incorporates the safety-zone features detailed earlier, is illustrated in Figure~\ref{}.
-
 Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several additional features were integrated into the \ac{MR} application aimed at enhancing user flexibility and clarity. Positioned in the upper right corner of the \ac{UI}, two green toggle buttons provide control over distinct interface functionalities.
 
-The lower button, as shown in Figure \ref{fig:menu-toggle-button}, enables users to activate (1) or deactivate (2) the joint control panel, changing to gray when inactive. Deactivating this panel provides an unobstructed view of the shared workspace, enhancing awareness for both on-site and remote users. The upper button operates in a similar way, but controls the visibility and functionality of the safety zones. When toggled off, both safety zones disappear and their associated alerts are disabled. This configuration allows users to customize the interface to match the specific task requirements, reducing visual distractions when safety zones are unnecessary.
+By utilizing these two toggle buttons, users can enable/disable the visibility of both safety zones and the robot joint control panel for an optimized workspace view. Figure \ \ref{fig:all-features-button} demonstrates this \ac{MR} interface flexibility. In image 1, both safety zones and control panels are active. By selecting the upper-right button, the user can deactivate safety zones, turning this toggle button into gray and thus, removing visual cues and safety-zones related features (2). The lower button, pressed in image 3, toggles the robot joint control panel on and off, as illustrated in image 4. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image 5 represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
 
-* TODO: comment this better
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figs/all-features.png}
-    \caption{Illustration of the activation and deactivation functionality for the robot control panel within the \ac{MR} interface. In the left image (1), the control panel is fully active, displaying joint selection buttons as well as corresponding directional arrows, along with a reference image of the robot. The right image (2) shows the interface after control panel deactivation by pressing the toggle button (highlighted in red), enabling a clearer view of the environment.}
-    \label{fig:menu-toggle-button}
+    \caption{\ac{UI} demonstrating the activation and deactivation of the safety zones and robot joint control panel within the \ac{MR} environment. In (1), the workspace is displayed with the safety zones active. By pressing the top-right button in (2), these zones are deactivated, providing a clearer view. In (3), pressing the button below the top-right icon deactivates the joint control panel, as seen in (4). In (5), with both buttons deactivated, the workspace is entirely unobstructed, offering maximum clarity for the user}
+    \label{fig:all-features-button}
 \end{figure}
 
 
@@ -296,15 +287,16 @@ However, when transmitting the uncompressed image data to the Unity \ac{MR} appl
 
 Afterwards, this compressed camera feed had to be integrated into Unity. To do this, the \texttt{CameraFeedReceiver.cs} script was developed, responsible for receiving and rendering the feed into the \ac{UI} panel. This setup allowed the remote user to view the robot’s perspective in real time, independent of the on-site operator’s actions. This dual-view capability offers the remote user a comprehensive visual overview by combining the on-site provided view with the camera feed directly from the robot’s perspective, potentially enhancing spatial awareness and operational context.
 
+Figure \ref{fig:camera-feed} demonstrates the live feed display in Unity, showcasing how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly. This feature may support more informed decision-making in future implementations of remote \ac{MR} systems for \ac{HRC}.
+
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figs/camera-feed-transmission-3.png}
-    \caption{Real-time camera feed integration from the robot’s perspective within the \ac{MR} environment. On the left image, Unity displays the \ac{MR} \ac{UI} seen by the remote user, with emphasis on the live feed coming from the camera mounted on the robot, aiming to enhance situational awareness. The right picture shows the RViz simulation where the camera feed is captured through the \ac{ROS} Middleware setup. This live camera transmission between on-site and remote users is previously compressed, ensuring the proper quality and minimal latency between environments, enabling synchronized visualization.}
+    \caption{Real-time camera feed integration from the robot’s perspective within the \ac{MR} environment. On the left image, Unity displays the \ac{MR} interface seen by the remote user, with emphasis on the live feed coming from the camera mounted on the robot, aiming to enhance situational awareness. The right picture shows the RViz simulation where the camera feed is captured through the \ac{ROS} Middleware setup. This live camera transmission between on-site and remote users has to be compressed, ensuring the proper quality and minimal latency between environments, enabling synchronized visualization.}
     \label{fig:camera-feed}
 \end{figure}
 
 
-Figure \ref{fig:camera-feed} demonstrates the live feed display in Unity, showcasing how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly. This feature may support more informed decision-making in future implementations of remote \ac{MR} systems for \ac{HRC}.
 
 
 % "how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly" - this sentence means that it can visualize the robots working view and manipulate the robot to make informed decisions and move it to where it wants to.  
