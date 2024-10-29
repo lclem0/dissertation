@@ -250,18 +250,71 @@ However, this method proved ineffective because, once inside it, users could not
 %  the remaining part should be in this part - explaining the rest of the UI features
 \subsection{Flexible Interface Options for User Customization}
 
-Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several additional features were integrated into the \ac{MR} application aimed at enhancing user flexibility and clarity. Positioned in the upper right corner of the \ac{UI}, two green toggle buttons provide control over distinct interface functionalities.
+Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several additional features were integrated into the \ac{MR} application aimed at enhancing user flexibility and clarity. Positioned in the upper right corner of the \ac{UI}, two green toggle buttons provide control over distinct interface functionalities. By utilizing these two toggle buttons, users can enable/disable the visibility of both safety zones and the robot joint control panel for an optimized workspace view. 
 
-By utilizing these two toggle buttons, users can enable/disable the visibility of both safety zones and the robot joint control panel for an optimized workspace view. Figure \ \ref{fig:all-features-button} demonstrates this \ac{MR} interface flexibility. In image 1, both safety zones and control panels are active. By selecting the upper-right button, the user can deactivate safety zones, turning this toggle button into gray and thus, removing visual cues and safety-zones related features (2). The lower button, pressed in image 3, toggles the robot joint control panel on and off, as illustrated in image 4. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image 5 represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=\linewidth]{figs/all-features-3.png}
+%     \caption{\ac{UI} demonstrating the activation and deactivation of the safety zones and robot joint control panel within the \ac{MR} environment. In (1), the workspace is displayed with the safety zones active. By pressing the top-right button in (2), these zones are deactivated, providing a clearer view. In (3), pressing the button below the top-right icon deactivates the joint control panel, as seen in (4). In (5), with both buttons deactivated, the workspace is entirely unobstructed, offering maximum clarity for the user}
+%     \label{fig:all-features-button}
+% \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figs/all-features.png}
-    \caption{\ac{UI} demonstrating the activation and deactivation of the safety zones and robot joint control panel within the \ac{MR} environment. In (1), the workspace is displayed with the safety zones active. By pressing the top-right button in (2), these zones are deactivated, providing a clearer view. In (3), pressing the button below the top-right icon deactivates the joint control panel, as seen in (4). In (5), with both buttons deactivated, the workspace is entirely unobstructed, offering maximum clarity for the user}
+    % First subfigure
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.42\textwidth]{figs/feature-1.png}
+        \caption{Both safety zones and control panel are active, providing full visual feedback. Upon pressing the upper-right toggle button, safety-zones are disabled.}
+        \label{fig:subfig1}
+    \end{subfigure}
+
+    \vspace{0.5em} % Add space between figures
+
+    % Second subfigure
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.42\textwidth]{figs/feature-2.png}
+        \caption{Consequence of pressing the upper-right toggle button, removing safety cues and providing a clearer view.}
+        \label{fig:subfig2}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Third subfigure
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.42\textwidth]{figs/feature-3.png}
+        \caption{Pressing of the lower-right toggle button to deactivate the robot joint control panel.}
+        \label{fig:subfig3}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Fourth subfigure
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.42\textwidth]{figs/feature-4.png}
+        \caption{Robot joint control panel deactivated, allowing a more streamlined interface.}
+        \label{fig:subfig4}
+    \end{subfigure}
+
+    \vspace{0.5em}
+
+    % Fifth subfigure
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.42\textwidth]{figs/feature-5.png}
+        \caption{Both safety zones and control panel are deactivated, achieving an unobstructed workspace view.}
+        \label{fig:subfig5}
+    \end{subfigure}
+
+    \caption{Flexible \ac{MR} interface options for user customization, allowing selective activation and deactivation of safety zones and the robot joint control panel. Both image \ref{fig:subfig1} and \ref{fig:subfig3} show both features active. By pressing the top-right button, \ref{fig:subfig2} shows safety zones deactivaton. Similarly, in \ref{fig:subfig3} and \ref{fig:subfig4}, the lower toggle deactivation controls the joint control panel. Image \ref{fig:subfig5} demonstrates a fully unobstructed workspace with both features off, enabling a clearer task view.}
     \label{fig:all-features-button}
 \end{figure}
 
 
+Figure \ref{fig:all-features-button} demonstrates this \ac{MR} interface flexibility. In image \ref{fig:subfig1}, both safety zones and control panels are active. By selecting the upper-right button, the user can deactivate safety zones, turning this toggle button into gray and thus, removing visual cues and safety-zones related features, as depicted in \ref{fig:subfig2}. The lower button, pressed in image \ref{fig:subfig3}, toggles the robot joint control panel on and off, as illustrated in image \ref{fig:subfig4}. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
 
 \subsection{Enhanced Remote Visualization Through Camera Feed Transmission}
 
@@ -289,14 +342,36 @@ Afterwards, this compressed camera feed had to be integrated into Unity. To do t
 
 Figure \ref{fig:camera-feed} demonstrates the live feed display in Unity, showcasing how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly. This feature may support more informed decision-making in future implementations of remote \ac{MR} systems for \ac{HRC}.
 
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=\linewidth]{figs/camera-feed-transmission-3.png}
+%     \caption{Real-time camera feed integration from the robot’s perspective within the \ac{MR} environment. On the left image, Unity displays the \ac{MR} interface seen by the remote user, with emphasis on the live feed coming from the camera mounted on the robot, aiming to enhance situational awareness. The right picture shows the RViz simulation where the camera feed is captured through the \ac{ROS} Middleware setup. This live camera transmission between on-site and remote users has to be compressed, ensuring the proper quality and minimal latency between environments, enabling synchronized visualization.}
+%     \label{fig:camera-feed}
+% \end{figure}
+
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\linewidth]{figs/camera-feed-transmission-3.png}
-    \caption{Real-time camera feed integration from the robot’s perspective within the \ac{MR} environment. On the left image, Unity displays the \ac{MR} interface seen by the remote user, with emphasis on the live feed coming from the camera mounted on the robot, aiming to enhance situational awareness. The right picture shows the RViz simulation where the camera feed is captured through the \ac{ROS} Middleware setup. This live camera transmission between on-site and remote users has to be compressed, ensuring the proper quality and minimal latency between environments, enabling synchronized visualization.}
-    \label{fig:camera-feed}
+    % First subfigure
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figs/camera-feed-transmission-alone-1.png}
+        \caption{Unity \ac{MR} environment displaying the robot’s camera feed, providing the remote user with real-time situational awareness of the robot’s workspace.}       
+        \label{fig:camera-unity}
+    \end{subfigure}
+
+    \vspace{0.8em} % Add space between figures
+
+    % Second subfigure
+    \begin{subfigure}{\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{figs/camera-feed-transmission-alone-2.png}
+        \caption{RViz interface showing the camera feed integrated through \ac{ROS}, used for verifying the robot’s field of view and validating alignment with the \ac{MR} display in Unity.}
+        \label{fig:camera-rviz}
+    \end{subfigure}
+    
+    \caption{Real-time camera feed integration from the robot’s perspective within the \ac{MR} environment. On \ref{fig:camera-unity}, Unity displays the \ac{MR} interface seen by the remote user, with emphasis on the live feed coming from the camera mounted on the robot, aiming to enhance situational awareness. The \ref{fig:camera-rviz} picture shows the RViz simulation where the camera feed is captured through the \ac{ROS} Middleware setup. This live camera transmission between on-site and remote users has to be compressed, ensuring the proper quality and minimal latency between environments, enabling synchronized visualization.}
+\label{fig:camera-feed}
 \end{figure}
-
-
 
 
 % "how the system allows remote users to monitor the robot’s surroundings and adjust their commands accordingly" - this sentence means that it can visualize the robots working view and manipulate the robot to make informed decisions and move it to where it wants to.  
