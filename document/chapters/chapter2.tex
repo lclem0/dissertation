@@ -85,7 +85,7 @@ However, \ac{HRI} can be broken down into different forms of interaction, whose 
 humans and robots share the workspace. This disctinction is represented in the Figure \ref{fig:collab} and can be broken down into \textbf{Coexistence}, \textbf{Cooperation} and \textbf{Collaboration} \cite{Jahanmahin2022}. 
 Each one can be distinguished by the degree of interaction and task sharing between humans and robots:
 
-* TODO: i tried to edit it and center it, but it lost resolution. i will try to make it better
+% * TODO: i tried to edit it and center it, but it lost resolution. i will try to make it better
 \begin{figure}[!htbp]
     % \centering
     % \hspace{-1.3cm}
@@ -169,7 +169,7 @@ Despite their advantages, integrating cobots still encounters challenges for som
 Moreover, \ac{MR} technologies are becoming increasingly pivotal in advancing cobot integration, offering immersive, real-time interfaces that enhance \ac{HRC}. By overlaying digital information onto the physical workspace, \ac{MR} facilitates better situational awareness and task execution for both operators and cobots. Coupled with \ac{DT} systems, \ac{MR} enables real-time monitoring and control of cobots in dynamic and remote settings, enhancing operational flexibility. Integrating \ac{MR} into cobot applications thus allows for more intuitive interactions, improved safety, and higher precision in collaborative environments. As part of Industry 5.0, these technologies collectively contribute to creating more responsive, human-centered manufacturing systems.
 
 \section{Digital Realities} 
-\ac{DRs} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in Figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
+\ac{DR} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in Figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
 This continuum is divided into four principal stages: Reality, \ac{AR}, \ac{AV}, and \ac{VR}.
 
 \begin{figure}[h]
@@ -381,16 +381,15 @@ Figure~\ref{fig:physical-digital} depicts an immersive dual view where users can
     \label{fig:physical-digital}
 \end{figure}
 
-Their proposed comprehensive framework for an \ac{AR}-assisted, \ac{DT}-enabled robot collaborative manufacturing system features human-in-the-loop control. The system architecture, shown in Figure~\ref{f:system-framework}, introduces a multi-node communication mechanism to facilitate interactions among multiple robots and clients. It includes the design of an \ac{AR}-based teleoperation system for pose registration and motion planning, coupled with three \ac{DT}-enabled interaction approaches to achieve closed-loop interaction between virtual and physical robots.
+Their proposed comprehensive framework for an \ac{AR}-assisted, \ac{DT}-enabled robot collaborative manufacturing system features human-in-the-loop control.  It includes the design of an \ac{AR}-based teleoperation system for pose registration and motion planning, coupled with three \ac{DT}-enabled interaction approaches to achieve closed-loop interaction between virtual and physical robots. The \ac{DT} of the physical robot, modeled using the Unity engine, is displayed as a hologram in the remote workspace via \ac{AR} glasses, enabling teleoperation and remote monitoring. Pose registration involves aligning the virtual and physical robot models using the Vuforia Engine, while joint alignment translates \ac{DT} joint values into real-world coordinates.
 
-\begin{figure}[!htpb]
-    \centering
-    \includegraphics[width=0.5\linewidth]{figs/framework.jpg}
-    \caption{The architecture of a multi-robot, multi-client communication mechanism~\cite{LI2022102321}.}
-    \label{f:system-framework}
-\end{figure}
-
-The \ac{DT} of the physical robot, modeled using the Unity engine, is displayed as a hologram in the remote workspace via \ac{AR} glasses, enabling teleoperation and remote monitoring. Pose registration involves aligning the virtual and physical robot models using the Vuforia Engine, while joint alignment translates \ac{DT} joint values into real-world coordinates.
+% The system architecture introduces a multi-node communication mechanism to facilitate interactions among multiple robots and clients.
+% \begin{figure}[!htpb]
+%     \centering
+%     \includegraphics[width=0.5\linewidth]{figs/framework.jpg}
+%     \caption{The architecture of a multi-robot, multi-client communication mechanism~\cite{LI2022102321}.}
+%     \label{f:system-framework}
+% \end{figure}
 
 Therefore, a robot control approach aided by \ac{AR} technology offers several benefits:
 \begin{itemize}
@@ -401,7 +400,7 @@ Therefore, a robot control approach aided by \ac{AR} technology offers several b
 
 However, observing workspace and robot state information during task execution presents challenges, such as networking latency and positioning accuracy. Proposed solutions include time-sensitive networks and advanced communication technologies such as 5G~\cite{LI2022102321}.
 
-The proposed system also utilizes IP cameras for workspace monitoring, projecting video feeds onto \ac{AR} glasses for enhanced remote monitoring, as shown in Figure~\ref{f:workspace-visualization}.
+The proposed system also utilizes \ac{IP} cameras for workspace monitoring, projecting video feeds onto \ac{AR} glasses for enhanced remote monitoring, as shown in Figure~\ref{f:workspace-visualization}.
 
 \begin{figure}[!htpb]
     \centering

@@ -21,11 +21,11 @@ This section details the foundational architecture enabling seamless \ac{MR} int
     \label{fig:project_framework}
 \end{figure}
 
-First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled. The on-site user interacts with this robotic arm through a custom \ac{MR} application developed in Unity, chosen due to its robust \ac{MR} capabilities, which facilitates the creation of immersive, interactive environments, enabling intuitive real-time robot manipulation.
+First of all, regarding the \textbf{On-Site Environment}, the UR10e robotic arm operates as the central physical entity to be controlled. The on-site user controls this robotic arm through a custom \ac{MR} application, designed to create an immersive and interactive environment. It allows this user to stream the environment to the remote counterpart and intuitively manipulate the robot in real-time, as well as interact with the developed augmented features.  
 
-After implementing the robot digital model into the simulation environment, the next step was to align it with the physical robot. Pose registration between the physical robot and its digital counterpart is executed using Vuforia's capabilities. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
+After implementing the robot's digital model into the simulation environment, the next step was to align it with the physical robot. Pose registration between the physical robot and its digital counterpart is executed using Vuforia's capabilities. The system employs ArUco markers for precise pose estimation, ensuring that the digital representation of the UR10e is accurately aligned with its physical counterpart. The \ac{DT} of the robot, rendered in Unity, provides a visually synchronized, real-time mirror of the robot's movements and configurations, thus facilitating enhanced interaction.
 
-The robot is connected via Ethernet to a laptop running Ubuntu 20.04 with \ac{ROS} Noetic, which serves as the middleware layer. This setup facilitates seamless data exchange between the Unity \ac{DT} and the physical robot. The \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, available on IRIS Lab's GitHub~\footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment that supports critical functionalities such as trajectory planning and robotic manipulation and visualization through RViz.
+The robot is connected via Ethernet to a laptop running Ubuntu 20.04 with \ac{ROS} Noetic, which serves as the middleware layer. This setup facilitates seamless data exchange between the Unity \ac{DT} and the physical robot. The \texttt{iris\_ur10e} and \texttt{iris\_sami} \ac{ROS} packages, available on IRIS Lab's GitHub~\footnote{https://github.com/iris-ua}, provide a pre-established \ac{ROS} environment that supports critical functionalities such robotic manipulation and visualization through RViz.
 
 To tailor these packages to the specific needs of this project, several enhancements were made. These modifications included the integration of bidirectional data flow between \ac{ROS} and Unity, enabling the Unity-based \ac{DT} to mirror the real-time movements of the physical robot. In particular, new \ac{ROS} nodes were created to subscribe to joint state data from the physical robot and publish these updates to Unity, ensuring precise synchronization between the physical and virtual environments. Additionally, new publishing mechanisms were implemented to send commands from Unity back to \ac{ROS}, allowing for full control of the robot through the \ac{MR} interface. 
 
@@ -40,19 +40,15 @@ This framework aims to provide an immersive and responsive \ac{MR} environment, 
 
 \section{Robot Manipulation Within Mixed Reality Environment}
 
-Building on this comprehensive framework, the Unity-based \ac{MR} environment is designed to implement and control the \ac{DT} representation of the UR10e robotic arm. Initially, basic robot manipulation was achieved through the Unity Robotics Hub's \ac{URDF} Importer, enabling joint-specific adjustments via keyboard controls. However, to enhance user interaction and provide a more intuitive experience, new control methods were subsequently developed within the application, aimed at optimizing the user’s ability to monitor and interact with the robotic arm in real time. This section outlines these control methods in detail, describing their specific functions and contributions to the \ac{HRC} experience.
+Building on this comprehensive framework, the Unity-based \ac{MR} environment is designed to implement and control the \ac{DT} representation of the UR10e robotic arm. Initially, basic robot manipulation was achieved through the Unity Robotics Hub's \ac{URDF} Importer, enabling joint-specific adjustments via keyboard controls. However, to enhance user interaction and provide a more intuitive experience, new control methods were subsequently developed within the application, aimed at optimizing the user’s ability to monitor and interact with the robotic arm in real time. This section outlines these control methods in detail, describing their specific functions and contributions to the \ac{HRC} experience. 
 
-In order to properly develop new ways of controlling the \ac{DT} version of the robot, it was necessary to understand the core C\# script which contained all the necessary functions to control the robot's joints within Unity, named \texttt{Controller.cs}. After further analysis, control methods were implemented to facilitate the manipulation of the digital robot model through a \ac{HHD} interface. This interface includes a menu displaying each joint, enabling users to adjust the robot’s position directly. Once the digital model is set to the desired position—either via the \ac{HHD} or keyboard controls—the user can publish this position to the \ac{ROS} middleware, which moves the physical robot accordingly. Additionally, another method was created for situations where the on-site counterpart manipulates the physical robot directly. In these cases, the \ac{DT} mirrors the real robot’s movements, maintaining synchronized operation between the physical and virtual environments.
-
-These methods are explained in detail below.
+In order to properly develop new ways of controlling the \ac{DT} version of the robot, it was necessary to understand the core C\# script which contained all the necessary functions to control the robot's joints within Unity, named \texttt{Controller.cs}. After further analysis, control methods were implemented to facilitate the manipulation of the digital robot model through a \ac{HHD} interface. This interface includes a menu displaying each joint, enabling users to adjust the robot’s position directly. Once the digital model is set to the desired position—either via the \ac{HHD} or keyboard controls—the user can publish this position to the \ac{ROS} middleware, which moves the physical robot accordingly. Additionally, another method was created for situations where the on-site counterpart manipulates the physical robot directly. In these cases, the \ac{DT} mirrors the real robot’s movements, maintaining synchronized operation between the physical and virtual environments. These methods are explained in detail below.
 
 
 \subsection{UI Control Panel and Joint Manipulation}
 \label{subsection:ui-control-method}
 % \textbf{UI Control Method}:
-This method is designed to provide users with an intuitive, user-friendly interface for manipulating the \ac{DT} of the UR10e robot. 
-
-Figure \ref{f:ui-control} illustrates the \ac{UI} developed in Unity, highlighting its primary control panel on the left (1), which includes a detailed joint selection menu, directional arrows, and a reference image of the robot with joint labels (2 and 3). This panel is central to controlling the digital model of the robot, while other \ac{UI} features shown in the figure will be explained in subsequent sections.
+This method is designed to provide users with an intuitive, user-friendly interface for manipulating the \ac{DT} of the UR10e robot. Figure \ref{f:ui-control} illustrates the \ac{UI} developed in Unity, highlighting its primary control panel on the left (1), which includes a detailed joint selection menu, directional arrows, and a reference image of the robot with joint labels (2 and 3). This panel is central to controlling the digital model of the robot, while other \ac{UI} features will be explained in subsequent sections.
 
 \begin{figure}[h]
     \centering
@@ -74,6 +70,8 @@ Figure \ref{f:ui-control} illustrates the \ac{UI} developed in Unity, highlighti
 
     % \item \textbf{Directional Exclusivity}: When a rotation direction is chosen (e.g., pressing the right arrow), the opposite direction is temporarily disabled, as shown in Figures 4 and 5. This feature prevents conflicting commands, reinforcing safe and logical control of the robot.
 \end{itemize}
+
+\newpage
 
 \textbf{Additional Design Considerations: }
 \begin{itemize}
@@ -198,7 +196,7 @@ Figure~\ref{fig:robot-unity} illustrates this real-time synchronization between 
 \begin{figure}[h]
     \centering
     \includegraphics[width=\linewidth]{figs/super-imposed-robot.png}
-    \caption{Real-time synchronization of the UR10e robot’s \ac{DT} in Unity environment, showing an accurately overlay of the robot. This synchronization enables remote users to monitor the robot's state within the \ac{MR} environment, reflecting live updates via bidirectional \ac{ROS}-Unity communication}
+    \caption{Real-time synchronization of the UR10e robot’s \ac{DT} in Unity environment, showing an overlay of the robot. This synchronization enables remote users to monitor the robot's state within the \ac{MR} environment, reflecting live updates via bidirectional \ac{ROS}-Unity communication}
     \label{fig:robot-unity}
 \end{figure}
 
@@ -230,11 +228,13 @@ However, this method proved ineffective because, once inside it, users could not
 
 \item \textbf{Inner Safety Zone:} To overcome this outer zone limitation, an additional Inner-Safety Zone was developed. This design ensures a two-step safety mechanism that properly alerts users when they are in close proximity to the robot.
 
-\item \textbf{Sensorial Cues:  }
-\textbf{Visual}: Upon entering the Outer-Safety Zone, the color of the Inner sphere changes to red, reverting to its default color if the user exits this critical area. This visual cue alerts the user to increased proximity to a high-risk zone. Additionally, a blinking warning appears at the bottom center of the interface, switching between both circular danger signs shown in Figure \ref{fig:blinking-sign}. This flashing indicator amplifies the alert, reinforcing the awareness of approaching the operational robot area, remaining active as long as the user is within this Outer-Safety Zone.
+\item \textbf{Sensorial Cues: } Feedback was provided using distinct sensorial cues, namely:
+\begin{itemize}
 
+    \item \textbf{Visual}: Upon entering the Outer-Safety Zone, the color of the Inner sphere changes to red, reverting to its default color if the user exits this critical area. This visual cue alerts the user to increased proximity to a high-risk zone. Additionally, a blinking warning appears at the bottom center of the interface, switching between both circular danger signs shown in Figure \ref{fig:blinking-sign}. This flashing indicator amplifies the alert, reinforcing the awareness of approaching the operational robot area, remaining active as long as the user is within this Outer-Safety Zone.
 
-\textbf{Auditory}: Entering the Inner-Safety Zone triggers an audio alarm signifying that the user has breached into the robot working area, enhancing the effectiveness of the safety mechanism.
+    \item \textbf{Auditory}: Entering the Inner-Safety Zone triggers an audio alarm signifying that the user has breached into the robot working area, enhancing the effectiveness of the safety mechanism.
+\end{itemize}
 
 \begin{figure}[h]
     \centering
@@ -250,7 +250,7 @@ However, this method proved ineffective because, once inside it, users could not
 %  the remaining part should be in this part - explaining the rest of the UI features
 \subsection{Flexible Interface Options for User Customization}
 
-Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several additional features were integrated into the \ac{MR} application aimed at enhancing user flexibility and clarity. Positioned in the upper right corner of the \ac{UI}, two green toggle buttons provide control over distinct interface functionalities. By utilizing these two toggle buttons, users can enable/disable the visibility of both safety zones and the robot joint control panel for an optimized workspace view. 
+Additional features were integrated into the \ac{MR} application aimed at enhancing user flexibility and clarity. Positioned in the upper right corner of the \ac{UI}, two green toggle buttons provide control over distinct interface functionalities. By utilizing these two toggle buttons, users can enable/disable the visibility of both safety zones and the robot joint control panel for an optimized workspace view. 
 
 % \begin{figure}[h]
 %     \centering
@@ -259,33 +259,52 @@ Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several a
 %     \label{fig:all-features-button}
 % \end{figure}
 
+Figure \ref{fig:safety-zones-button} represents this \ac{MR} interface flexibility. In image \ref{fig:subfig1}, both safety zones and control panels are active. By selecting the upper-right button, the user can deactivate safety zones, turning this toggle button into gray and thus, removing visual cues and safety-zones related features. This deactivation is depicted in \ref{fig:subfig2}, where a clearer view of the environment can be visualized.
+
 \begin{figure}[h]
     \centering
     % First subfigure
     \begin{subfigure}{\textwidth}
+        % \captionsetup{justification=raggedright, singlelinecheck=false, position=top}
+        \caption{}
         \centering
-        \includegraphics[width=0.42\textwidth]{figs/feature-1.png}
-        \caption{Both safety zones and control panel are active, providing full visual feedback. Upon pressing the upper-right toggle button, safety-zones are disabled.}
-        \label{fig:subfig1}
+        \includegraphics[width=0.7\textwidth]{figs/feature-1.png}
+        % \caption{Both safety zones and control panel are active, providing full visual feedback. Upon pressing the upper-right toggle button, safety-zones are disabled.}
+    \label{fig:subfig1}
     \end{subfigure}
 
     \vspace{0.5em} % Add space between figures
 
     % Second subfigure
     \begin{subfigure}{\textwidth}
+        % \captionsetup{justification=raggedright, singlelinecheck=false, position=top}
+        \caption{}
         \centering
-        \includegraphics[width=0.42\textwidth]{figs/feature-2.png}
-        \caption{Consequence of pressing the upper-right toggle button, removing safety cues and providing a clearer view.}
+        \includegraphics[width=0.7\textwidth]{figs/feature-2.png}
+        % \caption{Consequence of pressing the upper-right toggle button, removing safety cues and providing a clearer view.}
         \label{fig:subfig2}
     \end{subfigure}
+    \caption{Flexible \ac{MR} interface for activating and deactivating safety zones. In subfigure \ref{fig:subfig1}, both safety zones are active, providing visual cues for the user. By selecting the top-right toggle button, subfigure \ref{fig:subfig2} shows the deactivated state of the safety zones, removing these visual elements to enable an unobstructed workspace view.}
+    \label{fig:safety-zones-button}
+\end{figure}
 
-    \vspace{0.5em}
+Regarding the joint control panel used to manipulate the robot through the interface, an activation/deactivation toggle was also added to the \ac{UI}. This interaction is displayed in Figure \ref{fig:3-features-button} where it is clear that by pressing the lower button represented in \ref{fig:subfig3}, the joint control panel is removed from the \ac{MR} environment. This toggle also behaves in the same way of the one from \ref{fig:subfig1}, turning into gray upon deactivation. 
+Finally, Figure \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
 
+
+% The lower button, pressed in image \ref{fig:subfig3}, toggles the robot joint control panel on and off, as illustrated in image \ref{fig:subfig4}. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
+
+% Figure \ref{fig:all-features-button} demonstrates this \ac{MR} interface flexibility. In image \ref{fig:subfig1}, both safety zones and control panels are active. By selecting the upper-right button, the user can deactivate safety zones, turning this toggle button into gray and thus, removing visual cues and safety-zones related features, as depicted in \ref{fig:subfig2}. The lower button, pressed in image \ref{fig:subfig3}, toggles the robot joint control panel on and off, as illustrated in image \ref{fig:subfig4}. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
+
+
+\begin{figure}[h]
     % Third subfigure
     \begin{subfigure}{\textwidth}
+        % \captionsetup{justification=raggedright, singlelinecheck=false, position=top}
+        \caption{}
         \centering
-        \includegraphics[width=0.42\textwidth]{figs/feature-3.png}
-        \caption{Pressing of the lower-right toggle button to deactivate the robot joint control panel.}
+        \includegraphics[width=0.7\textwidth]{figs/feature-3.png}
+        % \caption{Pressing of the lower-right toggle button to deactivate the robot joint control panel.        
         \label{fig:subfig3}
     \end{subfigure}
 
@@ -293,9 +312,11 @@ Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several a
 
     % Fourth subfigure
     \begin{subfigure}{\textwidth}
+        % \captionsetup{justification=raggedright, singlelinecheck=false, position=top}
+        \caption{}
         \centering
-        \includegraphics[width=0.42\textwidth]{figs/feature-4.png}
-        \caption{Robot joint control panel deactivated, allowing a more streamlined interface.}
+        \includegraphics[width=0.7\textwidth]{figs/feature-4.png}
+        % \caption{Robot joint control panel deactivated, allowing a more streamlined interface.}
         \label{fig:subfig4}
     \end{subfigure}
 
@@ -303,24 +324,25 @@ Beyond the joint control panel displayed on Figure \ref{f:ui-control}, several a
 
     % Fifth subfigure
     \begin{subfigure}{\textwidth}
+        % \captionsetup{justification=raggedright, singlelinecheck=false, position=top}
+        \caption{}
         \centering
-        \includegraphics[width=0.42\textwidth]{figs/feature-5.png}
-        \caption{Both safety zones and control panel are deactivated, achieving an unobstructed workspace view.}
+        \includegraphics[width=0.7\textwidth]{figs/feature-5.png}
+        % \caption{Both safety zones and control panel are deactivated, achieving an unobstructed workspace view.}
         \label{fig:subfig5}
     \end{subfigure}
 
-    \caption{Flexible \ac{MR} interface options for user customization, allowing selective activation and deactivation of safety zones and the robot joint control panel. Both image \ref{fig:subfig1} and \ref{fig:subfig3} show both features active. By pressing the top-right button, \ref{fig:subfig2} shows safety zones deactivaton. Similarly, in \ref{fig:subfig3} and \ref{fig:subfig4}, the lower toggle deactivation controls the joint control panel. Image \ref{fig:subfig5} demonstrates a fully unobstructed workspace with both features off, enabling a clearer task view.}
-    \label{fig:all-features-button}
+    \caption{Flexible \ac{MR} interface options for robot joint control panel management. Subfigure \ref{fig:subfig3} displays the joint control panel active, allowing users to manipulate the robot’s joints. Upon pressing the lower toggle button, subfigure \ref{fig:subfig4} shows the deactivation of this control panel, creating a less cluttered interface. In subfigure \ref{fig:subfig5}, both the safety zones and control panel are deactivated, offering a fully unobstructed view of the workspace for optimal clarity.}
+    \label{fig:3-features-button}
 \end{figure}
 
 
-Figure \ref{fig:all-features-button} demonstrates this \ac{MR} interface flexibility. In image \ref{fig:subfig1}, both safety zones and control panels are active. By selecting the upper-right button, the user can deactivate safety zones, turning this toggle button into gray and thus, removing visual cues and safety-zones related features, as depicted in \ref{fig:subfig2}. The lower button, pressed in image \ref{fig:subfig3}, toggles the robot joint control panel on and off, as illustrated in image \ref{fig:subfig4}. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
 
 \subsection{Enhanced Remote Visualization Through Camera Feed Transmission}
 
 To improve situational awareness for remote users, an additional camera was integrated, providing real-time visual context directly from the robot’s perspective and reducing on-site operator's responsibility for managing environmental views.
-
-The Orbbec Astra 3D camera~\footnote{\url{https://www.orbbec.com/products/structured-light-camera/astra-series/} Acessed:2024-10-22}, shown in Figure \ref{fig:astra-camera}, was chosen for its high-resolution video output and compatibility with the \ac{ROS} framework. This camera was mounted directly onto the robot, offering an immersive view that aligns with the robot’s operational perspective. Integration into the \ac{ROS} environment was facilitated through the Astra camera’s dedicated GitHub repository~\footnote{\url{https://github.com/orbbec/ros\_astra\_camera} Accessed: 2024-10-04}, which provided essential drivers and nodes for \ac{ROS} compatibility.
+% *TODO: check this, it was mounted on top of the robot (?-lie)
+The Orbbec Astra 3D camera~\footnote{\url{https://www.orbbec.com/products/structured-light-camera/astra-series/} Acessed:2024-10-22}, shown in Figure \ref{fig:astra-camera}, was chosen for its compatibility with the \ac{ROS} framework. This camera was mounted directly onto the robot, offering an immersive view that aligns with the robot’s operational perspective. Integration into the \ac{ROS} environment was facilitated through the Astra camera’s dedicated GitHub repository~\footnote{\url{https://github.com/orbbec/ros\_astra\_camera} Accessed: 2024-10-04}, which provided essential drivers and nodes for \ac{ROS} compatibility.
 
 \begin{figure}[h]
     \centering
@@ -331,7 +353,7 @@ The Orbbec Astra 3D camera~\footnote{\url{https://www.orbbec.com/products/struct
 
 The live feed from the Astra camera was managed via the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package, enabling continuous data capture and real-time display in RViz for preliminary verification. This configuration ensured proper camera functionality within the \ac{ROS} environment and accurate data capture. 
 
-However, when transmitting the uncompressed image data to the Unity \ac{MR} application, bandwidth and latency challenges arose, potentially impacting real-time collaboration. To address this, the \ac{ROS} \texttt{image\_transport} package was implemented, which converted the raw video stream into a compressed format, reducing data size while preserving essential image quality. By compressing the image data, the system achieved more efficient and stable real-time transmission to Unity, providing continuous visual feedback with minimal latency. The following command facilitated the data compression:
+However, when transmitting the uncompressed image data to the Unity \ac{MR} application, bandwidth and latency challenges arose, potentially impacting real-time collaboration. To address this, the \ac{ROS} \texttt{image\_transport} package was used, which converted the raw video stream into a compressed format, reducing data size while preserving essential image quality. By compressing the image data, the system achieved more efficient and stable real-time transmission to Unity, providing continuous visual feedback with minimal latency. The following command facilitated the data compression:
 
 \begin{verbatim} 
     rosrun image_transport republish raw in:=/camera/color/image_raw 

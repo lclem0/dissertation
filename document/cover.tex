@@ -9,7 +9,7 @@
 
 % Remove 'coverdepname' parameter to remove department name from cover pages
 % Add 'final' parameter to remove "DOCUMENTO PROVISÓRIO" from cover page
-\documentclass[11pt,a4paper]{report}
+\documentclass[11pt,twoside,a4paper,final]{report}
 
 %%% This file is a template for the cover of your
 %%%  thesis.
@@ -80,9 +80,9 @@
 
 
 %%% Uncomment one of the following options:
-\DocumentTypeThesis
+% \DocumentTypeThesis
 % \DocumentTypeThesisProposal
-% \DocumentTypeDissertation
+\DocumentTypeDissertation
 
 %%% Uncomment if you are a student of a MAP Doctoral program 
 %%% http://www.map.edu.pt/
@@ -190,8 +190,10 @@ Collaboration supported by Mixed Reality}
 
 %%% OPTIONAL: Add an acknowledgement text
 %% Optional Acknowledgement text
-\Acknowledgements{Esta dissertação consiste no culminar de um percurso académico que se estendeu ao longo de 17 anos. 
+% Cover page
 
+
+\Acknowledgements{Esta dissertação consiste no culminar de um percurso académico que se estendeu ao longo de 17 anos. 
 Deste modo, gostaria de começar por agradecer à minha família, especialmente à minha mãe e ao meu pai por me terem proporcionado esta aventura, bem como, por terem celebrado todas as minhas conquistas. 
 
 Em segundo lugar, gostaria de agradecer aos meus orientadores, Professor Doutor Bernardo Marques e Professor Doutor Eurico Pedrosa, pelo apoio e orientação na conceção deste trabalho, bem como pelas diversas horas nas quais se dispuseram a ajudar-me, de modo a poder levar este projeto a bom porto. Gostaria também de agradecer ao Doutor João Alves, por me ter transmitido o seu conhecimento e experiência, fundamentais para a realização deste trabalho. 
@@ -237,6 +239,9 @@ aiding in the development of the software components.}
 \Abstract{keywords}{textbook, architecture, history, construction, construction materials, traditional knowledge.}
          {abstract}{\selectlanguage{english}An abstract is a short summary of a longer work (such as a thesis, dissertation or research paper).\\The abstract concisely reports the aims and outcomes of your research, so that readers know exactly what your paper is about.\\Although the structure may vary slightly depending on your discipline, your abstract should describe the purpose of your work, the methods you’ve used, and the conclusions you’ve drawn.\\One common way to structure your abstract is to use the IMRaD structure. This stands for: \begin{itemize} \item Introduction \item Methods \item Results \item Discussion \end{itemize} Check for more details here:\\\texttt{https://www.scribbr.com/dissertation/abstract/}}
 
+
+
+         
 %%% Edit the Jury President information.
 %% First Member will be the President of the Jury
 \JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
@@ -249,6 +254,7 @@ aiding in the development of the software components.}
 \JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
 \JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
 \JuriMember{Prof. Doutor João Antunes da Silva}{professor associado da Universidade de Aveiro}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -265,7 +271,6 @@ aiding in the development of the software components.}
 %%%  in english uncomment the following line.
 %%% Set the proper language or you will end with incorrect hyphenation!
 \selectlanguage{english}
-
 
 \MakeCover
 \end{document}
