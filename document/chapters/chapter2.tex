@@ -103,7 +103,6 @@ Each one can be distinguished by the degree of interaction and task sharing betw
 
 In the bottom part of the Figure \ref{fig:collab} there is a table that further breaks down these distinctions, highlighting key factors like space, task relationship, possibility of contact, and the need for context awareness. This gradient from coexistence to collaboration shows the increasing complexity and interdependence in \ac{HRI}, as technology evolves to make robots more capable partners in industrial and service environments.
 
-% explanation of the below figure
 Below, the Figure \ref{fig:hrc-workstation} illustrates a \ac{HRC} workspace, showcasing the interaction between a human worker and a robot within a shared environment. The workspace is divided into distinct yet overlapping areas: the robot's work envelope and the human's work envelope. These areas reflect the respective tasks of each party, with the robot likely performing repetitive or automated tasks, such as material handling within the feeding system, while the human focuses on more intricate tasks requiring dexterity and decision-making.
 
 The overlapping shared workspace demonstrates the core principle of \ac{HRC}, where humans and robots work together toward common goals, necessitating real-time coordination and communication. In this setup, advanced sensing technologies or machine vision are essential to ensure safety and prevent collisions, allowing both the human and robot to operate efficiently within close proximity.
@@ -125,7 +124,6 @@ These new robots featuring intelligent sensing and vision systems, envisioned to
 They represent the alternative to full automation, since industry specialists have stated it is not possible to completely remove the 
 human within the manufacturing environment \cite{Weiss2021}.
 
-%% adicionar figura correta e dar label - verificar depois esta questao do estado da arte aqui
 
 %%%%%%%%%%%%%%%%%%%%%%%% analise do artigo sobre cobots - Human–Robot Collaboration in Manufacturing Applications: A Review - 2019
 %%%%%%%%%%%%%%%%%%%%%%%% ver melhor esta parte abaixo, organizar melhor e adicionar referencias bem, imagens e o que está a faltar
@@ -146,11 +144,11 @@ This cobots' emergence represents a paradigm shift in industrial automation, emp
 
 Cobots differentiate themselves from traditional industrial robots by prioritizing safety, ergonomics, and user accessibility. Unlike conventional robots that require extensive safety enclosures, cobots are equipped with advanced features such as force and torque sensors, vision systems, and anti-collision mechanisms. These capabilities enable them to operate safely in close proximity to humans without the need for restrictive barriers \cite{cobots-design}. The inherent design of cobots supports flexibility and ease of deployment, avoiding the high costs and complexity associated with retrofitting traditional robotic systems for similar functionality.
 
-The adoption of cobots in industrial settings is driven by a combination of economic, operational, and health-related factors:
+The adoption of cobots in industrial settings is driven by a combination of economic, operational, and health-related factors \cite{cobot-2019collaborative, cobots-implementation}:
 \begin{itemize}
-    \item \textbf{Cost Efficiency:} Cobots can significantly reduce labor costs by performing repetitive tasks, thereby lowering direct unit production costs compared to traditional automation solutions \cite{cobot-2019collaborative}.
+    \item \textbf{Cost Efficiency:} Cobots can significantly reduce labor costs by performing repetitive tasks, thereby lowering direct unit production costs compared to traditional automation solutions.
     \item \textbf{Enhanced Workplace Safety:} Their design minimizes occupational hazards, which leads to improved worker safety and health, addressing ergonomic challenges in manual labor.
-    \item \textbf{Spatial Efficiency:} The compact and flexible nature of cobots allows them to be easily relocated and reconfigured within different production areas, optimizing factory space utilization \cite{cobots-implementation}.
+    \item \textbf{Spatial Efficiency:} The compact and flexible nature of cobots allows them to be easily relocated and reconfigured within different production areas, optimizing factory space utilization.
 \end{itemize}
 
 
@@ -159,7 +157,7 @@ These attributes are particularly beneficial in high-risk applications and indus
 When assessing the applicability of cobots versus traditional robots, several distinctions emerge. Cobots excel in tasks that require adaptability and human-like dexterity, such as assembly, placement, handling, and quality inspection. Their versatility and ease of integration make them suitable for low-volume, high-flexibility production environments, where agility is crucial. Despite their advantages, integrating cobots still encounters challenges for some use-cases. Lack of knowledge has a huge impact, for example regarding safety legislation, reference cases, and optimizing cobot potential applications in dynamic environments that require further research and development \cite{Aaltonen2019}.
 Additionally, advancements in \ac{AI} and \ac{ML} could unlock new capabilities for cobots, enabling them to autonomously adapt to changing tasks and work conditions, thereby extending their utility beyond predefined, structured environments.
 
-Moreover, \ac{MR} technologies are becoming increasingly pivotal in advancing cobot integration, offering immersive, real-time interfaces that enhance \ac{HRC}. By overlaying digital information onto the physical workspace, \ac{MR} facilitates better situational awareness and task execution for both operators and cobots. Coupled with \ac{DT} systems, \ac{MR} enables real-time monitoring and control of cobots in dynamic and remote settings, enhancing operational flexibility. Integrating \ac{MR} into cobot applications thus allows for more intuitive interactions, improved safety, and higher precision in collaborative environments. As part of Industry 5.0, these technologies collectively contribute to creating more responsive, human-centered manufacturing systems.
+Moreover, \ac{MR} technologies are becoming increasingly pivotal in advancing cobot integration, offering immersive, real-time interfaces that enhance \ac{HRC}. By overlaying digital information onto the physical workspace, \ac{MR} facilitates better situational awareness and task execution for both operators and cobots. Coupled with \ac{DT} systems, \ac{MR} enables real-time monitoring and control of cobots in dynamic and remote settings, enhancing operational flexibility. Integrating \ac{MR} into cobot applications allows for more intuitive interactions, improved safety, and higher precision in collaborative environments. As part of Industry 5.0, these technologies collectively contribute to creating more responsive, human-centered manufacturing systems.
 
 \section{Digital Realities} 
 \ac{DR} encompass a wide spectrum of technologies that merge virtual elements with real-world environments to varying extents. In 1994, Milgram and Kishino introduced the Reality-Virtuality Continuum, a theoretical framework that characterizes the progression from a purely physical environment to a fully virtual one, as illustrated in Figure \ref{f:real-virtual-continuum} \cite{milgram1994}.
@@ -182,25 +180,25 @@ In this continuum, Reality represents the perception of an unaltered physical en
     \begin{figure}[!htpb]
         \centering
         \includegraphics[width=0.6\linewidth]{figs/ar-example.jpg}
-        \caption{Augmented Reality application of industry overlayed information in order to assist the operator}
+        \caption{Application of industry overlayed AR information in order to assist an operator when performing an assembly task}
         \label{f:ar-example}
     \end{figure}
 
     Achieving this level of integration requires accurate spatial registration, a process that ensures that virtual elements are properly aligned with real-world objects in both location and scale. The spatial coherence between the two realities is critical for creating an effective \ac{AR} experience, where virtual objects respond to changes in the environment and user interaction in real-time \cite{whatismixedreality}. 
 
-    Various \ac{AR} devices are employed to deliver these experiences, including \ac{AR}-\ac{HMD}, tablets, \ac{HHD}, projectors, and see-through \ac{VR} headsets with built-in cameras. Each device offers different degrees of environmental awareness and interaction capabilities, such as hand tracking and holographic projection \cite{Yin2023}. 
+    Various \ac{AR} devices are employed to deliver these experiences, including \ac{AR}-\ac{HMD}, \ac{HHD}, projectors, and see-through \ac{VR} headsets with built-in cameras. Each device offers different degrees of environmental awareness and interaction capabilities, such as hand tracking and holographic projection \cite{Yin2023}. 
     % These technologies have transformed numerous industries, offering new possibilities in fields ranging from manufacturing and design to healthcare and entertainment.
 
 \subsection{Virtual Reality}
     
-    Within the Reality-Virtuality Continuum proposed by Milgram and Kishino, \ac{VR} occupies the extreme end of the spectrum, representing a complete substitution of a user’s perception of the physical world with a fully immersive synthetic environment. In this state, the user is entirely isolated from their real surroundings, perceiving only the artificially constructed virtual environment, typically presented through a range of immersive devices such as \ac{HMD} \cite{milgram1994}. Figure~\ref{f:real-virtual-continuum} \footnote{\url{https://en.wikipedia.org/wiki/Immersion_\%28
+    Within the Reality-Virtuality Continuum proposed by Milgram and Kishino, \ac{VR} occupies the extreme end of the spectrum, representing a complete substitution of a user’s perception of the physical world with a fully immersive synthetic environment. In this state, the user is entirely isolated from their real surroundings, perceiving only the artificially constructed virtual environment, typically presented through a range of immersive devices such as \ac{HMD} \cite{milgram1994}. Figure~\ref{f:virtual} \footnote{\url{https://en.wikipedia.org/wiki/Immersion_\%28
     virtual_reality\%29\#/media/File:Reality_check_ESA384313.jpg}} illustrates this immersive experience where the user interacts with a virtual environment through \ac{VR} equipment.
 
     \begin{figure}[h]
         \centering
         \includegraphics[width=0.6\linewidth]{figs/Reality_check_ESA384313.jpg}
         \caption{User immersed in a virtual environment using a VR headset, demonstrating complete isolation from the physical world.}
-        \label{f:real-virtual-continuum}
+        \label{f:virtual}
     \end{figure}
 
     Modern \ac{VR} systems achieve this full immersion by leveraging advanced \ac{HMD}, which present stereoscopic images directly to the user’s eyes through built-in displays or projection systems. These devices often incorporate additional features like head tracking, enabling the user’s head movements to influence their viewpoint in the virtual environment, further enhancing the sense of immersion and presence \cite{whatismixedreality}. Some systems also include positional tracking through external sensors or inside-out tracking via integrated cameras, allowing users to physically navigate virtual spaces, augmenting both interaction fidelity and spatial awareness.
@@ -219,14 +217,13 @@ In this continuum, Reality represents the perception of an unaltered physical en
    
     \ac{MR} continues to elude a universally accepted definition, with interpretations diverging significantly across academic and industrial domains. According to the Milgram and Kishino Reality-Virtuality Continuum, depicted in Figure \ref{f:real-virtual-continuum}, \ac{MR} occupies a transitional space between \ac{AR} and \ac{AV}, bridging the two concepts \cite{milgram1994}. Expanding on this, Microsoft’s \ac{MR} spectrum~\footnote{\url{https://learn.microsoft.com/en-us/windows/mixed-reality/discover/mixed-reality}} defines \ac{MR} as spanning a range of technologies, from \ac{AR} (where physical reality predominates, augmented with digital overlays) to \ac{AV} (where the virtual environment dominates, supplemented by real-world data). 
 
-    * TODO: ADD REFERENCES IN BELOW TEXT
-    In \ac{MR} environments, digital and physical elements coexist and interact in real time, creating a dynamic interface where virtual and physical worlds seamlessly blend. This enables immersive, bi-directional interaction, where users engage with both digital objects and real-world elements, facilitating fluid communication between virtual entities and the physical environment. This integration enhances the user experience by enabling virtual objects to influence, and be influenced by, real-world contexts in a highly interactive manner, enabling new forms of collaboration, visualization, and interaction.
+    In \ac{MR} environments, digital and physical elements coexist and interact in real time, creating a dynamic interface where virtual and physical worlds seamlessly blend. This enables immersive, bidirectional interaction, where users engage with both digital objects and real-world elements, facilitating fluid communication between virtual entities and the physical environment. This integration enhances the user experience by enabling virtual objects to influence, and be influenced by, real-world contexts in a highly interactive manner, enabling new forms of collaboration, visualization, and interaction.
 
     The inherent complexity of \ac{MR} arises from the challenge of ensuring a natural and intuitive integration of digital and physical elements. This requires advanced environmental sensing, real-time data fusion, and contextual understanding to deliver interactions that appear natural to the user. 
 
     Despite considerable advancements, the definition of \ac{MR} remains contested. Speicher et al. (2019) identified six competing notions of \ac{MR} across both scholarly literature and industry practice, underscoring the fragmentation in its interpretation. Some experts argue that \ac{MR} represents an enhanced form of \ac{AR}, where users are not merely passive observers but active participants interacting with a responsive augmented space. In this interpretation, \ac{MR} is seen as a "stronger" form of \ac{AR}, exemplified by technologies such as Microsoft's HoloLens, where users can manipulate virtual elements within their physical environment \cite{whatismixedreality}.
 
-    Other perspectives view \ac{MR} as a convergence of \ac{AR} and \ac{VR}, where the boundary between the real and virtual worlds is fluid and adaptable, creating immersive, hybrid experiences. For example, the widely known game Pokémon Go is sometimes cited as an \ac{MR} application, where a \ac{VR}-based digital environment enables users to interact with augmented digital elements such as Pokémons, overlaid onto the physical world \cite{whatismixedreality}.
+    Other perspectives view \ac{MR} as a convergence of \ac{AR} and \ac{VR}, where the boundary between the real and virtual worlds is fluid and adaptable, creating immersive, hybrid experiences. For example, the widely known game Pokémon Go is sometimes cited as an \ac{MR} application, given that a \ac{VR}-based digital environment enables users to interact with augmented digital elements such as Pokémons, overlaid onto the physical world \cite{whatismixedreality}.
 
     However, the definition most relevant to this project's development emphasizes \ac{MR} as a powerful medium for collaboration, enabling users to interact across different realities—whether physical, augmented, or virtual. In this context, \ac{MR} facilitates shared experiences between users located in distinct environments. For example, a physical space visualized by an on-site \ac{AR} user can be simultaneously recreated and experienced by a remote \ac{VR} user, allowing real-time collaborative interactions between participants situated in different realities. This capacity for cross-reality collaboration enhances both the user’s understanding of the workspace and the efficiency of the collaboration process.
 
@@ -239,10 +236,8 @@ In this continuum, Reality represents the perception of an unaltered physical en
         \caption{Collaborative setup for training in industrial scenarios using \ac{MR} \cite{Mayer2023}}
         \label{fig:mr-collab-example}
     \end{figure}
-
-    *TODO: Verify this part a bit better - clarify the distinction between the referenced collaboration scenario and the collaboration of this dissertation, can I say that the remote user sees is immersed into an VR environment that the on-site also sees? because the on-site member sees it via AR and not only VR? 
     
-    Although this example highlights the collaborative potential of \ac{MR}, it slightly differs from the ideal collaboration model developed in this project. Here, the focus is on enabling an \textbf{on-site} user to interact with the real world through \ac{AR}—visualizing real-time data overlaid onto their physical environment—while the \textbf{remote} user experiences the same \ac{VR} environment. This configuration allows the remote user to be fully immersed in a virtual reconstruction of the on-site environment, with the ability to monitor and collaborate with the on-site user in real-time. The goal is not only to enhance communication but to enable mutual interaction with a shared digital-physical environment, fostering more precise decision-making, particularly in complex, dynamic tasks. This setup, more reflective of the full potential of \ac{MR}, aligns closely with Industry 5.0’s vision of combining human expertise and advanced technology for seamless collaboration between humans and machines across different realities.
+    Although this example highlights the collaborative potential of \ac{MR}, it slightly differs from the ideal collaboration model developed in this project. Here, the focus is on enabling an \textbf{on-site} user to interact with the real world through \ac{AR}—visualizing real-time data overlaid onto their physical environment—while the \textbf{remote} user experiences the same \ac{VR} environment. This configuration allows the remote user to be immersed in a virtual reconstruction of the on-site environment, with the ability to monitor and collaborate with the on-site user in real-time. The goal is not only to enhance communication but to enable mutual interaction with a shared digital-physical environment, fostering more precise decision-making, particularly in complex, dynamic tasks. This setup, more reflective of the full potential of \ac{MR}, aligns closely with Industry 5.0’s vision of combining human expertise and advanced technology for seamless collaboration between humans and machines across different realities.
 
 \section{Digital Twins}
 \label{sec:dt}
@@ -270,11 +265,9 @@ To illustrate the distinction, Figure \ref{f:dt-structure} presents a reference 
     \label{f:dt-structure}
 \end{figure}
 
-Bidirectional communication's importance in \ac{DT} is further emphasized by Liu et al.~\cite{liu2022state}, who argue that “a true DT must include bidirectional communication instead of having a virtual model that only updates according to a physical system.” This distinction between the types of communication and interaction is critical, as it defines the extent to which a \ac{DT} can be leveraged for control, simulation, and predictive purposes.
+Bidirectional communication's importance in \ac{DT} is further emphasized by Liu et al.~\cite{liu2022state}, who argue that “a true DT must include bidirectional communication instead of having a virtual model that only updates according to a physical system”. This distinction between the types of communication and interaction is critical, as it defines the extent to which a \ac{DT} can be leveraged for control, simulation, and predictive purposes.
 
 Table \ref{tab:levels_of_control} outlines different interaction levels within \ac{DT} systems, ranging from no interaction, where the physical and virtual systems are disconnected, to unidirectional data flow, where data is transferred from the physical to the virtual model, and culminating in bidirectional communication. The latter represents a fully functional \ac{DT}, where continuous exchange of data allows the virtual model to influence and control the physical system, achieving real-time synchronization and interaction.
-
-% Table \ref{tab:levels_of_control} illustrates interaction levels present in \ac{DT} systems, from no interaction, to unidirectional data flow, and ultimately to bidirectional communication, the latest defining a fully functional \ac{DT}.
 
 \begin{table}[!htpb]
     \centering
@@ -350,17 +343,18 @@ Puljiz et al.~\cite{puljiz2019conceptsendtoendaugmentedreality,puljiz2} explored
 
 Modern manufacturing trends are characterized by a shift toward mass customization and increased flexibility, driven by the demand for individualized products. This necessitates more adaptable manufacturing systems where human operators collaborate with industrial robots to handle complex tasks~\cite{1-ar-dt,2-ar-dt,3-ar-dt}. However, existing robotic systems primarily execute pre-programmed tasks with limited intelligence.
 
-To address this, two promising approaches have emerged: leveraging advanced \ac{AI} techniques for robot learning~\cite{6-ar-dt} and integrating a human-in-the-loop strategy for robot teleoperation. The latter, more aligned with Industry 5.0 principles, extends the capabilities of both humans and robots by incorporating human expertise into collaborative multi-robot processes~\cite{7-ar-dt}.
+To address this, two promising approaches have emerged: leveraging advanced \ac{AI} techniques for robot learning and integrating a human-in-the-loop strategy for robot teleoperation. The latter, more aligned with Industry 5.0 principles, extends the capabilities of both humans and robots by incorporating human expertise into collaborative multi-robot processes~\cite{6-ar-dt, 7-ar-dt}.
 
-Unlike traditional \ac{HRC}, multi-robot manufacturing with a human in the loop allows operators to interact with robots from remote locations, not limited to physical workspaces. This paradigm facilitates safer and more flexible manufacturing, by bridging the gap between fully automated and manual operations~\cite{7-ar-dt}. However, significant challenges remain, including the need for more user-friendly teleoperation interfaces and systems that can be easily utilized by manufacturing operators without extensive robotics training~\cite{9-ar-dt}.
+Unlike traditional \ac{HRC}, multi-robot manufacturing with a human in the loop allows operators to interact with robots from remote locations, not limited to physical workspaces. This paradigm facilitates safer and more flexible manufacturing, by bridging the gap between fully automated and manual operations. However, significant challenges remain, including the need for more user-friendly teleoperation interfaces and systems that can be easily utilized by manufacturing operators without extensive robotics training~\cite{7-ar-dt,9-ar-dt}.
 
-Research in multi-agent collaborative manufacturing has focused on enhancing safety, productivity, and cost reduction. Wearable \ac{AR}-assisted systems and \ac{DT} technologies enable accurate and intuitive robot teleoperation. By combining \ac{AR} with robot teleoperation, workers can access physical and virtual information simultaneously in a hybrid environment, interacting with virtual objects~\cite{26-ar-dt,27-ar-dt}. An example is an \ac{AR}-based teleoperation system utilizing RGB-D imaging, allowing operators to perceive the remote robot's environment and perform teleoperation~\cite{10-ar-dt}. Another system transforms robot workspaces into \ac{AR} environments for rapid and intuitive path planning and task programming~\cite{30-ar-dt}. These systems improve task performance by providing additional visual cues to enhance the operator's situational awareness.
+Research in multi-agent collaborative manufacturing has focused on enhancing safety, productivity, and cost reduction. Wearable \ac{AR}-assisted systems and \ac{DT} technologies enable accurate and intuitive robot teleoperation. By combining \ac{AR} with robot teleoperation, workers can access physical and virtual information simultaneously in a hybrid environment, interacting with virtual objects~\cite{26-ar-dt,27-ar-dt}. One example is an \ac{AR}-based teleoperation system utilizing RGB-D imaging, allowing operators to perceive the remote robot's environment and perform teleoperation~\cite{10-ar-dt}. Another system transforms robot workspaces into \ac{AR} environments for rapid and intuitive path planning and task programming~\cite{30-ar-dt}. These systems improve task performance by providing additional visual cues to enhance the operator's awareness.
 
 Recent advancements in smart manufacturing have led to the development of \ac{DT} models for robot control. For example, \cite{37-ar-dt} used the Unity engine to create a \ac{DT} of a robot arm that could learn manufacturing tasks virtually and replicate them in the physical world. The integration of \ac{DT} and \ac{VR} interfaces has also been proposed to design immersive human-in-the-loop robotic systems, where the \ac{DT} acts as an intermediary layer for task execution and quality monitoring~\cite{41-ar-dt,42-ar-dt}.
 
 Li et al.~\cite{LI2022102321} demonstrated how \ac{AR}-assisted \ac{DT} enable operators to manage and coordinate multiple robots more effectively.
 Figure~\ref{fig:physical-digital} depicts an immersive dual view where users can interact with the physical setup of two collaborating robots while simultaneously observing their virtual counterparts through Microsoft HoloLens \ac{AR} glasses. This setup allows for real-time monitoring and simulation of manufacturing processes, improving robot operation control.
 
+\FloatBarrier
 \begin{figure}[!htpb]
     \centering
     \includegraphics[width=0.85\linewidth]{figs/physical-digital.png}

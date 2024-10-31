@@ -6,7 +6,7 @@
     % This chapter presents the development of a comprehensive framework for implementing a Mixed Reality environment in Human-Robot Collaboration. 
     % % By allowing both on-site and remote manipulation through a communication pipeline, this system enables real-time robot manipulation and monitoring. 
     % The framework leverages advanced technologies such as Mixed-Reality, Digital Twins, and ROS, ensuring precise synchronization between physical and digital models. It discusses the tools, control methods, and User Interface enhancements designed to optimize both on-site and remote user experiences, aiming towards an intuitive, immersive collaboration.
-    The primary objective of this project is to enhance remote human-robot collaboration through a framework incorporating a UR10e robotic arm and a mixed reality interface. This framework leverages real-time, bidirectional communication, allowing the mixed-reality system to function as an active, synchronized digital twin rather than a static digital replica. With an intuitive user interface, the system aims to provide remote operators with robust visualization and precise control capabilities as well as enabling seamless monitoring and manipulation of the robotic arm within the collaborative environment
+    The primary objective of this dissertation is to enhance remote human-robot collaboration through a framework incorporating a UR10e robotic arm and a mixed reality interface. This framework leverages real-time, bidirectional communication, allowing the mixed-reality system to function as an active, synchronized digital twin rather than a static digital replica. With an intuitive user interface, the system aims to provide remote operators with robust visualization and precise control capabilities as well as enabling seamless monitoring and manipulation of the robotic arm within the collaborative environment
 \end{introduction}
 
 
@@ -41,10 +41,10 @@ This framework aims to provide an immersive and responsive \ac{MR} environment, 
     \centering
     \includegraphics[width=\linewidth]{figs/mr-collab.png}
     \caption{Collaborative \ac{MR} setup. The on-site member (1) observes and manipulates the environment through a \ac{HHD}, while the remote user (2) engages from a separate location using a computer interface. Both users can view and control the UR10e robotic arm in real-time, enhancing human-robot collaboration across locations.}
-    \label{fig:project_framework}
+    \label{fig:eu-mateus}
 \end{figure}
 
-As illustrated in Figure~\ref{fig:project_framework}, the on-site user utilizes the \ac{HHD} to observe and interact with the environment, while the remote counterpart can simultaneously view the workspace and manipulate the robot, ensuring synchronized, collaborative interaction across different locations.
+As illustrated in Figure~\ref{fig:eu-mateus}, the on-site user utilizes the \ac{HHD} to observe and interact with the environment, while the remote counterpart can simultaneously view the workspace and manipulate the robot, ensuring synchronized, collaborative interaction across different locations.
 
 
 \section{Robot Manipulation Within Mixed Reality Environment}
@@ -94,7 +94,7 @@ This structured approach to joint manipulation tries to promote safe, precise, a
 
 \subsection{Unity to Robot}
 % \textbf{Unity-ROS Control:} 
-Similarly to the previous described method, this one also enables the digital robot model to be controled from the \ac{MR} environment. However, when needed, it sends the newly defined digital robot position into the Middleware environment, updating the real UR10e robot status. In order to change the \ac{DT}, the user has can also do it by pressing the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
+Similarly to the previous described method, this one also enables the digital robot model to be controled from the \ac{MR} environment. However, when desired, it sends the newly defined digital robot position into the Middleware environment, updating the real UR10e robot status. In order to change the \ac{DT}, the user can also do it by pressing the right/left arrow keyboard keys to select the following/previous joint as well as the up/down keys to rotate the selected joint in the positive/negative direction, respectively.
         
 After moving the digital model to the desired position, by pressing the "Publish" button within the \ac{UI}, as shown in Figure \ref{fig:publish_UI_button}, the robot's joints coordinates are published to the \ac{ROS} middleware, using the \ac{ROS}-\ac{TCP}-Connector/Endpoint packages.
 
@@ -299,12 +299,6 @@ Figure \ref{fig:safety-zones-button} represents this \ac{MR} interface flexibili
 Regarding the joint control panel used to manipulate the robot through the interface, an activation/deactivation toggle was also added to the \ac{UI}. This interaction is displayed in Figure \ref{fig:3-features-button} where it is clear that by pressing the lower button represented in \ref{fig:subfig3}, the joint control panel is removed from the \ac{MR} environment. This toggle also behaves in the same way of the one from \ref{fig:subfig1}, turning into gray upon deactivation. 
 Finally, Figure \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
 
-
-% The lower button, pressed in image \ref{fig:subfig3}, toggles the robot joint control panel on and off, as illustrated in image \ref{fig:subfig4}. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
-
-% Figure \ref{fig:all-features-button} demonstrates this \ac{MR} interface flexibility. In image \ref{fig:subfig1}, both safety zones and control panels are active. By selecting the upper-right button, the user can deactivate safety zones, turning this toggle button into gray and thus, removing visual cues and safety-zones related features, as depicted in \ref{fig:subfig2}. The lower button, pressed in image \ref{fig:subfig3}, toggles the robot joint control panel on and off, as illustrated in image \ref{fig:subfig4}. This toggle also behaves in the same way of the above one, turning into gray upon deactivation. Image \ref{fig:subfig5} represents the deactivation of both features, achieving an unobstructed view. These customization options allow users to adjust the interface according to task requirements, balancing between safety feedback and workspace clarity.
-
-
 \begin{figure}[h]
     % Third subfigure
     \begin{subfigure}{\textwidth}
@@ -350,7 +344,6 @@ Finally, Figure \ref{fig:subfig5} represents the deactivation of both features, 
 
 To improve situational awareness for remote users, an additional camera was integrated, providing real-time visual context directly from the robot’s perspective and reducing on-site operator's responsibility for managing environmental views.
 
-% *TODO: check this, it was mounted on top of the robot (?-lie) - eurico missing correction
 The Orbbec Astra 3D camera~\footnote{\url{https://www.orbbec.com/products/structured-light-camera/astra-series/} Acessed:2024-10-22}, shown in Figure \ref{fig:astra-camera}, was chosen for its compatibility with the \ac{ROS} framework. This camera was mounted directly onto the robot, offering an immersive view that aligns with the robot’s operational perspective. Integration into the \ac{ROS} environment was facilitated through the Astra camera’s dedicated GitHub repository~\footnote{\url{https://github.com/orbbec/ros\_astra\_camera} Accessed: 2024-10-04}, which provided essential drivers and nodes for \ac{ROS} compatibility.
 
 \begin{figure}[h]
@@ -409,42 +402,4 @@ Figure \ref{fig:camera-feed} demonstrates the live feed display in Unity, showca
 
 
 
-
-
-% To initiate the camera feed, the \texttt{astra\_camera\_node} from the \texttt{astra\_camera} package is initialized. Afterwards, an RVIZ image viewer displays the live feed, ensuring the camera is functioning correctly and capturing the desired video data.
-
-% * TODO: add a picture of the UI showing that the camera live feed from Rviz
-% * TODO: need to explain better how the image transmission is sent to the Unity, needed to compress the image data into a different format, from raw to compressed, to be able to send it over Wi-Fi - used the image\_transport package to republish the image data in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
-% after launching the camera node, the image data was republished using the image\_transport package, which allowed for smoother and real-time transmission to the Unity environment.
-% * TODO: reorganize this part better
-
-% \subsection{Unity Camera Feed Integration}
-
-% After the camera live feed was displayed in the Rviz simulation within the on-site environment, this data needs to be transmitted to the Unity \ac{MR} application, allowing the remote user to observe the robot's environment in real-time, providing critical visual feedback necessary for effective remote collaboration.
-
-
-% From the Unity side, the \texttt{CameraFeedReceiver.cs} (verify the name of the script) script was developed to receive and display the live camera feed. This script was then atached to an UI interface (confirm the name of the element) that displayed the video feed in real-time. 
-% add a figure of the UI interface with the view of the camera - The figure (add figure) illustrates the camera feed in the Unity application, showcasing the live video stream from the robot's environment.
-
-% \subsection{Data Transmission to Unity} 
-    
-% However, the raw image data generated by the camera was too heavy to be transmitted efficiently over Wi-Fi, so this data needed to be republished using the \texttt{image\_transport} package.
-% By utilizing the following \ac{ROS} command 
-% \begin{verbatim}
-%     rosrun image_transport republish raw 
-%     in:=/camera/color/image_raw out:=/camera/image_repub
-% \end{verbatim}
-% the image data was republished in a more efficient format, allowing for smoother and real-time transmission to the Unity environment.
-
-
-
-% *TODO: is this useful to any integration part of this chapter????  - from chapter 5 beginning
-% One of the key features developed was a seamless control method integrated within the \ac{MR} environment, allowing the user to manipulate the robot via the \ac{UI}. This interface includes joint's selection buttons, directional controls, and toggle switches for precise manipulation of each robotic joint.  This setup enables users to control the robot's movements through the \ac{MR} interface and send this position update to the \ac{ROS} middleware, with real-time synchronization ensuring the robot accurately mirrors the \ac{DT}'s state.
-
-% The development of two safety zones within the \ac{UI} was a critical enhancement aimed at ensuring user safety and improving operational awareness when interacting with the robot. These zones function by providing real-time alerts to the user. When the user enters the "Outer Safety Zone", which has a larger radius, not only a visual alert starts blinking, but also the color of the "Inner Safety Zone" changes, signaling that the user is approaching the robot's workspace. These visual cue escalate the user's awareness of proximity to the robot. If he gets even closer to the robot and breaches the "Inner Safety Zone", an auditory alarm is triggered, continuously alerting the user to their presence within a hazardous area. This layered approach—combining visual color changes and auditory alarms—ensures that users are fully aware of any potential danger during robot operation, thereby preventing accidents. Moreover, the combination of these sensorial cues also contributes to a more immersive interaction experience, increasing awareness without overwhelming the user.
-% However, the accuracy of these safety zones is heavily dependent on the alignment between the camera and the \ac{AR} marker. Misalignment between the them can lead to inaccuracies in distance measurements, affecting the reliability of the safety zones. Maintaining precise marker tracking is therefore essential for ensuring both the accuracy of safety zone alerts and the overall safety of the system during operation.
-
-% Another significant feature was the implementation of a live camera feed, allowing the remote participant to view the robot’s workspace in real-time. This feed is crucial for remote collaboration, enabling users from different locations to have a synchronized understanding of the robot’s surroundings. The camera feed is transmitted from the \ac{ROS} middleware to the Unity \ac{MR} environment via \ac{TCP}/\ac{IP} after image compression. Compression was necessary due to the substantial bandwidth required for raw video data transmission. This feature offers an important perspective for remote users, aiding in monitoring and providing assistance when necessary.
-
-% Both the joint control interface and the safety-zone mechanisms were designed to be toggled on/off, thereby ensuring that the user has the option to clear the \ac{UI} for an unobstructed view of the environment.
 

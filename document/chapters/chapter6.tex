@@ -4,12 +4,10 @@
 
 This dissertation has explored the development of an \ac{MR}-assisted, \ac{DT}-enabled robot collaborative system with human-in-the-loop control. The primary objective consisted on enhancing \ac{HRC} by integrating advanced technologies that bridge the gap between physical and virtual environments supporting remote collaboration and, thereby, fostering more efficient and intuitive interactions in manufacturing settings.
 
-On-Site interaction was a crucial aspect of the project. By utilizing \ac{HHD} such as tablets and smartphones, on-site participants are able to share live views of their surroundings. Furthermore, \ac{AR} elements were layed upon the \ac{MR} application to provide visual and audio cues with the purpose enhancing user's awareness. 
+On-Site interaction was a crucial aspect of the project. Despite having a functional \ac{MR} application, issues arose when trying to build it and utilize \ac{HHD} such as tablets and smartphones to enable on-site participants to share live views of their surroundings. However, \ac{AR} elements were layed upon the \ac{MR} application to provide visual and audio cues with the purpose enhancing user's awareness. 
 
 In terms of remote visualization and interaction, a foundational 2D interface was accessible via standard devices like laptops. This \ac{UI} aims to enable remote participants to visualize the collaboration scenario and understand the task context effectively. Furthermore, the system's capabilities allow remote operation of the robot through the \ac{MR} application, given that bidirectional communication was implemented. This enhancement empowered remote users to interact with and manipulate the collaborative environment, bringing them closer to the on-site experience, aiming to improve the overall collaborative efficacy.
 
-
-% *TODO: remove we
 Regarding immersion, a camera was mounted on the robot to automate the process of environment sharing with remote participants. This feature relieved on-site participants from the responsibility of manually sharing visual information, as the robot could now autonomously provide live feeds of the workspace. This automation not only improved efficiency but also enhanced the immersive experience for remote users by offering real-time visual insights into the operational environment.
 
 Throughout the development process, Unity game engine was used for robot model development and \ac{ROS} enabled seamless communication between the physical robot and its \ac{DT}. The use of Vuforia facilitated precise pose registration, ensuring accurate alignment between virtual and physical models. By integrating both visual and audio cues as well as intuitive controls within the shared environment, it enhanced user's awareness of robot's movements and provided a user-friendly interface for robot manipulation.
@@ -19,7 +17,7 @@ In conclusion, the project successfully achieved its main objectives by developi
 
 \section{Future Work}
 
-Despite having achieved its primary goals, there are several areas for future exploration to further enhance the system's capabilities and impact.
+Even though having achieved its primary goals, there are several areas for future exploration to further enhance the system's capabilities and impact.
 % organize below part
 Future work related to this includes:
 
@@ -28,17 +26,9 @@ Future work related to this includes:
     For the remote user, Meta Quest provides immersive visualization, allowing them to fully engage with 3D content in a virtual space. Its mobility allows the remote user to work from different locations seamlessly. Immersive collaboration tools such as whiteboard sharing and 3D model manipulation enable richer, real-time teamwork, further boosting collaborative efficiency. 
     \item \textbf{Improving Communication Tools}: Integrating advanced communication tools such as interactive annotations on 3D models and gesture-based interaction will further enhance collaboration between on-site and remote participants. Remote users can annotate specific areas on the digital twin in real time, providing clear, visual instructions to the on-site member. Gesture-based interaction, meanwhile, offers both users a more intuitive, natural means of communication, allowing for non-verbal cues and actions. However, this approach must be adapted to the specific requirements of each use case, as varying tasks may demand different levels of precision, feedback, or interaction.
     \item \textbf{Conducting User Study:} is a critical step to refine the system based on real-world usage feedback and performance metrics. By carrying out comprehensive usability studies, it can evaluate different aspects of the system separately, such as \ac{UI} design, robot control modes, and task execution. This will help identify key points and areas for improvement. Furthermore, analyzing task performance data will allow us to optimize workflows, improve system ergonomics, and enhance overall efficiency, ensuring that the system is tailored to meet users' diverse needs.
-    \item \textbf{Longitudinal Studies and Ergonomic}: Evaluating the long-term impact of the developed system on collaboration efficiency and user well-being is essential. Longitudinal studies can assess how the technology influences productivity, identifying trends that inform further improvements. Additionally, ergonomic assessments will ensure that \ac{AR} devices do not cause discomfort or health issues, optimizing long-term usage for user well-being. 
-\end{itemize}
-
-In addition to user experience research, future work could focus on:
-
-\begin{itemize} 
-
+    \item \textbf{Longitudinal Studies and Ergonomic}: Evaluating the long-term impact of the developed system on collaboration efficiency and user well-being is essential. Longitudinal studies can assess how the technology influences productivity, identifying trends that inform further improvements. Additionally, ergonomic assessments will ensure that \ac{AR} devices do not cause discomfort or health issues, optimizing long-term usage for user well-being.
     \item \textbf{Advanced Interaction Modalities}: Incorporating gesture recognition and voice commands can make the system more accessible and reduce reliance on manual input devices. These modalities can provide a more intuitive control mechanism, especially in environments where traditional input devices are impractical.
-    
     \item \textbf{Expanding Robotic Capabilities with Integrated Sensors and Mobile Platforms:} Leveraging advanced sensor integration within the robotic arm alongside with \ac{AI} and \ac{ML} algorithms could enhance situational awareness and interaction precision, by enabling the arm to respond dynamically to environmental cues and sudden changes. Moreover, equipping these robotics arms onto mobile robots, allows for greater flexibility and reach in different collaborative tasks. Incorporating complex navigation sensors such as \ac{LIDAR} and vision systems could enable autonomous maneuver within complex environments.
-
     \item \textbf{End-Effector Positioning via Inverse Kinematics:} Transitioning from direct joint manipulation to an end-effector-based control approach would allow users to specify a target position for this robot’s end-effector and it would calculate and execute the necessary joint movements automatically through inverse kinematics. This method would simplify user interaction, particularly for complex tasks requiring precise positioning, as it eliminates the need for individual joint adjustments, thereby improving task efficiency. 
 
 \end{itemize}

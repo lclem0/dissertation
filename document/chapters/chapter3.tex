@@ -14,7 +14,7 @@
 
 \section{UR10e Robot}
 
-In order to start adressing the aforementioned challenges, a first effort has been made. The robotic arm from Universal Robots, UR10e was used. It is one of Universal Robots' most advanced cobots, featuring a payload capacity of 12.5 kg, and a reach of 1300 mm, being designed to automate a wide range of tasks that typically require human input, such as assembly, packaging, and pick-and-place operations~\footnote{UR10e \url{https://www.universal-robots.com/products/ur10-robot/} Accessed: 2024-10-15}. UR10e's integrated force sensors and collision detection technologies allow to collaborate safely with humans in shared workspaces, making it ideal for \ac{HRC} scenarios. Besides, it offers significant flexibility in terms of programming and adaptability. Its console is intuitive and allows imported pre-programmed scripts, therefore being easily deployed across various industrial tasks with minimal programming experience required by the operator.
+In order to start adressing the aforementioned challenges, a first effort has been made. The robotic arm UR10e, shown in Figure~\ref{f:ur10e_iris}, was used. It is one of Universal Robots' most advanced cobots, featuring a payload capacity of 12.5 kg, and a reach of 1300 mm, being designed to automate a wide range of tasks that typically require human input, such as assembly, packaging, and pick-and-place operations~\footnote{UR10e \url{https://www.universal-robots.com/products/ur10-robot/} Accessed: 2024-10-15}. UR10e's integrated force sensors and collision detection technologies allow to collaborate safely with humans in shared workspaces, making it ideal for \ac{HRC} scenarios. Besides, it offers significant flexibility in terms of programming and adaptability. Its console is intuitive and allows imported pre-programmed scripts, therefore being easily deployed across various industrial tasks with minimal programming experience required by the operator.
 
 \begin{figure}[h]
     \centering
@@ -23,12 +23,6 @@ In order to start adressing the aforementioned challenges, a first effort has be
     \label{f:ur10e_iris}
 \end{figure}
 
-% \begin{figure}[h]
-%     \centering
-%     \includegraphics[width=0.4\linewidth]{figs/ur10e.jpeg}
-%     \caption{UR10e Robot used in the robotics laboratory of IEETA, the Institute of Electronics and Informatics Engineering of Aveiro's University}
-%     \label{f:ur10e_iris}
-% \end{figure}
 
 This robot, as the core physical entity in this human-robot collaborative system, serves as the dynamic agent for performing collaborative tasks, where its physical attributes were mirrored in an immersive digital environment, regarding the fundamental \ac{DT} concept.
 
@@ -71,7 +65,7 @@ Vuforia Engine \ac{SDK}~\footnote{\url{https://developer.vuforia.com/downloads/S
 
 \subsection{Marker Detection}
 
-To ensure this precise spatial alignment between the digital and physical elements within the \ac{MR} environment, an ArUco marker~\footnote{\url{https://chev.me/arucogen/} Accessed: 2024-10-27} was placed next to the physical robot in the robotics laboratory of IEETA, as shown in above presented Figure \ref{f:ur10e_iris} . This positioning is illustrated within the \ac{MR} simulation in Figure \ref{f:aruco_marker}, where the marker is positioned relative to the robot digital model. To properly visualize the environment, the Logitech c922 camera, shown in Figure \ref{fig:camera-c922}, was used. It enables the robot digital model overlay to the physical robot, ensuring precise positioning and manipulation of the \ac{DT} in the \ac{MR} space.
+To ensure this precise spatial alignment between the digital and physical elements within the \ac{MR} environment, an ArUco marker~\footnote{\url{https://chev.me/arucogen/} Accessed: 2024-10-27} was placed next to the physical robot in the robotics laboratory of IEETA, as shown in above presented Figure \ref{f:ur10e_iris} . This positioning is illustrated within the \ac{MR} simulation in Figure \ref{f:aruco_marker}, where the marker is positioned relative to the digital robot model. To properly visualize the environment, the Logitech c922 camera, shown in Figure \ref{fig:camera-c922}, was used. It enables the robot digital model overlay to the physical robot, ensuring precise positioning and manipulation of the \ac{DT} in the \ac{MR} space.
 
 \begin{figure}[h]
     \centering
@@ -92,7 +86,7 @@ To ensure this precise spatial alignment between the digital and physical elemen
 \label{marker-camera}
 \end{figure}
 
-Figure \ref{f:ur10_marker_unity} displayes the digital robot model positioned realitve to the above described marker, within the Unity simulation environment.
+Figure \ref{f:ur10_marker_unity} displays the digital robot positioned realitve to the above described marker, within the Unity simulation environment.
 
 \begin{figure}[h]
     \centering
@@ -107,4 +101,4 @@ After having the digital model correctly aligned with the physical robot, the ne
 
 \ac{ROS}~\footnote{\url{https://www.ros.org/}, Acessed: 2024-10-27} is an open-source, flexible middleware framework that provides essential tools and libraries for developing complex robotic applications. Initially designed to support robotic research, it has evolved into a widely used framework in both academia and industry. By offering a standard architecture for robotic system integration, it allows different nodes to communicate and exchange data in real-time, supporting several functions such as sensor integration, data processing, and visualization.
 
-Therefore, it was used as the middleware software for facilitating bi-directional communication between the physical robot and the Unity \ac{MR} environment. There were also prior developed \ac{ROS} packages, which provide a comprehensive \ac{ROS} setup for controlling the UR10e robot available at the laboratory, namely \texttt{iris\_ur10e}~\footnote{\url{https://github.com/iris-ua/iris_ur10e}, Acessed: 2024-10-02} and \texttt{iris\_sami}~\footnote{\url{https://github.com/iris-ua/iris_sami}, Acessed: 2024-10-02} that include trajectory planning, RViz visualization, and real-time robot manipulation.
+Therefore, it was used as the middleware software for facilitating bidirectional communication between the physical robot and the Unity \ac{MR} environment. There were also prior developed \ac{ROS} packages, which provide a comprehensive \ac{ROS} setup for controlling the UR10e robot available at the laboratory, namely \texttt{iris\_ur10e}~\footnote{\url{https://github.com/iris-ua/iris_ur10e}, Acessed: 2024-10-02} and \texttt{iris\_sami}~\footnote{\url{https://github.com/iris-ua/iris_sami}, Acessed: 2024-10-02} that include trajectory planning, RViz visualization, and real-time robot manipulation.
