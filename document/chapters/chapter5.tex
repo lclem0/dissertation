@@ -42,12 +42,10 @@ When establishing the bidirectional communication between the \ac{ROS} middlewar
 
 One additional challenge was the live camera feed transmission from \ac{ROS} to Unity, which proved to be too large to transmit efficiently over the network, resulting in significant latency. To address this, the image data had to be compressed using the \texttt{image\_transport} package in \ac{ROS}, which allowed the camera feed to be republished in a more compact format. This enabled real-time transmission over a \ac{TCP}/\ac{IP} connection, ensuring that the remote user could observe the robot’s workspace without excessive delay.
 
-% *TODO: confirm this is not said anywhere else in the document
 By the time all the developed features were working properly, building the Unity-based \ac{MR} application for deployment on a \ac{HHD} presented significant challenges. There are no certainties regarding where do these issues come from, however, integrating several packages essential for achieving robotics bidirectional communication, precise model rendering and manipulation within Unity, could have affected the deployment and runtime stability of the application on mobile devices.
 
 In conclusion, while the implementation of the core functionalities of the \ac{MR} application—such as robot control, bidirectional communication, and user interface elements—was successful, the project encountered significant obstacles mainly related to the lack of documentation, support and examples that enables the integration of external tools and the handling of \ac{ROS} messages in Unity. This lack of resources complicated the development process, yet the solutions developed play a foundational role and offer substantial value to the community. By implementing core funcionalities like robot control with bidirectional communication and \ac{UI} features integration, this dissertation enables future advancements, such as robust system testing and performance evaluations. Despite not having conducted a user testing, the framework serves as a valuable platform for further exploration and validation of \ac{MR} based \ac{DT} integrated applications in \ac{HRC}.
 
-% *TODO: mention that the control UI can be accessed either in laptop in unity simulation or in an HHD, which was the main purpose, but there were issues when building the unity app.
 
 
 \section{Scenarios of Relevant Future Use-Cases}
